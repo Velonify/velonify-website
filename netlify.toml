@@ -7,6 +7,16 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/ueber-uns/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/en/about/*"
+  to = "/en/"
+  status = 301
+
 [[headers]]
   for = "/assets/*"
   [headers.values]

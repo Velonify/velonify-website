@@ -72,14 +72,6 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/cases/pretty-woman/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/cases/pretty-woman/"/>
   </url>
-  <url><loc>https://velonify.de/ueber-uns/</loc><lastmod>2026-09-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ueber-uns/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/about/"/>
-  </url>
-  <url><loc>https://velonify.de/en/about/</loc><lastmod>2026-09-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ueber-uns/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/about/"/>
-  </url>
   <url><loc>https://velonify.de/impressum/</loc><lastmod>2026-09-20</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/impressum/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/legal-notice/"/>
