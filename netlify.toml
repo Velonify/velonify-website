@@ -11,11 +11,13 @@
   from = "/ueber-uns/*"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/en/about/*"
   to = "/en/"
   status = 301
+  force = true
 
 [[headers]]
   for = "/assets/*"
