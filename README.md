@@ -9,10 +9,20 @@ Export aus dem Velonify-Design-Canvas. Reines HTML/CSS/JS, kein Build-Schritt.
 - `sitemap.xml`, `robots.txt`, `404.html`, `favicon.svg`, `netlify.toml` (www → velonify.de, Caching, Sicherheits-Header)
 
 ## Deploy auf Netlify
-1. app.netlify.com → Add new site → Deploy manually → diesen Ordner hineinziehen
-2. Domain management → Add domain → velonify.de
-3. Beim Domain-Anbieter: `@` A-Record 75.2.60.5 (oder ALIAS apex-loadbalancer.netlify.com), `www` CNAME auf <projekt>.netlify.app – MX-Einträge nicht anfassen
-4. Formular: Das Kontaktformular heißt „anfrage“ (Netlify Forms). Anfragen erscheinen unter Forms; E-Mail-Benachrichtigung dort einstellen.
+Netlify hängt an diesem Repo: jeder Push auf `main` geht automatisch live, ein Build-Schritt läuft nicht (`publish = "."`).
+Domain velonify.de liegt auf Netlify, `www` leitet auf die Adresse ohne www (siehe `netlify.toml`); die MX-Einträge bleiben unberührt.
+
+## Kontaktformular
+Das Formular heißt `anfrage` (Netlify Forms) und steht auf der deutschen und der englischen Startseite,
+je zweimal – einmal im Desktop-, einmal im Mobil-Layout. Beide Kopien müssen dieselben Felder tragen:
+`name`, `email`, `shop`, `themen` (verstecktes Feld, von `site.js` aus den Chips befüllt), `sprache` (`de`/`en`),
+`nachricht` sowie den Honeypot `bot-field`. Nach dem Absenden landet man auf `/danke/` bzw. `/en/thanks/`.
+
+Einmalig im Netlify-Dashboard einzustellen:
+1. Site configuration → Forms → **Form detection einschalten**, danach einen Deploy auslösen. Ohne diesen Schalter
+   nimmt Netlify keine Einsendung an (POST auf die Seite antwortet mit 404) – Stand 2026-09-20 ist er noch aus.
+2. Forms → Notifications → E-Mail-Benachrichtigung an die Adresse, die Anfragen sehen soll.
+3. Forms → Notifications → Outgoing webhook auf den CRM-Eingang, damit jede Anfrage in der internen Plattform landet.
 
 ## Vor dem Livegang ersetzen
 - `[BUCHUNGSLINK]` – Link zum Buchungstool (Buttons „Erstgespräch vereinbaren“)
