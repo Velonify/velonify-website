@@ -263,7 +263,7 @@ html { scroll-behavior: smooth; }
     details.faq[open] .a { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; }
     /* Mobile menu */
     @keyframes menuIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
-    .menu-panel { animation: menuIn .45s cubic-bezier(.16,1,.3,1) both; }
+    .menu-panel { animation: menuIn .45s cubic-bezier(.16,1,.3,1) both; } .menu-panel[hidden] { display: none !important; }
     .menu-link { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; }
     .burger { background: transparent; border: 0; padding: 0; width: 48px; height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 7px; cursor: pointer; }
     .burger span { display: block; height: 2px; background: #FFFFFF; transition: transform .35s cubic-bezier(.16,1,.3,1), width .35s; }
