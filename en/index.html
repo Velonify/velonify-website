@@ -133,11 +133,11 @@ html { scroll-behavior: smooth; }
 
     /* Keyword rows: outlined word, fills on hover, text appears */
     .vrow { container-type: inline-size; padding: 24px 0 28px; border-top: 1px solid rgba(0,0,0,0.14); outline-offset: -3px; }
-    .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
-    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 20px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
+    .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: rgba(69,20,45,0.42); -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
+    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 20px; line-height: 1.5; font-weight: 600; opacity: 1; }
     .vrow:hover .vword, .vrow:focus-within .vword, .vrow:focus .vword { color: #45142D; }
-    .vrow:hover .vtext, .vrow:focus-within .vtext, .vrow:focus .vtext { opacity: 1; transform: none; }
-    @media (hover: none) { .vtext { opacity: 1; transform: none; } .vrow:active .vword { color: #45142D; } }
+    
+    @media (hover: none) { .vrow:active .vword { color: #45142D; } }
     @media (prefers-reduced-motion: reduce) { .vtext { transition: none; } }
 
     /* Cases carousel */
@@ -287,11 +287,11 @@ html { scroll-behavior: smooth; }
 
     /* Keyword rows: outlined word, fills on hover, text appears */
     .vrow { container-type: inline-size; padding: 24px 0 28px; border-top: 1px solid rgba(0,0,0,0.14); outline-offset: -3px; }
-    .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
-    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 20px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
+    .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: rgba(69,20,45,0.42); -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
+    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 20px; line-height: 1.5; font-weight: 600; opacity: 1; }
     .vrow:hover .vword, .vrow:focus-within .vword, .vrow:focus .vword { color: #45142D; }
-    .vrow:hover .vtext, .vrow:focus-within .vtext, .vrow:focus .vtext { opacity: 1; transform: none; }
-    @media (hover: none) { .vtext { opacity: 1; transform: none; } .vrow:active .vword { color: #45142D; } }
+    
+    @media (hover: none) { .vrow:active .vword { color: #45142D; } }
     @media (prefers-reduced-motion: reduce) { .vtext { transition: none; } }
 
     /* Cases carousel */
