@@ -78,7 +78,7 @@ html { scroll-behavior: smooth; }
     .svc-tags { color: #45142D; transition: color .3s; }
     .svc:hover .svc-tags { color: #C5D8E6; }
     .svc:hover .svc-arrow { transform: translate(6px, -6px); color: #C5D8E6; }
-    .svc-arrow { transition: transform .4s cubic-bezier(.16,1,.3,1), color .3s; }
+    .svc-arrow { transition: transform .4s cubic-bezier(.16,1,.3,1), color .3s; } .svc-icon { flex: none; color: #45142D; transition: color .3s; } .svc:hover .svc-icon { color: #C5D8E6; }
 
     /* Form */
     .chip { height: 44px; padding: 0 18px; border-radius: 0; cursor: pointer; font: 600 15px 'Albert Sans', sans-serif; border: 1.5px solid rgba(255,255,255,0.45); background: transparent; color: #FFFFFF; transition: background-color .2s, border-color .2s, color .2s; }
@@ -216,7 +216,7 @@ html { scroll-behavior: smooth; }
     .svc-tags { color: #45142D; transition: color .3s; }
     .svc:hover .svc-tags { color: #C5D8E6; }
     .svc:hover .svc-arrow { transform: translate(6px, -6px); color: #C5D8E6; }
-    .svc-arrow { transition: transform .4s cubic-bezier(.16,1,.3,1), color .3s; }
+    .svc-arrow { transition: transform .4s cubic-bezier(.16,1,.3,1), color .3s; } .svc-icon { flex: none; color: #45142D; transition: color .3s; } .svc:hover .svc-icon { color: #C5D8E6; }
 
     /* Form */
     .chip { height: 44px; padding: 0 18px; border-radius: 0; cursor: pointer; font: 600 15px 'Albert Sans', sans-serif; border: 1.5px solid rgba(255,255,255,0.45); background: transparent; color: #FFFFFF; transition: background-color .2s, border-color .2s, color .2s; }
@@ -361,7 +361,7 @@ html { scroll-behavior: smooth; }
         </h1>
         <p class="hero-fade" style="font-size: 20px; line-height: 1.55; font-weight: 500; max-width: 600px; color: rgba(255,255,255,0.88);">Velonify ist eine E-Commerce-Agentur für Shopify. Wir begleiten Marken von der Migration über Tracking und Performance Marketing bis zur E-Mail-Strecke, ohne Subunternehmer und ohne Umwege. Ihr sprecht direkt mit den Menschen, die euren Shop umsetzen.</p>
         <div class="hero-fade-2" style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
-          <a class="btn btn-ice" href="#kontakt" style="display: flex; align-items: center; gap: 12px; height: 60px; padding: 0 30px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Erstgespräch vereinbaren
+          <a class="btn btn-ice" href="https://calendly.com/julian-velonify/20min" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 12px; height: 60px; padding: 0 30px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Erstgespräch vereinbaren
             <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg>
           </a>
           <a class="btn btn-ghost-light" href="#cases" style="display: flex; align-items: center; height: 60px; padding: 0 30px; border: 1.5px solid #FFFFFF; box-sizing: border-box; color: #FFFFFF; font-size: 16px; font-weight: 700;">Cases ansehen</a>
@@ -433,13 +433,13 @@ html { scroll-behavior: smooth; }
     <div style="position: sticky; top: 136px; display: flex; flex-direction: column; gap: 28px;">
       <h2 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 54px; line-height: 1.06;">Alles, was euer Shop braucht.</h2>
       <p style="font-size: 18px; line-height: 1.6; max-width: 460px;">Von der Migration auf Shopify bis zur Kampagne, die danach verkauft: Alle Leistungen kommen aus einer Hand und werden von uns selbst umgesetzt.</p>
-      <a class="btn btn-bdx" href="#kontakt" style="align-self: flex-start; display: flex; align-items: center; height: 58px; padding: 0 28px; background: #45142D; color: #FFFFFF; font-size: 16px; font-weight: 700;">Erstgespräch vereinbaren</a>
+      <a class="btn btn-bdx" href="https://calendly.com/julian-velonify/20min" target="_blank" rel="noopener" style="align-self: flex-start; display: flex; align-items: center; height: 58px; padding: 0 28px; background: #45142D; color: #FFFFFF; font-size: 16px; font-weight: 700;">Erstgespräch vereinbaren</a>
     </div>
     <div style="display: flex; flex-direction: column; border-top: 1.5px solid #000000;">
       
         <a class="svc reveal" href="/leistungen/shopify-migration/" style="display: grid; grid-template-columns: minmax(0, 1fr) 48px; gap: 24px; align-items: center; padding: 36px 32px; border-bottom: 1.5px solid #000000;">
           <span style="display: flex; flex-direction: column; gap: 12px;">
-            <span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 28px; line-height: 1.15;">Shopify-Migration</span>
+            <span style="display: flex; align-items: center; gap: 14px;"><svg class="svc-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7 H15 M10 3 L15 7 L10 11"/><path d="M21 17 H9 M14 21 L9 17 L14 13"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 28px; line-height: 1.15;">Shopify-Migration</span></span>
             <span style="font-size: 16px; line-height: 1.5; font-weight: 500;">Der Umzug von Magento, Shopware oder WooCommerce auf Shopify und Shopify Plus, ohne Verlust bei Umsatz und Rankings.</span>
             <span class="svc-tags" style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">Daten · Redirects &amp; SEO · Markets · B2B</span>
           </span>
@@ -448,7 +448,7 @@ html { scroll-behavior: smooth; }
       
         <a class="svc reveal" href="/leistungen/tracking/" style="display: grid; grid-template-columns: minmax(0, 1fr) 48px; gap: 24px; align-items: center; padding: 36px 32px; border-bottom: 1.5px solid #000000;">
           <span style="display: flex; flex-direction: column; gap: 12px;">
-            <span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 28px; line-height: 1.15;">Tracking &amp; Attribution</span>
+            <span style="display: flex; align-items: center; gap: 14px;"><svg class="svc-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2 L22 12 L12 22 L2 12 Z"/><path d="M12 2 V7 M12 17 V22 M2 12 H7 M17 12 H22"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 28px; line-height: 1.15;">Tracking &amp; Attribution</span></span>
             <span style="font-size: 16px; line-height: 1.5; font-weight: 500;">Belastbare Daten, bevor Budget fließt. Jede Conversion wird dort erfasst, wo sie hingehört.</span>
             <span class="svc-tags" style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">GA4 · GTM · Server-Side · Conversions API</span>
           </span>
@@ -457,7 +457,7 @@ html { scroll-behavior: smooth; }
       
         <a class="svc reveal" href="/leistungen/performance-marketing/" style="display: grid; grid-template-columns: minmax(0, 1fr) 48px; gap: 24px; align-items: center; padding: 36px 32px; border-bottom: 1.5px solid #000000;">
           <span style="display: flex; flex-direction: column; gap: 12px;">
-            <span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 28px; line-height: 1.15;">Performance Marketing</span>
+            <span style="display: flex; align-items: center; gap: 14px;"><svg class="svc-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21 H21 M6 21 V14 M12 21 V9 M18 21 V6 M14 4 H19 V9"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 28px; line-height: 1.15;">Performance Marketing</span></span>
             <span style="font-size: 16px; line-height: 1.5; font-weight: 500;">Meta Ads und Google Ads, gesteuert nach Umsatz und Marge statt nach Klicks.</span>
             <span class="svc-tags" style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">Meta Ads · Google Ads · Merchant Center</span>
           </span>
@@ -466,7 +466,7 @@ html { scroll-behavior: smooth; }
       
         <a class="svc reveal" href="/leistungen/e-mail-marketing/" style="display: grid; grid-template-columns: minmax(0, 1fr) 48px; gap: 24px; align-items: center; padding: 36px 32px; border-bottom: 1.5px solid #000000;">
           <span style="display: flex; flex-direction: column; gap: 12px;">
-            <span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 28px; line-height: 1.15;">E-Mail &amp; Retention</span>
+            <span style="display: flex; align-items: center; gap: 14px;"><svg class="svc-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5 H22 V19 H2 Z"/><path d="M2 5 L12 14 L22 5"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 28px; line-height: 1.15;">E-Mail &amp; Retention</span></span>
             <span style="font-size: 16px; line-height: 1.5; font-weight: 500;">Aus Erstkäufern werden Stammkunden. Automatisiert, segmentiert und messbar.</span>
             <span class="svc-tags" style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">Klaviyo Flows · Kampagnen · Segmente</span>
           </span>
@@ -475,7 +475,7 @@ html { scroll-behavior: smooth; }
       
         <a class="svc reveal" href="/leistungen/conversion-optimierung/" style="display: grid; grid-template-columns: minmax(0, 1fr) 48px; gap: 24px; align-items: center; padding: 36px 32px; border-bottom: 1.5px solid #000000;">
           <span style="display: flex; flex-direction: column; gap: 12px;">
-            <span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 28px; line-height: 1.15;">Conversion-Optimierung</span>
+            <span style="display: flex; align-items: center; gap: 14px;"><svg class="svc-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 4 H21 L14 13 V20 L10 18 V13 Z"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 28px; line-height: 1.15;">Conversion-Optimierung</span></span>
             <span style="font-size: 16px; line-height: 1.5; font-weight: 500;">Wir finden die Stellen, an denen Besucher abspringen, und beheben sie direkt in eurem Shop.</span>
             <span class="svc-tags" style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">CRO-Audit · Produktseiten · Checkout</span>
           </span>
@@ -519,10 +519,10 @@ html { scroll-behavior: smooth; }
             <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 26px; text-transform: uppercase; line-height: 1.15;">Storz &amp; Bickel</span>
             <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8; text-align: right; white-space: nowrap;">Premium-Hardware</span>
           </span>
-          <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 22px; line-height: 1.25; text-transform: uppercase;">Ein Shopify-Plus-Setup für neun Märkte.</span>
-          <span style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; border-top: 1.5px solid currentColor; padding-top: 24px;"><span style="display: flex; flex-direction: column; gap: 10px;"><span class="ck" style="font-family: 'Krona One', sans-serif; font-size: 24px; line-height: 1.15;">9 Märkte</span><span style="font-size: 14px; font-weight: 600; line-height: 1.4;">auf einer Plattform live</span></span><span style="display: flex; flex-direction: column; gap: 10px;"><span class="ck" style="font-family: 'Krona One', sans-serif; font-size: 24px; line-height: 1.15;">+18 %</span><span style="font-size: 14px; font-weight: 600; line-height: 1.4;">Conversion-Rate mobil</span></span><span style="display: flex; flex-direction: column; gap: 10px;"><span class="ck" style="font-family: 'Krona One', sans-serif; font-size: 24px; line-height: 1.15;">1,6 s</span><span style="font-size: 14px; font-weight: 600; line-height: 1.4;">Ladezeit mobil (LCP)</span></span></span>
+          <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 22px; line-height: 1.25; text-transform: uppercase;">Migration von Mapp zu Klaviyo in vier Wochen.</span>
+          <span style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; border-top: 1.5px solid currentColor; padding-top: 24px;"><span style="display: flex; flex-direction: column; gap: 10px;"><span class="ck" style="font-family: 'Krona One', sans-serif; font-size: 24px; line-height: 1.15;">4 Wochen</span><span style="font-size: 14px; font-weight: 600; line-height: 1.4;">von Mapp zu Klaviyo migriert</span></span><span style="display: flex; flex-direction: column; gap: 10px;"><span class="ck" style="font-family: 'Krona One', sans-serif; font-size: 24px; line-height: 1.15;">Google Ads</span><span style="font-size: 14px; font-weight: 600; line-height: 1.4;">neu aufgesetzt und gestartet</span></span></span>
           <span style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; margin-top: auto;">
-            <span style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Shopify Plus</span><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Markets</span><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Tracking</span><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Conversion</span></span>
+            <span style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Klaviyo</span><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">E-Mail-Marketing</span><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Google Ads</span><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Performance Marketing</span></span>
             <span style="display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 700; white-space: nowrap;">Case ansehen <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></span>
           </span>
         </a>
@@ -589,16 +589,7 @@ html { scroll-behavior: smooth; }
   </section>
 
   
-  <section style="position: relative; background: #45142D; color: #FFFFFF; padding: 150px 64px; overflow: hidden;">
-    <svg class="drift" viewBox="0 44 1278 813" fill="#2C0E18" aria-hidden="true" style="position: absolute; right: -60px; top: 40px; width: 640px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
-    <div style="position: relative; display: flex; flex-direction: column; gap: 36px; max-width: 920px;">
-      <h2 data-vm="chars repel" class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 72px; line-height: 1.04; text-wrap: balance;">Eine Frage. Eine Antwort.</h2>
-      <p class="reveal" style="font-size: 20px; line-height: 1.55; max-width: 560px; color: rgba(255,255,255,0.9);">Ihr habt eine Frage? Ihr erhaltet die Antwort von einer einzigen Person, ohne Umweg über Ticketsysteme und mit zügiger Rückmeldung.</p>
-      <a class="btn btn-ice reveal" href="#kontakt" style="align-self: flex-start; display: flex; align-items: center; gap: 12px; height: 62px; padding: 0 32px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Erstgespräch vereinbaren
-        <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg>
-      </a>
-    </div>
-  </section>
+  
 
   
   <section id="kontakt" style="flex-grow: 1; background: #2C0E18; color: #FFFFFF; padding: 150px 64px 56px; display: flex; flex-direction: column; gap: 120px;">
@@ -607,7 +598,7 @@ html { scroll-behavior: smooth; }
         <h2 data-vm="repel" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 76px; line-height: 1.02;">Projekt anfragen.</h2>
         <div class="bar" style="width: 96px; height: 4px; background: #C5D8E6;"></div>
         <p style="font-size: 19px; line-height: 1.6; max-width: 480px; color: rgba(255,255,255,0.88);">In 30 Minuten klären wir Ausgangslage, Ziel und nächste Schritte. Kostenlos und unverbindlich, direkt mit Lukas, Johannes oder Julian, also mit der Person, die euer Projekt später umsetzt.</p>
-        <a class="btn btn-ice" href="#kontakt" style="align-self: flex-start; display: flex; align-items: center; gap: 12px; height: 62px; padding: 0 32px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Erstgespräch vereinbaren
+        <a class="btn btn-ice" href="https://calendly.com/julian-velonify/20min" target="_blank" rel="noopener" style="align-self: flex-start; display: flex; align-items: center; gap: 12px; height: 62px; padding: 0 32px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Erstgespräch vereinbaren
           <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg>
         </a>
         <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
@@ -717,7 +708,7 @@ html { scroll-behavior: smooth; }
         <a href="#top" aria-current="page" style="color: #C5D8E6;">DE</a>
         <a href="/en/" style="color: rgba(255,255,255,0.75);">EN</a>
       </div>
-      <a class="btn btn-ice" href="#kontakt" style="margin-top: auto; display: flex; align-items: center; justify-content: center; height: 58px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Erstgespräch vereinbaren</a>
+      <a class="btn btn-ice" href="https://calendly.com/julian-velonify/20min" target="_blank" rel="noopener" style="margin-top: auto; display: flex; align-items: center; justify-content: center; height: 58px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Erstgespräch vereinbaren</a>
     </nav>
   
 
@@ -732,7 +723,7 @@ html { scroll-behavior: smooth; }
       </h1>
       <p class="hero-fade" style="font-size: 17px; line-height: 1.55; font-weight: 500; color: rgba(255,255,255,0.88);">Velonify ist eine E-Commerce-Agentur für Shopify. Wir begleiten Marken von der Migration über Tracking und Performance Marketing bis zur E-Mail-Strecke, ohne Subunternehmer und ohne Umwege. Ihr sprecht direkt mit den Menschen, die euren Shop umsetzen.</p>
       <div class="hero-fade-2" style="display: flex; flex-direction: column; gap: 12px;">
-        <a class="btn btn-ice" href="#kontakt" style="display: flex; align-items: center; justify-content: center; gap: 12px; height: 56px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Erstgespräch vereinbaren <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
+        <a class="btn btn-ice" href="https://calendly.com/julian-velonify/20min" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 12px; height: 56px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Erstgespräch vereinbaren <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
         <a class="btn btn-ghost-light" href="#cases" style="display: flex; align-items: center; justify-content: center; height: 56px; border: 1.5px solid #FFFFFF; box-sizing: border-box; color: #FFFFFF; font-size: 16px; font-weight: 700;">Cases ansehen</a>
       </div>
     </div>
@@ -798,7 +789,7 @@ html { scroll-behavior: smooth; }
       
         <a class="svc reveal" href="/leistungen/shopify-migration/" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px; gap: 16px; align-items: center; padding: 24px 4px; border-bottom: 1.5px solid #000000;">
           <span style="display: flex; flex-direction: column; gap: 8px;">
-            <span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Shopify-Migration</span>
+            <span style="display: flex; align-items: center; gap: 10px;"><svg class="svc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7 H15 M10 3 L15 7 L10 11"/><path d="M21 17 H9 M14 21 L9 17 L14 13"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Shopify-Migration</span></span>
             <span style="font-size: 15px; line-height: 1.5; font-weight: 500;">Der Umzug von Magento, Shopware oder WooCommerce auf Shopify und Shopify Plus, ohne Verlust bei Umsatz und Rankings.</span>
           </span>
           <svg class="svc-arrow" width="26" height="26" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
@@ -806,7 +797,7 @@ html { scroll-behavior: smooth; }
       
         <a class="svc reveal" href="/leistungen/tracking/" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px; gap: 16px; align-items: center; padding: 24px 4px; border-bottom: 1.5px solid #000000;">
           <span style="display: flex; flex-direction: column; gap: 8px;">
-            <span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Tracking &amp; Attribution</span>
+            <span style="display: flex; align-items: center; gap: 10px;"><svg class="svc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2 L22 12 L12 22 L2 12 Z"/><path d="M12 2 V7 M12 17 V22 M2 12 H7 M17 12 H22"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Tracking &amp; Attribution</span></span>
             <span style="font-size: 15px; line-height: 1.5; font-weight: 500;">Belastbare Daten, bevor Budget fließt. Jede Conversion wird dort erfasst, wo sie hingehört.</span>
           </span>
           <svg class="svc-arrow" width="26" height="26" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
@@ -814,7 +805,7 @@ html { scroll-behavior: smooth; }
       
         <a class="svc reveal" href="/leistungen/performance-marketing/" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px; gap: 16px; align-items: center; padding: 24px 4px; border-bottom: 1.5px solid #000000;">
           <span style="display: flex; flex-direction: column; gap: 8px;">
-            <span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Performance Marketing</span>
+            <span style="display: flex; align-items: center; gap: 10px;"><svg class="svc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21 H21 M6 21 V14 M12 21 V9 M18 21 V6 M14 4 H19 V9"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Performance Marketing</span></span>
             <span style="font-size: 15px; line-height: 1.5; font-weight: 500;">Meta Ads und Google Ads, gesteuert nach Umsatz und Marge statt nach Klicks.</span>
           </span>
           <svg class="svc-arrow" width="26" height="26" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
@@ -822,7 +813,7 @@ html { scroll-behavior: smooth; }
       
         <a class="svc reveal" href="/leistungen/e-mail-marketing/" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px; gap: 16px; align-items: center; padding: 24px 4px; border-bottom: 1.5px solid #000000;">
           <span style="display: flex; flex-direction: column; gap: 8px;">
-            <span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">E-Mail &amp; Retention</span>
+            <span style="display: flex; align-items: center; gap: 10px;"><svg class="svc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5 H22 V19 H2 Z"/><path d="M2 5 L12 14 L22 5"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">E-Mail &amp; Retention</span></span>
             <span style="font-size: 15px; line-height: 1.5; font-weight: 500;">Aus Erstkäufern werden Stammkunden. Automatisiert, segmentiert und messbar.</span>
           </span>
           <svg class="svc-arrow" width="26" height="26" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
@@ -830,7 +821,7 @@ html { scroll-behavior: smooth; }
       
         <a class="svc reveal" href="/leistungen/conversion-optimierung/" style="display: grid; grid-template-columns: minmax(0, 1fr) 28px; gap: 16px; align-items: center; padding: 24px 4px; border-bottom: 1.5px solid #000000;">
           <span style="display: flex; flex-direction: column; gap: 8px;">
-            <span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Conversion-Optimierung</span>
+            <span style="display: flex; align-items: center; gap: 10px;"><svg class="svc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 4 H21 L14 13 V20 L10 18 V13 Z"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Conversion-Optimierung</span></span>
             <span style="font-size: 15px; line-height: 1.5; font-weight: 500;">Wir finden die Stellen, an denen Besucher abspringen, und beheben sie direkt in eurem Shop.</span>
           </span>
           <svg class="svc-arrow" width="26" height="26" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
@@ -870,10 +861,10 @@ html { scroll-behavior: smooth; }
             <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 22px; text-transform: uppercase; line-height: 1.15;">Storz &amp; Bickel</span>
             <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8; text-align: right; white-space: nowrap;">Premium-Hardware</span>
           </span>
-          <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 18px; line-height: 1.25; text-transform: uppercase;">Ein Shopify-Plus-Setup für neun Märkte.</span>
-          <span style="display: flex; flex-direction: column; gap: 14px; border-top: 1.5px solid currentColor; padding-top: 24px;"><span style="display: flex; align-items: baseline; gap: 16px;"><span class="ck" style="font-family: 'Krona One', sans-serif; font-size: 20px; min-width: 132px; white-space: nowrap;">9 Märkte</span><span style="font-size: 15px; font-weight: 600; line-height: 1.35;">auf einer Plattform live</span></span><span style="display: flex; align-items: baseline; gap: 16px;"><span class="ck" style="font-family: 'Krona One', sans-serif; font-size: 20px; min-width: 132px; white-space: nowrap;">+18 %</span><span style="font-size: 15px; font-weight: 600; line-height: 1.35;">Conversion-Rate mobil</span></span><span style="display: flex; align-items: baseline; gap: 16px;"><span class="ck" style="font-family: 'Krona One', sans-serif; font-size: 20px; min-width: 132px; white-space: nowrap;">1,6 s</span><span style="font-size: 15px; font-weight: 600; line-height: 1.35;">Ladezeit mobil (LCP)</span></span></span>
+          <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 18px; line-height: 1.25; text-transform: uppercase;">Migration von Mapp zu Klaviyo in vier Wochen.</span>
+          <span style="display: flex; flex-direction: column; gap: 14px; border-top: 1.5px solid currentColor; padding-top: 24px;"><span style="display: flex; align-items: baseline; gap: 16px;"><span class="ck" style="font-family: 'Krona One', sans-serif; font-size: 20px; min-width: 132px; white-space: nowrap;">4 Wochen</span><span style="font-size: 15px; font-weight: 600; line-height: 1.35;">von Mapp zu Klaviyo migriert</span></span><span style="display: flex; align-items: baseline; gap: 16px;"><span class="ck" style="font-family: 'Krona One', sans-serif; font-size: 20px; min-width: 132px; white-space: nowrap;">Google Ads</span><span style="font-size: 15px; font-weight: 600; line-height: 1.35;">neu aufgesetzt und gestartet</span></span></span>
           <span style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; margin-top: auto;">
-            <span style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Shopify Plus</span><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Markets</span><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Tracking</span><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Conversion</span></span>
+            <span style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Klaviyo</span><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">E-Mail-Marketing</span><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Google Ads</span><span class="ct" style="padding: 5px 12px; font-size: 13px; font-weight: 700;">Performance Marketing</span></span>
             <span style="display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 700; white-space: nowrap;">Case ansehen <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></span>
           </span>
         </a>
@@ -939,21 +930,14 @@ html { scroll-behavior: smooth; }
     </div>
   </section>
 
-  <section style="position: relative; background: #45142D; color: #FFFFFF; padding: 96px 20px; overflow: hidden;">
-    <svg class="drift" viewBox="0 44 1278 813" fill="#2C0E18" aria-hidden="true" style="position: absolute; right: -90px; top: 10px; width: 320px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
-    <div style="position: relative; display: flex; flex-direction: column; gap: 24px;">
-      <h2 data-vm="chars repel" class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 34px; line-height: 1.06; line-height: 1.08;">Eine Frage. Eine Antwort.</h2>
-      <p class="reveal" style="font-size: 17px; line-height: 1.55; color: rgba(255,255,255,0.9);">Ihr habt eine Frage? Ihr erhaltet die Antwort von einer einzigen Person, ohne Umweg über Ticketsysteme und mit zügiger Rückmeldung.</p>
-      <a class="btn btn-ice reveal" href="#kontakt" style="display: flex; align-items: center; justify-content: center; gap: 12px; height: 58px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Erstgespräch vereinbaren <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
-    </div>
-  </section>
+  
 
   <section id="kontakt" style="flex-grow: 1; background: #2C0E18; color: #FFFFFF; padding: 96px 20px 32px; display: flex; flex-direction: column; gap: 64px;">
     <div style="display: flex; flex-direction: column; gap: 24px;">
       <h2 data-vm="repel" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 40px; line-height: 1.06; line-height: 1.04;">Projekt anfragen.</h2>
       <div class="bar" style="width: 72px; height: 4px; background: #C5D8E6;"></div>
       <p style="font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.88);">In 30 Minuten klären wir Ausgangslage, Ziel und nächste Schritte. Kostenlos und unverbindlich, direkt mit Lukas, Johannes oder Julian, also mit der Person, die euer Projekt später umsetzt.</p>
-      <a class="btn btn-ice" href="#kontakt" style="display: flex; align-items: center; justify-content: center; gap: 12px; height: 58px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Erstgespräch vereinbaren <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
+      <a class="btn btn-ice" href="https://calendly.com/julian-velonify/20min" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 12px; height: 58px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Erstgespräch vereinbaren <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
       <div style="display: flex; flex-direction: column; gap: 4px;">
         <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 6px;">Lieber direkt?</span>
         <a href="mailto:hallo@velonify.de" style="font-size: 18px; font-weight: 700; color: #FFFFFF; padding: 4px 0 6px;">hallo@velonify.de</a>

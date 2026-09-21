@@ -26,10 +26,6 @@
     'html.vm-pre canvas.flock, html.vm-pre header { visibility: hidden; }' +
     '.vm-txt { display: inline-block; }' +
     '.vm-progress { position: fixed; left: 0; top: 0; width: 100%; height: 3px; background: #C5D8E6; transform-origin: 0 50%; z-index: 9998; pointer-events: none; }' +
-    '.vm-cursor { position: fixed; left: 0; top: 0; width: 22px; height: 15px; color: #FFFFFF; mix-blend-mode: difference; pointer-events: none; z-index: 9999; will-change: transform; }' +
-    '.vm-cursor svg { display: block; fill: currentColor; }' +
-    'html.vm-cursor-on, html.vm-cursor-on * { cursor: none !important; }' +
-    'html.vm-cursor-on input, html.vm-cursor-on textarea { cursor: text !important; } html.vm-cursor-on select { cursor: auto !important; }' +
     'html.vm-dragging, html.vm-dragging * { user-select: none; }' +
     // Lenis base styles (from lenis.css) and no native smooth scrolling underneath it
     'html.lenis, html.lenis body { height: auto; } html.lenis { scroll-behavior: auto !important; }' +
@@ -545,28 +541,6 @@
       bar.className = 'vm-progress';
       doc.body.appendChild(bar);
       gsap.fromTo(bar, { scaleX: 0 }, { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 0.3 } });
-    });
-
-    // ---------- CURSOR: the Velonify mark replaces the pointer, same look everywhere ----------
-    safe('cursor', function () {
-      if (!canHover) return;
-      var cur = doc.createElement('div');
-      cur.className = 'vm-cursor'; cur.setAttribute('aria-hidden', 'true');
-      cur.innerHTML = '<svg viewBox="0 44 1278 813" width="100%" height="100%"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>';
-      doc.body.appendChild(cur);
-      html.classList.add('vm-cursor-on');
-      gsap.set(cur, { xPercent: -50, yPercent: -50, autoAlpha: 0 });
-      var xTo = gsap.quickTo(cur, 'x', { duration: 0.12, ease: 'power3' }), yTo = gsap.quickTo(cur, 'y', { duration: 0.12, ease: 'power3' });
-      var shown = false;
-      doc.addEventListener('pointermove', function (e) {
-        var inField = e.target && e.target.closest && e.target.closest('input, textarea, select');
-        if (!shown || inField) { shown = !inField; gsap.to(cur, { autoAlpha: inField ? 0 : 1, duration: 0.15, overwrite: 'auto' }); }
-        if (!inField && gsap.getProperty(cur, 'x') === 0 && gsap.getProperty(cur, 'y') === 0) gsap.set(cur, { x: e.clientX, y: e.clientY });
-        xTo(e.clientX); yTo(e.clientY);
-      });
-      html.addEventListener('mouseleave', function () { shown = false; gsap.to(cur, { autoAlpha: 0, duration: 0.15 }); });
-      doc.addEventListener('pointerdown', function () { gsap.to(cur, { scale: 0.75, duration: 0.12 }); });
-      doc.addEventListener('pointerup', function () { gsap.to(cur, { scale: 1, duration: 0.4, ease: 'back.out(3)' }); });
     });
 
     // ---------- MOBILE MENU: panel wipes down, links rise in one after another ----------
