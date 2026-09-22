@@ -12,6 +12,10 @@ Export aus dem Velonify-Design-Canvas. Reines HTML/CSS/JS, kein Build-Schritt.
 Netlify hängt an diesem Repo: jeder Push auf `main` geht automatisch live, ein Build-Schritt läuft nicht (`publish = "."`).
 Domain velonify.de liegt auf Netlify, `www` leitet auf die Adresse ohne www (siehe `netlify.toml`); die MX-Einträge bleiben unberührt.
 
+`netlify.toml` cached `/assets/*` ein Jahr lang, `immutable`. Wer `site.js` oder `velonify-motion.js`
+ändert, muss das `?v=N` im jeweiligen `<script src="...">` auf allen Seiten hochzählen – sonst sehen
+wiederkehrende Besucher:innen die alte Datei bis zu ein Jahr lang, egal was im Repo steht.
+
 ## Kontaktformular
 Das Formular heißt `anfrage` (Netlify Forms) und steht auf der deutschen und der englischen Startseite,
 je zweimal – einmal im Desktop-, einmal im Mobil-Layout. Beide Kopien müssen dieselben Felder tragen:
