@@ -33,15 +33,29 @@
       panel.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
     }
 
-    // topic chips in the contact form
+    // topic chips in the contact form (multi-select)
     var topics = root.querySelector('input[name="themen"]');
-    root.querySelectorAll('button.chip').forEach(function (b) {
+    root.querySelectorAll('button.chip:not(.chip-budget)').forEach(function (b) {
       b.addEventListener('click', function () {
         var on = b.getAttribute('aria-pressed') !== 'true';
         b.setAttribute('aria-pressed', on ? 'true' : 'false');
         b.classList.toggle('chip-on', on);
-        if (topics) topics.value = Array.prototype.filter.call(root.querySelectorAll('button.chip'), function (x) { return x.getAttribute('aria-pressed') === 'true'; })
+        if (topics) topics.value = Array.prototype.filter.call(root.querySelectorAll('button.chip:not(.chip-budget)'), function (x) { return x.getAttribute('aria-pressed') === 'true'; })
           .map(function (x) { return x.textContent.trim(); }).join(', ');
+      });
+    });
+
+    // budget chips in the contact form (single-select)
+    var budget = root.querySelector('input[name="budget"]');
+    root.querySelectorAll('button.chip-budget').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var wasOn = b.getAttribute('aria-pressed') === 'true';
+        root.querySelectorAll('button.chip-budget').forEach(function (x) {
+          x.setAttribute('aria-pressed', 'false');
+          x.classList.remove('chip-on');
+        });
+        if (!wasOn) { b.setAttribute('aria-pressed', 'true'); b.classList.add('chip-on'); }
+        if (budget) budget.value = wasOn ? '' : b.textContent.trim();
       });
     });
 
