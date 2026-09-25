@@ -129,7 +129,7 @@ html { scroll-behavior: smooth; }
     /* Mobile menu */
     @keyframes menuIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
     .menu-panel { animation: menuIn .45s cubic-bezier(.16,1,.3,1) both; } .menu-panel[hidden] { display: none !important; }
-    .menu-link { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; }
+    .menu-link { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; } .menu-panel > * { flex-shrink: 0; }
     .burger { background: transparent; border: 0; padding: 0; width: 48px; height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 7px; cursor: pointer; }
     .burger span { display: block; height: 2px; background: #FFFFFF; transition: transform .35s cubic-bezier(.16,1,.3,1), width .35s; }
 
@@ -365,6 +365,7 @@ html { scroll-behavior: smooth; }
     <nav aria-label="Hauptnavigation" style="display: flex; align-items: center; gap: 40px; font-size: 15px; font-weight: 600;">
       <div class="dd"><a class="navlink dd-trigger" href="/#leistungen" aria-haspopup="true" style="color: #FFFFFF;">Leistungen <svg class="dd-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1 L5 5 L9 1"></path></svg></a><div class="dd-menu"><a class="dd-item" href="/leistungen/shopify-migration/"><span>Shopify-Migration</span></a><a class="dd-item" href="/leistungen/tracking/"><span>Tracking & Attribution</span></a><a class="dd-item" href="/leistungen/performance-marketing/"><span>Performance Marketing</span></a><a class="dd-item" href="/leistungen/e-mail-marketing/"><span>E-Mail & Retention</span></a><a class="dd-item" href="/leistungen/conversion-optimierung/"><span>Conversion-Optimierung</span></a></div></div>
       <div class="dd"><a class="navlink dd-trigger" href="/#cases" aria-haspopup="true" style="color: #C5D8E6;">Cases <svg class="dd-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1 L5 5 L9 1"></path></svg></a><div class="dd-menu"><a class="dd-item" href="/cases/blue-fire/"><span>Blue Fire Co.</span><small>Denim & Mode</small></a><a class="dd-item" href="/cases/storz-bickel/"><span>Storz & Bickel</span><small>Premium-Hardware</small></a><a class="dd-item" href="/cases/pretty-woman/"><span>Pretty Woman Brautmoden</span><small>Brautmode</small></a></div></div>
+      <a class="navlink" href="/ratgeber/" style="color: #FFFFFF;">Ratgeber</a>
       <a class="navlink" href="/#kontakt" style="color: #FFFFFF;">Kontakt</a>
       <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.08em;">
         <a href="#top" style="color: #C5D8E6;">DE</a>
@@ -504,6 +505,7 @@ html { scroll-behavior: smooth; }
     <nav aria-label="Footer" style="display: flex; gap: 32px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">
       <a class="navlink" href="/" style="color: #FFFFFF;">Start</a>
       <a class="navlink" href="/#cases" style="color: #FFFFFF;">Cases</a>
+      <a class="navlink" href="/ratgeber/" style="color: #FFFFFF;">Ratgeber</a>
       <a class="navlink" href="/impressum/" style="color: #FFFFFF;">Impressum</a>
       <a class="navlink" href="/datenschutz/" style="color: #FFFFFF;">Datenschutz</a>
     </nav>
@@ -550,6 +552,8 @@ html { scroll-behavior: smooth; }
         <a class="menu-link" href="/cases/storz-bickel/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.38s;">Storz &amp; Bickel</a>
       
         <a class="menu-link" href="/cases/pretty-woman/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.42s;">Pretty Woman Brautmoden</a>
+      
+        <a class="menu-link" href="/ratgeber/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.46s;">Ratgeber</a>
       
         <a class="menu-link" href="/#kontakt" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.5s;">Kontakt</a>
       
@@ -690,6 +694,7 @@ html { scroll-behavior: smooth; }
     <nav aria-label="Footer" style="display: flex; gap: 20px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; flex-wrap: wrap;">
       <a class="navlink" href="/" style="color: #FFFFFF;">Start</a>
       <a class="navlink" href="/#cases" style="color: #FFFFFF;">Cases</a>
+      <a class="navlink" href="/ratgeber/" style="color: #FFFFFF;">Ratgeber</a>
       <a class="navlink" href="/impressum/" style="color: #FFFFFF;">Impressum</a>
       <a class="navlink" href="/datenschutz/" style="color: #FFFFFF;">Datenschutz</a>
     </nav>

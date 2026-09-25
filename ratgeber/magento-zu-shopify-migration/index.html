@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magento zu Shopify migrieren: Dauer &amp; Kosten | Velonify</title>
+<meta name="description" content="Wie eine Migration von Magento auf Shopify abläuft, welche Daten mitkommen, wie lange sie dauert und was sie kostet. Mit Zeitplan, Kostenrahmen und Checkliste.">
+<link rel="canonical" href="https://velonify.de/ratgeber/magento-zu-shopify-migration/">
+<link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/magento-zu-shopify-migration/">
+<link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/magento-to-shopify-migration/">
+<link rel="alternate" hreflang="x-default" href="https://velonify.de/ratgeber/magento-zu-shopify-migration/">
+<meta property="og:title" content="Magento zu Shopify migrieren: Dauer &amp; Kosten | Velonify">
+<meta property="og:description" content="Wie eine Migration von Magento auf Shopify abläuft, welche Daten mitkommen, wie lange sie dauert und was sie kostet. Mit Zeitplan, Kostenrahmen und Checkliste.">
+<meta property="og:url" content="https://velonify.de/ratgeber/magento-zu-shopify-migration/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Velonify">
+<meta property="og:image" content="https://velonify.de/assets/img/velonify-wordmark.png">
+<meta name="twitter:card" content="summary">
+<meta property="article:published_time" content="2026-09-24">
+<meta property="article:modified_time" content="2026-09-24">
+<meta name="author" content="Lukas Hanke">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://velonify.de/ratgeber/magento-zu-shopify-migration/#article", "headline": "Magento zu Shopify migrieren: Ablauf, Dauer und Kosten", "description": "Wie eine Migration von Magento auf Shopify abläuft, welche Daten mitkommen, wie lange sie dauert und was sie kostet. Mit Zeitplan, Kostenrahmen und Checkliste.", "abstract": "Eine Migration von Magento auf Shopify läuft in vier Phasen: Audit, Mapping, Aufbau mit Testmigration und Go-live mit Nachbetreuung. Ein schlanker Shop ist oft in vier bis sechs Wochen live, mit mehreren Integrationen oder auf Shopify Plus dauert es acht bis zwölf Wochen, große B2B-Projekte drei bis sechs Monate. Die Kosten reichen am Markt von einem niedrigen vierstelligen Betrag für kleine Shops bis in den sechsstelligen Bereich für Enterprise-Projekte. Die größten Risiken sind fehlende Weiterleitungen, unvollständige Daten und Tracking, das nach dem Umschalten nicht mehr misst.", "inLanguage": "de-DE", "url": "https://velonify.de/ratgeber/magento-zu-shopify-migration/", "mainEntityOfPage": "https://velonify.de/ratgeber/magento-zu-shopify-migration/", "datePublished": "2026-09-24", "dateModified": "2026-09-24", "image": "https://velonify.de/assets/img/velonify-wordmark.png", "articleSection": "Shopify-Migration", "wordCount": 1396, "author": {"@type": "Person", "name": "Lukas Hanke", "jobTitle": "Backend, CRM & Integrationen", "worksFor": {"@id": "https://velonify.de/#organization"}}, "publisher": {"@type": "Organization", "@id": "https://velonify.de/#organization", "name": "Velonify", "url": "https://velonify.de/", "logo": {"@type": "ImageObject", "url": "https://velonify.de/assets/img/velonify-wordmark.png"}}, "citation": ["https://www.shopify.com/de/preise", "https://shopify.dev/changelog/the-product-variant-limit-is-now-2048-for-all-merchants", "https://help.shopify.com/de/manual/online-store/menus-and-links/url-redirect", "https://www.uncap.com/post/magento-to-shopify-migration-cost", "https://wearepresta.com/shopify-migration-cost-breakdown-what-agencies-actually-charge-in-2026/"]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://velonify.de/"}, {"@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://velonify.de/ratgeber/"}, {"@type": "ListItem", "position": 3, "name": "Magento zu Shopify migrieren: Ablauf, Dauer und Kosten", "item": "https://velonify.de/ratgeber/magento-zu-shopify-migration/"}]}, {"@type": "FAQPage", "@id": "https://velonify.de/ratgeber/magento-zu-shopify-migration/#faq", "mainEntity": [{"@type": "Question", "name": "Gehen bei der Migration Google-Rankings verloren?", "acceptedAnswer": {"@type": "Answer", "text": "Nicht, wenn jede alte URL per 301 auf ihr Gegenstück zeigt und Titel, Beschreibungen und Inhalte übernommen werden. Kleine Schwankungen in den ersten Wochen sind normal, deshalb gehört eine enge Beobachtung der Search Console zur Nachbetreuung."}}, {"@type": "Question", "name": "Muss der Shop während der Migration offline gehen?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Der neue Shop wird parallel aufgebaut. Umgeschaltet wird erst, wenn die Testmigration sauber durchgelaufen ist. Der eigentliche Wechsel dauert meist nur wenige Stunden."}}, {"@type": "Question", "name": "Können wir unsere Domain und E-Mail-Adressen behalten?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Die Domain wird auf Shopify umgestellt, indem nur die Einträge für die Website geändert werden. Die MX-Einträge für eure E-Mails bleiben unberührt."}}, {"@type": "Question", "name": "Brauchen wir Shopify oder Shopify Plus?", "acceptedAnswer": {"@type": "Answer", "text": "Für die meisten Shops reicht ein Standard-Plan. Shopify Plus lohnt sich bei mehreren Märkten mit eigenen Katalogen, bei B2B mit Firmenkonten und Zahlungszielen oder bei höheren Umsätzen, wo die niedrigeren Gebühren den Plus-Preis ausgleichen."}}, {"@type": "Question", "name": "Können Kunden ihre Passwörter behalten?", "acceptedAnswer": {"@type": "Answer", "text": "Nein, Passwörter lassen sich aus Sicherheitsgründen nicht übertragen. Mit den neuen Shopify-Kundenkonten ist das kein Problem mehr, denn die Anmeldung läuft dort über einen Einmal-Code per E-Mail."}}]}]}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2C0E18">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/krona-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Albert Sans', 'Helvetica Neue', Arial, sans-serif; background: #FFFFFF; color: #000000; -webkit-font-smoothing: antialiased; caret-color: #45142D; }
+    h1, h2, h3, p { margin: 0; }
+    a { color: #45142D; text-decoration: none; }
+    a:hover { color: #2C0E18; }
+    ::selection { background: #45142D; color: #FFFFFF; }
+    :focus-visible { outline: 2px solid #C5D8E6; outline-offset: 3px; }
+    .on-light :focus-visible { outline-color: #45142D; }
+    html { scrollbar-color: #45142D #FFFFFF; }
+    ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: #FFFFFF; } ::-webkit-scrollbar-thumb { background: #45142D; }
+
+    /* Buttons & links */
+    .btn { transition: background-color .25s cubic-bezier(.16,1,.3,1), color .25s cubic-bezier(.16,1,.3,1), border-color .25s; }
+    .btn-ice:hover { background: #FFFFFF !important; color: #2C0E18 !important; }
+    .btn-bdx:hover { background: #2C0E18 !important; color: #FFFFFF !important; }
+    .btn-ghost-light:hover { background: #FFFFFF !important; color: #2C0E18 !important; }
+    .navlink { position: relative; }
+    .navlink::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: #C5D8E6; transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.16,1,.3,1); }
+    .navlink:hover::after { transform: scaleX(1); }
+    .arrow { transition: transform .35s cubic-bezier(.16,1,.3,1); }
+    a:hover .arrow { transform: translateX(6px); }
+
+    /* Hero load sequence */
+    @keyframes wipeUp { from { transform: translateY(105%); } to { transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    @keyframes slideFromLeft { from { transform: translate(-38%, 0); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes slideFromRight { from { transform: translate(30%, 22%); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes flash { 0%, 100% { opacity: 1; } 40% { opacity: 0; } 55% { opacity: 1; } 70% { opacity: 0; } }
+    .line { display: block; overflow: hidden; }
+    .line > span { display: block; animation: wipeUp .9s cubic-bezier(.16,1,.3,1) both; }
+    .line:nth-child(2) > span { animation-delay: .12s; }
+    .line:nth-child(3) > span { animation-delay: .24s; }
+    .hero-fade { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .45s both; }
+    .hero-fade-2 { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .6s both; }
+    .mark-a { animation: slideFromLeft 1.1s cubic-bezier(.16,1,.3,1) .2s both; }
+    .mark-b { animation: slideFromRight 1.1s cubic-bezier(.16,1,.3,1) .2s both; }
+    .blitz { animation: flash 1s steps(1) 1.3s both; }
+
+
+    /* Hero mark: slow 3D spin with light falloff and sheen */
+    @keyframes spinY { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+    @keyframes spinLight { 0%, 50%, 100% { filter: brightness(1.45); } 22%, 28%, 72%, 78% { filter: brightness(0.62); } 25%, 75% { filter: brightness(0.5); } }
+    .spin-stage { perspective: 2400px; }
+    .spin { transform-style: preserve-3d; animation: spinY 7.68s linear 1.3s infinite; will-change: transform; }
+    .spin > svg { display: block; animation: spinLight 7.68s linear 1.3s infinite; backface-visibility: visible; }
+
+    /* Ticker */
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker-track { animation: ticker 38s linear infinite; }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+
+    /* Service rows: hard bordeaux wipe on hover */
+    .svc { background: linear-gradient(#45142D, #45142D) no-repeat left top / 0% 100%; transition: background-size .5s cubic-bezier(.16,1,.3,1), color .3s; color: #000000; }
+    .svc:hover { background-size: 100% 100%; color: #FFFFFF; }
+    .svc-tags { color: #45142D; transition: color .3s; }
+    .svc:hover .svc-tags { color: #C5D8E6; }
+    .svc:hover .svc-arrow { transform: translate(6px, -6px); color: #C5D8E6; }
+    .svc-arrow { transition: transform .4s cubic-bezier(.16,1,.3,1), color .3s; }
+
+    /* Form */
+    .chip { height: 44px; padding: 0 18px; border-radius: 0; cursor: pointer; font: 600 15px 'Albert Sans', sans-serif; border: 1.5px solid rgba(255,255,255,0.45); background: transparent; color: #FFFFFF; transition: background-color .2s, border-color .2s, color .2s; }
+    .chip:hover { border-color: #C5D8E6; }
+    .chip-on { background: #C5D8E6; border-color: #C5D8E6; color: #2C0E18; }
+    .field { transition: border-color .2s, box-shadow .2s; }
+    .field:hover { border-color: #C5D8E6 !important; }
+    .field:focus { outline: none; border-color: #C5D8E6 !important; box-shadow: inset 0 -3px 0 #C5D8E6; }
+    .field::placeholder { color: rgba(255,255,255,0.55); }
+
+
+    /* Partner badges: visible on arrival, gone after a short scroll */
+    @keyframes partnerOut { to { opacity: 0; transform: translateY(24px); visibility: hidden; } }
+    .partners { position: absolute; }
+    @supports (animation-timeline: scroll()) {
+      .partners { position: fixed; }
+      .partners-inner { animation: partnerOut linear both; animation-timeline: scroll(root); animation-range: 80px 420px; }
+    }
+
+    /* Scroll-driven motion, content visible by default */
+    @supports (animation-timeline: view()) {
+      @keyframes rise { from { opacity: 0; transform: translateY(48px); } to { opacity: 1; transform: none; } }
+      @keyframes fillWord { 0% { color: transparent; } 35%, 65% { color: #45142D; } 100% { color: transparent; } }
+      @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+      @keyframes drift { from { transform: translateY(-120px) rotate(0deg); } to { transform: translateY(140px) rotate(0deg); } }
+      @keyframes growBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+      .reveal { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+      .value-word { animation: fillWord linear both; animation-timeline: view(); animation-range: cover 15% cover 85%; }
+      .route { animation: draw linear both; animation-timeline: view(); animation-range: entry 20% cover 55%; }
+      .drift { animation: drift linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+      .bar { transform-origin: left; animation: growBar linear both; animation-timeline: view(); animation-range: entry 10% cover 40%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+      .value-word { color: #45142D !important; }
+    }
+  
+    /* FAQ accordion */
+    details.faq { border-top: 1.5px solid #000000; }
+    details.faq:last-child { border-bottom: 1.5px solid #000000; }
+    details.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 28px 0; }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq .plus { transition: transform .35s cubic-bezier(.16,1,.3,1); flex-shrink: 0; }
+    details.faq[open] .plus { transform: rotate(45deg); }
+    details.faq summary:hover .q { color: #45142D; }
+    details.faq[open] .a { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; }
+    /* Mobile menu */
+    @keyframes menuIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+    .menu-panel { animation: menuIn .45s cubic-bezier(.16,1,.3,1) both; } .menu-panel[hidden] { display: none !important; }
+    .menu-link { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; } .menu-panel > * { flex-shrink: 0; }
+    .burger { background: transparent; border: 0; padding: 0; width: 48px; height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 7px; cursor: pointer; }
+    .burger span { display: block; height: 2px; background: #FFFFFF; transition: transform .35s cubic-bezier(.16,1,.3,1), width .35s; }
+
+    /* ---- v2: robust text, dropdown, values, carousel, globe ---- */
+    h1, h2, h3, p, li, span, a, label, blockquote { overflow-wrap: break-word; }
+    .line { display: block; overflow-x: visible; overflow-y: clip; padding-top: .2em; margin-top: -.2em; padding-bottom: .06em; margin-bottom: -.06em; }
+    .dd { position: relative; display: flex; align-items: center; height: 88px; }
+    .dd-trigger { display: inline-flex; align-items: center; gap: 8px; }
+    .dd-chev { transition: transform .3s cubic-bezier(.16,1,.3,1); }
+    .dd:hover .dd-chev, .dd:focus-within .dd-chev { transform: rotate(180deg); }
+    .dd-menu { position: absolute; top: 88px; left: -24px; min-width: 340px; display: none; flex-direction: column; padding: 8px 0; background: #2C0E18; border: 1px solid rgba(197,216,230,0.22); border-top: 2px solid #C5D8E6; z-index: 30; }
+    .dd:hover .dd-menu, .dd:focus-within .dd-menu { display: flex; }
+    .dd-item { display: flex; justify-content: space-between; align-items: baseline; gap: 28px; padding: 14px 24px; color: #FFFFFF; font-size: 15px; font-weight: 700; white-space: nowrap; transition: background-color .2s, color .2s; }
+    .dd-item small { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; }
+    .dd-item:hover { background: #45142D; color: #C5D8E6; }
+    .dd-all { border-top: 1px solid rgba(197,216,230,0.22); margin-top: 6px; color: #C5D8E6; }
+
+    /* Keyword rows: outlined word, fills on hover, text appears */
+    .vrow { container-type: inline-size; padding: 24px 0 28px; border-top: 1px solid rgba(0,0,0,0.14); outline-offset: -3px; }
+    .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
+    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 20px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
+    .vrow:hover .vword, .vrow:focus-within .vword, .vrow:focus .vword { color: #45142D; }
+    .vrow:hover .vtext, .vrow:focus-within .vtext, .vrow:focus .vtext { opacity: 1; transform: none; }
+    @media (hover: none) { .vtext { opacity: 1; transform: none; } .vrow:active .vword { color: #45142D; } }
+    @media (prefers-reduced-motion: reduce) { .vtext { transition: none; } }
+
+    /* Cases carousel */
+    .car { display: flex; gap: 32px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 64px 8px; scroll-padding-left: 64px; }
+    .car::-webkit-scrollbar { display: none; }
+    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px; padding: 40px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
+    .case-card:hover { background: #45142D; color: #FFFFFF; border-color: #45142D; }
+    .case-card .ck { color: #45142D; transition: color .35s; }
+    .case-card:hover .ck { color: #C5D8E6; }
+    .case-card .ct { border: 1.5px solid #000000; color: #000000; transition: border-color .35s, color .35s; }
+    .case-card:hover .ct { border-color: rgba(197,216,230,0.6); color: #C5D8E6; }
+    .case-card .clogo { filter: invert(1); transition: filter .35s; }
+    .case-card:hover .clogo { filter: none; }
+    .case-card:hover .arrow { transform: translateX(6px); }
+    .car-btn { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; padding: 0; background: transparent; border: 1.5px solid #000000; border-radius: 0; color: #000000; cursor: pointer; transition: background-color .25s, color .25s; }
+    .car-btn:hover { background: #000000; color: #FFFFFF; }
+    .globe-wrap canvas { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; }
+    @media (max-width: 500px) { .case-card { flex-basis: 300px; padding: 24px; gap: 24px; } .car { padding-left: 20px; padding-right: 20px; scroll-padding-left: 20px; gap: 16px; } .vrow { padding: 20px 0 24px; } .vword { font-size: min(44px, calc(100cqw / 8.8)); } .vtext { font-size: 17px; } }
+</style>
+<style>
+@media (max-width: 1023px) {
+html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Albert Sans', 'Helvetica Neue', Arial, sans-serif; background: #FFFFFF; color: #000000; -webkit-font-smoothing: antialiased; caret-color: #45142D; }
+    h1, h2, h3, p { margin: 0; }
+    a { color: #45142D; text-decoration: none; }
+    a:hover { color: #2C0E18; }
+    ::selection { background: #45142D; color: #FFFFFF; }
+    :focus-visible { outline: 2px solid #C5D8E6; outline-offset: 3px; }
+    .on-light :focus-visible { outline-color: #45142D; }
+    html { scrollbar-color: #45142D #FFFFFF; }
+    ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: #FFFFFF; } ::-webkit-scrollbar-thumb { background: #45142D; }
+
+    /* Buttons & links */
+    .btn { transition: background-color .25s cubic-bezier(.16,1,.3,1), color .25s cubic-bezier(.16,1,.3,1), border-color .25s; }
+    .btn-ice:hover { background: #FFFFFF !important; color: #2C0E18 !important; }
+    .btn-bdx:hover { background: #2C0E18 !important; color: #FFFFFF !important; }
+    .btn-ghost-light:hover { background: #FFFFFF !important; color: #2C0E18 !important; }
+    .navlink { position: relative; }
+    .navlink::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: #C5D8E6; transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.16,1,.3,1); }
+    .navlink:hover::after { transform: scaleX(1); }
+    .arrow { transition: transform .35s cubic-bezier(.16,1,.3,1); }
+    a:hover .arrow { transform: translateX(6px); }
+
+    /* Hero load sequence */
+    @keyframes wipeUp { from { transform: translateY(105%); } to { transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    @keyframes slideFromLeft { from { transform: translate(-38%, 0); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes slideFromRight { from { transform: translate(30%, 22%); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes flash { 0%, 100% { opacity: 1; } 40% { opacity: 0; } 55% { opacity: 1; } 70% { opacity: 0; } }
+    .line { display: block; overflow: hidden; }
+    .line > span { display: block; animation: wipeUp .9s cubic-bezier(.16,1,.3,1) both; }
+    .line:nth-child(2) > span { animation-delay: .12s; }
+    .line:nth-child(3) > span { animation-delay: .24s; }
+    .hero-fade { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .45s both; }
+    .hero-fade-2 { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .6s both; }
+    .mark-a { animation: slideFromLeft 1.1s cubic-bezier(.16,1,.3,1) .2s both; }
+    .mark-b { animation: slideFromRight 1.1s cubic-bezier(.16,1,.3,1) .2s both; }
+    .blitz { animation: flash 1s steps(1) 1.3s both; }
+
+
+    /* Hero mark: slow 3D spin with light falloff and sheen */
+    @keyframes spinY { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+    @keyframes spinLight { 0%, 50%, 100% { filter: brightness(1.45); } 22%, 28%, 72%, 78% { filter: brightness(0.62); } 25%, 75% { filter: brightness(0.5); } }
+    .spin-stage { perspective: 2400px; }
+    .spin { transform-style: preserve-3d; animation: spinY 7.68s linear 1.3s infinite; will-change: transform; }
+    .spin > svg { display: block; animation: spinLight 7.68s linear 1.3s infinite; backface-visibility: visible; }
+
+    /* Ticker */
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker-track { animation: ticker 38s linear infinite; }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+
+    /* Service rows: hard bordeaux wipe on hover */
+    .svc { background: linear-gradient(#45142D, #45142D) no-repeat left top / 0% 100%; transition: background-size .5s cubic-bezier(.16,1,.3,1), color .3s; color: #000000; }
+    .svc:hover { background-size: 100% 100%; color: #FFFFFF; }
+    .svc-tags { color: #45142D; transition: color .3s; }
+    .svc:hover .svc-tags { color: #C5D8E6; }
+    .svc:hover .svc-arrow { transform: translate(6px, -6px); color: #C5D8E6; }
+    .svc-arrow { transition: transform .4s cubic-bezier(.16,1,.3,1), color .3s; }
+
+    /* Form */
+    .chip { height: 44px; padding: 0 18px; border-radius: 0; cursor: pointer; font: 600 15px 'Albert Sans', sans-serif; border: 1.5px solid rgba(255,255,255,0.45); background: transparent; color: #FFFFFF; transition: background-color .2s, border-color .2s, color .2s; }
+    .chip:hover { border-color: #C5D8E6; }
+    .chip-on { background: #C5D8E6; border-color: #C5D8E6; color: #2C0E18; }
+    .field { transition: border-color .2s, box-shadow .2s; }
+    .field:hover { border-color: #C5D8E6 !important; }
+    .field:focus { outline: none; border-color: #C5D8E6 !important; box-shadow: inset 0 -3px 0 #C5D8E6; }
+    .field::placeholder { color: rgba(255,255,255,0.55); }
+
+
+    /* Partner badges: visible on arrival, gone after a short scroll */
+    @keyframes partnerOut { to { opacity: 0; transform: translateY(24px); visibility: hidden; } }
+    .partners { position: absolute; }
+    @supports (animation-timeline: scroll()) {
+      .partners { position: fixed; }
+      .partners-inner { animation: partnerOut linear both; animation-timeline: scroll(root); animation-range: 80px 420px; }
+    }
+
+    /* Scroll-driven motion, content visible by default */
+    @supports (animation-timeline: view()) {
+      @keyframes rise { from { opacity: 0; transform: translateY(48px); } to { opacity: 1; transform: none; } }
+      @keyframes fillWord { 0% { color: transparent; } 35%, 65% { color: #45142D; } 100% { color: transparent; } }
+      @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+      @keyframes drift { from { transform: translateY(-120px) rotate(0deg); } to { transform: translateY(140px) rotate(0deg); } }
+      @keyframes growBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+      .reveal { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+      .value-word { animation: fillWord linear both; animation-timeline: view(); animation-range: cover 15% cover 85%; }
+      .route { animation: draw linear both; animation-timeline: view(); animation-range: entry 20% cover 55%; }
+      .drift { animation: drift linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+      .bar { transform-origin: left; animation: growBar linear both; animation-timeline: view(); animation-range: entry 10% cover 40%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+      .value-word { color: #45142D !important; }
+    }
+  
+    /* FAQ accordion */
+    details.faq { border-top: 1.5px solid #000000; }
+    details.faq:last-child { border-bottom: 1.5px solid #000000; }
+    details.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 28px 0; }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq .plus { transition: transform .35s cubic-bezier(.16,1,.3,1); flex-shrink: 0; }
+    details.faq[open] .plus { transform: rotate(45deg); }
+    details.faq summary:hover .q { color: #45142D; }
+    details.faq[open] .a { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; }
+    /* Mobile menu */
+    @keyframes menuIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+    .menu-panel { animation: menuIn .45s cubic-bezier(.16,1,.3,1) both; } .menu-panel[hidden] { display: none !important; }
+    .menu-link { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; }
+    .burger { background: transparent; border: 0; padding: 0; width: 48px; height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 7px; cursor: pointer; }
+    .burger span { display: block; height: 2px; background: #FFFFFF; transition: transform .35s cubic-bezier(.16,1,.3,1), width .35s; }
+
+    /* ---- v2: robust text, dropdown, values, carousel, globe ---- */
+    h1, h2, h3, p, li, span, a, label, blockquote { overflow-wrap: break-word; }
+    .line { display: block; overflow-x: visible; overflow-y: clip; padding-top: .2em; margin-top: -.2em; padding-bottom: .06em; margin-bottom: -.06em; }
+    .dd { position: relative; display: flex; align-items: center; height: 88px; }
+    .dd-trigger { display: inline-flex; align-items: center; gap: 8px; }
+    .dd-chev { transition: transform .3s cubic-bezier(.16,1,.3,1); }
+    .dd:hover .dd-chev, .dd:focus-within .dd-chev { transform: rotate(180deg); }
+    .dd-menu { position: absolute; top: 88px; left: -24px; min-width: 340px; display: none; flex-direction: column; padding: 8px 0; background: #2C0E18; border: 1px solid rgba(197,216,230,0.22); border-top: 2px solid #C5D8E6; z-index: 30; }
+    .dd:hover .dd-menu, .dd:focus-within .dd-menu { display: flex; }
+    .dd-item { display: flex; justify-content: space-between; align-items: baseline; gap: 28px; padding: 14px 24px; color: #FFFFFF; font-size: 15px; font-weight: 700; white-space: nowrap; transition: background-color .2s, color .2s; }
+    .dd-item small { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; }
+    .dd-item:hover { background: #45142D; color: #C5D8E6; }
+    .dd-all { border-top: 1px solid rgba(197,216,230,0.22); margin-top: 6px; color: #C5D8E6; }
+
+    /* Keyword rows: outlined word, fills on hover, text appears */
+    .vrow { container-type: inline-size; padding: 24px 0 28px; border-top: 1px solid rgba(0,0,0,0.14); outline-offset: -3px; }
+    .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
+    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 20px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
+    .vrow:hover .vword, .vrow:focus-within .vword, .vrow:focus .vword { color: #45142D; }
+    .vrow:hover .vtext, .vrow:focus-within .vtext, .vrow:focus .vtext { opacity: 1; transform: none; }
+    @media (hover: none) { .vtext { opacity: 1; transform: none; } .vrow:active .vword { color: #45142D; } }
+    @media (prefers-reduced-motion: reduce) { .vtext { transition: none; } }
+
+    /* Cases carousel */
+    .car { display: flex; gap: 32px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 64px 8px; scroll-padding-left: 64px; }
+    .car::-webkit-scrollbar { display: none; }
+    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px; padding: 40px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
+    .case-card:hover { background: #45142D; color: #FFFFFF; border-color: #45142D; }
+    .case-card .ck { color: #45142D; transition: color .35s; }
+    .case-card:hover .ck { color: #C5D8E6; }
+    .case-card .ct { border: 1.5px solid #000000; color: #000000; transition: border-color .35s, color .35s; }
+    .case-card:hover .ct { border-color: rgba(197,216,230,0.6); color: #C5D8E6; }
+    .case-card .clogo { filter: invert(1); transition: filter .35s; }
+    .case-card:hover .clogo { filter: none; }
+    .case-card:hover .arrow { transform: translateX(6px); }
+    .car-btn { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; padding: 0; background: transparent; border: 1.5px solid #000000; border-radius: 0; color: #000000; cursor: pointer; transition: background-color .25s, color .25s; }
+    .car-btn:hover { background: #000000; color: #FFFFFF; }
+    .globe-wrap canvas { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; }
+    @media (max-width: 500px) { .case-card { flex-basis: 300px; padding: 24px; gap: 24px; } .car { padding-left: 20px; padding-right: 20px; scroll-padding-left: 20px; gap: 16px; } .vrow { padding: 20px 0 24px; } .vword { font-size: min(44px, calc(100cqw / 8.8)); } .vtext { font-size: 17px; } }
+    @keyframes menuIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+    .menu-panel { animation: menuIn .45s cubic-bezier(.16,1,.3,1) both; } .menu-panel[hidden] { display: none !important; }
+    .menu-link { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; }
+    .burger { background: transparent; border: 0; padding: 0; width: 48px; height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 7px; cursor: pointer; }
+    .burger span { display: block; height: 2px; background: #FFFFFF; transition: transform .35s cubic-bezier(.16,1,.3,1), width .35s; }
+    /* Mobile layout */
+    .hero-fade-2:has(> .btn) { flex-direction: column !important; align-items: stretch !important; }
+    .btn { justify-content: center; text-align: center; }
+    a.case-card[style*="flex: 1 1 0"] { flex: 1 1 100% !important; }
+    h1, h2, h3, summary { hyphens: auto; -webkit-hyphens: auto; }
+    img { max-width: 100%; height: auto; }
+    table { display: block; overflow-x: auto; }
+}
+@media (max-width: 1023px){.v-desktop{display:none!important}}@media (min-width: 1024px){.v-mobile{display:none!important}}
+.v-desktop > div{min-width:1024px!important}html.is-mobile .v-desktop,html.is-desktop .v-mobile{display:none!important}
+</style>
+<script src="/assets/js/site.js?v=3"></script>
+<script src="/assets/js/gsap.min.js"></script>
+<script src="/assets/js/ScrollTrigger.min.js"></script>
+<script src="/assets/js/SplitText.min.js"></script>
+<script src="/assets/js/ScrambleTextPlugin.min.js"></script>
+<script src="/assets/js/Draggable.min.js"></script>
+<script src="/assets/js/InertiaPlugin.min.js"></script>
+<script src="/assets/js/lenis.min.js"></script>
+<script src="/assets/js/velonify-motion.js?v=2"></script>
+<style>
+/* Ratgeber / Guides: one responsive layout, header and menu come from the regular pages */
+.rg-bar { position: sticky; top: 0; z-index: 20; }
+.rg-bar > div { width: 100%; }
+.rg-skip { position: absolute; left: 16px; top: -60px; z-index: 50; background: #C5D8E6; color: #2C0E18; padding: 12px 18px; font-weight: 700; }
+.rg-skip:focus { top: 12px; }
+main { display: block; }
+.rg-wrap { box-sizing: border-box; width: 100%; max-width: 1288px; margin: 0 auto; padding: 0 64px; }
+
+/* Hero */
+.rg-hero { position: relative; background: #2C0E18; color: #FFFFFF; padding: 72px 0 80px; overflow: hidden; }
+.rg-hero .mark-a { position: absolute; right: -160px; bottom: -200px; width: 560px; height: auto; }
+.rg-hero-in { position: relative; display: flex; flex-direction: column; gap: 28px; }
+.rg-crumbs { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; font-weight: 600; }
+.rg-crumbs a { color: rgba(255,255,255,0.75); }
+.rg-crumbs a:hover { color: #FFFFFF; }
+.rg-crumbs span[aria-current] { color: #FFFFFF; }
+.rg-dot { width: 6px; height: 6px; background: #C5D8E6; flex-shrink: 0; }
+.rg-eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C5D8E6; }
+.rg-hero h1 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 46px; line-height: 1.15; max-width: 1040px; text-wrap: balance; }
+.rg-lead { font-size: 20px; line-height: 1.6; max-width: 720px; color: rgba(255,255,255,0.85); }
+.rg-meta { display: flex; align-items: center; gap: 16px; }
+.rg-meta p { display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.8); }
+.rg-meta strong { color: #FFFFFF; }
+.rg-avatar { width: 52px; height: 52px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #C5D8E6; color: #2C0E18; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 15px; }
+
+/* Body: table of contents + article */
+.rg-body { display: grid; grid-template-columns: 240px minmax(0, 760px); gap: 80px; padding-top: 72px; padding-bottom: 96px; }
+.rg-toc { position: sticky; top: 120px; align-self: start; }
+.rg-toc summary { list-style: none; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D; padding-bottom: 16px; border-bottom: 1.5px solid #000000; pointer-events: none; }
+.rg-toc summary::-webkit-details-marker { display: none; }
+.rg-toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+.rg-toc li { counter-increment: toc; border-bottom: 1px solid rgba(0,0,0,0.12); }
+.rg-toc a { display: grid; grid-template-columns: 28px 1fr; padding: 12px 0; font-size: 14px; line-height: 1.45; font-weight: 600; color: #000000; }
+.rg-toc a::before { content: counter(toc, decimal-leading-zero); color: #45142D; font-weight: 700; font-size: 12px; padding-top: 2px; }
+.rg-toc a:hover { color: #45142D; }
+
+.rg-article { font-size: 18px; line-height: 1.7; color: #000000; min-width: 0; }
+.rg-article p { margin: 0 0 20px; }
+.rg-article a { color: #45142D; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; }
+.rg-article a:hover { color: #2C0E18; background: rgba(197,216,230,0.45); }
+.rg-article strong { font-weight: 700; }
+.rg-article code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 0.86em; background: rgba(197,216,230,0.4); padding: 2px 6px; }
+.rg-sec { margin-top: 64px; }
+.rg-sec h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.25; color: #2C0E18; margin: 0 0 24px; scroll-margin-top: 120px; text-wrap: balance; }
+.rg-sec h3 { font-size: 21px; line-height: 1.35; font-weight: 800; margin: 36px 0 12px; scroll-margin-top: 120px; }
+.rg-article ul, .rg-article ol { margin: 0 0 24px; padding: 0; list-style: none; }
+.rg-article ul li { position: relative; padding-left: 26px; margin-bottom: 12px; }
+.rg-article ul li::before { content: ""; position: absolute; left: 2px; top: 0.72em; width: 7px; height: 7px; background: #45142D; }
+.rg-article ol { counter-reset: step; }
+.rg-article ol li { counter-increment: step; position: relative; padding-left: 48px; margin-bottom: 16px; }
+.rg-article ol li::before { content: counter(step); position: absolute; left: 0; top: 2px; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background: #45142D; color: #FFFFFF; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 13px; line-height: 1; }
+
+.rg-summary { background: rgba(197,216,230,0.35); border-left: 5px solid #45142D; padding: 28px 32px; }
+.rg-summary p { margin: 0; }
+.rg-summary .rg-label, .rg-author-label { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D; margin-bottom: 10px; }
+.rg-summary p + p { font-size: 19px; line-height: 1.65; font-weight: 500; }
+
+.rg-table { overflow-x: auto; margin: 8px 0 28px; border: 1.5px solid #000000; }
+.rg-table:focus-visible { outline: 2px solid #45142D; outline-offset: 2px; }
+.rg-table table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
+.rg-table th { background: #2C0E18; color: #FFFFFF; text-align: left; font-weight: 700; padding: 14px 16px; vertical-align: bottom; }
+.rg-table td { padding: 14px 16px; border-top: 1px solid rgba(0,0,0,0.14); vertical-align: top; }
+.rg-table td:first-child { font-weight: 700; }
+.rg-table tbody tr:nth-child(even) td { background: rgba(197,216,230,0.18); }
+
+/* FAQ */
+.rg-faq { border-top: 1.5px solid #000000; }
+.rg-faq:last-child { border-bottom: 1.5px solid #000000; }
+.rg-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; }
+.rg-faq summary::-webkit-details-marker { display: none; }
+.rg-faq summary h3 { margin: 0; font-size: 19px; line-height: 1.4; font-weight: 700; }
+.rg-faq summary:hover h3 { color: #45142D; }
+.rg-plus { position: relative; width: 18px; height: 18px; flex-shrink: 0; transition: transform .35s cubic-bezier(.16,1,.3,1); }
+.rg-plus::before, .rg-plus::after { content: ""; position: absolute; background: #45142D; }
+.rg-plus::before { left: 0; right: 0; top: 8px; height: 2px; }
+.rg-plus::after { top: 0; bottom: 0; left: 8px; width: 2px; }
+.rg-faq[open] .rg-plus { transform: rotate(45deg); }
+.rg-faq-a { padding: 0 48px 12px 0; }
+
+/* Author, sources */
+.rg-author { display: flex; gap: 20px; margin-top: 72px; padding: 28px 32px; background: #2C0E18; color: rgba(255,255,255,0.85); font-size: 16px; line-height: 1.6; }
+.rg-author p { margin: 0; }
+.rg-author .rg-author-label { color: #C5D8E6; margin-bottom: 6px; }
+.rg-author-name { font-family: 'Krona One', 'Arial Narrow', sans-serif; text-transform: uppercase; color: #FFFFFF; font-size: 17px; }
+.rg-author-role { color: #C5D8E6; font-weight: 600; margin-bottom: 8px !important; }
+.rg-sources { margin-top: 48px; }
+.rg-sources h2 { font-family: 'Albert Sans', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: #45142D; margin-bottom: 12px; }
+.rg-sources ul li { font-size: 15px; margin-bottom: 8px; }
+
+/* CTA */
+.rg-cta { background: #45142D; color: #FFFFFF; padding: 88px 0; }
+.rg-cta h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 40px; line-height: 1.15; margin-bottom: 20px; }
+.rg-cta p { font-size: 19px; line-height: 1.6; max-width: 680px; color: rgba(255,255,255,0.85); margin-bottom: 36px; }
+.rg-cta-row { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+.rg-btn { display: inline-flex; align-items: center; gap: 12px; height: 60px; padding: 0 30px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700; }
+.rg-cta-link { display: inline-flex; align-items: center; gap: 10px; color: #FFFFFF; font-weight: 700; font-size: 16px; border-bottom: 2px solid #C5D8E6; padding-bottom: 4px; }
+.rg-cta-link:hover { color: #C5D8E6; }
+
+/* Cards */
+.rg-related { padding: 88px 0 104px; }
+.rg-related h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 30px; color: #2C0E18; margin-bottom: 32px; }
+.rg-list { padding: 72px 0 104px; }
+.rg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.rg-grid-index { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.rg-card { display: flex; flex-direction: column; gap: 14px; padding: 32px; border: 1.5px solid #000000; color: #000000; background: linear-gradient(#45142D, #45142D) no-repeat left top / 0% 100%; transition: background-size .5s cubic-bezier(.16,1,.3,1), color .3s; }
+.rg-card:hover { background-size: 100% 100%; color: #FFFFFF; }
+.rg-card-cat { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D; transition: color .3s; }
+.rg-card:hover .rg-card-cat, .rg-card:hover .rg-card-go { color: #C5D8E6; }
+.rg-card h3 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 20px; line-height: 1.3; text-wrap: balance; }
+.rg-card-desc { font-size: 16px; line-height: 1.6; }
+.rg-card-meta { font-size: 14px; opacity: 0.75; margin-top: auto !important; }
+.rg-card-go { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: #45142D; transition: color .3s; }
+
+/* Footer */
+.rg-footer { background: #2C0E18; color: #FFFFFF; padding: 36px 64px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+.rg-footer nav { display: flex; gap: 32px; flex-wrap: wrap; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.rg-footer nav a { color: #FFFFFF; }
+.rg-social { display: flex; align-items: center; gap: 16px; }
+.rg-social a { color: #FFFFFF; display: flex; }
+.rg-social span { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+
+@media (max-width: 1180px) {
+  .rg-grid-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rg-body { grid-template-columns: 200px minmax(0, 1fr); gap: 56px; }
+}
+@media (max-width: 1023px) {
+  .rg-wrap { padding: 0 20px; }
+  .rg-hero { padding: 36px 0 44px; }
+  .rg-hero .mark-a { right: -80px; bottom: -100px; width: 308px; }
+  .rg-hero-in { gap: 20px; }
+  .rg-hero h1 { font-size: 27px; line-height: 1.2; }
+  .rg-lead { font-size: 17px; }
+  .rg-meta p { font-size: 14px; }
+  .rg-avatar { width: 44px; height: 44px; font-size: 13px; }
+  .rg-body { display: block; padding-top: 32px; padding-bottom: 64px; }
+  .rg-toc { position: static; margin-bottom: 32px; border: 1.5px solid #000000; }
+  .rg-toc summary { pointer-events: auto; cursor: pointer; padding: 16px 18px; border-bottom: 0; display: flex; justify-content: space-between; }
+  .rg-toc summary::after { content: "+"; font-size: 18px; line-height: 1; }
+  .rg-toc details[open] summary::after { content: "–"; }
+  .rg-toc ol { padding: 0 18px 8px; }
+  .rg-toc li:last-child { border-bottom: 0; }
+  .rg-article { font-size: 17px; }
+  .rg-summary { padding: 22px 20px; }
+  .rg-summary p + p { font-size: 17px; }
+  .rg-sec { margin-top: 48px; }
+  .rg-sec h2 { font-size: 20px; scroll-margin-top: 90px; }
+  .rg-sec h3 { font-size: 19px; scroll-margin-top: 90px; }
+  .rg-table table { font-size: 14px; min-width: 560px; }
+  .rg-faq summary h3 { font-size: 17px; }
+  .rg-faq-a { padding-right: 0; }
+  .rg-author { flex-direction: column; padding: 24px 20px; margin-top: 56px; }
+  .rg-cta { padding: 56px 0; }
+  .rg-cta h2 { font-size: 26px; }
+  .rg-cta p { font-size: 17px; }
+  .rg-btn { width: 100%; justify-content: center; height: 58px; }
+  .rg-related { padding: 56px 0 64px; }
+  .rg-related h2 { font-size: 22px; }
+  .rg-list { padding: 40px 0 64px; }
+  .rg-grid, .rg-grid-index { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .rg-card { padding: 24px 20px; }
+  .rg-card h3 { font-size: 18px; }
+  .rg-footer { padding: 36px 20px; gap: 20px; }
+  .rg-footer nav { gap: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-card { transition: none; }
+}
+
+</style>
+</head>
+<body>
+<a class="rg-skip" href="#inhalt">Zum Inhalt springen</a>
+<div class="v v-desktop rg-bar"><div>
+<header style="position: sticky; top: 0; z-index: 20; height: 88px; box-sizing: border-box; padding: 0 64px; display: flex; align-items: center; justify-content: space-between; background: #2C0E18; border-bottom: 1px solid rgba(197,216,230,0.14);">
+    <a href="/" aria-label="Velonify Startseite" style="display: flex; align-items: center; gap: 14px; color: #FFFFFF;">
+      <svg width="38" height="25" viewBox="0 44 1278 813" fill="#C5D8E6" aria-hidden="true"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
+      <img src="/assets/img/velonify-wordmark.png" alt="Velonify" style="height: 18px; width: auto;">
+    </a>
+    <nav aria-label="Hauptnavigation" style="display: flex; align-items: center; gap: 40px; font-size: 15px; font-weight: 600;">
+      <div class="dd"><a class="navlink dd-trigger" href="/#leistungen" aria-haspopup="true" style="color: #FFFFFF;">Leistungen <svg class="dd-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1 L5 5 L9 1"></path></svg></a><div class="dd-menu"><a class="dd-item" href="/leistungen/shopify-migration/"><span>Shopify-Migration</span></a><a class="dd-item" href="/leistungen/tracking/"><span>Tracking & Attribution</span></a><a class="dd-item" href="/leistungen/performance-marketing/"><span>Performance Marketing</span></a><a class="dd-item" href="/leistungen/e-mail-marketing/"><span>E-Mail & Retention</span></a><a class="dd-item" href="/leistungen/conversion-optimierung/"><span>Conversion-Optimierung</span></a></div></div>
+      <div class="dd"><a class="navlink dd-trigger" href="/#cases" aria-haspopup="true" style="color: #FFFFFF;">Cases <svg class="dd-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1 L5 5 L9 1"></path></svg></a><div class="dd-menu"><a class="dd-item" href="/cases/blue-fire/"><span>Blue Fire Co.</span><small>Denim & Mode</small></a><a class="dd-item" href="/cases/storz-bickel/"><span>Storz & Bickel</span><small>Premium-Hardware</small></a><a class="dd-item" href="/cases/pretty-woman/"><span>Pretty Woman Brautmoden</span><small>Brautmode</small></a></div></div>
+      <a class="navlink" href="/ratgeber/" aria-current="page" style="color: #C5D8E6;">Ratgeber</a>
+      <a class="navlink" href="/#kontakt" style="color: #FFFFFF;">Kontakt</a>
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.08em;">
+        <a href="#top" style="color: #C5D8E6;">DE</a>
+        <span style="width: 1px; height: 14px; background: rgba(255,255,255,0.35);"></span>
+        <a href="/en/guides/magento-to-shopify-migration/" style="color: rgba(255,255,255,0.75);">EN</a>
+      </div>
+      <a class="btn btn-ice" href="/#kontakt" style="display: flex; align-items: center; height: 48px; padding: 0 22px; background: #C5D8E6; color: #2C0E18; font-weight: 700;">Projekt anfragen</a>
+    </nav>
+  </header>
+</div></div>
+<div class="v v-mobile rg-bar"><div>
+<header style="position: sticky; top: 0; z-index: 20; height: 68px; box-sizing: border-box; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; background: #2C0E18; border-bottom: 1px solid rgba(197,216,230,0.14);">
+    <a href="/" aria-label="Velonify Startseite" style="display: flex; align-items: center; gap: 10px;">
+      <svg width="30" height="20" viewBox="0 44 1278 813" fill="#C5D8E6" aria-hidden="true"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
+      <img src="/assets/img/velonify-wordmark.png" alt="Velonify" style="height: 14px; width: auto;">
+    </a>
+    <button class="burger" type="button" data-labels="Menü öffnen|Menü schließen" aria-label="Menü öffnen" aria-expanded="false">
+      <span style="width: 28px; transform: none;"></span>
+      <span style="width: 20px;"></span>
+      <span style="width: 20px; transform: none;"></span>
+    </button>
+  </header>
+
+  
+    <nav class="menu-panel" hidden aria-label="Hauptnavigation" style="position: fixed; top: 68px; left: 0; right: 0; bottom: 0; z-index: 19; background: #2C0E18; padding: 24px 20px; display: flex; flex-direction: column; gap: 0; overflow-y: auto;">
+      
+        <a class="menu-link" href="/#leistungen" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.06s;">Leistungen</a>
+      
+        <a class="menu-link" href="/leistungen/shopify-migration/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.1s;">Shopify-Migration</a>
+      
+        <a class="menu-link" href="/leistungen/tracking/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.14s;">Tracking &amp; Attribution</a>
+      
+        <a class="menu-link" href="/leistungen/performance-marketing/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.18s;">Performance Marketing</a>
+      
+        <a class="menu-link" href="/leistungen/e-mail-marketing/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.22s;">E-Mail &amp; Retention</a>
+      
+        <a class="menu-link" href="/leistungen/conversion-optimierung/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.26s;">Conversion-Optimierung</a>
+      
+        <a class="menu-link" href="/#cases" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.3s;">Cases</a>
+      
+        <a class="menu-link" href="/cases/blue-fire/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.34s;">Blue Fire Co.</a>
+      
+        <a class="menu-link" href="/cases/storz-bickel/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.38s;">Storz &amp; Bickel</a>
+      
+        <a class="menu-link" href="/cases/pretty-woman/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.42s;">Pretty Woman Brautmoden</a>
+      
+        <a class="menu-link" href="/ratgeber/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.46s;">Ratgeber</a>
+      
+        <a class="menu-link" href="/#kontakt" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.5s;">Kontakt</a>
+      
+      <div style="display: flex; gap: 16px; margin-top: 20px; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; flex-wrap: wrap;">
+        <a href="#top" aria-current="page" style="color: #C5D8E6;">DE</a>
+        <a href="/en/guides/magento-to-shopify-migration/" style="color: rgba(255,255,255,0.75);">EN</a>
+      </div>
+      <a class="btn btn-ice" href="/#kontakt" style="margin-top: auto; display: flex; align-items: center; justify-content: center; height: 58px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Projekt anfragen</a>
+    </nav>
+</div></div>
+<main>
+<section id="top" class="rg-hero">
+<svg class="mark-a" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
+<div class="rg-wrap rg-hero-in">
+<nav aria-label="Brotkrumen" class="rg-crumbs"><a href="/">Start</a><span class="rg-dot" aria-hidden="true"></span><a href="/ratgeber/">Ratgeber</a><span class="rg-dot" aria-hidden="true"></span><span aria-current="page">Magento zu Shopify migrieren: Ablauf, Dauer und Kosten</span></nav>
+<p class="rg-eyebrow">Shopify-Migration</p>
+<h1>Magento zu Shopify migrieren: Ablauf, Dauer und Kosten</h1>
+<div class="rg-meta"><div class="rg-avatar" aria-hidden="true">LH</div><p><span>Von <strong>Lukas Hanke</strong>, Backend, CRM &amp; Integrationen</span><span>Stand: <time datetime="2026-09-24">24. September 2026</time> · 7 Min. Lesezeit</span></p></div>
+</div>
+</section>
+<div id="inhalt" class="rg-wrap rg-body">
+<nav class="rg-toc" aria-label="Inhalt"><details class="rg-toc-box" open><summary>Inhalt</summary><ol><li><a href="#wann-lohnt-sich-der-wechsel-von-magento-auf-shopify">Wann lohnt sich der Wechsel von Magento auf Shopify?</a></li><li><a href="#welche-daten-kommen-von-magento-zu-shopify-mit">Welche Daten kommen von Magento zu Shopify mit?</a></li><li><a href="#wie-laeuft-eine-migration-ab">Wie läuft eine Migration ab?</a></li><li><a href="#wie-lange-dauert-eine-migration-von-magento-auf-shopify">Wie lange dauert eine Migration von Magento auf Shopify?</a></li><li><a href="#was-kostet-eine-migration-von-magento-auf-shopify">Was kostet eine Migration von Magento auf Shopify?</a></li><li><a href="#die-fuenf-haeufigsten-fehler-bei-der-migration">Die fünf häufigsten Fehler bei der Migration</a></li><li><a href="#checkliste-fuer-den-go-live-tag">Checkliste für den Go-live-Tag</a></li><li><a href="#haeufige-fragen">Häufige Fragen</a></li><li><a href="#quellen">Quellen</a></li></ol></details></nav>
+<article class="rg-article">
+<div class="rg-summary"><p class="rg-label">Kurz gesagt</p><p>Eine Migration von Magento auf Shopify läuft in vier Phasen: Audit, Mapping, Aufbau mit Testmigration und Go-live mit Nachbetreuung. Ein schlanker Shop ist oft in vier bis sechs Wochen live, mit mehreren Integrationen oder auf Shopify Plus dauert es acht bis zwölf Wochen, große B2B-Projekte drei bis sechs Monate. Die Kosten reichen am Markt von einem niedrigen vierstelligen Betrag für kleine Shops bis in den sechsstelligen Bereich für Enterprise-Projekte. Die größten Risiken sind fehlende Weiterleitungen, unvollständige Daten und Tracking, das nach dem Umschalten nicht mehr misst.</p></div>
+<section class="rg-sec" aria-labelledby="wann-lohnt-sich-der-wechsel-von-magento-auf-shopify"><h2 id="wann-lohnt-sich-der-wechsel-von-magento-auf-shopify">Wann lohnt sich der Wechsel von Magento auf Shopify?</h2><p>Der Wechsel lohnt sich, wenn die Plattform euch mehr Zeit und Geld kostet, als sie leistet. Typische Anlässe:</p>
+<ul><li>Eure Magento-Version bekommt keine Sicherheitsupdates mehr (mehr dazu in <a href="/ratgeber/magento-supportende/">Magento 2.4.6 ohne Support</a>).</li><li>Jede Änderung am Shop braucht einen Entwickler und dauert Tage.</li><li>Hosting, Wartung und Extension-Lizenzen fressen einen spürbaren Teil der Marge.</li><li>Ihr wollt in neue Länder oder an Geschäftskunden verkaufen, und das System bremst.</li><li>Der Shop lädt langsam, besonders auf dem Smartphone.</li></ul>
+<p>Weniger sinnvoll ist ein Umzug, wenn der Shop technisch gesund ist und nur die Zahlen schwach sind. Dann liegt die Ursache meist im Funnel, und eine <a href="/leistungen/conversion-optimierung/">Conversion-Optimierung</a> bringt mehr als ein neues System.</p></section><section class="rg-sec" aria-labelledby="welche-daten-kommen-von-magento-zu-shopify-mit"><h2 id="welche-daten-kommen-von-magento-zu-shopify-mit">Welche Daten kommen von Magento zu Shopify mit?</h2><p>Fast alles, aber nicht alles 1:1. Magento speichert Produktdaten flexibel in Attributen, Shopify arbeitet mit einem festeren Modell aus Produkten, Varianten und Metafeldern. Deshalb braucht jede Migration ein Mapping.</p>
+<div class="rg-table" role="region" tabindex="0"><table><thead><tr><th scope="col">Daten</th><th scope="col">Übernehmbar?</th><th scope="col">Worauf ihr achten müsst</th></tr></thead><tbody><tr><td>Produkte und Varianten</td><td>Ja</td><td>Shopify erlaubt bis zu 2.048 Varianten, aber maximal drei Optionen pro Produkt (etwa Größe, Farbe, Material). Konfigurierbare Magento-Produkte mit mehr Optionen müssen aufgeteilt werden.</td></tr><tr><td>Attribute</td><td>Ja, als Metafelder</td><td>Vorher entscheiden, welche Attribute ihr wirklich braucht. Viele Magento-Shops schleppen Hunderte ungenutzte mit.</td></tr><tr><td>Kategorien</td><td>Ja, als Kollektionen</td><td>Shopify-Kollektionen sind flach. Verschachtelte Kategoriebäume werden über Navigation und Filter abgebildet.</td></tr><tr><td>Kundenkonten</td><td>Ja</td><td>Passwörter lassen sich technisch nicht übertragen. Mit den neuen Shopify-Kundenkonten melden sich Kunden per Einmal-Code an, ein Passwort-Reset entfällt dann.</td></tr><tr><td>Bestellhistorie</td><td>Ja</td><td>Wird als historische Bestellungen importiert, ohne dass Kunden E-Mails bekommen.</td></tr><tr><td>Rabatte und Gutscheine</td><td>Teilweise</td><td>Preisregeln funktionieren in Shopify anders und werden meist neu aufgesetzt. Offene Gutscheincodes lassen sich übernehmen.</td></tr><tr><td>CMS-Seiten und Blog</td><td>Ja</td><td>Guter Anlass, veraltete Inhalte auszusortieren.</td></tr><tr><td>Bewertungen</td><td>Ja, über eine Review-App</td><td>Den Export aus Magento früh testen.</td></tr><tr><td>URLs</td><td>Nein, sie ändern sich</td><td>Shopify gibt feste Pfade vor (<code>/products/</code>, <code>/collections/</code>, <code>/pages/</code>). Jede alte URL braucht eine 301-Weiterleitung.</td></tr></tbody></table></div></section><section class="rg-sec" aria-labelledby="wie-laeuft-eine-migration-ab"><h2 id="wie-laeuft-eine-migration-ab">Wie läuft eine Migration ab?</h2><p>Wir planen jede Migration rückwärts vom Go-live-Termin. Der neue Shop entsteht parallel zum alten, euer Tagesgeschäft läuft ungestört weiter.</p>
+<h3 id="phase-1-audit-ein-bis-zwei-wochen">Phase 1: Audit (ein bis zwei Wochen)</h3>
+<p>Bestandsaufnahme des Altshops: Extensions und was sie tun, Datenqualität, angebundene Systeme wie Warenwirtschaft, Payment und Newsletter. Dazu die wichtigsten URLs aus Search Console und Analytics, damit klar ist, welche Seiten Umsatz und Rankings tragen. Am Ende steht die Zielarchitektur: Shopify oder Shopify Plus, ein Markt oder mehrere, mit oder ohne B2B.</p>
+<h3 id="phase-2-mapping-ein-bis-zwei-wochen">Phase 2: Mapping (ein bis zwei Wochen)</h3>
+<p>Hier fallen die Entscheidungen, die später teuer werden, wenn sie fehlen. Welches Magento-Attribut wird welches Metafeld? Welche Kategorie wird welche Kollektion? Welche Extension ersetzt eine App, welche wird Eigenentwicklung und welche fällt weg? Und die vollständige Weiterleitungsliste: jede alte URL mit ihrem neuen Ziel.</p>
+<h3 id="phase-3-aufbau-und-testmigration-zwei-bis-sechs-wochen-bei-grossen-projekten-laenger">Phase 3: Aufbau und Testmigration (zwei bis sechs Wochen, bei großen Projekten länger)</h3>
+<p>Theme, Integrationen und Tracking entstehen im neuen Shop. Dann läuft eine vollständige Testmigration mit echten Daten. Ihr prüft Produkte, Preise, Kundenkonten und Prozesse, bevor ein einziger Kunde den neuen Shop sieht.</p>
+<h3 id="phase-4-go-live-und-nachbetreuung-umschalttag-plus-vier-bis-acht-wochen">Phase 4: Go-live und Nachbetreuung (Umschalttag plus vier bis acht Wochen)</h3>
+<p>Kurz vor dem Umschalten werden die Bestellungen und Kunden übertragen, die seit der Testmigration dazugekommen sind. Dann wird die Domain umgestellt, Weiterleitungen und Tracking werden live geprüft. In den Wochen danach beobachten wir Rankings, Crawling-Fehler in der Search Console und die Bestellzahlen.</p></section><section class="rg-sec" aria-labelledby="wie-lange-dauert-eine-migration-von-magento-auf-shopify"><h2 id="wie-lange-dauert-eine-migration-von-magento-auf-shopify">Wie lange dauert eine Migration von Magento auf Shopify?</h2><div class="rg-table" role="region" tabindex="0"><table><thead><tr><th scope="col">Ausgangslage</th><th scope="col">Typische Dauer</th></tr></thead><tbody><tr><td>Schlanker Shop, wenige hundert Produkte, kaum Zusatzsysteme</td><td>vier bis sechs Wochen</td></tr><tr><td>Mehrere Integrationen (Warenwirtschaft, Newsletter, Marktplätze) oder Shopify Plus</td><td>acht bis zwölf Wochen</td></tr><tr><td>Mehrere Länder, B2B, ERP-Anbindung, individuelle Funktionen</td><td>drei bis sechs Monate</td></tr></tbody></table></div>
+<p>Die Dauer hängt weniger an der Zahl der Produkte als an der Zahl der Systeme, die mitziehen müssen, und daran, wie schnell Entscheidungen fallen. Ein Shop mit 150 Produkten und zwei Warenwirtschaften kann aufwendiger sein als einer mit 20.000 Artikeln und sauberem Datenbestand.</p></section><section class="rg-sec" aria-labelledby="was-kostet-eine-migration-von-magento-auf-shopify"><h2 id="was-kostet-eine-migration-von-magento-auf-shopify">Was kostet eine Migration von Magento auf Shopify?</h2><p>Einen Festpreis ohne Audit kann seriös niemand nennen. Die Marktspannen, die Agenturen 2026 öffentlich angeben, geben aber eine gute Orientierung:</p>
+<div class="rg-table" role="region" tabindex="0"><table><thead><tr><th scope="col">Projektgröße</th><th scope="col">Merkmale</th><th scope="col">Marktübliche Spanne</th></tr></thead><tbody><tr><td>Kleiner Shop</td><td>unter 500 Produkten, einfache Struktur</td><td>ca. 2.000 bis 7.000 €</td></tr><tr><td>Mittelgroßer Shop</td><td>500 bis 10.000 Produkte, mehrere Integrationen</td><td>ca. 7.000 bis 28.000 €</td></tr><tr><td>Enterprise und Shopify Plus</td><td>B2B, mehrere Märkte, ERP- und PIM-Anbindung</td><td>ca. 30.000 bis über 200.000 €</td></tr></tbody></table></div>
+<p>Die größten Kostentreiber sind:</p>
+<ul><li><strong>Integrationen.</strong> Jede angebundene Warenwirtschaft, jedes PIM, jeder Marktplatz ist ein eigener Baustein mit eigenem Testaufwand.</li><li><strong>Design.</strong> Ein angepasstes Standard-Theme kostet einen Bruchteil eines komplett individuellen Designs.</li><li><strong>Individuelle Funktionen.</strong> Alles, was keine App abdeckt, wird entwickelt.</li><li><strong>Datenqualität.</strong> Unsaubere Altdaten zu bereinigen kostet oft mehr als ihr Import.</li><li><strong>Interner Aufwand.</strong> Abstimmungen, Freigaben und Tests auf eurer Seite werden gern vergessen.</li></ul>
+<p><strong>Laufende Kosten im Vergleich.</strong> Shopify kostet in Deutschland zwischen 27 € (Basic, jährliche Zahlung) und 289 € (Advanced) pro Monat, Shopify Plus ab 2.100 € pro Monat. Dazu kommen Apps und Zahlungsgebühren. Wichtig: Wer statt Shopify Payments einen externen Zahlungsanbieter nutzt, zahlt je nach Plan eine zusätzliche Transaktionsgebühr zwischen 2 % (Basic) und 0,2 % (Plus). Auf der Magento-Seite stehen dem Hosting, Wartung, Sicherheitsupdates, Extension-Lizenzen und regelmäßige Upgrades gegenüber. Legt beide Summen für drei Jahre nebeneinander, bevor ihr entscheidet.</p></section><section class="rg-sec" aria-labelledby="die-fuenf-haeufigsten-fehler-bei-der-migration"><h2 id="die-fuenf-haeufigsten-fehler-bei-der-migration">Die fünf häufigsten Fehler bei der Migration</h2><ol><li><strong>Weiterleitungen erst nach dem Go-live.</strong> Dann fallen Kategorie- und Produktseiten schon in den ersten Tagen aus dem Index. Die Weiterleitungsliste gehört in Phase 2.</li><li><strong>Den alten Shop 1:1 nachbauen.</strong> Jede Magento-Extension durch eine App zu ersetzen, macht den neuen Shop so schwer wie den alten. Erst fragen, ob die Funktion noch gebraucht wird.</li><li><strong>Kunden nicht informieren.</strong> Wer sich plötzlich anders anmelden muss, braucht eine kurze E-Mail vorab. Sonst landen die Fragen beim Support.</li><li><strong>Tracking vergessen.</strong> Nach dem Umschalten laufen Kampagnen tagelang auf falschen Zahlen, wenn GA4, Meta und Google Ads nicht vorher eingerichtet und getestet wurden. Wie das auf Shopify sauber geht, steht in <a href="/ratgeber/server-side-tracking-shopify/">Server-Side Tracking auf Shopify</a>.</li><li><strong>Go-live vor der Hochsaison.</strong> Wir legen den Umschalttermin grundsätzlich um eure Spitzen herum, nie direkt davor.</li></ol></section><section class="rg-sec" aria-labelledby="checkliste-fuer-den-go-live-tag"><h2 id="checkliste-fuer-den-go-live-tag">Checkliste für den Go-live-Tag</h2><ul><li>Delta-Migration der neuen Bestellungen und Kunden seit der Testmigration abgeschlossen</li><li>Weiterleitungen importiert und die 100 wichtigsten URLs stichprobenartig geprüft</li><li>Domain umgestellt, SSL-Zertifikat aktiv, <code>www</code> und Hauptdomain leiten korrekt</li><li>Neue Sitemap in der Google Search Console eingereicht</li><li>Testbestellung mit jeder Zahlungsart durchgeführt</li><li>Käufe kommen in Shopify, GA4, Meta und Google Ads an</li><li>Transaktionale E-Mails (Bestellbestätigung, Versand) geprüft</li><li>Alter Shop im Wartungsmodus, aber für Rückfragen noch erreichbar</li></ul></section><section class="rg-sec" aria-labelledby="haeufige-fragen"><h2 id="haeufige-fragen">Häufige Fragen</h2><details class="rg-faq"><summary><h3>Gehen bei der Migration Google-Rankings verloren?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Nicht, wenn jede alte URL per 301 auf ihr Gegenstück zeigt und Titel, Beschreibungen und Inhalte übernommen werden. Kleine Schwankungen in den ersten Wochen sind normal, deshalb gehört eine enge Beobachtung der Search Console zur Nachbetreuung.</p></div></details><details class="rg-faq"><summary><h3>Muss der Shop während der Migration offline gehen?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Nein. Der neue Shop wird parallel aufgebaut. Umgeschaltet wird erst, wenn die Testmigration sauber durchgelaufen ist. Der eigentliche Wechsel dauert meist nur wenige Stunden.</p></div></details><details class="rg-faq"><summary><h3>Können wir unsere Domain und E-Mail-Adressen behalten?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Ja. Die Domain wird auf Shopify umgestellt, indem nur die Einträge für die Website geändert werden. Die MX-Einträge für eure E-Mails bleiben unberührt.</p></div></details><details class="rg-faq"><summary><h3>Brauchen wir Shopify oder Shopify Plus?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Für die meisten Shops reicht ein Standard-Plan. Shopify Plus lohnt sich bei mehreren Märkten mit eigenen Katalogen, bei B2B mit Firmenkonten und Zahlungszielen oder bei höheren Umsätzen, wo die niedrigeren Gebühren den Plus-Preis ausgleichen.</p></div></details><details class="rg-faq"><summary><h3>Können Kunden ihre Passwörter behalten?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Nein, Passwörter lassen sich aus Sicherheitsgründen nicht übertragen. Mit den neuen Shopify-Kundenkonten ist das kein Problem mehr, denn die Anmeldung läuft dort über einen Einmal-Code per E-Mail.</p></div></details></section><aside class="rg-author"><div class="rg-avatar" aria-hidden="true">LH</div><div><p class="rg-author-label">Über den Autor</p><p class="rg-author-name">Lukas Hanke</p><p class="rg-author-role">Backend, CRM &amp; Integrationen</p><p>Verbindet Shop, CRM und Drittsysteme über stabile Schnittstellen.</p></div></aside><section class="rg-sec rg-sources" aria-labelledby="quellen"><h2 id="quellen">Quellen</h2><ul><li><a href="https://www.shopify.com/de/preise" target="_blank" rel="noopener">Shopify: Preise für Deutschland</a></li><li><a href="https://shopify.dev/changelog/the-product-variant-limit-is-now-2048-for-all-merchants" target="_blank" rel="noopener">Shopify Developer Changelog: Variantenlimit 2.048 für alle Händler</a></li><li><a href="https://help.shopify.com/de/manual/online-store/menus-and-links/url-redirect" target="_blank" rel="noopener">Shopify Help Center: URL-Weiterleitungen</a></li><li><a href="https://www.uncap.com/post/magento-to-shopify-migration-cost" target="_blank" rel="noopener">Uncap: Magento to Shopify Migration Cost</a></li><li><a href="https://wearepresta.com/shopify-migration-cost-breakdown-what-agencies-actually-charge-in-2026/" target="_blank" rel="noopener">WeArePresta: Shopify Migration Cost Breakdown 2026</a></li></ul></section>
+</article>
+</div>
+<section class="rg-cta">
+<div class="rg-wrap">
+<h2>Fragen zu eurem Shop?</h2>
+<p>In 30 Minuten klären wir Ausgangslage, Ziel und nächste Schritte. Kostenlos und unverbindlich, direkt mit der Person, die euer Projekt später umsetzt.</p>
+<div class="rg-cta-row"><a class="btn btn-ice rg-btn" href="/#kontakt">Projekt anfragen <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></a><a class="rg-cta-link" href="/leistungen/shopify-migration/">Zur Leistung: Shopify-Migration <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></a></div>
+</div>
+</section>
+<section class="rg-related"><div class="rg-wrap"><h2>Weiterlesen</h2><div class="rg-grid"><a class="rg-card" href="/ratgeber/magento-supportende/">
+<p class="rg-card-cat">Magento</p>
+<h3>Magento 2.4.6 ohne Support: Was Shopbetreiber jetzt tun sollten</h3>
+<p class="rg-card-desc">Seit dem 11. August 2026 bekommt Magento 2.4.6 keine regulären Sicherheitsupdates mehr. Was das für euren Shop bedeutet und welche Optionen ihr jetzt habt.</p>
+<p class="rg-card-meta">Lukas Hanke · 24. September 2026 · 8 Min. Lesezeit</p>
+<span class="rg-card-go">Artikel lesen <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
+</a><a class="rg-card" href="/ratgeber/server-side-tracking-shopify/">
+<p class="rg-card-cat">Tracking</p>
+<h3>Server-Side Tracking auf Shopify: GA4, Meta und Consent richtig aufsetzen</h3>
+<p class="rg-card-desc">Warum Browser-Tracking auf Shopify Käufe verliert, welche drei Wege zum serverseitigen Tracking es gibt und was seit dem 26. August 2026 für Shopify-Shops gilt.</p>
+<p class="rg-card-meta">Lukas Hanke · 24. September 2026 · 8 Min. Lesezeit</p>
+<span class="rg-card-go">Artikel lesen <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
+</a></div></div></section>
+</main>
+<footer class="rg-footer">
+  <img src="/assets/img/velonify-wordmark.png" alt="Velonify" style="height: 22px; width: auto;">
+  <nav aria-label="Footer"><a class="navlink" href="/">Start</a><a class="navlink" href="/#cases">Cases</a><a class="navlink" href="/ratgeber/">Ratgeber</a><a class="navlink" href="/impressum/">Impressum</a><a class="navlink" href="/datenschutz/">Datenschutz</a></nav>
+  <div class="rg-social"><a href="https://www.instagram.com/velonify.de/" target="_blank" rel="noopener" aria-label="Velonify auf Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"></circle></svg></a><a href="https://www.linkedin.com/company/velonify/" target="_blank" rel="noopener" aria-label="Velonify auf LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="7.5" cy="8" r="0.9" fill="currentColor" stroke="none"></circle><path d="M7.5 11 V17"></path><path d="M11.5 17 V12.5 C11.5 11 13 10.3 14.3 11 C15.3 11.5 15.5 12.3 15.5 13 V17"></path><path d="M11.5 11 V17"></path></svg></a><span>© 2026 Velonify</span></div>
+</footer>
+<script>if (window.matchMedia('(max-width: 1023px)').matches) document.querySelectorAll('details.rg-toc-box').forEach(function (d) { d.removeAttribute('open'); });</script>
+</body>
+</html>

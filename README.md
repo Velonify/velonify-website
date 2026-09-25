@@ -3,10 +3,19 @@
 Export aus dem Velonify-Design-Canvas. Reines HTML/CSS/JS, kein Build-Schritt.
 
 ## Struktur
-- `/` Deutsch, `/en/` Englisch (je 12 Seiten), eine Seite pro Adresse
+- `/` Deutsch, `/en/` Englisch (je 12 Seiten plus Ratgeber), eine Seite pro Adresse
 - Desktop- und Mobil-Layout stecken in derselben Seite; `assets/js/site.js` behält beim Laden nur das passende (Umbruch bei 1024 px)
 - Schriften (Krona One, Albert Sans), GSAP, Lenis und Bilder liegen lokal unter `/assets` – keine externen Anfragen
-- `sitemap.xml`, `robots.txt`, `404.html`, `favicon.svg`, `netlify.toml` (www → velonify.de, Caching, Sicherheits-Header)
+- `sitemap.xml`, `llms.txt`, `robots.txt`, `404.html`, `favicon.svg`, `netlify.toml` (www → velonify.de, Caching, Sicherheits-Header)
+
+## Ratgeber / Guides
+Die Artikel unter `/ratgeber/` (DE) und `/en/guides/` (EN) werden **nicht von Hand bearbeitet**, sondern aus Markdown gebaut:
+- Quelle: `_ratgeber/de/*.md` und `_ratgeber/en/*.md` – oben die Metadaten (Titel, Beschreibung, Autor, Datum, `translation` = Slug des Gegenstücks), darunter der Text
+- `## Häufige Fragen {faq}` wird zum Akkordeon plus FAQPage-Schema, `## Quellen {sources}` zur Quellenliste; Autor-Kürzel stehen in `_ratgeber/build.py` (`lukas`, `johannes`)
+- Bauen: `python3 _ratgeber/build.py` (nur Python-Standardbibliothek). Schreibt die HTML-Seiten, ergänzt `sitemap.xml` und `llms.txt`
+- Header und Mobilmenü übernimmt der Build aus `impressum/` bzw. `en/legal-notice/`. Kommt eine neue Seite aus dem Design-Canvas dazu, einmal `python3 _ratgeber/nav.py` laufen lassen, dann bekommt sie den Menüpunkt „Ratgeber“/„Guides“
+- Beim Überarbeiten `updated:` hochsetzen, das landet als „Stand“ auf der Seite und als `dateModified` im Schema
+- `/_ratgeber/*` liefert auf Netlify 404 (siehe `netlify.toml`)
 
 ## Deploy auf Netlify
 Netlify hängt an diesem Repo: jeder Push auf `main` geht automatisch live, ein Build-Schritt läuft nicht (`publish = "."`).

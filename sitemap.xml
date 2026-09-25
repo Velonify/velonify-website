@@ -88,4 +88,36 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/datenschutz/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/privacy/"/>
   </url>
+  <url><loc>https://velonify.de/ratgeber/</loc><lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/"/>
+  </url>
+  <url><loc>https://velonify.de/en/guides/</loc><lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/"/>
+  </url>
+  <url><loc>https://velonify.de/ratgeber/magento-supportende/</loc><lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/magento-supportende/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/magento-end-of-support/"/>
+  </url>
+  <url><loc>https://velonify.de/en/guides/magento-end-of-support/</loc><lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/magento-supportende/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/magento-end-of-support/"/>
+  </url>
+  <url><loc>https://velonify.de/ratgeber/magento-zu-shopify-migration/</loc><lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/magento-zu-shopify-migration/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/magento-to-shopify-migration/"/>
+  </url>
+  <url><loc>https://velonify.de/en/guides/magento-to-shopify-migration/</loc><lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/magento-zu-shopify-migration/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/magento-to-shopify-migration/"/>
+  </url>
+  <url><loc>https://velonify.de/ratgeber/server-side-tracking-shopify/</loc><lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/server-side-tracking-shopify/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopify-server-side-tracking/"/>
+  </url>
+  <url><loc>https://velonify.de/en/guides/shopify-server-side-tracking/</loc><lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/server-side-tracking-shopify/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopify-server-side-tracking/"/>
+  </url>
 </urlset>

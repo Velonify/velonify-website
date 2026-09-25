@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Server-Side Tracking auf Shopify: GA4 &amp; Meta CAPI | Velonify</title>
+<meta name="description" content="Warum Browser-Tracking auf Shopify Käufe verliert, welche drei Wege zum serverseitigen Tracking es gibt und was seit dem 26. August 2026 für Shopify-Shops gilt.">
+<link rel="canonical" href="https://velonify.de/ratgeber/server-side-tracking-shopify/">
+<link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/server-side-tracking-shopify/">
+<link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopify-server-side-tracking/">
+<link rel="alternate" hreflang="x-default" href="https://velonify.de/ratgeber/server-side-tracking-shopify/">
+<meta property="og:title" content="Server-Side Tracking auf Shopify: GA4 &amp; Meta CAPI | Velonify">
+<meta property="og:description" content="Warum Browser-Tracking auf Shopify Käufe verliert, welche drei Wege zum serverseitigen Tracking es gibt und was seit dem 26. August 2026 für Shopify-Shops gilt.">
+<meta property="og:url" content="https://velonify.de/ratgeber/server-side-tracking-shopify/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Velonify">
+<meta property="og:image" content="https://velonify.de/assets/img/velonify-wordmark.png">
+<meta name="twitter:card" content="summary">
+<meta property="article:published_time" content="2026-09-24">
+<meta property="article:modified_time" content="2026-09-24">
+<meta name="author" content="Lukas Hanke">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://velonify.de/ratgeber/server-side-tracking-shopify/#article", "headline": "Server-Side Tracking auf Shopify: GA4, Meta und Consent richtig aufsetzen", "description": "Warum Browser-Tracking auf Shopify Käufe verliert, welche drei Wege zum serverseitigen Tracking es gibt und was seit dem 26. August 2026 für Shopify-Shops gilt.", "abstract": "Beim Server-Side Tracking schickt ein Server die Conversion-Daten an GA4, Meta und Google Ads, nicht nur der Browser des Kunden. Dadurch gehen weniger Käufe durch Adblocker, Browser-Beschränkungen und Zahlungs-Weiterleitungen verloren. Auf Shopify gibt es drei Wege: die nativen Apps von Google und Meta, ein Custom Pixel mit serverseitigem Google Tag Manager oder eine spezialisierte Tracking-App. Die Einwilligung der Besucher bleibt Pflicht, serverseitig ersetzt kein Cookie-Banner. Seit dem 26. August 2026 laufen auf Shopify-Shops ohne Plus keine „Zusätzlichen Skripte“ auf der Danke-Seite mehr, deshalb solltet ihr eure Kauf-Events jetzt prüfen.", "inLanguage": "de-DE", "url": "https://velonify.de/ratgeber/server-side-tracking-shopify/", "mainEntityOfPage": "https://velonify.de/ratgeber/server-side-tracking-shopify/", "datePublished": "2026-09-24", "dateModified": "2026-09-24", "image": "https://velonify.de/assets/img/velonify-wordmark.png", "articleSection": "Tracking", "wordCount": 1404, "author": {"@type": "Person", "name": "Lukas Hanke", "jobTitle": "Backend, CRM & Integrationen", "worksFor": {"@id": "https://velonify.de/#organization"}}, "publisher": {"@type": "Organization", "@id": "https://velonify.de/#organization", "name": "Velonify", "url": "https://velonify.de/", "logo": {"@type": "ImageObject", "url": "https://velonify.de/assets/img/velonify-wordmark.png"}}, "citation": ["https://help.shopify.com/en/manual/checkout-settings/customize-checkout-configurations/upgrade-thank-you-order-status", "https://shopify.dev/docs/apps/build/marketing-analytics/pixels", "https://developers.google.com/tag-platform/learn/sst-fundamentals/7-planning-infrastructure", "https://support.google.com/google-ads/answer/13695607?hl=de", "https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events"]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://velonify.de/"}, {"@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://velonify.de/ratgeber/"}, {"@type": "ListItem", "position": 3, "name": "Server-Side Tracking auf Shopify: GA4, Meta und Consent richtig aufsetzen", "item": "https://velonify.de/ratgeber/server-side-tracking-shopify/"}]}, {"@type": "FAQPage", "@id": "https://velonify.de/ratgeber/server-side-tracking-shopify/#faq", "mainEntity": [{"@type": "Question", "name": "Brauche ich mit Server-Side Tracking noch ein Cookie-Banner?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Server-Side Tracking ändert nichts an der Einwilligungspflicht für Marketing-Tracking. Das Banner muss außerdem an die Customer Privacy API von Shopify angebunden sein, damit Pixel und Apps den Consent-Status kennen."}}, {"@type": "Question", "name": "Ist ein serverseitiger Google Tag Manager Pflicht?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Die nativen Apps von Google und Meta senden bereits serverseitig. Ein eigener serverseitiger Tag Manager lohnt sich, wenn ihr viele Kanäle steuert, Daten anreichern wollt oder volle Kontrolle über den Datenstrom braucht."}}, {"@type": "Question", "name": "Was kostet Server-Side Tracking auf Shopify?", "acceptedAnswer": {"@type": "Answer", "text": "Die nativen Apps kosten nichts. Für einen serverseitigen Tag Manager bei Google Cloud rechnet Google mit rund 45 $ pro Instanz und Monat, empfohlen sind im Livebetrieb mindestens zwei bis drei Instanzen. Gehostete Anbieter sind oft günstiger. Dazu kommt die einmalige Einrichtung."}}, {"@type": "Question", "name": "Funktioniert Server-Side Tracking auch mit Shopify Basic?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Kundenereignisse, Custom Pixel und die nativen Apps stehen in allen Plänen zur Verfügung. Shopify Plus bietet nur zusätzliche Möglichkeiten im Checkout."}}, {"@type": "Question", "name": "Erfasst Server-Side Tracking alle Käufe?", "acceptedAnswer": {"@type": "Answer", "text": "Nein, und das soll es auch nicht. Käufe von Besuchern, die das Marketing-Tracking abgelehnt haben, dürfen nicht an Werbeplattformen gehen. Server-Side Tracking schließt die technischen Lücken, nicht die rechtlichen."}}]}]}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2C0E18">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/krona-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Albert Sans', 'Helvetica Neue', Arial, sans-serif; background: #FFFFFF; color: #000000; -webkit-font-smoothing: antialiased; caret-color: #45142D; }
+    h1, h2, h3, p { margin: 0; }
+    a { color: #45142D; text-decoration: none; }
+    a:hover { color: #2C0E18; }
+    ::selection { background: #45142D; color: #FFFFFF; }
+    :focus-visible { outline: 2px solid #C5D8E6; outline-offset: 3px; }
+    .on-light :focus-visible { outline-color: #45142D; }
+    html { scrollbar-color: #45142D #FFFFFF; }
+    ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: #FFFFFF; } ::-webkit-scrollbar-thumb { background: #45142D; }
+
+    /* Buttons & links */
+    .btn { transition: background-color .25s cubic-bezier(.16,1,.3,1), color .25s cubic-bezier(.16,1,.3,1), border-color .25s; }
+    .btn-ice:hover { background: #FFFFFF !important; color: #2C0E18 !important; }
+    .btn-bdx:hover { background: #2C0E18 !important; color: #FFFFFF !important; }
+    .btn-ghost-light:hover { background: #FFFFFF !important; color: #2C0E18 !important; }
+    .navlink { position: relative; }
+    .navlink::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: #C5D8E6; transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.16,1,.3,1); }
+    .navlink:hover::after { transform: scaleX(1); }
+    .arrow { transition: transform .35s cubic-bezier(.16,1,.3,1); }
+    a:hover .arrow { transform: translateX(6px); }
+
+    /* Hero load sequence */
+    @keyframes wipeUp { from { transform: translateY(105%); } to { transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    @keyframes slideFromLeft { from { transform: translate(-38%, 0); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes slideFromRight { from { transform: translate(30%, 22%); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes flash { 0%, 100% { opacity: 1; } 40% { opacity: 0; } 55% { opacity: 1; } 70% { opacity: 0; } }
+    .line { display: block; overflow: hidden; }
+    .line > span { display: block; animation: wipeUp .9s cubic-bezier(.16,1,.3,1) both; }
+    .line:nth-child(2) > span { animation-delay: .12s; }
+    .line:nth-child(3) > span { animation-delay: .24s; }
+    .hero-fade { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .45s both; }
+    .hero-fade-2 { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .6s both; }
+    .mark-a { animation: slideFromLeft 1.1s cubic-bezier(.16,1,.3,1) .2s both; }
+    .mark-b { animation: slideFromRight 1.1s cubic-bezier(.16,1,.3,1) .2s both; }
+    .blitz { animation: flash 1s steps(1) 1.3s both; }
+
+
+    /* Hero mark: slow 3D spin with light falloff and sheen */
+    @keyframes spinY { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+    @keyframes spinLight { 0%, 50%, 100% { filter: brightness(1.45); } 22%, 28%, 72%, 78% { filter: brightness(0.62); } 25%, 75% { filter: brightness(0.5); } }
+    .spin-stage { perspective: 2400px; }
+    .spin { transform-style: preserve-3d; animation: spinY 7.68s linear 1.3s infinite; will-change: transform; }
+    .spin > svg { display: block; animation: spinLight 7.68s linear 1.3s infinite; backface-visibility: visible; }
+
+    /* Ticker */
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker-track { animation: ticker 38s linear infinite; }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+
+    /* Service rows: hard bordeaux wipe on hover */
+    .svc { background: linear-gradient(#45142D, #45142D) no-repeat left top / 0% 100%; transition: background-size .5s cubic-bezier(.16,1,.3,1), color .3s; color: #000000; }
+    .svc:hover { background-size: 100% 100%; color: #FFFFFF; }
+    .svc-tags { color: #45142D; transition: color .3s; }
+    .svc:hover .svc-tags { color: #C5D8E6; }
+    .svc:hover .svc-arrow { transform: translate(6px, -6px); color: #C5D8E6; }
+    .svc-arrow { transition: transform .4s cubic-bezier(.16,1,.3,1), color .3s; }
+
+    /* Form */
+    .chip { height: 44px; padding: 0 18px; border-radius: 0; cursor: pointer; font: 600 15px 'Albert Sans', sans-serif; border: 1.5px solid rgba(255,255,255,0.45); background: transparent; color: #FFFFFF; transition: background-color .2s, border-color .2s, color .2s; }
+    .chip:hover { border-color: #C5D8E6; }
+    .chip-on { background: #C5D8E6; border-color: #C5D8E6; color: #2C0E18; }
+    .field { transition: border-color .2s, box-shadow .2s; }
+    .field:hover { border-color: #C5D8E6 !important; }
+    .field:focus { outline: none; border-color: #C5D8E6 !important; box-shadow: inset 0 -3px 0 #C5D8E6; }
+    .field::placeholder { color: rgba(255,255,255,0.55); }
+
+
+    /* Partner badges: visible on arrival, gone after a short scroll */
+    @keyframes partnerOut { to { opacity: 0; transform: translateY(24px); visibility: hidden; } }
+    .partners { position: absolute; }
+    @supports (animation-timeline: scroll()) {
+      .partners { position: fixed; }
+      .partners-inner { animation: partnerOut linear both; animation-timeline: scroll(root); animation-range: 80px 420px; }
+    }
+
+    /* Scroll-driven motion, content visible by default */
+    @supports (animation-timeline: view()) {
+      @keyframes rise { from { opacity: 0; transform: translateY(48px); } to { opacity: 1; transform: none; } }
+      @keyframes fillWord { 0% { color: transparent; } 35%, 65% { color: #45142D; } 100% { color: transparent; } }
+      @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+      @keyframes drift { from { transform: translateY(-120px) rotate(0deg); } to { transform: translateY(140px) rotate(0deg); } }
+      @keyframes growBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+      .reveal { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+      .value-word { animation: fillWord linear both; animation-timeline: view(); animation-range: cover 15% cover 85%; }
+      .route { animation: draw linear both; animation-timeline: view(); animation-range: entry 20% cover 55%; }
+      .drift { animation: drift linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+      .bar { transform-origin: left; animation: growBar linear both; animation-timeline: view(); animation-range: entry 10% cover 40%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+      .value-word { color: #45142D !important; }
+    }
+  
+    /* FAQ accordion */
+    details.faq { border-top: 1.5px solid #000000; }
+    details.faq:last-child { border-bottom: 1.5px solid #000000; }
+    details.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 28px 0; }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq .plus { transition: transform .35s cubic-bezier(.16,1,.3,1); flex-shrink: 0; }
+    details.faq[open] .plus { transform: rotate(45deg); }
+    details.faq summary:hover .q { color: #45142D; }
+    details.faq[open] .a { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; }
+    /* Mobile menu */
+    @keyframes menuIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+    .menu-panel { animation: menuIn .45s cubic-bezier(.16,1,.3,1) both; } .menu-panel[hidden] { display: none !important; }
+    .menu-link { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; } .menu-panel > * { flex-shrink: 0; }
+    .burger { background: transparent; border: 0; padding: 0; width: 48px; height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 7px; cursor: pointer; }
+    .burger span { display: block; height: 2px; background: #FFFFFF; transition: transform .35s cubic-bezier(.16,1,.3,1), width .35s; }
+
+    /* ---- v2: robust text, dropdown, values, carousel, globe ---- */
+    h1, h2, h3, p, li, span, a, label, blockquote { overflow-wrap: break-word; }
+    .line { display: block; overflow-x: visible; overflow-y: clip; padding-top: .2em; margin-top: -.2em; padding-bottom: .06em; margin-bottom: -.06em; }
+    .dd { position: relative; display: flex; align-items: center; height: 88px; }
+    .dd-trigger { display: inline-flex; align-items: center; gap: 8px; }
+    .dd-chev { transition: transform .3s cubic-bezier(.16,1,.3,1); }
+    .dd:hover .dd-chev, .dd:focus-within .dd-chev { transform: rotate(180deg); }
+    .dd-menu { position: absolute; top: 88px; left: -24px; min-width: 340px; display: none; flex-direction: column; padding: 8px 0; background: #2C0E18; border: 1px solid rgba(197,216,230,0.22); border-top: 2px solid #C5D8E6; z-index: 30; }
+    .dd:hover .dd-menu, .dd:focus-within .dd-menu { display: flex; }
+    .dd-item { display: flex; justify-content: space-between; align-items: baseline; gap: 28px; padding: 14px 24px; color: #FFFFFF; font-size: 15px; font-weight: 700; white-space: nowrap; transition: background-color .2s, color .2s; }
+    .dd-item small { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; }
+    .dd-item:hover { background: #45142D; color: #C5D8E6; }
+    .dd-all { border-top: 1px solid rgba(197,216,230,0.22); margin-top: 6px; color: #C5D8E6; }
+
+    /* Keyword rows: outlined word, fills on hover, text appears */
+    .vrow { container-type: inline-size; padding: 24px 0 28px; border-top: 1px solid rgba(0,0,0,0.14); outline-offset: -3px; }
+    .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
+    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 20px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
+    .vrow:hover .vword, .vrow:focus-within .vword, .vrow:focus .vword { color: #45142D; }
+    .vrow:hover .vtext, .vrow:focus-within .vtext, .vrow:focus .vtext { opacity: 1; transform: none; }
+    @media (hover: none) { .vtext { opacity: 1; transform: none; } .vrow:active .vword { color: #45142D; } }
+    @media (prefers-reduced-motion: reduce) { .vtext { transition: none; } }
+
+    /* Cases carousel */
+    .car { display: flex; gap: 32px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 64px 8px; scroll-padding-left: 64px; }
+    .car::-webkit-scrollbar { display: none; }
+    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px; padding: 40px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
+    .case-card:hover { background: #45142D; color: #FFFFFF; border-color: #45142D; }
+    .case-card .ck { color: #45142D; transition: color .35s; }
+    .case-card:hover .ck { color: #C5D8E6; }
+    .case-card .ct { border: 1.5px solid #000000; color: #000000; transition: border-color .35s, color .35s; }
+    .case-card:hover .ct { border-color: rgba(197,216,230,0.6); color: #C5D8E6; }
+    .case-card .clogo { filter: invert(1); transition: filter .35s; }
+    .case-card:hover .clogo { filter: none; }
+    .case-card:hover .arrow { transform: translateX(6px); }
+    .car-btn { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; padding: 0; background: transparent; border: 1.5px solid #000000; border-radius: 0; color: #000000; cursor: pointer; transition: background-color .25s, color .25s; }
+    .car-btn:hover { background: #000000; color: #FFFFFF; }
+    .globe-wrap canvas { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; }
+    @media (max-width: 500px) { .case-card { flex-basis: 300px; padding: 24px; gap: 24px; } .car { padding-left: 20px; padding-right: 20px; scroll-padding-left: 20px; gap: 16px; } .vrow { padding: 20px 0 24px; } .vword { font-size: min(44px, calc(100cqw / 8.8)); } .vtext { font-size: 17px; } }
+</style>
+<style>
+@media (max-width: 1023px) {
+html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Albert Sans', 'Helvetica Neue', Arial, sans-serif; background: #FFFFFF; color: #000000; -webkit-font-smoothing: antialiased; caret-color: #45142D; }
+    h1, h2, h3, p { margin: 0; }
+    a { color: #45142D; text-decoration: none; }
+    a:hover { color: #2C0E18; }
+    ::selection { background: #45142D; color: #FFFFFF; }
+    :focus-visible { outline: 2px solid #C5D8E6; outline-offset: 3px; }
+    .on-light :focus-visible { outline-color: #45142D; }
+    html { scrollbar-color: #45142D #FFFFFF; }
+    ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: #FFFFFF; } ::-webkit-scrollbar-thumb { background: #45142D; }
+
+    /* Buttons & links */
+    .btn { transition: background-color .25s cubic-bezier(.16,1,.3,1), color .25s cubic-bezier(.16,1,.3,1), border-color .25s; }
+    .btn-ice:hover { background: #FFFFFF !important; color: #2C0E18 !important; }
+    .btn-bdx:hover { background: #2C0E18 !important; color: #FFFFFF !important; }
+    .btn-ghost-light:hover { background: #FFFFFF !important; color: #2C0E18 !important; }
+    .navlink { position: relative; }
+    .navlink::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: #C5D8E6; transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.16,1,.3,1); }
+    .navlink:hover::after { transform: scaleX(1); }
+    .arrow { transition: transform .35s cubic-bezier(.16,1,.3,1); }
+    a:hover .arrow { transform: translateX(6px); }
+
+    /* Hero load sequence */
+    @keyframes wipeUp { from { transform: translateY(105%); } to { transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    @keyframes slideFromLeft { from { transform: translate(-38%, 0); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes slideFromRight { from { transform: translate(30%, 22%); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes flash { 0%, 100% { opacity: 1; } 40% { opacity: 0; } 55% { opacity: 1; } 70% { opacity: 0; } }
+    .line { display: block; overflow: hidden; }
+    .line > span { display: block; animation: wipeUp .9s cubic-bezier(.16,1,.3,1) both; }
+    .line:nth-child(2) > span { animation-delay: .12s; }
+    .line:nth-child(3) > span { animation-delay: .24s; }
+    .hero-fade { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .45s both; }
+    .hero-fade-2 { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .6s both; }
+    .mark-a { animation: slideFromLeft 1.1s cubic-bezier(.16,1,.3,1) .2s both; }
+    .mark-b { animation: slideFromRight 1.1s cubic-bezier(.16,1,.3,1) .2s both; }
+    .blitz { animation: flash 1s steps(1) 1.3s both; }
+
+
+    /* Hero mark: slow 3D spin with light falloff and sheen */
+    @keyframes spinY { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+    @keyframes spinLight { 0%, 50%, 100% { filter: brightness(1.45); } 22%, 28%, 72%, 78% { filter: brightness(0.62); } 25%, 75% { filter: brightness(0.5); } }
+    .spin-stage { perspective: 2400px; }
+    .spin { transform-style: preserve-3d; animation: spinY 7.68s linear 1.3s infinite; will-change: transform; }
+    .spin > svg { display: block; animation: spinLight 7.68s linear 1.3s infinite; backface-visibility: visible; }
+
+    /* Ticker */
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker-track { animation: ticker 38s linear infinite; }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+
+    /* Service rows: hard bordeaux wipe on hover */
+    .svc { background: linear-gradient(#45142D, #45142D) no-repeat left top / 0% 100%; transition: background-size .5s cubic-bezier(.16,1,.3,1), color .3s; color: #000000; }
+    .svc:hover { background-size: 100% 100%; color: #FFFFFF; }
+    .svc-tags { color: #45142D; transition: color .3s; }
+    .svc:hover .svc-tags { color: #C5D8E6; }
+    .svc:hover .svc-arrow { transform: translate(6px, -6px); color: #C5D8E6; }
+    .svc-arrow { transition: transform .4s cubic-bezier(.16,1,.3,1), color .3s; }
+
+    /* Form */
+    .chip { height: 44px; padding: 0 18px; border-radius: 0; cursor: pointer; font: 600 15px 'Albert Sans', sans-serif; border: 1.5px solid rgba(255,255,255,0.45); background: transparent; color: #FFFFFF; transition: background-color .2s, border-color .2s, color .2s; }
+    .chip:hover { border-color: #C5D8E6; }
+    .chip-on { background: #C5D8E6; border-color: #C5D8E6; color: #2C0E18; }
+    .field { transition: border-color .2s, box-shadow .2s; }
+    .field:hover { border-color: #C5D8E6 !important; }
+    .field:focus { outline: none; border-color: #C5D8E6 !important; box-shadow: inset 0 -3px 0 #C5D8E6; }
+    .field::placeholder { color: rgba(255,255,255,0.55); }
+
+
+    /* Partner badges: visible on arrival, gone after a short scroll */
+    @keyframes partnerOut { to { opacity: 0; transform: translateY(24px); visibility: hidden; } }
+    .partners { position: absolute; }
+    @supports (animation-timeline: scroll()) {
+      .partners { position: fixed; }
+      .partners-inner { animation: partnerOut linear both; animation-timeline: scroll(root); animation-range: 80px 420px; }
+    }
+
+    /* Scroll-driven motion, content visible by default */
+    @supports (animation-timeline: view()) {
+      @keyframes rise { from { opacity: 0; transform: translateY(48px); } to { opacity: 1; transform: none; } }
+      @keyframes fillWord { 0% { color: transparent; } 35%, 65% { color: #45142D; } 100% { color: transparent; } }
+      @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+      @keyframes drift { from { transform: translateY(-120px) rotate(0deg); } to { transform: translateY(140px) rotate(0deg); } }
+      @keyframes growBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+      .reveal { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+      .value-word { animation: fillWord linear both; animation-timeline: view(); animation-range: cover 15% cover 85%; }
+      .route { animation: draw linear both; animation-timeline: view(); animation-range: entry 20% cover 55%; }
+      .drift { animation: drift linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+      .bar { transform-origin: left; animation: growBar linear both; animation-timeline: view(); animation-range: entry 10% cover 40%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+      .value-word { color: #45142D !important; }
+    }
+  
+    /* FAQ accordion */
+    details.faq { border-top: 1.5px solid #000000; }
+    details.faq:last-child { border-bottom: 1.5px solid #000000; }
+    details.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 28px 0; }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq .plus { transition: transform .35s cubic-bezier(.16,1,.3,1); flex-shrink: 0; }
+    details.faq[open] .plus { transform: rotate(45deg); }
+    details.faq summary:hover .q { color: #45142D; }
+    details.faq[open] .a { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; }
+    /* Mobile menu */
+    @keyframes menuIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+    .menu-panel { animation: menuIn .45s cubic-bezier(.16,1,.3,1) both; } .menu-panel[hidden] { display: none !important; }
+    .menu-link { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; }
+    .burger { background: transparent; border: 0; padding: 0; width: 48px; height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 7px; cursor: pointer; }
+    .burger span { display: block; height: 2px; background: #FFFFFF; transition: transform .35s cubic-bezier(.16,1,.3,1), width .35s; }
+
+    /* ---- v2: robust text, dropdown, values, carousel, globe ---- */
+    h1, h2, h3, p, li, span, a, label, blockquote { overflow-wrap: break-word; }
+    .line { display: block; overflow-x: visible; overflow-y: clip; padding-top: .2em; margin-top: -.2em; padding-bottom: .06em; margin-bottom: -.06em; }
+    .dd { position: relative; display: flex; align-items: center; height: 88px; }
+    .dd-trigger { display: inline-flex; align-items: center; gap: 8px; }
+    .dd-chev { transition: transform .3s cubic-bezier(.16,1,.3,1); }
+    .dd:hover .dd-chev, .dd:focus-within .dd-chev { transform: rotate(180deg); }
+    .dd-menu { position: absolute; top: 88px; left: -24px; min-width: 340px; display: none; flex-direction: column; padding: 8px 0; background: #2C0E18; border: 1px solid rgba(197,216,230,0.22); border-top: 2px solid #C5D8E6; z-index: 30; }
+    .dd:hover .dd-menu, .dd:focus-within .dd-menu { display: flex; }
+    .dd-item { display: flex; justify-content: space-between; align-items: baseline; gap: 28px; padding: 14px 24px; color: #FFFFFF; font-size: 15px; font-weight: 700; white-space: nowrap; transition: background-color .2s, color .2s; }
+    .dd-item small { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; }
+    .dd-item:hover { background: #45142D; color: #C5D8E6; }
+    .dd-all { border-top: 1px solid rgba(197,216,230,0.22); margin-top: 6px; color: #C5D8E6; }
+
+    /* Keyword rows: outlined word, fills on hover, text appears */
+    .vrow { container-type: inline-size; padding: 24px 0 28px; border-top: 1px solid rgba(0,0,0,0.14); outline-offset: -3px; }
+    .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
+    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 20px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
+    .vrow:hover .vword, .vrow:focus-within .vword, .vrow:focus .vword { color: #45142D; }
+    .vrow:hover .vtext, .vrow:focus-within .vtext, .vrow:focus .vtext { opacity: 1; transform: none; }
+    @media (hover: none) { .vtext { opacity: 1; transform: none; } .vrow:active .vword { color: #45142D; } }
+    @media (prefers-reduced-motion: reduce) { .vtext { transition: none; } }
+
+    /* Cases carousel */
+    .car { display: flex; gap: 32px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 64px 8px; scroll-padding-left: 64px; }
+    .car::-webkit-scrollbar { display: none; }
+    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px; padding: 40px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
+    .case-card:hover { background: #45142D; color: #FFFFFF; border-color: #45142D; }
+    .case-card .ck { color: #45142D; transition: color .35s; }
+    .case-card:hover .ck { color: #C5D8E6; }
+    .case-card .ct { border: 1.5px solid #000000; color: #000000; transition: border-color .35s, color .35s; }
+    .case-card:hover .ct { border-color: rgba(197,216,230,0.6); color: #C5D8E6; }
+    .case-card .clogo { filter: invert(1); transition: filter .35s; }
+    .case-card:hover .clogo { filter: none; }
+    .case-card:hover .arrow { transform: translateX(6px); }
+    .car-btn { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; padding: 0; background: transparent; border: 1.5px solid #000000; border-radius: 0; color: #000000; cursor: pointer; transition: background-color .25s, color .25s; }
+    .car-btn:hover { background: #000000; color: #FFFFFF; }
+    .globe-wrap canvas { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; }
+    @media (max-width: 500px) { .case-card { flex-basis: 300px; padding: 24px; gap: 24px; } .car { padding-left: 20px; padding-right: 20px; scroll-padding-left: 20px; gap: 16px; } .vrow { padding: 20px 0 24px; } .vword { font-size: min(44px, calc(100cqw / 8.8)); } .vtext { font-size: 17px; } }
+    @keyframes menuIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+    .menu-panel { animation: menuIn .45s cubic-bezier(.16,1,.3,1) both; } .menu-panel[hidden] { display: none !important; }
+    .menu-link { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; }
+    .burger { background: transparent; border: 0; padding: 0; width: 48px; height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 7px; cursor: pointer; }
+    .burger span { display: block; height: 2px; background: #FFFFFF; transition: transform .35s cubic-bezier(.16,1,.3,1), width .35s; }
+    /* Mobile layout */
+    .hero-fade-2:has(> .btn) { flex-direction: column !important; align-items: stretch !important; }
+    .btn { justify-content: center; text-align: center; }
+    a.case-card[style*="flex: 1 1 0"] { flex: 1 1 100% !important; }
+    h1, h2, h3, summary { hyphens: auto; -webkit-hyphens: auto; }
+    img { max-width: 100%; height: auto; }
+    table { display: block; overflow-x: auto; }
+}
+@media (max-width: 1023px){.v-desktop{display:none!important}}@media (min-width: 1024px){.v-mobile{display:none!important}}
+.v-desktop > div{min-width:1024px!important}html.is-mobile .v-desktop,html.is-desktop .v-mobile{display:none!important}
+</style>
+<script src="/assets/js/site.js?v=3"></script>
+<script src="/assets/js/gsap.min.js"></script>
+<script src="/assets/js/ScrollTrigger.min.js"></script>
+<script src="/assets/js/SplitText.min.js"></script>
+<script src="/assets/js/ScrambleTextPlugin.min.js"></script>
+<script src="/assets/js/Draggable.min.js"></script>
+<script src="/assets/js/InertiaPlugin.min.js"></script>
+<script src="/assets/js/lenis.min.js"></script>
+<script src="/assets/js/velonify-motion.js?v=2"></script>
+<style>
+/* Ratgeber / Guides: one responsive layout, header and menu come from the regular pages */
+.rg-bar { position: sticky; top: 0; z-index: 20; }
+.rg-bar > div { width: 100%; }
+.rg-skip { position: absolute; left: 16px; top: -60px; z-index: 50; background: #C5D8E6; color: #2C0E18; padding: 12px 18px; font-weight: 700; }
+.rg-skip:focus { top: 12px; }
+main { display: block; }
+.rg-wrap { box-sizing: border-box; width: 100%; max-width: 1288px; margin: 0 auto; padding: 0 64px; }
+
+/* Hero */
+.rg-hero { position: relative; background: #2C0E18; color: #FFFFFF; padding: 72px 0 80px; overflow: hidden; }
+.rg-hero .mark-a { position: absolute; right: -160px; bottom: -200px; width: 560px; height: auto; }
+.rg-hero-in { position: relative; display: flex; flex-direction: column; gap: 28px; }
+.rg-crumbs { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; font-weight: 600; }
+.rg-crumbs a { color: rgba(255,255,255,0.75); }
+.rg-crumbs a:hover { color: #FFFFFF; }
+.rg-crumbs span[aria-current] { color: #FFFFFF; }
+.rg-dot { width: 6px; height: 6px; background: #C5D8E6; flex-shrink: 0; }
+.rg-eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C5D8E6; }
+.rg-hero h1 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 46px; line-height: 1.15; max-width: 1040px; text-wrap: balance; }
+.rg-lead { font-size: 20px; line-height: 1.6; max-width: 720px; color: rgba(255,255,255,0.85); }
+.rg-meta { display: flex; align-items: center; gap: 16px; }
+.rg-meta p { display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.8); }
+.rg-meta strong { color: #FFFFFF; }
+.rg-avatar { width: 52px; height: 52px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #C5D8E6; color: #2C0E18; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 15px; }
+
+/* Body: table of contents + article */
+.rg-body { display: grid; grid-template-columns: 240px minmax(0, 760px); gap: 80px; padding-top: 72px; padding-bottom: 96px; }
+.rg-toc { position: sticky; top: 120px; align-self: start; }
+.rg-toc summary { list-style: none; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D; padding-bottom: 16px; border-bottom: 1.5px solid #000000; pointer-events: none; }
+.rg-toc summary::-webkit-details-marker { display: none; }
+.rg-toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+.rg-toc li { counter-increment: toc; border-bottom: 1px solid rgba(0,0,0,0.12); }
+.rg-toc a { display: grid; grid-template-columns: 28px 1fr; padding: 12px 0; font-size: 14px; line-height: 1.45; font-weight: 600; color: #000000; }
+.rg-toc a::before { content: counter(toc, decimal-leading-zero); color: #45142D; font-weight: 700; font-size: 12px; padding-top: 2px; }
+.rg-toc a:hover { color: #45142D; }
+
+.rg-article { font-size: 18px; line-height: 1.7; color: #000000; min-width: 0; }
+.rg-article p { margin: 0 0 20px; }
+.rg-article a { color: #45142D; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; }
+.rg-article a:hover { color: #2C0E18; background: rgba(197,216,230,0.45); }
+.rg-article strong { font-weight: 700; }
+.rg-article code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 0.86em; background: rgba(197,216,230,0.4); padding: 2px 6px; }
+.rg-sec { margin-top: 64px; }
+.rg-sec h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.25; color: #2C0E18; margin: 0 0 24px; scroll-margin-top: 120px; text-wrap: balance; }
+.rg-sec h3 { font-size: 21px; line-height: 1.35; font-weight: 800; margin: 36px 0 12px; scroll-margin-top: 120px; }
+.rg-article ul, .rg-article ol { margin: 0 0 24px; padding: 0; list-style: none; }
+.rg-article ul li { position: relative; padding-left: 26px; margin-bottom: 12px; }
+.rg-article ul li::before { content: ""; position: absolute; left: 2px; top: 0.72em; width: 7px; height: 7px; background: #45142D; }
+.rg-article ol { counter-reset: step; }
+.rg-article ol li { counter-increment: step; position: relative; padding-left: 48px; margin-bottom: 16px; }
+.rg-article ol li::before { content: counter(step); position: absolute; left: 0; top: 2px; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background: #45142D; color: #FFFFFF; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 13px; line-height: 1; }
+
+.rg-summary { background: rgba(197,216,230,0.35); border-left: 5px solid #45142D; padding: 28px 32px; }
+.rg-summary p { margin: 0; }
+.rg-summary .rg-label, .rg-author-label { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D; margin-bottom: 10px; }
+.rg-summary p + p { font-size: 19px; line-height: 1.65; font-weight: 500; }
+
+.rg-table { overflow-x: auto; margin: 8px 0 28px; border: 1.5px solid #000000; }
+.rg-table:focus-visible { outline: 2px solid #45142D; outline-offset: 2px; }
+.rg-table table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
+.rg-table th { background: #2C0E18; color: #FFFFFF; text-align: left; font-weight: 700; padding: 14px 16px; vertical-align: bottom; }
+.rg-table td { padding: 14px 16px; border-top: 1px solid rgba(0,0,0,0.14); vertical-align: top; }
+.rg-table td:first-child { font-weight: 700; }
+.rg-table tbody tr:nth-child(even) td { background: rgba(197,216,230,0.18); }
+
+/* FAQ */
+.rg-faq { border-top: 1.5px solid #000000; }
+.rg-faq:last-child { border-bottom: 1.5px solid #000000; }
+.rg-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; }
+.rg-faq summary::-webkit-details-marker { display: none; }
+.rg-faq summary h3 { margin: 0; font-size: 19px; line-height: 1.4; font-weight: 700; }
+.rg-faq summary:hover h3 { color: #45142D; }
+.rg-plus { position: relative; width: 18px; height: 18px; flex-shrink: 0; transition: transform .35s cubic-bezier(.16,1,.3,1); }
+.rg-plus::before, .rg-plus::after { content: ""; position: absolute; background: #45142D; }
+.rg-plus::before { left: 0; right: 0; top: 8px; height: 2px; }
+.rg-plus::after { top: 0; bottom: 0; left: 8px; width: 2px; }
+.rg-faq[open] .rg-plus { transform: rotate(45deg); }
+.rg-faq-a { padding: 0 48px 12px 0; }
+
+/* Author, sources */
+.rg-author { display: flex; gap: 20px; margin-top: 72px; padding: 28px 32px; background: #2C0E18; color: rgba(255,255,255,0.85); font-size: 16px; line-height: 1.6; }
+.rg-author p { margin: 0; }
+.rg-author .rg-author-label { color: #C5D8E6; margin-bottom: 6px; }
+.rg-author-name { font-family: 'Krona One', 'Arial Narrow', sans-serif; text-transform: uppercase; color: #FFFFFF; font-size: 17px; }
+.rg-author-role { color: #C5D8E6; font-weight: 600; margin-bottom: 8px !important; }
+.rg-sources { margin-top: 48px; }
+.rg-sources h2 { font-family: 'Albert Sans', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: #45142D; margin-bottom: 12px; }
+.rg-sources ul li { font-size: 15px; margin-bottom: 8px; }
+
+/* CTA */
+.rg-cta { background: #45142D; color: #FFFFFF; padding: 88px 0; }
+.rg-cta h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 40px; line-height: 1.15; margin-bottom: 20px; }
+.rg-cta p { font-size: 19px; line-height: 1.6; max-width: 680px; color: rgba(255,255,255,0.85); margin-bottom: 36px; }
+.rg-cta-row { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+.rg-btn { display: inline-flex; align-items: center; gap: 12px; height: 60px; padding: 0 30px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700; }
+.rg-cta-link { display: inline-flex; align-items: center; gap: 10px; color: #FFFFFF; font-weight: 700; font-size: 16px; border-bottom: 2px solid #C5D8E6; padding-bottom: 4px; }
+.rg-cta-link:hover { color: #C5D8E6; }
+
+/* Cards */
+.rg-related { padding: 88px 0 104px; }
+.rg-related h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 30px; color: #2C0E18; margin-bottom: 32px; }
+.rg-list { padding: 72px 0 104px; }
+.rg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.rg-grid-index { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.rg-card { display: flex; flex-direction: column; gap: 14px; padding: 32px; border: 1.5px solid #000000; color: #000000; background: linear-gradient(#45142D, #45142D) no-repeat left top / 0% 100%; transition: background-size .5s cubic-bezier(.16,1,.3,1), color .3s; }
+.rg-card:hover { background-size: 100% 100%; color: #FFFFFF; }
+.rg-card-cat { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D; transition: color .3s; }
+.rg-card:hover .rg-card-cat, .rg-card:hover .rg-card-go { color: #C5D8E6; }
+.rg-card h3 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 20px; line-height: 1.3; text-wrap: balance; }
+.rg-card-desc { font-size: 16px; line-height: 1.6; }
+.rg-card-meta { font-size: 14px; opacity: 0.75; margin-top: auto !important; }
+.rg-card-go { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: #45142D; transition: color .3s; }
+
+/* Footer */
+.rg-footer { background: #2C0E18; color: #FFFFFF; padding: 36px 64px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+.rg-footer nav { display: flex; gap: 32px; flex-wrap: wrap; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.rg-footer nav a { color: #FFFFFF; }
+.rg-social { display: flex; align-items: center; gap: 16px; }
+.rg-social a { color: #FFFFFF; display: flex; }
+.rg-social span { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+
+@media (max-width: 1180px) {
+  .rg-grid-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rg-body { grid-template-columns: 200px minmax(0, 1fr); gap: 56px; }
+}
+@media (max-width: 1023px) {
+  .rg-wrap { padding: 0 20px; }
+  .rg-hero { padding: 36px 0 44px; }
+  .rg-hero .mark-a { right: -80px; bottom: -100px; width: 308px; }
+  .rg-hero-in { gap: 20px; }
+  .rg-hero h1 { font-size: 27px; line-height: 1.2; }
+  .rg-lead { font-size: 17px; }
+  .rg-meta p { font-size: 14px; }
+  .rg-avatar { width: 44px; height: 44px; font-size: 13px; }
+  .rg-body { display: block; padding-top: 32px; padding-bottom: 64px; }
+  .rg-toc { position: static; margin-bottom: 32px; border: 1.5px solid #000000; }
+  .rg-toc summary { pointer-events: auto; cursor: pointer; padding: 16px 18px; border-bottom: 0; display: flex; justify-content: space-between; }
+  .rg-toc summary::after { content: "+"; font-size: 18px; line-height: 1; }
+  .rg-toc details[open] summary::after { content: "–"; }
+  .rg-toc ol { padding: 0 18px 8px; }
+  .rg-toc li:last-child { border-bottom: 0; }
+  .rg-article { font-size: 17px; }
+  .rg-summary { padding: 22px 20px; }
+  .rg-summary p + p { font-size: 17px; }
+  .rg-sec { margin-top: 48px; }
+  .rg-sec h2 { font-size: 20px; scroll-margin-top: 90px; }
+  .rg-sec h3 { font-size: 19px; scroll-margin-top: 90px; }
+  .rg-table table { font-size: 14px; min-width: 560px; }
+  .rg-faq summary h3 { font-size: 17px; }
+  .rg-faq-a { padding-right: 0; }
+  .rg-author { flex-direction: column; padding: 24px 20px; margin-top: 56px; }
+  .rg-cta { padding: 56px 0; }
+  .rg-cta h2 { font-size: 26px; }
+  .rg-cta p { font-size: 17px; }
+  .rg-btn { width: 100%; justify-content: center; height: 58px; }
+  .rg-related { padding: 56px 0 64px; }
+  .rg-related h2 { font-size: 22px; }
+  .rg-list { padding: 40px 0 64px; }
+  .rg-grid, .rg-grid-index { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .rg-card { padding: 24px 20px; }
+  .rg-card h3 { font-size: 18px; }
+  .rg-footer { padding: 36px 20px; gap: 20px; }
+  .rg-footer nav { gap: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-card { transition: none; }
+}
+
+</style>
+</head>
+<body>
+<a class="rg-skip" href="#inhalt">Zum Inhalt springen</a>
+<div class="v v-desktop rg-bar"><div>
+<header style="position: sticky; top: 0; z-index: 20; height: 88px; box-sizing: border-box; padding: 0 64px; display: flex; align-items: center; justify-content: space-between; background: #2C0E18; border-bottom: 1px solid rgba(197,216,230,0.14);">
+    <a href="/" aria-label="Velonify Startseite" style="display: flex; align-items: center; gap: 14px; color: #FFFFFF;">
+      <svg width="38" height="25" viewBox="0 44 1278 813" fill="#C5D8E6" aria-hidden="true"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
+      <img src="/assets/img/velonify-wordmark.png" alt="Velonify" style="height: 18px; width: auto;">
+    </a>
+    <nav aria-label="Hauptnavigation" style="display: flex; align-items: center; gap: 40px; font-size: 15px; font-weight: 600;">
+      <div class="dd"><a class="navlink dd-trigger" href="/#leistungen" aria-haspopup="true" style="color: #FFFFFF;">Leistungen <svg class="dd-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1 L5 5 L9 1"></path></svg></a><div class="dd-menu"><a class="dd-item" href="/leistungen/shopify-migration/"><span>Shopify-Migration</span></a><a class="dd-item" href="/leistungen/tracking/"><span>Tracking & Attribution</span></a><a class="dd-item" href="/leistungen/performance-marketing/"><span>Performance Marketing</span></a><a class="dd-item" href="/leistungen/e-mail-marketing/"><span>E-Mail & Retention</span></a><a class="dd-item" href="/leistungen/conversion-optimierung/"><span>Conversion-Optimierung</span></a></div></div>
+      <div class="dd"><a class="navlink dd-trigger" href="/#cases" aria-haspopup="true" style="color: #FFFFFF;">Cases <svg class="dd-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1 L5 5 L9 1"></path></svg></a><div class="dd-menu"><a class="dd-item" href="/cases/blue-fire/"><span>Blue Fire Co.</span><small>Denim & Mode</small></a><a class="dd-item" href="/cases/storz-bickel/"><span>Storz & Bickel</span><small>Premium-Hardware</small></a><a class="dd-item" href="/cases/pretty-woman/"><span>Pretty Woman Brautmoden</span><small>Brautmode</small></a></div></div>
+      <a class="navlink" href="/ratgeber/" aria-current="page" style="color: #C5D8E6;">Ratgeber</a>
+      <a class="navlink" href="/#kontakt" style="color: #FFFFFF;">Kontakt</a>
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.08em;">
+        <a href="#top" style="color: #C5D8E6;">DE</a>
+        <span style="width: 1px; height: 14px; background: rgba(255,255,255,0.35);"></span>
+        <a href="/en/guides/shopify-server-side-tracking/" style="color: rgba(255,255,255,0.75);">EN</a>
+      </div>
+      <a class="btn btn-ice" href="/#kontakt" style="display: flex; align-items: center; height: 48px; padding: 0 22px; background: #C5D8E6; color: #2C0E18; font-weight: 700;">Projekt anfragen</a>
+    </nav>
+  </header>
+</div></div>
+<div class="v v-mobile rg-bar"><div>
+<header style="position: sticky; top: 0; z-index: 20; height: 68px; box-sizing: border-box; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; background: #2C0E18; border-bottom: 1px solid rgba(197,216,230,0.14);">
+    <a href="/" aria-label="Velonify Startseite" style="display: flex; align-items: center; gap: 10px;">
+      <svg width="30" height="20" viewBox="0 44 1278 813" fill="#C5D8E6" aria-hidden="true"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
+      <img src="/assets/img/velonify-wordmark.png" alt="Velonify" style="height: 14px; width: auto;">
+    </a>
+    <button class="burger" type="button" data-labels="Menü öffnen|Menü schließen" aria-label="Menü öffnen" aria-expanded="false">
+      <span style="width: 28px; transform: none;"></span>
+      <span style="width: 20px;"></span>
+      <span style="width: 20px; transform: none;"></span>
+    </button>
+  </header>
+
+  
+    <nav class="menu-panel" hidden aria-label="Hauptnavigation" style="position: fixed; top: 68px; left: 0; right: 0; bottom: 0; z-index: 19; background: #2C0E18; padding: 24px 20px; display: flex; flex-direction: column; gap: 0; overflow-y: auto;">
+      
+        <a class="menu-link" href="/#leistungen" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.06s;">Leistungen</a>
+      
+        <a class="menu-link" href="/leistungen/shopify-migration/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.1s;">Shopify-Migration</a>
+      
+        <a class="menu-link" href="/leistungen/tracking/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.14s;">Tracking &amp; Attribution</a>
+      
+        <a class="menu-link" href="/leistungen/performance-marketing/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.18s;">Performance Marketing</a>
+      
+        <a class="menu-link" href="/leistungen/e-mail-marketing/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.22s;">E-Mail &amp; Retention</a>
+      
+        <a class="menu-link" href="/leistungen/conversion-optimierung/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.26s;">Conversion-Optimierung</a>
+      
+        <a class="menu-link" href="/#cases" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.3s;">Cases</a>
+      
+        <a class="menu-link" href="/cases/blue-fire/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.34s;">Blue Fire Co.</a>
+      
+        <a class="menu-link" href="/cases/storz-bickel/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.38s;">Storz &amp; Bickel</a>
+      
+        <a class="menu-link" href="/cases/pretty-woman/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.42s;">Pretty Woman Brautmoden</a>
+      
+        <a class="menu-link" href="/ratgeber/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.46s;">Ratgeber</a>
+      
+        <a class="menu-link" href="/#kontakt" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.5s;">Kontakt</a>
+      
+      <div style="display: flex; gap: 16px; margin-top: 20px; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; flex-wrap: wrap;">
+        <a href="#top" aria-current="page" style="color: #C5D8E6;">DE</a>
+        <a href="/en/guides/shopify-server-side-tracking/" style="color: rgba(255,255,255,0.75);">EN</a>
+      </div>
+      <a class="btn btn-ice" href="/#kontakt" style="margin-top: auto; display: flex; align-items: center; justify-content: center; height: 58px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Projekt anfragen</a>
+    </nav>
+</div></div>
+<main>
+<section id="top" class="rg-hero">
+<svg class="mark-a" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
+<div class="rg-wrap rg-hero-in">
+<nav aria-label="Brotkrumen" class="rg-crumbs"><a href="/">Start</a><span class="rg-dot" aria-hidden="true"></span><a href="/ratgeber/">Ratgeber</a><span class="rg-dot" aria-hidden="true"></span><span aria-current="page">Server-Side Tracking auf Shopify: GA4, Meta und Consent richtig aufsetzen</span></nav>
+<p class="rg-eyebrow">Tracking</p>
+<h1>Server-Side Tracking auf Shopify: GA4, Meta und Consent richtig aufsetzen</h1>
+<div class="rg-meta"><div class="rg-avatar" aria-hidden="true">LH</div><p><span>Von <strong>Lukas Hanke</strong>, Backend, CRM &amp; Integrationen</span><span>Stand: <time datetime="2026-09-24">24. September 2026</time> · 8 Min. Lesezeit</span></p></div>
+</div>
+</section>
+<div id="inhalt" class="rg-wrap rg-body">
+<nav class="rg-toc" aria-label="Inhalt"><details class="rg-toc-box" open><summary>Inhalt</summary><ol><li><a href="#was-ist-server-side-tracking">Was ist Server-Side Tracking?</a></li><li><a href="#warum-browser-tracking-allein-kaeufe-verliert">Warum Browser-Tracking allein Käufe verliert</a></li><li><a href="#was-sich-2026-bei-shopify-geaendert-hat">Was sich 2026 bei Shopify geändert hat</a></li><li><a href="#drei-wege-zum-serverseitigen-tracking-auf-shopify">Drei Wege zum serverseitigen Tracking auf Shopify</a></li><li><a href="#consent-was-serverseitig-erlaubt-ist">Consent: Was serverseitig erlaubt ist</a></li><li><a href="#deduplizierung-warum-kaeufe-nicht-doppelt-zaehlen-duerfen">Deduplizierung: Warum Käufe nicht doppelt zählen dürfen</a></li><li><a href="#einrichtung-schritt-fuer-schritt">Einrichtung Schritt für Schritt</a></li><li><a href="#wie-ihr-prueft-ob-euer-tracking-funktioniert">Wie ihr prüft, ob euer Tracking funktioniert</a></li><li><a href="#haeufige-fragen">Häufige Fragen</a></li><li><a href="#quellen">Quellen</a></li></ol></details></nav>
+<article class="rg-article">
+<div class="rg-summary"><p class="rg-label">Kurz gesagt</p><p>Beim Server-Side Tracking schickt ein Server die Conversion-Daten an GA4, Meta und Google Ads, nicht nur der Browser des Kunden. Dadurch gehen weniger Käufe durch Adblocker, Browser-Beschränkungen und Zahlungs-Weiterleitungen verloren. Auf Shopify gibt es drei Wege: die nativen Apps von Google und Meta, ein Custom Pixel mit serverseitigem Google Tag Manager oder eine spezialisierte Tracking-App. Die Einwilligung der Besucher bleibt Pflicht, serverseitig ersetzt kein Cookie-Banner. Seit dem 26. August 2026 laufen auf Shopify-Shops ohne Plus keine „Zusätzlichen Skripte“ auf der Danke-Seite mehr, deshalb solltet ihr eure Kauf-Events jetzt prüfen.</p></div>
+<section class="rg-sec" aria-labelledby="was-ist-server-side-tracking"><h2 id="was-ist-server-side-tracking">Was ist Server-Side Tracking?</h2><p>Beim klassischen Tracking lädt der Browser eures Kunden Skripte von Google, Meta oder TikTok und schickt jedes Ereignis direkt an diese Plattformen: Seitenaufruf, Warenkorb, Kauf. Beim Server-Side Tracking landen die Ereignisse zuerst auf einem Server, den ihr kontrolliert, oder werden direkt von Shopify an die Plattformen übermittelt. Von dort gehen sie über die offiziellen Server-Schnittstellen weiter, etwa die Meta Conversions API oder das Google-Tag-Manager-Serverprodukt.</p>
+<p>Der Unterschied in einem Satz: Browser-Tracking hängt davon ab, was im Browser des Kunden funktioniert. Server-Side Tracking hängt davon ab, was auf eurem Server passiert.</p></section><section class="rg-sec" aria-labelledby="warum-browser-tracking-allein-kaeufe-verliert"><h2 id="warum-browser-tracking-allein-kaeufe-verliert">Warum Browser-Tracking allein Käufe verliert</h2><ul><li><strong>Adblocker und Tracking-Schutz.</strong> Viele Browser und Erweiterungen blockieren bekannte Tracking-Domains. Das Ereignis verlässt den Browser dann gar nicht erst.</li><li><strong>Kurze Cookie-Laufzeiten.</strong> Safari begrenzt Cookies, die per JavaScript gesetzt werden, auf sieben Tage. Wer am Montag auf eine Anzeige klickt und am übernächsten Dienstag kauft, ist für die Plattform ein neuer Besucher.</li><li><strong>Zahlungs-Weiterleitungen.</strong> Bei PayPal, Klarna oder Shop Pay verlässt der Kunde kurz euren Shop. Kommt er nicht auf die Danke-Seite zurück, fehlt das Kauf-Event im Browser.</li><li><strong>Sandbox bei Shopify.</strong> Pixel über die Shopify-Kundenereignisse laufen in einer abgeschotteten Umgebung. Das ist gut für Sicherheit und Datenschutz, macht Browser-Tracking aber nicht robuster.</li></ul>
+<p>Die Folge: Werbeplattformen sehen weniger Käufe, als tatsächlich stattfinden. Ihre Algorithmen optimieren dann auf ein unvollständiges Bild, und ihr bewertet Kampagnen auf falschen Zahlen.</p></section><section class="rg-sec" aria-labelledby="was-sich-2026-bei-shopify-geaendert-hat"><h2 id="was-sich-2026-bei-shopify-geaendert-hat">Was sich 2026 bei Shopify geändert hat</h2><p>Shopify hat die alten Wege, eigenen Code in den Checkout und auf die Danke-Seite einzubauen, abgeschaltet:</p>
+<div class="rg-table" role="region" tabindex="0"><table><thead><tr><th scope="col">Plan</th><th scope="col">Stichtag</th><th scope="col">Was wegfällt</th></tr></thead><tbody><tr><td>Shopify Plus</td><td>28. August 2025</td><td><code>checkout.liquid</code>, Zusätzliche Skripte, Script-Tags auf Danke- und Bestellstatusseite</td></tr><tr><td>Basic, Grow, Advanced</td><td>26. August 2026</td><td>Zusätzliche Skripte und Script-Tag-Apps auf Danke- und Bestellstatusseite</td></tr></tbody></table></div>
+<p>Shops, die nicht selbst umgestellt haben, wurden automatisch umgestellt. Dabei wurde der Inhalt der Zusätzlichen Skripte entfernt, und das lässt sich nicht rückgängig machen. Wenn euer Kauf-Tracking für Google Ads, Meta oder ein Affiliate-Netzwerk dort lag, fehlen die Käufe seitdem womöglich in euren Werbekonten.</p>
+<p><strong>So prüft ihr es in fünf Minuten:</strong> Öffnet in Shopify Einstellungen → Kundenereignisse und schaut, welche Pixel dort aktiv sind. Vergleicht dann für die letzten sieben Tage die Zahl der Bestellungen in Shopify mit den Käufen in GA4, im Meta Events Manager und in Google Ads. Liegt eine Plattform seit Ende August deutlich darunter, ist das euer Hinweis.</p></section><section class="rg-sec" aria-labelledby="drei-wege-zum-serverseitigen-tracking-auf-shopify"><h2 id="drei-wege-zum-serverseitigen-tracking-auf-shopify">Drei Wege zum serverseitigen Tracking auf Shopify</h2><div class="rg-table" role="region" tabindex="0"><table><thead><tr><th scope="col">Weg</th><th scope="col">Was er kann</th><th scope="col">Aufwand und Kosten</th><th scope="col">Passt für</th></tr></thead><tbody><tr><td>Native Apps von Google und Meta</td><td>GA4, Google-Ads-Conversions, Meta Conversions API, direkt von Shopify gesendet</td><td>Gering, die Apps sind kostenlos</td><td>Shops mit ein bis zwei Werbekanälen und wenig Sonderwünschen</td></tr><tr><td>Custom Pixel mit serverseitigem Google Tag Manager</td><td>Ein Datenstrom für alle Plattformen, volle Kontrolle, Anreicherung etwa mit Marge oder Neukunden-Kennzeichen</td><td>Einrichtung plus Hosting. Google rechnet mit rund 45 $ pro Server-Instanz und Monat und empfiehlt für den Livebetrieb mindestens zwei bis drei Instanzen. Gehostete Anbieter sind oft günstiger.</td><td>Shops mit mehreren Kanälen, eigenem Reporting oder hohem Werbebudget</td></tr><tr><td>Spezialisierte Tracking-App</td><td>Vorgefertigte Server-Anbindungen für viele Plattformen</td><td>Monatliche App-Gebühr, meist gestaffelt nach Bestellungen</td><td>Shops, die schnell viele Kanäle anbinden wollen, ohne eigene Infrastruktur</td></tr></tbody></table></div>
+<p><strong>Unsere Empfehlung:</strong> Startet mit den nativen Apps und aktiviert bei Meta die maximale Datenfreigabe, die die Conversions API nutzt. Das deckt bei vielen Shops den Großteil ab. Den serverseitigen Tag Manager lohnt es sich aufzusetzen, sobald ihr mehr als zwei Werbekanäle steuert, nach Marge statt nach Umsatz optimieren wollt oder die Zahlen trotz nativer Apps deutlich auseinanderlaufen.</p></section><section class="rg-sec" aria-labelledby="consent-was-serverseitig-erlaubt-ist"><h2 id="consent-was-serverseitig-erlaubt-ist">Consent: Was serverseitig erlaubt ist</h2><p>Server-Side Tracking ist kein Weg um die Einwilligung herum. In Deutschland regelt § 25 TDDDG den Zugriff auf das Endgerät, die DSGVO die Verarbeitung der personenbezogenen Daten. Wer ohne Einwilligung Marketing-Daten serverseitig weiterleitet, hat dasselbe rechtliche Problem wie mit einem Browser-Pixel.</p>
+<p>Für Shopify heißt das konkret:</p>
+<ul><li><strong>Das Cookie-Banner muss an die Customer Privacy API von Shopify angebunden sein.</strong> Nur dann wissen Shopify-Pixel und native Apps, was der Besucher erlaubt hat.</li><li><strong>Google Consent Mode v2 ist für Traffic aus dem EWR Pflicht.</strong> Seit März 2024 verlangt Google die Signale <code>ad_user_data</code> und <code>ad_personalization</code>. Ohne sie fehlen Remarketing-Listen und ein Teil der Conversion-Messung.</li><li><strong>Serverseitige Events tragen den Consent-Status mit.</strong> Im serverseitigen Tag Manager entscheidet ihr pro Plattform, was bei abgelehnter Einwilligung gesendet wird und was nicht.</li></ul>
+<p>Das ist keine Rechtsberatung. Stimmt das Setup mit eurem Datenschutzbeauftragten ab, bevor ihr live geht.</p></section><section class="rg-sec" aria-labelledby="deduplizierung-warum-kaeufe-nicht-doppelt-zaehlen-duerfen"><h2 id="deduplizierung-warum-kaeufe-nicht-doppelt-zaehlen-duerfen">Deduplizierung: Warum Käufe nicht doppelt zählen dürfen</h2><p>Wenn Browser und Server dasselbe Ereignis melden, muss die Plattform erkennen, dass es nur ein Kauf war. Meta gleicht dafür den Event-Namen und eine gemeinsame <code>event_id</code> ab, die im Browser- und im Server-Event identisch sein muss. GA4 zählt Käufe mit derselben <code>transaction_id</code> nur einmal. Fehlt diese Verknüpfung, meldet euer Werbekonto plötzlich deutlich mehr Käufe als Shopify, und die Kampagnen-Steuerung wird genauso falsch wie vorher, nur in die andere Richtung.</p></section><section class="rg-sec" aria-labelledby="einrichtung-schritt-fuer-schritt"><h2 id="einrichtung-schritt-fuer-schritt">Einrichtung Schritt für Schritt</h2><ol><li><strong>Bestand aufnehmen.</strong> Welche Pixel laufen heute, wo sind sie eingebaut (Theme, Kundenereignisse, Apps), welche Conversions zählen die Werbekonten?</li><li><strong>Altlasten entfernen.</strong> Doppelte Pixel im Theme und in Apps sind die häufigste Ursache für falsche Zahlen.</li><li><strong>Consent anbinden.</strong> Cookie-Banner mit der Customer Privacy API verbinden und Consent Mode v2 aktivieren.</li><li><strong>Native Kanäle einrichten.</strong> Google-&amp;-YouTube-App für GA4 und Google Ads, Facebook-&amp;-Instagram-App mit maximaler Datenfreigabe.</li><li><strong>Bei Bedarf ein Custom Pixel mit serverseitigem Tag Manager ergänzen</strong>, etwa für weitere Plattformen oder angereicherte Daten.</li><li><strong>Deduplizierung prüfen.</strong> Eine Testbestellung durchführen und im Meta Events Manager und in GA4 nachsehen, ob sie genau einmal ankommt.</li><li><strong>Abgleichen.</strong> Eine Woche lang Bestellungen in Shopify mit Käufen in GA4 und den Werbekonten vergleichen.</li><li><strong>Dokumentieren.</strong> Welches Event geht wohin, mit welchen Parametern. Das spart beim nächsten App-Wechsel Tage.</li></ol></section><section class="rg-sec" aria-labelledby="wie-ihr-prueft-ob-euer-tracking-funktioniert"><h2 id="wie-ihr-prueft-ob-euer-tracking-funktioniert">Wie ihr prüft, ob euer Tracking funktioniert</h2><ul><li><strong>Shopify gegen GA4.</strong> Die Zahl der Käufe in GA4 wird nie exakt der Zahl der Bestellungen entsprechen, weil nicht jeder Besucher einwilligt. Große oder plötzlich wachsende Lücken zeigen aber, dass Events fehlen.</li><li><strong>Meta Events Manager.</strong> Hier seht ihr, ob Browser- und Server-Events ankommen, ob sie dedupliziert werden und wie gut Meta die Events Personen zuordnen kann (Event Match Quality).</li><li><strong>Google Ads.</strong> Die Conversion-Diagnose zeigt, ob erweiterte Conversions aktiv sind und Daten empfangen.</li><li><strong>Nach jeder Änderung testen.</strong> Neue Apps, Theme-Updates und Checkout-Anpassungen sind die typischen Momente, in denen Tracking unbemerkt bricht.</li></ul></section><section class="rg-sec" aria-labelledby="haeufige-fragen"><h2 id="haeufige-fragen">Häufige Fragen</h2><details class="rg-faq"><summary><h3>Brauche ich mit Server-Side Tracking noch ein Cookie-Banner?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Ja. Server-Side Tracking ändert nichts an der Einwilligungspflicht für Marketing-Tracking. Das Banner muss außerdem an die Customer Privacy API von Shopify angebunden sein, damit Pixel und Apps den Consent-Status kennen.</p></div></details><details class="rg-faq"><summary><h3>Ist ein serverseitiger Google Tag Manager Pflicht?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Nein. Die nativen Apps von Google und Meta senden bereits serverseitig. Ein eigener serverseitiger Tag Manager lohnt sich, wenn ihr viele Kanäle steuert, Daten anreichern wollt oder volle Kontrolle über den Datenstrom braucht.</p></div></details><details class="rg-faq"><summary><h3>Was kostet Server-Side Tracking auf Shopify?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Die nativen Apps kosten nichts. Für einen serverseitigen Tag Manager bei Google Cloud rechnet Google mit rund 45 $ pro Instanz und Monat, empfohlen sind im Livebetrieb mindestens zwei bis drei Instanzen. Gehostete Anbieter sind oft günstiger. Dazu kommt die einmalige Einrichtung.</p></div></details><details class="rg-faq"><summary><h3>Funktioniert Server-Side Tracking auch mit Shopify Basic?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Ja. Kundenereignisse, Custom Pixel und die nativen Apps stehen in allen Plänen zur Verfügung. Shopify Plus bietet nur zusätzliche Möglichkeiten im Checkout.</p></div></details><details class="rg-faq"><summary><h3>Erfasst Server-Side Tracking alle Käufe?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Nein, und das soll es auch nicht. Käufe von Besuchern, die das Marketing-Tracking abgelehnt haben, dürfen nicht an Werbeplattformen gehen. Server-Side Tracking schließt die technischen Lücken, nicht die rechtlichen.</p></div></details></section><aside class="rg-author"><div class="rg-avatar" aria-hidden="true">LH</div><div><p class="rg-author-label">Über den Autor</p><p class="rg-author-name">Lukas Hanke</p><p class="rg-author-role">Backend, CRM &amp; Integrationen</p><p>Verbindet Shop, CRM und Drittsysteme über stabile Schnittstellen.</p></div></aside><section class="rg-sec rg-sources" aria-labelledby="quellen"><h2 id="quellen">Quellen</h2><ul><li><a href="https://help.shopify.com/en/manual/checkout-settings/customize-checkout-configurations/upgrade-thank-you-order-status" target="_blank" rel="noopener">Shopify Help Center: Upgrade der Danke- und Bestellstatusseiten</a></li><li><a href="https://shopify.dev/docs/apps/build/marketing-analytics/pixels" target="_blank" rel="noopener">Shopify Developer: Web Pixels und Kundenereignisse</a></li><li><a href="https://developers.google.com/tag-platform/learn/sst-fundamentals/7-planning-infrastructure" target="_blank" rel="noopener">Google: Server-side Tagging, Infrastruktur und Kosten</a></li><li><a href="https://support.google.com/google-ads/answer/13695607?hl=de" target="_blank" rel="noopener">Google Ads Hilfe: Consent Mode für Traffic aus dem EWR</a></li><li><a href="https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events" target="_blank" rel="noopener">Meta for Developers: Deduplizierung von Pixel- und Server-Events</a></li></ul></section>
+</article>
+</div>
+<section class="rg-cta">
+<div class="rg-wrap">
+<h2>Fragen zu eurem Shop?</h2>
+<p>In 30 Minuten klären wir Ausgangslage, Ziel und nächste Schritte. Kostenlos und unverbindlich, direkt mit der Person, die euer Projekt später umsetzt.</p>
+<div class="rg-cta-row"><a class="btn btn-ice rg-btn" href="/#kontakt">Projekt anfragen <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></a><a class="rg-cta-link" href="/leistungen/tracking/">Zur Leistung: Tracking &amp; Attribution <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></a></div>
+</div>
+</section>
+<section class="rg-related"><div class="rg-wrap"><h2>Weiterlesen</h2><div class="rg-grid"><a class="rg-card" href="/ratgeber/magento-zu-shopify-migration/">
+<p class="rg-card-cat">Shopify-Migration</p>
+<h3>Magento zu Shopify migrieren: Ablauf, Dauer und Kosten</h3>
+<p class="rg-card-desc">Wie eine Migration von Magento auf Shopify abläuft, welche Daten mitkommen, wie lange sie dauert und was sie kostet. Mit Zeitplan, Kostenrahmen und Checkliste.</p>
+<p class="rg-card-meta">Lukas Hanke · 24. September 2026 · 7 Min. Lesezeit</p>
+<span class="rg-card-go">Artikel lesen <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
+</a><a class="rg-card" href="/ratgeber/magento-supportende/">
+<p class="rg-card-cat">Magento</p>
+<h3>Magento 2.4.6 ohne Support: Was Shopbetreiber jetzt tun sollten</h3>
+<p class="rg-card-desc">Seit dem 11. August 2026 bekommt Magento 2.4.6 keine regulären Sicherheitsupdates mehr. Was das für euren Shop bedeutet und welche Optionen ihr jetzt habt.</p>
+<p class="rg-card-meta">Lukas Hanke · 24. September 2026 · 8 Min. Lesezeit</p>
+<span class="rg-card-go">Artikel lesen <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
+</a></div></div></section>
+</main>
+<footer class="rg-footer">
+  <img src="/assets/img/velonify-wordmark.png" alt="Velonify" style="height: 22px; width: auto;">
+  <nav aria-label="Footer"><a class="navlink" href="/">Start</a><a class="navlink" href="/#cases">Cases</a><a class="navlink" href="/ratgeber/">Ratgeber</a><a class="navlink" href="/impressum/">Impressum</a><a class="navlink" href="/datenschutz/">Datenschutz</a></nav>
+  <div class="rg-social"><a href="https://www.instagram.com/velonify.de/" target="_blank" rel="noopener" aria-label="Velonify auf Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"></circle></svg></a><a href="https://www.linkedin.com/company/velonify/" target="_blank" rel="noopener" aria-label="Velonify auf LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="7.5" cy="8" r="0.9" fill="currentColor" stroke="none"></circle><path d="M7.5 11 V17"></path><path d="M11.5 17 V12.5 C11.5 11 13 10.3 14.3 11 C15.3 11.5 15.5 12.3 15.5 13 V17"></path><path d="M11.5 11 V17"></path></svg></a><span>© 2026 Velonify</span></div>
+</footer>
+<script>if (window.matchMedia('(max-width: 1023px)').matches) document.querySelectorAll('details.rg-toc-box').forEach(function (d) { d.removeAttribute('open'); });</script>
+</body>
+</html>
