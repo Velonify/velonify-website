@@ -13,6 +13,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / '_ratgeber'
 SITE = 'https://velonify.de'
 LOGO = SITE + '/assets/img/velonify-wordmark.png'
+IMG = '/assets/img/ratgeber/'  # cover images: <name>.jpg (1800 px) and <name>-card.jpg (900 px)
 ORG_ID = SITE + '/#organization'
 
 AUTHORS = {
@@ -219,7 +220,7 @@ def chrome(lang):
     src = (ROOT / L[lang]['template']).read_text(encoding='utf-8')
     head = src[src.index('<head>') + 6:src.index('</head>')]
     head = re.sub(r'<title>.*?</title>\s*', '', head, flags=re.S)
-    head = re.sub(r'<meta (name="description"|property="og:[^"]+"|name="twitter:card")[^>]*>\s*', '', head)
+    head = re.sub(r'<meta (name="description"|property="og:[^"]+"|name="twitter:[^"]+")[^>]*>\s*', '', head)
     head = re.sub(r'<link rel="(canonical|alternate)"[^>]*>\s*', '', head)
     head = re.sub(r'<script type="application/ld\+json">.*?</script>\s*', '', head, flags=re.S)
     desk = src[src.index('<div class="v v-desktop">'):src.index('<div class="v v-mobile">')]
@@ -288,7 +289,13 @@ def document(lang, head, dh, mh, meta_head, main):
 '''
 
 
-def meta_tags(lang, title, desc, url, de_url, en_url, og_type, ld, extra=''):
+def meta_tags(lang, title, desc, url, de_url, en_url, og_type, ld, extra='', image=None, image_alt=''):
+    # share preview: the article's cover image, otherwise the 1200x630 card per language
+    if image:
+        w, h = 1800, 1018
+    else:
+        image, w, h = SITE + ('/assets/img/og-image.png' if lang == 'de' else '/assets/img/og-image-en.png'), 1200, 630
+    img_alt = f'\n<meta property="og:image:alt" content="{esc(image_alt)}">' if image_alt else ''
     return f'''<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
@@ -303,8 +310,11 @@ def meta_tags(lang, title, desc, url, de_url, en_url, og_type, ld, extra=''):
 <meta property="og:type" content="{og_type}">
 <meta property="og:locale" content="{L[lang]["og_locale"]}">
 <meta property="og:site_name" content="Velonify">
-<meta property="og:image" content="{LOGO}">
-<meta name="twitter:card" content="summary">{extra}
+<meta property="og:image" content="{image}">
+<meta property="og:image:width" content="{w}">
+<meta property="og:image:height" content="{h}">{img_alt}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{image}">{extra}
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>'''
 
 
@@ -353,8 +363,10 @@ def card(lang, a):
     t = L[lang]
     au = AUTHORS[a['author']]['name']
     mins = math.ceil(a['words'] / 200)
+    img = (f'<span class="rg-card-img" aria-hidden="true"><img src="{IMG}{a["image"]}-card.jpg" alt="" width="900" height="509" loading="lazy" decoding="async"></span>\n'
+           if a.get('image') else '')
     return f'''<a class="rg-card" href="{t["base"]}{a["slug"]}/">
-<p class="rg-card-cat">{esc(a["category"])}</p>
+{img}<p class="rg-card-cat">{esc(a["category"])}</p>
 <h3>{esc(a["title"])}</h3>
 <p class="rg-card-desc">{esc(a["description"])}</p>
 <p class="rg-card-meta">{esc(au)} · {fmt_date(a["updated"], lang)} · {mins} {t["minutes"]}</p>
@@ -399,11 +411,13 @@ def article_page(a, by_slug, other):
                 f'<p><span>{t["by"]} <strong>{esc(au["name"])}</strong>, {esc(au["role"][lang])}</span>'
                 f'<span>{t["updated"]}: <time datetime="{a["updated"]}">{fmt_date(a["updated"], lang)}</time> · {mins} {t["minutes"]}</span></p></div>')
     main = hero(lang, [(t['start'], t['home']), (t['index'], t['base']), (a['title'], None)], a['category'], a['title'], meta_row)
+    cover = (f'<figure class="rg-cover"><img src="{IMG}{a["image"]}.jpg" alt="{esc(a.get("image_alt", ""))}" '
+             f'width="1800" height="1018" fetchpriority="high" decoding="async"></figure>\n' if a.get('image') else '')
     main += f'''
 <div id="inhalt" class="rg-wrap rg-body">
 <nav class="rg-toc" aria-label="{t["toc"]}"><details class="rg-toc-box" open><summary>{t["toc"]}</summary><ol>{"".join(toc)}</ol></details></nav>
 <article class="rg-article">
-<div class="rg-summary"><p class="rg-label">{t["summary"]}</p><p>{esc(a["summary"])}</p></div>
+{cover}<div class="rg-summary"><p class="rg-label">{t["summary"]}</p><p>{esc(a["summary"])}</p></div>
 {"".join(body)}
 </article>
 </div>
@@ -416,7 +430,7 @@ def article_page(a, by_slug, other):
     graph = [{
         '@type': 'BlogPosting', '@id': url + '#article', 'headline': a['title'], 'description': a['description'],
         'abstract': a['summary'], 'inLanguage': t['locale'], 'url': url, 'mainEntityOfPage': url,
-        'datePublished': a['published'], 'dateModified': a['updated'], 'image': LOGO,
+        'datePublished': a['published'], 'dateModified': a['updated'], 'image': SITE + IMG + a['image'] + '.jpg' if a.get('image') else LOGO,
         'articleSection': a['category'], 'wordCount': a['words'],
         'author': author_ld(a['author'], lang), 'publisher': publisher(), 'citation': sources,
     }, {
@@ -431,7 +445,8 @@ def article_page(a, by_slug, other):
              f'\n<meta name="author" content="{esc(au["name"])}">')
     head, dh, mh = page_chrome(lang, cp_path)
     mh_ = meta_tags(lang, a['seo_title'], a['description'], url, de_url, en_url, 'article',
-                    {'@context': 'https://schema.org', '@graph': graph}, extra)
+                    {'@context': 'https://schema.org', '@graph': graph}, extra,
+                    SITE + IMG + a['image'] + '.jpg' if a.get('image') else None, a.get('image_alt', ''))
     return document(lang, head, dh, mh, mh_, main)
 
 

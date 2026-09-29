@@ -480,6 +480,13 @@ main { display: block; }
 .rg-social a { color: #FFFFFF; display: flex; }
 .rg-social span { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
 
+/* Cover image below the hero, card images */
+.rg-cover { margin: 0 0 32px; }
+.rg-cover img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; background: #45142D; }
+.rg-card-img { display: block; margin: -32px -32px 6px; aspect-ratio: 16 / 9; overflow: hidden; background: #45142D; border-bottom: 1.5px solid #000000; }
+.rg-card-img img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.16,1,.3,1); }
+.rg-card:hover .rg-card-img img { transform: scale(1.04); }
+
 @media (max-width: 1180px) {
   .rg-grid-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .rg-body { grid-template-columns: 200px minmax(0, 1fr); gap: 56px; }
@@ -519,6 +526,9 @@ main { display: block; }
   .rg-list { padding: 40px 0 64px; }
   .rg-grid, .rg-grid-index { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .rg-card { padding: 24px 20px; }
+  .rg-card-img { margin: -24px -20px 4px; }
+  .rg-cover { margin-bottom: 24px; }
+  .rg-cover img { aspect-ratio: 16 / 9; }
   .rg-card h3 { font-size: 18px; }
   .rg-footer { padding: 36px 20px; gap: 20px; }
   .rg-footer nav { gap: 20px; }
@@ -609,18 +619,21 @@ main { display: block; }
 </div>
 </section>
 <section id="inhalt" class="rg-list"><div class="rg-wrap"><div class="rg-grid rg-grid-index"><a class="rg-card" href="/en/guides/magento-end-of-support/">
+<span class="rg-card-img" aria-hidden="true"><img src="/assets/img/ratgeber/magento-supportende-card.jpg" alt="" width="900" height="509" loading="lazy" decoding="async"></span>
 <p class="rg-card-cat">Magento</p>
 <h3>Magento 2.4.6 end of support: what store owners should do now</h3>
 <p class="rg-card-desc">Since 11 August 2026, Magento 2.4.6 no longer receives regular security updates. What that means for your store, which options you have and how to decide.</p>
 <p class="rg-card-meta">Lukas Hanke · 24 September 2026 · 8 min read</p>
 <span class="rg-card-go">Read article <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
 </a><a class="rg-card" href="/en/guides/magento-to-shopify-migration/">
+<span class="rg-card-img" aria-hidden="true"><img src="/assets/img/ratgeber/magento-zu-shopify-migration-card.jpg" alt="" width="900" height="509" loading="lazy" decoding="async"></span>
 <p class="rg-card-cat">Shopify migration</p>
 <h3>Migrating from Magento to Shopify: process, timeline and cost</h3>
 <p class="rg-card-desc">How a Magento to Shopify migration works, which data comes along, how long it takes and what it costs. With a schedule, cost ranges and a go-live checklist.</p>
 <p class="rg-card-meta">Lukas Hanke · 24 September 2026 · 8 min read</p>
 <span class="rg-card-go">Read article <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
 </a><a class="rg-card" href="/en/guides/shopify-server-side-tracking/">
+<span class="rg-card-img" aria-hidden="true"><img src="/assets/img/ratgeber/server-side-tracking-shopify-card.jpg" alt="" width="900" height="509" loading="lazy" decoding="async"></span>
 <p class="rg-card-cat">Tracking</p>
 <h3>Server-side tracking on Shopify: setting up GA4, Meta and consent properly</h3>
 <p class="rg-card-desc">Why browser tracking on Shopify loses purchases, the three routes to server-side tracking, and what has applied to Shopify stores since 26 August 2026.</p>

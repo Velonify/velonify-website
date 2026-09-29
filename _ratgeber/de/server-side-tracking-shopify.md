@@ -10,6 +10,8 @@ published: 2026-09-24
 updated: 2026-09-24
 order: 3
 category: "Tracking"
+image: "server-side-tracking-shopify"
+image_alt: "Ein kleiner Server, aus dem drei leuchtende Glasfaserkabel in verschiedene Richtungen laufen"
 summary: "Beim Server-Side Tracking schickt ein Server die Conversion-Daten an GA4, Meta und Google Ads, nicht nur der Browser des Kunden. Dadurch gehen weniger Käufe durch Adblocker, Browser-Beschränkungen und Zahlungs-Weiterleitungen verloren. Auf Shopify gibt es drei Wege: die nativen Apps von Google und Meta, ein Custom Pixel mit serverseitigem Google Tag Manager oder eine spezialisierte Tracking-App. Die Einwilligung der Besucher bleibt Pflicht, serverseitig ersetzt kein Cookie-Banner. Seit dem 26. August 2026 laufen auf Shopify-Shops ohne Plus keine „Zusätzlichen Skripte“ auf der Danke-Seite mehr, deshalb solltet ihr eure Kauf-Events jetzt prüfen."
 service: "/leistungen/tracking/ | Tracking & Attribution"
 related: magento-zu-shopify-migration, magento-supportende

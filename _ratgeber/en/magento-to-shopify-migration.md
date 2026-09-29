@@ -10,6 +10,8 @@ published: 2026-09-24
 updated: 2026-09-24
 order: 2
 category: "Shopify migration"
+image: "magento-zu-shopify-migration"
+image_alt: "Moving boxes on a hand truck in an empty room with a bordeaux wall"
 summary: "A migration from Magento to Shopify runs in four phases: audit, mapping, build with a test migration, and go-live with aftercare. A lean store is often live in four to six weeks. With several integrations or on Shopify Plus it takes eight to twelve weeks, and large B2B projects three to six months. Market prices range from a low four-figure sum for small stores to six figures for enterprise projects. The biggest risks are missing redirects, incomplete data and tracking that stops measuring after the switch."
 service: "/en/services/shopify-migration/ | Shopify migration"
 related: magento-end-of-support, shopify-server-side-tracking

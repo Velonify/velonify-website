@@ -10,6 +10,8 @@ published: 2026-09-24
 updated: 2026-09-24
 order: 1
 category: "Magento"
+image: "magento-supportende"
+image_alt: "An old open padlock with a cracked shackle next to an hourglass that has run out"
 summary: "Magento 2.4.6 reached the end of regular support on 11 August 2026. Magento Open Source no longer gets security patches or quality fixes from Adobe, while Adobe Commerce customers receive extended support until 31 August 2027. Your store keeps running, but every newly discovered vulnerability stays open. Realistically you have three paths: upgrade to 2.4.8 or 2.4.9, move to a SaaS platform such as Shopify, or harden the store as a bridge until the move is done."
 service: "/en/services/shopify-migration/ | Shopify migration"
 related: magento-to-shopify-migration, shopify-server-side-tracking

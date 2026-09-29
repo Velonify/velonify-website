@@ -159,6 +159,207 @@ html { scroll-behavior: smooth; }
     .car-btn:hover { background: #000000; color: #FFFFFF; }
     .globe-wrap canvas { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; }
     @media (max-width: 500px) { .case-card { flex-basis: 300px; padding: 24px; gap: 24px; } .car { padding-left: 20px; padding-right: 20px; scroll-padding-left: 20px; gap: 16px; } .vrow { padding: 20px 0 24px; } .vword { font-size: min(44px, calc(100cqw / 8.8)); } .vtext { font-size: 17px; } }
+
+    /* Phasen: three-step roadmap with accordions */
+    .phasen { padding: 0 64px 176px; display: flex; flex-direction: column; gap: 72px; }
+    .ph-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 72px; align-items: center; }
+    .ph-intro { display: flex; flex-direction: column; gap: 28px; }
+    .ph-head h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 44px; line-height: 1.08; text-wrap: balance; }
+    .ph-intro p { font-size: 18px; line-height: 1.6; max-width: 420px; }
+    .ph-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .ph-col { display: flex; flex-direction: column; }
+    .ph-label { font-size: 15px; font-weight: 600; letter-spacing: 0.04em; color: rgba(0,0,0,0.55); }
+    .ph-title { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1.15; margin-top: 14px; min-height: 2.3em; padding-right: 32px; }
+    .ph-track { position: relative; height: 22px; margin: 28px 0 56px; display: flex; align-items: center; }
+    .ph-dot { position: relative; z-index: 1; flex: none; width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid #45142D; background: #FFFFFF; }
+    .ph-dot::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: #45142D; }
+    .ph-dot::before { content: ""; position: absolute; inset: -1.5px; border-radius: 50%; border: 1.5px solid #45142D; opacity: 0; }
+    .ph-active .ph-dot::before { animation: phPulse 2s cubic-bezier(.16,1,.3,1) infinite; }
+    .ph-label { transition: color .3s; }
+    .ph-active .ph-label { color: #45142D; }
+    @keyframes phPulse { 0% { transform: scale(1); opacity: .6; } 70%, 100% { transform: scale(2.1); opacity: 0; } }
+    .ph-line { flex: 1; height: 0; border-top: 1.5px dashed rgba(69,20,45,0.35); transform-origin: left; }
+    .ph-last .ph-line { position: relative; margin-right: 8px; }
+    .ph-last .ph-line::after { content: ""; position: absolute; right: -2px; top: -7.5px; width: 12px; height: 12px; border-top: 1.5px solid rgba(69,20,45,0.6); border-right: 1.5px solid rgba(69,20,45,0.6); transform: rotate(45deg); }
+    .ph-list { margin-right: 56px; border-top: 1.5px solid #000000; }
+    .ph-item { border-bottom: 1.5px solid rgba(0,0,0,0.18); }
+    .ph-q { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: grid; grid-template-columns: 34px minmax(0, 1fr) 20px; align-items: center; gap: 12px; padding: 30px 8px 30px 4px; color: #000000; }
+    .ph-q:focus-visible { outline: 2px solid #45142D; outline-offset: 2px; }
+    .ph-n { font-size: 14px; font-weight: 600; color: #45142D; font-variant-numeric: tabular-nums; }
+    .ph-t { font-size: 21px; font-weight: 600; line-height: 1.3; transition: transform .35s cubic-bezier(.16,1,.3,1), color .25s; }
+    .ph-q:hover .ph-t { transform: translateX(4px); color: #45142D; }
+    .ph-plus { position: relative; width: 16px; height: 16px; justify-self: end; }
+    .ph-plus::before, .ph-plus::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1.5px; margin-top: -0.75px; background: currentColor; transition: transform .4s cubic-bezier(.16,1,.3,1); }
+    .ph-plus::after { transform: rotate(90deg); }
+    .ph-q[aria-expanded="true"] .ph-plus::after { transform: rotate(0deg); }
+    .ph-q[aria-expanded="true"] .ph-t { color: #45142D; }
+    .ph-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s cubic-bezier(.16,1,.3,1); }
+    .ph-a > div { overflow: hidden; padding-left: 50px; padding-right: 36px; }
+    .ph-a p { font-size: 16px; line-height: 1.6; opacity: 0; transform: translateY(-6px); transition: opacity .3s, transform .4s cubic-bezier(.16,1,.3,1); }
+    .ph-a a { display: inline-flex; gap: 8px; margin: 14px 0 30px; font-size: 15px; font-weight: 700; opacity: 0; transition: opacity .3s; }
+    .ph-open .ph-a { grid-template-rows: 1fr; }
+    .ph-open .ph-a p, .ph-open .ph-a a { opacity: 1; transform: none; transition-delay: .08s; }
+    @supports (animation-timeline: view()) {
+      .ph-line { animation: growBar linear both; animation-timeline: view(); animation-range: entry 10% cover 40%; }
+      .ph-col { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
+    }
+    .is-mobile .phasen { padding: 0 20px 96px; gap: 40px; }
+    .is-mobile .ph-head { display: flex; flex-direction: column; align-items: stretch; gap: 32px; }
+    .is-mobile .ph-intro { gap: 16px; }
+    .is-mobile .ph-head h2 { font-size: 30px; }
+    .is-mobile .ph-intro p { font-size: 16px; }
+    .is-mobile .ph-grid { grid-template-columns: minmax(0, 1fr); }
+    .is-mobile .ph-col { display: grid; grid-template-columns: 22px minmax(0, 1fr); column-gap: 18px; padding-bottom: 40px; }
+    .is-mobile .ph-col.ph-last { padding-bottom: 0; }
+    .is-mobile .ph-label, .is-mobile .ph-title, .is-mobile .ph-list { grid-column: 2; }
+    .is-mobile .ph-label { grid-row: 1; }
+    .is-mobile .ph-title { grid-row: 2; font-size: 22px; min-height: 0; margin-top: 8px; }
+    .is-mobile .ph-list { grid-row: 3; margin: 24px 0 0; }
+    .is-mobile .ph-track { grid-column: 1; grid-row: 1 / span 3; flex-direction: column; height: auto; margin: 0; }
+    .is-mobile .ph-line { width: 0; height: auto; border-top: 0; border-left: 1.5px dashed rgba(69,20,45,0.35); margin-bottom: -40px; transform-origin: top; animation: none; }
+    .is-mobile .ph-last .ph-line { margin: 0; }
+    .is-mobile .ph-last .ph-line::after { display: none; }
+    .is-mobile .ph-q { padding: 22px 4px; grid-template-columns: 30px minmax(0, 1fr) 16px; }
+    .is-mobile .ph-t { font-size: 18px; }
+    .is-mobile .ph-a > div { padding-left: 46px; padding-right: 8px; }
+
+    /* Phasen demo: animated shop window, one scene per phase */
+    .ph-demo { --dur: 6.5s; background: #2C0E18; color: #FFFFFF; display: flex; flex-direction: column; box-shadow: 0 40px 80px -40px rgba(44,14,24,0.55); }
+    .pd-bar { height: 46px; display: flex; align-items: center; gap: 16px; padding: 0 18px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .pd-dots { display: flex; gap: 6px; } .pd-dots i { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.22); }
+    .pd-url { flex: 1; max-width: 300px; height: 26px; display: flex; align-items: center; gap: 8px; padding: 0 12px; background: rgba(255,255,255,0.07); font-size: 12.5px; color: rgba(255,255,255,0.7); }
+    .pd-note { margin-left: auto; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+    .pd-stage { position: relative; height: 380px; overflow: hidden; }
+    .pd-scene { position: absolute; inset: 0; padding: 26px 28px; display: flex; flex-direction: column; gap: 18px; visibility: hidden; opacity: 0; transition: opacity .45s, visibility 0s .45s; }
+    .pd-scene.on { visibility: visible; opacity: 1; transition: opacity .45s; }
+    .pd-in { opacity: 0; transform: translateY(12px); transition: opacity .5s, transform .7s cubic-bezier(.16,1,.3,1); }
+    .on .pd-in { opacity: 1; transform: none; transition-delay: calc(var(--i) * 90ms); }
+    .pd-h { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C5D8E6; }
+    .pd-scene b { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+    .pd-mig { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 14px; }
+    .pd-sys { padding: 9px 14px; border: 1px solid rgba(255,255,255,0.3); font-size: 14px; font-weight: 600; }
+    .pd-sys-to { background: #C5D8E6; border-color: #C5D8E6; color: #2C0E18; }
+    .pd-pipe { position: relative; height: 2px; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.28) 0 6px, transparent 6px 12px); }
+    .pd-pipe span { position: absolute; top: -4px; left: 0; width: 10px; height: 10px; background: #C5D8E6; opacity: 0; }
+    .on .pd-pipe span { animation: pdPacket 1.8s linear infinite; animation-delay: calc(var(--i) * -0.6s); }
+    @keyframes pdPacket { 0% { left: 0; opacity: 0; } 12%, 88% { opacity: 1; } 100% { left: calc(100% - 10px); opacity: 0; } }
+    .pd-rows { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+    .pd-rows li { display: grid; grid-template-columns: 104px minmax(0, 1fr) 64px 16px; align-items: center; gap: 12px; font-size: 14px; }
+    .pd-rows li > span { color: rgba(255,255,255,0.7); }
+    .pd-rows b { text-align: right; }
+    .pd-prog { position: relative; height: 4px; background: rgba(255,255,255,0.1); }
+    .pd-prog::after { content: ""; position: absolute; inset: 0; background: #C5D8E6; transform: scaleX(0); transform-origin: left; transition: transform 1.4s cubic-bezier(.33,1,.68,1); }
+    .on .pd-prog::after { transform: scaleX(1); transition-delay: calc(.3s + var(--k) * .25s); }
+    .pd-ok { width: 16px; height: 16px; color: #C5D8E6; opacity: 0; transform: scale(.5); transition: opacity .3s, transform .4s cubic-bezier(.34,1.56,.64,1); }
+    .on .pd-ok { opacity: 1; transform: none; transition-delay: calc(1.7s + var(--k) * .25s); }
+    .pd-log { margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 7px; font: 12.5px/1.4 ui-monospace, 'SF Mono', Menlo, monospace; color: rgba(255,255,255,0.75); }
+    .pd-log p { display: flex; gap: 8px; opacity: 0; transform: translateX(-8px); transition: opacity .3s, transform .4s cubic-bezier(.16,1,.3,1); }
+    .on .pd-log p { opacity: 1; transform: none; transition-delay: calc(2.3s + var(--k) * .35s); }
+    .pd-ev { color: #C5D8E6; }
+    .pd-log em { margin-left: auto; font-style: normal; color: #90D5FF; }
+
+    .pd-kpi { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 16px; align-items: center; }
+    .pd-big { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 40px; line-height: 1; }
+    .pd-big b { font-weight: 400; }
+    .pd-sub { grid-column: 1; font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 8px; }
+    .pd-delta { grid-column: 2; grid-row: 1; justify-self: start; padding: 5px 9px; background: #C5D8E6; color: #2C0E18; font-size: 13px; font-weight: 700; opacity: 0; transform: scale(.6); transition: opacity .3s, transform .5s cubic-bezier(.34,1.56,.64,1); }
+    .on .pd-delta { opacity: 1; transform: none; transition-delay: 2s; }
+    .pd-fun { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 13px; }
+    .pd-fun li { display: grid; grid-template-columns: minmax(0, 1fr) auto; row-gap: 7px; font-size: 13.5px; }
+    .pd-fun li > span:first-child { color: rgba(255,255,255,0.7); }
+    .pd-track { grid-column: 1 / -1; position: relative; height: 8px; background: rgba(255,255,255,0.08); }
+    .pd-now { position: absolute; left: 0; top: 0; bottom: 0; width: var(--b); background: #C5D8E6; transition: width 1.4s cubic-bezier(.33,1,.68,1); }
+    .on .pd-now { width: var(--a); transition-delay: calc(.7s + var(--k) * .15s); }
+    .pd-was { position: absolute; left: var(--b); top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: #FFFFFF; }
+    .pd-legend { margin-top: auto; display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.55); }
+    .pd-legend i { display: inline-block; } .pd-lg-was { width: 2px; height: 12px; background: #FFFFFF; } .pd-lg-now { width: 14px; height: 8px; background: #C5D8E6; margin-left: 10px; }
+
+    .pd-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .pd-tile { border: 1px solid rgba(255,255,255,0.14); padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+    .pd-tile span { font-size: 12px; color: rgba(255,255,255,0.6); }
+    .pd-tile strong { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 20px; color: #C5D8E6; white-space: nowrap; }
+    .pd-tile strong b { font-weight: 400; }
+    .pd-chart { position: relative; flex: 1; min-height: 0; margin-top: 4px; }
+    .pd-plot { position: absolute; inset: 0; clip-path: inset(0 100% 0 0); transition: clip-path 2.2s cubic-bezier(.65,0,.35,1); }
+    .on .pd-plot { clip-path: inset(0 0 0 0); transition-delay: .4s; }
+    .pd-plot svg { width: 100%; height: 100%; display: block; overflow: visible; }
+    .pd-grid { stroke: rgba(255,255,255,0.1); stroke-width: 1; stroke-dasharray: 3 4; vector-effect: non-scaling-stroke; fill: none; }
+    .pd-line { stroke: #C5D8E6; stroke-width: 2.5; fill: none; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+    .pd-end { position: absolute; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: #C5D8E6; opacity: 0; transform: scale(0); transition: opacity .2s, transform .4s cubic-bezier(.34,1.56,.64,1); }
+    .pd-end::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid #C5D8E6; }
+    .on .pd-end { opacity: 1; transform: none; transition-delay: 2.5s; }
+    .on .pd-end::after { animation: phPulse 1.8s cubic-bezier(.16,1,.3,1) 2.7s infinite; }
+    .pd-toasts { position: absolute; left: 0; top: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+    .pd-toasts p { display: flex; align-items: center; gap: 8px; padding: 6px 10px; font-size: 12px; font-weight: 600; background: rgba(44,14,24,0.8); border: 1px solid rgba(255,255,255,0.14); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); opacity: 0; transform: translateY(8px) scale(.96); transition: opacity .3s, transform .5s cubic-bezier(.16,1,.3,1); }
+    .pd-toasts i { width: 6px; height: 6px; border-radius: 50%; background: #90D5FF; }
+    .on .pd-toasts p { opacity: 1; transform: none; transition-delay: calc(1.2s + var(--k) * .7s); }
+
+    .pd-foot { display: flex; gap: 10px; padding: 14px 18px 16px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .pd-seg { all: unset; box-sizing: border-box; position: relative; flex: 1; min-width: 0; cursor: pointer; display: flex; align-items: center; gap: 10px; height: 46px; padding: 0 12px; border: 1px solid rgba(255,255,255,0.22); background: rgba(255,255,255,0.04); font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75); overflow: hidden; transition: border-color .25s, background-color .25s, color .25s; }
+    .pd-seg:hover { border-color: #C5D8E6; background: rgba(197,216,230,0.1); color: #FFFFFF; }
+    .pd-seg:active { transform: scale(.98); }
+    .pd-seg.on { border-color: #C5D8E6; background: rgba(197,216,230,0.14); color: #FFFFFF; }
+    .pd-seg:focus-visible { outline: 2px solid #C5D8E6; outline-offset: 3px; }
+    .pd-seg-n { flex: none; display: grid; place-items: center; width: 24px; height: 24px; font-size: 11px; font-variant-numeric: tabular-nums; border: 1px solid currentColor; transition: background-color .25s, color .25s, border-color .25s; }
+    .pd-seg.on .pd-seg-n { background: #C5D8E6; border-color: #C5D8E6; color: #2C0E18; }
+    .pd-seg-t { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pd-seg-go { flex: none; opacity: .55; transition: transform .3s cubic-bezier(.16,1,.3,1), opacity .25s; }
+    .pd-seg:hover .pd-seg-go { opacity: 1; transform: translateX(3px); }
+    .pd-seg.on .pd-seg-go { opacity: 0; }
+    .pd-seg i { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; overflow: hidden; }
+    .pd-seg i::after { content: ""; position: absolute; inset: 0; background: #C5D8E6; transform: scaleX(0); transform-origin: left; }
+    .pd-seg.on i::after { transform: scaleX(1); }
+    .pd-auto .pd-seg.on i::after { animation: pdFill var(--dur) linear both; }
+    .pd-paused .pd-seg.on i::after { animation-play-state: paused; }
+    @keyframes pdFill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    .is-mobile .pd-bar { padding: 0 14px; gap: 12px; }
+    .is-mobile .pd-note { font-size: 9.5px; letter-spacing: 0.06em; }
+    .is-mobile .pd-url { min-width: 0; }
+    .is-mobile .pd-stage { height: 400px; }
+    .is-mobile .pd-scene { padding: 22px 18px; }
+    .is-mobile .pd-rows li { grid-template-columns: 92px minmax(0, 1fr) 54px 14px; gap: 10px; font-size: 13px; }
+    .is-mobile .pd-log { font-size: 11.5px; }
+    .is-mobile .pd-big { font-size: 34px; }
+    .is-mobile .pd-tiles { gap: 6px; }
+    .is-mobile .pd-tile { padding: 10px 8px; }
+    .is-mobile .pd-tile span { font-size: 11px; white-space: nowrap; }
+    .is-mobile .pd-tile strong { font-size: 16px; }
+    .is-mobile .pd-foot { padding: 12px 14px 14px; gap: 8px; }
+    .is-mobile .pd-seg { height: 52px; padding: 0 8px; gap: 6px; flex-direction: column; justify-content: center; font-size: 11px; }
+    .is-mobile .pd-seg-n { width: 20px; height: 20px; font-size: 10px; }
+    .is-mobile .pd-seg-t { flex: none; max-width: 100%; }
+    .is-mobile .pd-seg-go { display: none; }
+
+    /* Case cards: image on top */
+    .case-media { position: relative; display: block; margin: -40px -40px 0; aspect-ratio: 16 / 9; overflow: hidden; background: #2C0E18; border-bottom: 1.5px solid #000000; transition: border-color .35s; }
+    .case-card:hover .case-media { border-color: #45142D; }
+    .case-media > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .8s cubic-bezier(.16,1,.3,1); }
+    .case-card:hover .case-media > img, .case-card:hover .cm-phone { transform: scale(1.04); }
+    .cm-mails { display: flex; justify-content: center; align-items: flex-start; gap: 28px; padding-top: 28px; box-sizing: border-box; }
+    .cm-phone { width: 24%; aspect-ratio: 390 / 844; overflow: hidden; background: #FFFFFF; border: 7px solid #16090E; border-radius: 26px; box-shadow: 0 0 0 1.5px rgba(197,216,230,0.28); transition: transform .8s cubic-bezier(.16,1,.3,1); }
+    .cm-phone:nth-child(2) { margin-top: 44px; }
+    .cm-phone img { display: block; width: 100%; height: auto; }
+    .is-mobile .case-media { margin: -24px -24px 0; }
+    .is-mobile .cm-mails { gap: 12px; padding-top: 16px; }
+    .is-mobile .cm-phone { border-width: 4px; border-radius: 14px; }
+    .is-mobile .cm-phone:nth-child(2) { margin-top: 24px; }
+
+    /* Service rows: thumbnail of the service visual */
+    .is-desktop .svc { grid-template-columns: minmax(0, 1fr) 232px 48px !important; gap: 32px !important; }
+    .svc-thumb { display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #3A1724; box-shadow: 0 0 0 1.5px rgba(0,0,0,0.08); transition: box-shadow .3s, transform .5s cubic-bezier(.16,1,.3,1); }
+    .svc-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .svc:hover .svc-thumb { box-shadow: 0 0 0 1.5px rgba(197,216,230,0.5); transform: scale(1.03); }
+    .is-mobile .svc-thumb { grid-column: 1 / -1; grid-row: 2; aspect-ratio: 16 / 8; }
+
+    /* Arbeitsweise: route diagrams */
+    .aw-route { display: block; width: 100%; height: auto; overflow: visible; margin: -4px 0 4px; }
+    .aw-route text { font: 600 11px 'Albert Sans', sans-serif; }
+    .aw-route .aw-path { fill: none; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+    .is-mobile #arbeitsweise > div { grid-template-columns: minmax(0, 1fr) !important; }
+    .is-mobile #arbeitsweise > div > div { padding: 24px !important; }
+    .is-mobile .aw-route text { font-size: 13px; }
 </style>
 <style>
 @media (max-width: 1023px) {
@@ -447,6 +648,7 @@ html { scroll-behavior: smooth; }
             <span style="font-size: 16px; line-height: 1.5; font-weight: 500;">Der Umzug von Magento, Shopware oder WooCommerce auf Shopify und Shopify Plus, ohne Verlust bei Umsatz und Rankings.</span>
             <span class="svc-tags" style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">Daten · Redirects &amp; SEO · Markets · B2B</span>
           </span>
+          <span class="svc-thumb" aria-hidden="true"><img src="/assets/img/services/shopify-migration-de.jpg" alt="" width="900" height="746" loading="lazy" decoding="async"></span>
           <svg class="svc-arrow" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
         </a>
       
@@ -456,6 +658,7 @@ html { scroll-behavior: smooth; }
             <span style="font-size: 16px; line-height: 1.5; font-weight: 500;">Belastbare Daten, bevor Budget fließt. Jede Conversion wird dort erfasst, wo sie hingehört.</span>
             <span class="svc-tags" style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">GA4 · GTM · Server-Side · Conversions API</span>
           </span>
+          <span class="svc-thumb" aria-hidden="true"><img src="/assets/img/services/tracking-de.jpg" alt="" width="900" height="746" loading="lazy" decoding="async"></span>
           <svg class="svc-arrow" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
         </a>
       
@@ -465,6 +668,7 @@ html { scroll-behavior: smooth; }
             <span style="font-size: 16px; line-height: 1.5; font-weight: 500;">Meta Ads und Google Ads, gesteuert nach Umsatz und Marge statt nach Klicks.</span>
             <span class="svc-tags" style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">Meta Ads · Google Ads · Merchant Center</span>
           </span>
+          <span class="svc-thumb" aria-hidden="true"><img src="/assets/img/services/performance-marketing-de.jpg" alt="" width="900" height="746" loading="lazy" decoding="async"></span>
           <svg class="svc-arrow" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
         </a>
       
@@ -474,6 +678,7 @@ html { scroll-behavior: smooth; }
             <span style="font-size: 16px; line-height: 1.5; font-weight: 500;">Aus Erstkäufern werden Stammkunden. Automatisiert, segmentiert und messbar.</span>
             <span class="svc-tags" style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">Klaviyo Flows · Kampagnen · Segmente</span>
           </span>
+          <span class="svc-thumb" aria-hidden="true"><img src="/assets/img/services/e-mail-marketing-de.jpg" alt="" width="900" height="746" loading="lazy" decoding="async"></span>
           <svg class="svc-arrow" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
         </a>
       
@@ -483,6 +688,7 @@ html { scroll-behavior: smooth; }
             <span style="font-size: 16px; line-height: 1.5; font-weight: 500;">Wir finden die Stellen, an denen Besucher abspringen, und beheben sie direkt in eurem Shop.</span>
             <span class="svc-tags" style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">CRO-Audit · Produktseiten · Checkout</span>
           </span>
+          <span class="svc-thumb" aria-hidden="true"><img src="/assets/img/services/conversion-optimierung-de.jpg" alt="" width="900" height="746" loading="lazy" decoding="async"></span>
           <svg class="svc-arrow" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
         </a>
       
@@ -490,6 +696,120 @@ html { scroll-behavior: smooth; }
   </section>
 
   
+  <section id="phasen" class="on-light phasen" aria-labelledby="d-phasen-h">
+    <div class="ph-head">
+      <div class="ph-intro">
+        <h2 id="d-phasen-h" class="reveal">Vom Fundament bis zur Skalierung.</h2>
+        <p>Drei Phasen, ein Team. Ihr steigt dort ein, wo euer Shop gerade steht.</p>
+      </div>
+      <div class="ph-demo">
+        <div class="pd-bar"><span class="pd-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="pd-url" aria-hidden="true"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="5" width="8" height="6"/><path d="M3 5 V3.5 a2 2 0 0 1 4 0 V5"/></svg>euer-shop.de</span><span class="pd-note">Beispielwerte</span></div>
+        <div class="pd-stage" aria-hidden="true">
+          <div class="pd-scene pd-s1">
+            <p class="pd-h pd-in" style="--i:0">Migration &amp; Tracking</p>
+            <div class="pd-mig pd-in" style="--i:1"><span class="pd-sys">Magento</span><span class="pd-pipe"><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span></span><span class="pd-sys pd-sys-to">Shopify</span></div>
+            <ul class="pd-rows"><li class="pd-in" style="--i:2"><span>Produkte</span><i class="pd-prog" style="--k:0"></i><b data-to="2431" data-delay="300">0</b><svg class="pd-ok" style="--k:0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg></li><li class="pd-in" style="--i:3"><span>Kunden</span><i class="pd-prog" style="--k:1"></i><b data-to="18920" data-delay="550">0</b><svg class="pd-ok" style="--k:1" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg></li><li class="pd-in" style="--i:4"><span>Bestellungen</span><i class="pd-prog" style="--k:2"></i><b data-to="64310" data-delay="800">0</b><svg class="pd-ok" style="--k:2" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg></li><li class="pd-in" style="--i:5"><span>Redirects</span><i class="pd-prog" style="--k:3"></i><b data-to="1284" data-delay="1050">0</b><svg class="pd-ok" style="--k:3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg></li></ul>
+            <div class="pd-log"><p style="--k:0"><span class="pd-ev">purchase</span> → GA4<em>200 OK</em></p><p style="--k:1"><span class="pd-ev">purchase</span> → Meta CAPI<em>200 OK</em></p><p style="--k:2"><span class="pd-ev">purchase</span> → Google Ads<em>200 OK</em></p></div>
+          </div>
+          <div class="pd-scene pd-s2">
+            <p class="pd-h pd-in" style="--i:0">Conversion</p>
+            <div class="pd-kpi pd-in" style="--i:1"><span class="pd-big"><b data-from="1.6" data-to="2.4" data-dec="1" data-delay="600">1,6</b> %</span><span class="pd-sub">Conversion-Rate</span><span class="pd-delta">+50 %</span></div>
+            <ul class="pd-fun"><li class="pd-in" style="--i:2"><span>Besuch → Produktseite</span><span class="pd-v"><b data-from="55" data-to="58" data-delay="700">55</b> %</span><span class="pd-track" style="--b:55%;--a:58%;--k:0"><i class="pd-now"></i><i class="pd-was"></i></span></li><li class="pd-in" style="--i:3"><span>Produktseite → Warenkorb</span><span class="pd-v"><b data-from="20" data-to="24" data-delay="850">20</b> %</span><span class="pd-track" style="--b:20%;--a:24%;--k:1"><i class="pd-now"></i><i class="pd-was"></i></span></li><li class="pd-in" style="--i:4"><span>Warenkorb → Checkout</span><span class="pd-v"><b data-from="52" data-to="58" data-delay="1000">52</b> %</span><span class="pd-track" style="--b:52%;--a:58%;--k:2"><i class="pd-now"></i><i class="pd-was"></i></span></li><li class="pd-in" style="--i:5"><span>Checkout → Kauf</span><span class="pd-v"><b data-from="28" data-to="30" data-delay="1150">28</b> %</span><span class="pd-track" style="--b:28%;--a:30%;--k:3"><i class="pd-now"></i><i class="pd-was"></i></span></li></ul>
+            <p class="pd-legend pd-in" style="--i:6"><i class="pd-lg-was"></i>vorher <i class="pd-lg-now"></i>nachher</p>
+          </div>
+          <div class="pd-scene pd-s3">
+            <p class="pd-h pd-in" style="--i:0">Wachstum</p>
+            <div class="pd-tiles">
+              <div class="pd-tile pd-in" style="--i:1"><span>Umsatz</span><strong>+<b data-to="38" data-delay="300">0</b> %</strong></div>
+              <div class="pd-tile pd-in" style="--i:2"><span>ROAS</span><strong><b data-to="3.8" data-dec="1" data-delay="400">0</b>x</strong></div>
+              <div class="pd-tile pd-in" style="--i:3"><span>Wiederkäufer</span><strong><b data-to="31" data-delay="500">0</b> %</strong></div>
+            </div>
+            <div class="pd-chart pd-in" style="--i:4">
+              <div class="pd-plot"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs><linearGradient id="d-pd-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C5D8E6" stop-opacity=".35"/><stop offset="1" stop-color="#C5D8E6" stop-opacity="0"/></linearGradient></defs>
+                <path class="pd-grid" d="M0 25 H100 M0 50 H100 M0 75 H100"/>
+                <path d="M0.0 82 L8.82 79 L17.64 80 L26.45 73 L35.27 71 L44.09 64 L52.91 61 L61.73 53 L70.55 47 L79.36 37 L88.18 29 L97.0 17 L97.0 100 L0 100 Z" fill="url(#d-pd-grad)"/>
+                <path class="pd-line" d="M0.0 82 L8.82 79 L17.64 80 L26.45 73 L35.27 71 L44.09 64 L52.91 61 L61.73 53 L70.55 47 L79.36 37 L88.18 29 L97.0 17"/>
+              </svg></div>
+              <span class="pd-end" style="left: 97.0%; top: 17%;"></span>
+              <div class="pd-toasts"><p style="--k:0"><i></i>Neue Bestellung · 89,90 €</p><p style="--k:1"><i></i>Flow „Warenkorb“ · 1 Kauf</p><p style="--k:2"><i></i>Meta Ads · ROAS 3,8x</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="pd-foot">
+          <button type="button" class="pd-seg" aria-pressed="false"><span class="pd-seg-n">01</span><span class="pd-seg-t">Fundament</span><svg class="pd-seg-go" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 2 L8 6 L4 10"/></svg><i></i></button>
+          <button type="button" class="pd-seg" aria-pressed="false"><span class="pd-seg-n">02</span><span class="pd-seg-t">Optimieren</span><svg class="pd-seg-go" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 2 L8 6 L4 10"/></svg><i></i></button>
+          <button type="button" class="pd-seg" aria-pressed="false"><span class="pd-seg-n">03</span><span class="pd-seg-t">Skalieren</span><svg class="pd-seg-go" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 2 L8 6 L4 10"/></svg><i></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="ph-grid">
+      <div class="ph-col">
+        <p class="ph-label">Phase 01</p>
+        <h3 class="ph-title">Fundament legen</h3>
+        <div class="ph-track" aria-hidden="true"><span class="ph-dot"></span><span class="ph-line"></span></div>
+        <div class="ph-list">
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="d-p1-1">
+              <span class="ph-n">01</span><span class="ph-t">Shopify-Migration</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="d-p1-1" role="region"><div><p>Der Umzug von Magento, Shopware oder WooCommerce auf Shopify und Shopify Plus. Produkte, Kunden, Bestellungen und Redirects ziehen mit, Umsatz und Rankings bleiben.</p><a href="/leistungen/shopify-migration/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="d-p1-2">
+              <span class="ph-n">02</span><span class="ph-t">Tracking &amp; Attribution</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="d-p1-2" role="region"><div><p>GA4, GTM und serverseitiges Tracking mit Conversions API. Belastbare Daten, bevor das erste Budget fließt.</p><a href="/leistungen/tracking/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="ph-col">
+        <p class="ph-label">Phase 02</p>
+        <h3 class="ph-title">Shop optimieren</h3>
+        <div class="ph-track" aria-hidden="true"><span class="ph-dot"></span><span class="ph-line"></span></div>
+        <div class="ph-list">
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="d-p2-1">
+              <span class="ph-n">01</span><span class="ph-t">CRO-Audit</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="d-p2-1" role="region"><div><p>Wir finden die Stellen, an denen Besucher abspringen, und sortieren die Hebel nach ihrer Wirkung auf den Umsatz.</p><a href="/leistungen/conversion-optimierung/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="d-p2-2">
+              <span class="ph-n">02</span><span class="ph-t">Produktseiten</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="d-p2-2" role="region"><div><p>Bilder, Texte, Vertrauen und Varianten so gebaut, dass aus einem Besuch ein Warenkorb wird.</p><a href="/leistungen/conversion-optimierung/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="d-p2-3">
+              <span class="ph-n">03</span><span class="ph-t">Warenkorb &amp; Checkout</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="d-p2-3" role="region"><div><p>Weniger Reibung auf den letzten Metern: Versandinfos, Zahlarten und Upsells an der richtigen Stelle.</p><a href="/leistungen/conversion-optimierung/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="ph-col ph-last">
+        <p class="ph-label">Phase 03</p>
+        <h3 class="ph-title">Umsatz skalieren</h3>
+        <div class="ph-track" aria-hidden="true"><span class="ph-dot"></span><span class="ph-line"></span></div>
+        <div class="ph-list">
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="d-p3-1">
+              <span class="ph-n">01</span><span class="ph-t">Performance Marketing</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="d-p3-1" role="region"><div><p>Meta Ads und Google Ads, gesteuert nach Umsatz und Marge statt nach Klicks.</p><a href="/leistungen/performance-marketing/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="d-p3-2">
+              <span class="ph-n">02</span><span class="ph-t">E-Mail &amp; Retention</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="d-p3-2" role="region"><div><p>Klaviyo-Flows, Kampagnen und Segmente, die aus Erstkäufern Stammkunden machen.</p><a href="/leistungen/e-mail-marketing/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="cases" class="on-light" style="background: #FFFFFF; color: #000000; padding: 0px 0 128px; display: flex; flex-direction: column; gap: 56px; overflow: hidden;">
     <div style="margin: 0 64px; padding-top: 96px; border-top: 1.5px solid #000000; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px;">
       <div style="display: flex; flex-direction: column; gap: 20px; max-width: 820px;">
@@ -504,6 +824,7 @@ html { scroll-behavior: smooth; }
     <div class="car" aria-label="Cases" style="">
       
         <a class="case-card" href="/cases/blue-fire/" style="">
+          <span class="case-media" aria-hidden="true"><img src="/assets/img/cases/blue-fire-desktop.jpg" alt="" width="1800" height="1125" loading="lazy" decoding="async"></span>
           <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 16px; min-height: 56px;">
             <img class="clogo" src="/assets/img/blue-fire-logo.png" alt="Blue Fire Co." style="height: 52px; width: auto;">
             
@@ -518,6 +839,7 @@ html { scroll-behavior: smooth; }
         </a>
       
         <a class="case-card" href="/cases/storz-bickel/" style="">
+          <span class="case-media cm-mails" aria-hidden="true"><span class="cm-phone"><img src="/assets/img/cases/storz-bickel-welcome.jpg" alt="" width="400" height="1502" loading="lazy" decoding="async"></span><span class="cm-phone"><img src="/assets/img/cases/storz-bickel-warenkorb.jpg" alt="" width="626" height="1462" loading="lazy" decoding="async"></span></span>
           <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 16px; min-height: 56px;">
             
             <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 26px; text-transform: uppercase; line-height: 1.15;">Storz &amp; Bickel</span>
@@ -532,6 +854,7 @@ html { scroll-behavior: smooth; }
         </a>
       
         <a class="case-card" href="/cases/pretty-woman/" style="">
+          <span class="case-media" aria-hidden="true"><img src="/assets/img/cases/pretty-woman-desktop.jpg" alt="" width="1800" height="1125" loading="lazy" decoding="async"></span>
           <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 16px; min-height: 56px;">
             
             <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 26px; text-transform: uppercase; line-height: 1.15;">Pretty Woman Brautmoden</span>
@@ -552,7 +875,7 @@ html { scroll-behavior: smooth; }
   
 
   
-  <section id="arbeitsweise" class="on-light" style="padding: 176px 64px; display: flex; flex-direction: column; gap: 56px;"><h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 56px; line-height: 1.08; text-wrap: balance;">Typische Agentur. Oder Velonify.</h2><div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px;"><div style="border: 1.5px solid #000000; padding: 36px; display: flex; flex-direction: column; gap: 24px;"><h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 22px; line-height: 1.15; color: rgba(0,0,0,0.55);">Typische Agentur</h3><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px;"><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Anfragen laufen über einen Account Manager</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Freigabeschleifen über mehrere Abteilungen</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Umsetzung durch wechselnde Subunternehmer</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Reports ohne Bezug zu euren Zahlen</span></li></ul></div><div style="background: #45142D; color: #FFFFFF; padding: 36px; display: flex; flex-direction: column; gap: 24px;"><h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 22px; line-height: 1.15; color: #C5D8E6;">Velonify</h3><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px;"><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Ihr sprecht direkt mit der Person, die umsetzt</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Entscheidungen im kurzen Gespräch, keine Freigaberunden</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Wir setzen alles selbst um, ohne Subunternehmer</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Euer Erfolg im Shop ist unser Maßstab</span></li></ul></div></div></section>
+  <section id="arbeitsweise" class="on-light" style="padding: 176px 64px; display: flex; flex-direction: column; gap: 56px;"><h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 56px; line-height: 1.08; text-wrap: balance;">Typische Agentur. Oder Velonify.</h2><div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px;"><div style="border: 1.5px solid #000000; padding: 36px; display: flex; flex-direction: column; gap: 24px;"><h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 22px; line-height: 1.15; color: rgba(0,0,0,0.55);">Typische Agentur</h3><svg class="aw-route" viewBox="0 0 400 132" aria-hidden="true"><path class="aw-path" d="M20 65 L110 30 L200 105 L290 30 L380 65" stroke="rgba(0,0,0,0.35)" stroke-dasharray="4 5"/><circle cx="20" cy="65" r="5.5" fill="#000000" stroke="#000000" stroke-width="1.5"/><circle cx="110" cy="30" r="5.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/><circle cx="200" cy="105" r="5.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/><circle cx="290" cy="30" r="5.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/><circle cx="380" cy="65" r="5.5" fill="#000000" stroke="#000000" stroke-width="1.5"/><text x="12" y="92" text-anchor="start" fill="rgba(0,0,0,0.6)">Ihr</text><text x="110" y="16" text-anchor="middle" fill="rgba(0,0,0,0.6)">Account Manager</text><text x="200" y="126" text-anchor="middle" fill="rgba(0,0,0,0.6)">Projektleitung</text><text x="290" y="16" text-anchor="middle" fill="rgba(0,0,0,0.6)">Subunternehmer</text><text x="388" y="92" text-anchor="end" fill="rgba(0,0,0,0.6)">Shop</text><circle r="5" fill="#45142D"><animateMotion dur="7s" repeatCount="indefinite" path="M20 65 L110 30 L200 105 L290 30 L380 65"/></circle></svg><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px;"><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Anfragen laufen über einen Account Manager</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Freigabeschleifen über mehrere Abteilungen</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Umsetzung durch wechselnde Subunternehmer</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Reports ohne Bezug zu euren Zahlen</span></li></ul></div><div style="background: #45142D; color: #FFFFFF; padding: 36px; display: flex; flex-direction: column; gap: 24px;"><h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 22px; line-height: 1.15; color: #C5D8E6;">Velonify</h3><svg class="aw-route" viewBox="0 0 400 132" aria-hidden="true"><path class="aw-path" d="M20 65 L380 65" stroke="#C5D8E6"/><circle cx="20" cy="65" r="5.5" fill="#C5D8E6"/><circle cx="380" cy="65" r="5.5" fill="#C5D8E6"/><text x="12" y="92" text-anchor="start" fill="rgba(255,255,255,0.75)">Ihr</text><text x="388" y="92" text-anchor="end" fill="rgba(255,255,255,0.75)">Shop</text><text x="200" y="50" text-anchor="middle" fill="#C5D8E6">ein Team, direkt</text><circle r="5" fill="#FFFFFF"><animateMotion dur="2.4s" repeatCount="indefinite" path="M20 65 L380 65" keyPoints="0;1;1" keyTimes="0;0.55;1" calcMode="linear"/></circle></svg><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px;"><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Ihr sprecht direkt mit der Person, die umsetzt</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Entscheidungen im kurzen Gespräch, keine Freigaberunden</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Wir setzen alles selbst um, ohne Subunternehmer</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Euer Erfolg im Shop ist unser Maßstab</span></li></ul></div></div></section>
 
   
   
@@ -758,6 +1081,7 @@ html { scroll-behavior: smooth; }
             <span style="display: flex; align-items: center; gap: 10px;"><svg class="svc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7 H15 M10 3 L15 7 L10 11"/><path d="M21 17 H9 M14 21 L9 17 L14 13"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Shopify-Migration</span></span>
             <span style="font-size: 15px; line-height: 1.5; font-weight: 500;">Der Umzug von Magento, Shopware oder WooCommerce auf Shopify und Shopify Plus, ohne Verlust bei Umsatz und Rankings.</span>
           </span>
+          <span class="svc-thumb" aria-hidden="true"><img src="/assets/img/services/shopify-migration-de.jpg" alt="" width="900" height="746" loading="lazy" decoding="async"></span>
           <svg class="svc-arrow" width="26" height="26" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
         </a>
       
@@ -766,6 +1090,7 @@ html { scroll-behavior: smooth; }
             <span style="display: flex; align-items: center; gap: 10px;"><svg class="svc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2 L22 12 L12 22 L2 12 Z"/><path d="M12 2 V7 M12 17 V22 M2 12 H7 M17 12 H22"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Tracking &amp; Attribution</span></span>
             <span style="font-size: 15px; line-height: 1.5; font-weight: 500;">Belastbare Daten, bevor Budget fließt. Jede Conversion wird dort erfasst, wo sie hingehört.</span>
           </span>
+          <span class="svc-thumb" aria-hidden="true"><img src="/assets/img/services/tracking-de.jpg" alt="" width="900" height="746" loading="lazy" decoding="async"></span>
           <svg class="svc-arrow" width="26" height="26" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
         </a>
       
@@ -774,6 +1099,7 @@ html { scroll-behavior: smooth; }
             <span style="display: flex; align-items: center; gap: 10px;"><svg class="svc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21 H21 M6 21 V14 M12 21 V9 M18 21 V6 M14 4 H19 V9"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Performance Marketing</span></span>
             <span style="font-size: 15px; line-height: 1.5; font-weight: 500;">Meta Ads und Google Ads, gesteuert nach Umsatz und Marge statt nach Klicks.</span>
           </span>
+          <span class="svc-thumb" aria-hidden="true"><img src="/assets/img/services/performance-marketing-de.jpg" alt="" width="900" height="746" loading="lazy" decoding="async"></span>
           <svg class="svc-arrow" width="26" height="26" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
         </a>
       
@@ -782,6 +1108,7 @@ html { scroll-behavior: smooth; }
             <span style="display: flex; align-items: center; gap: 10px;"><svg class="svc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 5 H22 V19 H2 Z"/><path d="M2 5 L12 14 L22 5"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">E-Mail &amp; Retention</span></span>
             <span style="font-size: 15px; line-height: 1.5; font-weight: 500;">Aus Erstkäufern werden Stammkunden. Automatisiert, segmentiert und messbar.</span>
           </span>
+          <span class="svc-thumb" aria-hidden="true"><img src="/assets/img/services/e-mail-marketing-de.jpg" alt="" width="900" height="746" loading="lazy" decoding="async"></span>
           <svg class="svc-arrow" width="26" height="26" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
         </a>
       
@@ -790,6 +1117,7 @@ html { scroll-behavior: smooth; }
             <span style="display: flex; align-items: center; gap: 10px;"><svg class="svc-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 4 H21 L14 13 V20 L10 18 V13 Z"/></svg><span style="font-family: 'Krona One', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Conversion-Optimierung</span></span>
             <span style="font-size: 15px; line-height: 1.5; font-weight: 500;">Wir finden die Stellen, an denen Besucher abspringen, und beheben sie direkt in eurem Shop.</span>
           </span>
+          <span class="svc-thumb" aria-hidden="true"><img src="/assets/img/services/conversion-optimierung-de.jpg" alt="" width="900" height="746" loading="lazy" decoding="async"></span>
           <svg class="svc-arrow" width="26" height="26" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
         </a>
       
@@ -797,6 +1125,120 @@ html { scroll-behavior: smooth; }
   </section>
 
   
+  <section id="phasen" class="on-light phasen" aria-labelledby="m-phasen-h">
+    <div class="ph-head">
+      <div class="ph-intro">
+        <h2 id="m-phasen-h" class="reveal">Vom Fundament bis zur Skalierung.</h2>
+        <p>Drei Phasen, ein Team. Ihr steigt dort ein, wo euer Shop gerade steht.</p>
+      </div>
+      <div class="ph-demo">
+        <div class="pd-bar"><span class="pd-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="pd-url" aria-hidden="true"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="5" width="8" height="6"/><path d="M3 5 V3.5 a2 2 0 0 1 4 0 V5"/></svg>euer-shop.de</span><span class="pd-note">Beispielwerte</span></div>
+        <div class="pd-stage" aria-hidden="true">
+          <div class="pd-scene pd-s1">
+            <p class="pd-h pd-in" style="--i:0">Migration &amp; Tracking</p>
+            <div class="pd-mig pd-in" style="--i:1"><span class="pd-sys">Magento</span><span class="pd-pipe"><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span></span><span class="pd-sys pd-sys-to">Shopify</span></div>
+            <ul class="pd-rows"><li class="pd-in" style="--i:2"><span>Produkte</span><i class="pd-prog" style="--k:0"></i><b data-to="2431" data-delay="300">0</b><svg class="pd-ok" style="--k:0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg></li><li class="pd-in" style="--i:3"><span>Kunden</span><i class="pd-prog" style="--k:1"></i><b data-to="18920" data-delay="550">0</b><svg class="pd-ok" style="--k:1" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg></li><li class="pd-in" style="--i:4"><span>Bestellungen</span><i class="pd-prog" style="--k:2"></i><b data-to="64310" data-delay="800">0</b><svg class="pd-ok" style="--k:2" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg></li><li class="pd-in" style="--i:5"><span>Redirects</span><i class="pd-prog" style="--k:3"></i><b data-to="1284" data-delay="1050">0</b><svg class="pd-ok" style="--k:3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5 L6.5 12 L13 4.5"/></svg></li></ul>
+            <div class="pd-log"><p style="--k:0"><span class="pd-ev">purchase</span> → GA4<em>200 OK</em></p><p style="--k:1"><span class="pd-ev">purchase</span> → Meta CAPI<em>200 OK</em></p><p style="--k:2"><span class="pd-ev">purchase</span> → Google Ads<em>200 OK</em></p></div>
+          </div>
+          <div class="pd-scene pd-s2">
+            <p class="pd-h pd-in" style="--i:0">Conversion</p>
+            <div class="pd-kpi pd-in" style="--i:1"><span class="pd-big"><b data-from="1.6" data-to="2.4" data-dec="1" data-delay="600">1,6</b> %</span><span class="pd-sub">Conversion-Rate</span><span class="pd-delta">+50 %</span></div>
+            <ul class="pd-fun"><li class="pd-in" style="--i:2"><span>Besuch → Produktseite</span><span class="pd-v"><b data-from="55" data-to="58" data-delay="700">55</b> %</span><span class="pd-track" style="--b:55%;--a:58%;--k:0"><i class="pd-now"></i><i class="pd-was"></i></span></li><li class="pd-in" style="--i:3"><span>Produktseite → Warenkorb</span><span class="pd-v"><b data-from="20" data-to="24" data-delay="850">20</b> %</span><span class="pd-track" style="--b:20%;--a:24%;--k:1"><i class="pd-now"></i><i class="pd-was"></i></span></li><li class="pd-in" style="--i:4"><span>Warenkorb → Checkout</span><span class="pd-v"><b data-from="52" data-to="58" data-delay="1000">52</b> %</span><span class="pd-track" style="--b:52%;--a:58%;--k:2"><i class="pd-now"></i><i class="pd-was"></i></span></li><li class="pd-in" style="--i:5"><span>Checkout → Kauf</span><span class="pd-v"><b data-from="28" data-to="30" data-delay="1150">28</b> %</span><span class="pd-track" style="--b:28%;--a:30%;--k:3"><i class="pd-now"></i><i class="pd-was"></i></span></li></ul>
+            <p class="pd-legend pd-in" style="--i:6"><i class="pd-lg-was"></i>vorher <i class="pd-lg-now"></i>nachher</p>
+          </div>
+          <div class="pd-scene pd-s3">
+            <p class="pd-h pd-in" style="--i:0">Wachstum</p>
+            <div class="pd-tiles">
+              <div class="pd-tile pd-in" style="--i:1"><span>Umsatz</span><strong>+<b data-to="38" data-delay="300">0</b> %</strong></div>
+              <div class="pd-tile pd-in" style="--i:2"><span>ROAS</span><strong><b data-to="3.8" data-dec="1" data-delay="400">0</b>x</strong></div>
+              <div class="pd-tile pd-in" style="--i:3"><span>Wiederkäufer</span><strong><b data-to="31" data-delay="500">0</b> %</strong></div>
+            </div>
+            <div class="pd-chart pd-in" style="--i:4">
+              <div class="pd-plot"><svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs><linearGradient id="m-pd-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C5D8E6" stop-opacity=".35"/><stop offset="1" stop-color="#C5D8E6" stop-opacity="0"/></linearGradient></defs>
+                <path class="pd-grid" d="M0 25 H100 M0 50 H100 M0 75 H100"/>
+                <path d="M0.0 82 L8.82 79 L17.64 80 L26.45 73 L35.27 71 L44.09 64 L52.91 61 L61.73 53 L70.55 47 L79.36 37 L88.18 29 L97.0 17 L97.0 100 L0 100 Z" fill="url(#m-pd-grad)"/>
+                <path class="pd-line" d="M0.0 82 L8.82 79 L17.64 80 L26.45 73 L35.27 71 L44.09 64 L52.91 61 L61.73 53 L70.55 47 L79.36 37 L88.18 29 L97.0 17"/>
+              </svg></div>
+              <span class="pd-end" style="left: 97.0%; top: 17%;"></span>
+              <div class="pd-toasts"><p style="--k:0"><i></i>Neue Bestellung · 89,90 €</p><p style="--k:1"><i></i>Flow „Warenkorb“ · 1 Kauf</p><p style="--k:2"><i></i>Meta Ads · ROAS 3,8x</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="pd-foot">
+          <button type="button" class="pd-seg" aria-pressed="false"><span class="pd-seg-n">01</span><span class="pd-seg-t">Fundament</span><svg class="pd-seg-go" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 2 L8 6 L4 10"/></svg><i></i></button>
+          <button type="button" class="pd-seg" aria-pressed="false"><span class="pd-seg-n">02</span><span class="pd-seg-t">Optimieren</span><svg class="pd-seg-go" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 2 L8 6 L4 10"/></svg><i></i></button>
+          <button type="button" class="pd-seg" aria-pressed="false"><span class="pd-seg-n">03</span><span class="pd-seg-t">Skalieren</span><svg class="pd-seg-go" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 2 L8 6 L4 10"/></svg><i></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="ph-grid">
+      <div class="ph-col">
+        <p class="ph-label">Phase 01</p>
+        <h3 class="ph-title">Fundament legen</h3>
+        <div class="ph-track" aria-hidden="true"><span class="ph-dot"></span><span class="ph-line"></span></div>
+        <div class="ph-list">
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="m-p1-1">
+              <span class="ph-n">01</span><span class="ph-t">Shopify-Migration</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="m-p1-1" role="region"><div><p>Der Umzug von Magento, Shopware oder WooCommerce auf Shopify und Shopify Plus. Produkte, Kunden, Bestellungen und Redirects ziehen mit, Umsatz und Rankings bleiben.</p><a href="/leistungen/shopify-migration/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="m-p1-2">
+              <span class="ph-n">02</span><span class="ph-t">Tracking &amp; Attribution</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="m-p1-2" role="region"><div><p>GA4, GTM und serverseitiges Tracking mit Conversions API. Belastbare Daten, bevor das erste Budget fließt.</p><a href="/leistungen/tracking/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="ph-col">
+        <p class="ph-label">Phase 02</p>
+        <h3 class="ph-title">Shop optimieren</h3>
+        <div class="ph-track" aria-hidden="true"><span class="ph-dot"></span><span class="ph-line"></span></div>
+        <div class="ph-list">
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="m-p2-1">
+              <span class="ph-n">01</span><span class="ph-t">CRO-Audit</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="m-p2-1" role="region"><div><p>Wir finden die Stellen, an denen Besucher abspringen, und sortieren die Hebel nach ihrer Wirkung auf den Umsatz.</p><a href="/leistungen/conversion-optimierung/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="m-p2-2">
+              <span class="ph-n">02</span><span class="ph-t">Produktseiten</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="m-p2-2" role="region"><div><p>Bilder, Texte, Vertrauen und Varianten so gebaut, dass aus einem Besuch ein Warenkorb wird.</p><a href="/leistungen/conversion-optimierung/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="m-p2-3">
+              <span class="ph-n">03</span><span class="ph-t">Warenkorb &amp; Checkout</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="m-p2-3" role="region"><div><p>Weniger Reibung auf den letzten Metern: Versandinfos, Zahlarten und Upsells an der richtigen Stelle.</p><a href="/leistungen/conversion-optimierung/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="ph-col ph-last">
+        <p class="ph-label">Phase 03</p>
+        <h3 class="ph-title">Umsatz skalieren</h3>
+        <div class="ph-track" aria-hidden="true"><span class="ph-dot"></span><span class="ph-line"></span></div>
+        <div class="ph-list">
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="m-p3-1">
+              <span class="ph-n">01</span><span class="ph-t">Performance Marketing</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="m-p3-1" role="region"><div><p>Meta Ads und Google Ads, gesteuert nach Umsatz und Marge statt nach Klicks.</p><a href="/leistungen/performance-marketing/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+          <div class="ph-item">
+            <button class="ph-q" type="button" aria-expanded="false" aria-controls="m-p3-2">
+              <span class="ph-n">02</span><span class="ph-t">E-Mail &amp; Retention</span><span class="ph-plus" aria-hidden="true"></span>
+            </button>
+            <div class="ph-a" id="m-p3-2" role="region"><div><p>Klaviyo-Flows, Kampagnen und Segmente, die aus Erstkäufern Stammkunden machen.</p><a href="/leistungen/e-mail-marketing/">Mehr erfahren <span class="arrow" aria-hidden="true">&rarr;</span></a></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="cases" class="on-light" style="background: #FFFFFF; color: #000000; padding: 0px 0 88px; display: flex; flex-direction: column; gap: 40px; overflow: hidden;">
     <div style="margin: 0 20px; padding-top: 56px; border-top: 1.5px solid #000000; display: flex; flex-direction: column; gap: 32px;">
       <div style="display: flex; flex-direction: column; gap: 20px; max-width: 820px;">
@@ -808,6 +1250,7 @@ html { scroll-behavior: smooth; }
     <div class="car" aria-label="Cases" style="padding: 4px 20px 8px; gap: 16px; scroll-padding-left: 20px;">
       
         <a class="case-card" href="/cases/blue-fire/" style="flex: 0 0 300px; padding: 24px; gap: 24px;">
+          <span class="case-media" aria-hidden="true"><img src="/assets/img/cases/blue-fire-desktop.jpg" alt="" width="1800" height="1125" loading="lazy" decoding="async"></span>
           <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 16px; min-height: 56px;">
             <img class="clogo" src="/assets/img/blue-fire-logo.png" alt="Blue Fire Co." style="height: 44px; width: auto;">
             
@@ -822,6 +1265,7 @@ html { scroll-behavior: smooth; }
         </a>
       
         <a class="case-card" href="/cases/storz-bickel/" style="flex: 0 0 300px; padding: 24px; gap: 24px;">
+          <span class="case-media cm-mails" aria-hidden="true"><span class="cm-phone"><img src="/assets/img/cases/storz-bickel-welcome.jpg" alt="" width="400" height="1502" loading="lazy" decoding="async"></span><span class="cm-phone"><img src="/assets/img/cases/storz-bickel-warenkorb.jpg" alt="" width="626" height="1462" loading="lazy" decoding="async"></span></span>
           <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 16px; min-height: 56px;">
             
             <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 22px; text-transform: uppercase; line-height: 1.15;">Storz &amp; Bickel</span>
@@ -836,6 +1280,7 @@ html { scroll-behavior: smooth; }
         </a>
       
         <a class="case-card" href="/cases/pretty-woman/" style="flex: 0 0 300px; padding: 24px; gap: 24px;">
+          <span class="case-media" aria-hidden="true"><img src="/assets/img/cases/pretty-woman-desktop.jpg" alt="" width="1800" height="1125" loading="lazy" decoding="async"></span>
           <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 16px; min-height: 56px;">
             
             <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 22px; text-transform: uppercase; line-height: 1.15;">Pretty Woman Brautmoden</span>
@@ -856,7 +1301,7 @@ html { scroll-behavior: smooth; }
   
 
   
-  <section id="arbeitsweise" class="on-light" style="padding: 96px 20px; display: flex; flex-direction: column; gap: 32px;"><h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 30px; line-height: 1.08; text-wrap: balance;">Typische Agentur.<br>Oder Velonify.</h2><div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px;"><div style="border: 1.5px solid #000000; padding: 36px; display: flex; flex-direction: column; gap: 24px;"><h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 18px; line-height: 1.15; color: rgba(0,0,0,0.55);">Typische Agentur</h3><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px;"><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Anfragen laufen über einen Account Manager</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Freigabeschleifen über mehrere Abteilungen</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Umsetzung durch wechselnde Subunternehmer</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Reports ohne Bezug zu euren Zahlen</span></li></ul></div><div style="background: #45142D; color: #FFFFFF; padding: 36px; display: flex; flex-direction: column; gap: 24px;"><h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 18px; line-height: 1.15; color: #C5D8E6;">Velonify</h3><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px;"><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Ihr sprecht direkt mit der Person, die umsetzt</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Entscheidungen im kurzen Gespräch, keine Freigaberunden</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Wir setzen alles selbst um, ohne Subunternehmer</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Euer Erfolg im Shop ist unser Maßstab</span></li></ul></div></div></section>
+  <section id="arbeitsweise" class="on-light" style="padding: 96px 20px; display: flex; flex-direction: column; gap: 32px;"><h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 30px; line-height: 1.08; text-wrap: balance;">Typische Agentur.<br>Oder Velonify.</h2><div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px;"><div style="border: 1.5px solid #000000; padding: 36px; display: flex; flex-direction: column; gap: 24px;"><h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 18px; line-height: 1.15; color: rgba(0,0,0,0.55);">Typische Agentur</h3><svg class="aw-route" viewBox="0 0 400 132" aria-hidden="true"><path class="aw-path" d="M20 65 L110 30 L200 105 L290 30 L380 65" stroke="rgba(0,0,0,0.35)" stroke-dasharray="4 5"/><circle cx="20" cy="65" r="5.5" fill="#000000" stroke="#000000" stroke-width="1.5"/><circle cx="110" cy="30" r="5.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/><circle cx="200" cy="105" r="5.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/><circle cx="290" cy="30" r="5.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/><circle cx="380" cy="65" r="5.5" fill="#000000" stroke="#000000" stroke-width="1.5"/><text x="12" y="92" text-anchor="start" fill="rgba(0,0,0,0.6)">Ihr</text><text x="110" y="16" text-anchor="middle" fill="rgba(0,0,0,0.6)">Account Manager</text><text x="200" y="126" text-anchor="middle" fill="rgba(0,0,0,0.6)">Projektleitung</text><text x="290" y="16" text-anchor="middle" fill="rgba(0,0,0,0.6)">Subunternehmer</text><text x="388" y="92" text-anchor="end" fill="rgba(0,0,0,0.6)">Shop</text><circle r="5" fill="#45142D"><animateMotion dur="7s" repeatCount="indefinite" path="M20 65 L110 30 L200 105 L290 30 L380 65"/></circle></svg><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px;"><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Anfragen laufen über einen Account Manager</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Freigabeschleifen über mehrere Abteilungen</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Umsetzung durch wechselnde Subunternehmer</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #000000;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M5 5 L15 15 M15 5 L5 15"></path></svg><span>Reports ohne Bezug zu euren Zahlen</span></li></ul></div><div style="background: #45142D; color: #FFFFFF; padding: 36px; display: flex; flex-direction: column; gap: 24px;"><h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 18px; line-height: 1.15; color: #C5D8E6;">Velonify</h3><svg class="aw-route" viewBox="0 0 400 132" aria-hidden="true"><path class="aw-path" d="M20 65 L380 65" stroke="#C5D8E6"/><circle cx="20" cy="65" r="5.5" fill="#C5D8E6"/><circle cx="380" cy="65" r="5.5" fill="#C5D8E6"/><text x="12" y="92" text-anchor="start" fill="rgba(255,255,255,0.75)">Ihr</text><text x="388" y="92" text-anchor="end" fill="rgba(255,255,255,0.75)">Shop</text><text x="200" y="50" text-anchor="middle" fill="#C5D8E6">ein Team, direkt</text><circle r="5" fill="#FFFFFF"><animateMotion dur="2.4s" repeatCount="indefinite" path="M20 65 L380 65" keyPoints="0;1;1" keyTimes="0;0.55;1" calcMode="linear"/></circle></svg><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px;"><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Ihr sprecht direkt mit der Person, die umsetzt</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Entscheidungen im kurzen Gespräch, keine Freigaberunden</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Wir setzen alles selbst um, ohne Subunternehmer</span></li><li style="display: flex; align-items: flex-start; gap: 14px; font-size: 15px; line-height: 1.5; color: #FFFFFF;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 10 L8 14 L16 5"></path></svg><span>Euer Erfolg im Shop ist unser Maßstab</span></li></ul></div></div></section>
 
   
 
@@ -909,5 +1354,74 @@ html { scroll-behavior: smooth; }
 </div>
 
 </div>
+<script>
+/* Phasen accordion: one open item per phase */
+document.addEventListener('click', function (e) {
+  var q = e.target.closest('.ph-q'); if (!q) return;
+  var item = q.parentNode, open = !item.classList.contains('ph-open');
+  item.parentNode.querySelectorAll('.ph-open').forEach(function (o) { o.classList.remove('ph-open'); o.querySelector('.ph-q').setAttribute('aria-expanded', 'false'); });
+  if (open) { item.classList.add('ph-open'); q.setAttribute('aria-expanded', 'true'); }
+  var sec = q.closest('.phasen'), col = q.closest('.ph-col');
+  if (sec && sec._phase) sec._phase([].indexOf.call(col.parentNode.children, col), true);
+});
+</script>
+<script>
+/* Phasen demo: scenes cycle while in view; timeline, accordion and segments pick a phase */
+document.addEventListener('DOMContentLoaded', function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.phasen').forEach(function (sec) {
+    var demo = sec.querySelector('.ph-demo'); if (!demo) return;
+    var scenes = demo.querySelectorAll('.pd-scene'), segs = demo.querySelectorAll('.pd-seg'), cols = sec.querySelectorAll('.ph-col');
+    var DUR = 6500, cur = -1, timer = null, auto = !reduce, visible = false;
+    if (auto) demo.classList.add('pd-auto');
+
+    function count(el) {
+      var to = parseFloat(el.dataset.to), from = parseFloat(el.dataset.from || 0), dec = +(el.dataset.dec || 0), tok = {};
+      var fmt = function (v) { return v.toLocaleString(document.documentElement.lang === 'en' ? 'en-US' : 'de-DE', { minimumFractionDigits: dec, maximumFractionDigits: dec }); };
+      el._tok = tok;
+      if (reduce) { el.textContent = fmt(to); return; }
+      el.textContent = fmt(from);
+      setTimeout(function () {
+        var t0 = null;
+        requestAnimationFrame(function step(ts) {
+          if (el._tok !== tok) return;
+          if (!t0) t0 = ts;
+          var p = Math.min(1, (ts - t0) / 1400); p = 1 - Math.pow(1 - p, 3);
+          el.textContent = fmt(from + (to - from) * p);
+          if (p < 1) requestAnimationFrame(step);
+        });
+      }, +(el.dataset.delay || 0));
+    }
+    function schedule() {
+      clearTimeout(timer);
+      if (auto && visible) timer = setTimeout(function () { show((cur + 1) % scenes.length); }, DUR);
+    }
+    function show(i) {
+      cur = i;
+      scenes.forEach(function (s, k) { s.classList.remove('on'); });
+      void demo.offsetWidth;
+      scenes[i].classList.add('on');
+      segs.forEach(function (b, k) { b.classList.toggle('on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+      cols.forEach(function (c, k) { c.classList.toggle('ph-active', k === i); });
+      scenes[i].querySelectorAll('[data-to]').forEach(count);
+      schedule();
+    }
+    function pick(i) { auto = false; demo.classList.remove('pd-auto'); show(i); }
+    sec._phase = function (i) { if (i !== cur || auto) pick(i); };
+    segs.forEach(function (b, k) { b.addEventListener('click', function () { pick(k); }); });
+
+    if (!('IntersectionObserver' in window)) { visible = true; show(0); return; }
+    new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting;
+      demo.classList.toggle('pd-paused', !visible);
+      if (visible) show(cur < 0 ? 0 : cur); else clearTimeout(timer);
+    }, { threshold: 0.35 }).observe(demo);
+  });
+});
+</script>
+<script>
+/* Route diagrams: no moving dots for reduced motion */
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.addEventListener('DOMContentLoaded', function () { document.querySelectorAll('.aw-route animateMotion').forEach(function (a) { a.remove(); }); });
+</script>
 </body>
 </html>

@@ -338,6 +338,8 @@ html { scroll-behavior: smooth; }
 <script src="/assets/js/InertiaPlugin.min.js"></script>
 <script src="/assets/js/lenis.min.js"></script>
 <script src="/assets/js/velonify-motion.js?v=2"></script>
+<link rel="stylesheet" href="/assets/visuals.css?v=1">
+<script src="/assets/js/visuals.js?v=1" defer></script>
 </head>
 <body>
 <div class="v v-desktop">
@@ -365,7 +367,8 @@ html { scroll-behavior: smooth; }
 
   <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 72px 64px 112px; overflow: hidden;">
     <svg class="mark-b" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true" style="position: absolute; right: -160px; bottom: -180px; width: 620px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
-    <div style="position: relative; display: flex; flex-direction: column; gap: 36px; max-width: 980px;">
+    <div class="hero-vz">
+    <div class="hero-copy" style="position: relative; display: flex; flex-direction: column; gap: 36px; max-width: 980px;">
       <nav aria-label="Breadcrumb" style="display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600;">
         <a href="/en/" style="color: rgba(255,255,255,0.75);">Home</a>
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
@@ -378,6 +381,21 @@ html { scroll-behavior: smooth; }
       <div class="hero-fade-2" style="display: flex; gap: 14px;">
         <a class="btn btn-ice" href="/en/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 60px; padding: 0 30px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Start a project <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
         <a class="btn btn-ghost-light" href="#umfang" style="display: flex; align-items: center; height: 60px; padding: 0 30px; border: 1.5px solid #FFFFFF; box-sizing: border-box; color: #FFFFFF; font-size: 16px; font-weight: 700;">See what's included</a>
+      </div>
+    </div>
+      <div class="vz vz-perf" role="group" aria-label="Example: campaign dashboard shifting budget to the campaigns with the best margin">
+        <div class="vz-bar" aria-hidden="true"><span class="vz-dots"><i></i><i></i><i></i></span><span class="vz-url"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="5" width="8" height="6"/><path d="M3 5 V3.5 a2 2 0 0 1 4 0 V5"/></svg>your-store.com</span><span class="vz-note">Sample data</span></div>
+        <div class="vz-body">
+          <p class="vz-h vz-in" style="--i:0">Campaigns · last 30 days</p>
+          <div class="vz-tiles">
+            <div class="vz-tile vz-in" style="--i:1"><span>Spend</span><strong>€<b data-to="11760" data-delay="400">0</b></strong></div>
+            <div class="vz-tile vz-in" style="--i:2"><span>Revenue</span><strong>€<b data-to="48216" data-delay="500">0</b></strong></div>
+            <div class="vz-tile vz-in" style="--i:3"><span>ROAS</span><strong><b data-from="3.6" data-to="4.1" data-dec="1" data-delay="1400">3.6</b>x</strong></div>
+          </div>
+          <div class="vz-in" style="--i:4"><p class="vz-sub">Budget allocation by margin</p><ul class="vp-list"><li><span class="vp-ch">M</span><span class="vp-name">Prospecting · Broad</span><b>3.6x</b><em class="vp-tag " style="--k:0">Hold</em><span class="vp-bud" style="--k:0"><span style="--b:75.0%;--a:85.0%"><i></i></span><em><b data-from="30" data-to="34" data-delay="1300">30</b>%</em></span></li><li><span class="vp-ch">M</span><span class="vp-name">Retargeting · 7 days</span><b>5.8x</b><em class="vp-tag vp-up" style="--k:1">Scale</em><span class="vp-bud" style="--k:1"><span style="--b:30.0%;--a:35.0%"><i></i></span><em><b data-from="12" data-to="14" data-delay="1400">12</b>%</em></span></li><li><span class="vp-ch">G</span><span class="vp-name">PMax · Bestseller</span><b>4.9x</b><em class="vp-tag vp-up" style="--k:2">Scale</em><span class="vp-bud" style="--k:2"><span style="--b:70.0%;--a:95.0%"><i></i></span><em><b data-from="28" data-to="38" data-delay="1500">28</b>%</em></span></li><li><span class="vp-ch">G</span><span class="vp-name">Search · Generic</span><b>1.4x</b><em class="vp-tag vp-down" style="--k:3">Throttled</em><span class="vp-bud" style="--k:3"><span style="--b:75.0%;--a:35.0%"><i></i></span><em><b data-from="30" data-to="14" data-delay="1600">30</b>%</em></span></li></ul></div>
+          <div class="vz-in" style="--i:5"><p class="vz-sub">Spend and revenue per week</p><ul class="vp-chart"><li><i class="s" style="--h:14%;--k:0"></i><i style="--h:38%;--k:0"></i></li><li><i class="s" style="--h:15%;--k:1"></i><i style="--h:42%;--k:1"></i></li><li><i class="s" style="--h:15%;--k:2"></i><i style="--h:45%;--k:2"></i></li><li><i class="s" style="--h:16%;--k:3"></i><i style="--h:52%;--k:3"></i></li><li><i class="s" style="--h:17%;--k:4"></i><i style="--h:58%;--k:4"></i></li><li><i class="s" style="--h:17%;--k:5"></i><i style="--h:63%;--k:5"></i></li><li><i class="s" style="--h:18%;--k:6"></i><i style="--h:71%;--k:6"></i></li><li><i class="s" style="--h:19%;--k:7"></i><i style="--h:80%;--k:7"></i></li></ul>
+            <p class="vp-legend"><span><i class="s"></i>Spend</span><span><i></i>Revenue</span></p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -501,7 +519,8 @@ html { scroll-behavior: smooth; }
 
   <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 36px 20px 56px; overflow: hidden;">
     <svg class="mark-b" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true" style="position: absolute; right: -80px; bottom: -90px; width: 341px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
-    <div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 100%;">
+    <div class="hero-vz">
+    <div class="hero-copy" style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 100%;">
       <nav aria-label="Breadcrumb" style="display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; flex-wrap: wrap;">
         <a href="/en/" style="color: rgba(255,255,255,0.75);">Home</a>
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
@@ -514,6 +533,21 @@ html { scroll-behavior: smooth; }
       <div class="hero-fade-2" style="display: flex; gap: 14px; flex-wrap: wrap;">
         <a class="btn btn-ice" href="/en/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 60px; padding: 0 20px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Start a project <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
         <a class="btn btn-ghost-light" href="#umfang" style="display: flex; align-items: center; height: 60px; padding: 0 20px; border: 1.5px solid #FFFFFF; box-sizing: border-box; color: #FFFFFF; font-size: 16px; font-weight: 700;">See what's included</a>
+      </div>
+    </div>
+      <div class="vz vz-perf" role="group" aria-label="Example: campaign dashboard shifting budget to the campaigns with the best margin">
+        <div class="vz-bar" aria-hidden="true"><span class="vz-dots"><i></i><i></i><i></i></span><span class="vz-url"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="5" width="8" height="6"/><path d="M3 5 V3.5 a2 2 0 0 1 4 0 V5"/></svg>your-store.com</span><span class="vz-note">Sample data</span></div>
+        <div class="vz-body">
+          <p class="vz-h vz-in" style="--i:0">Campaigns · last 30 days</p>
+          <div class="vz-tiles">
+            <div class="vz-tile vz-in" style="--i:1"><span>Spend</span><strong>€<b data-to="11760" data-delay="400">0</b></strong></div>
+            <div class="vz-tile vz-in" style="--i:2"><span>Revenue</span><strong>€<b data-to="48216" data-delay="500">0</b></strong></div>
+            <div class="vz-tile vz-in" style="--i:3"><span>ROAS</span><strong><b data-from="3.6" data-to="4.1" data-dec="1" data-delay="1400">3.6</b>x</strong></div>
+          </div>
+          <div class="vz-in" style="--i:4"><p class="vz-sub">Budget allocation by margin</p><ul class="vp-list"><li><span class="vp-ch">M</span><span class="vp-name">Prospecting · Broad</span><b>3.6x</b><em class="vp-tag " style="--k:0">Hold</em><span class="vp-bud" style="--k:0"><span style="--b:75.0%;--a:85.0%"><i></i></span><em><b data-from="30" data-to="34" data-delay="1300">30</b>%</em></span></li><li><span class="vp-ch">M</span><span class="vp-name">Retargeting · 7 days</span><b>5.8x</b><em class="vp-tag vp-up" style="--k:1">Scale</em><span class="vp-bud" style="--k:1"><span style="--b:30.0%;--a:35.0%"><i></i></span><em><b data-from="12" data-to="14" data-delay="1400">12</b>%</em></span></li><li><span class="vp-ch">G</span><span class="vp-name">PMax · Bestseller</span><b>4.9x</b><em class="vp-tag vp-up" style="--k:2">Scale</em><span class="vp-bud" style="--k:2"><span style="--b:70.0%;--a:95.0%"><i></i></span><em><b data-from="28" data-to="38" data-delay="1500">28</b>%</em></span></li><li><span class="vp-ch">G</span><span class="vp-name">Search · Generic</span><b>1.4x</b><em class="vp-tag vp-down" style="--k:3">Throttled</em><span class="vp-bud" style="--k:3"><span style="--b:75.0%;--a:35.0%"><i></i></span><em><b data-from="30" data-to="14" data-delay="1600">30</b>%</em></span></li></ul></div>
+          <div class="vz-in" style="--i:5"><p class="vz-sub">Spend and revenue per week</p><ul class="vp-chart"><li><i class="s" style="--h:14%;--k:0"></i><i style="--h:38%;--k:0"></i></li><li><i class="s" style="--h:15%;--k:1"></i><i style="--h:42%;--k:1"></i></li><li><i class="s" style="--h:15%;--k:2"></i><i style="--h:45%;--k:2"></i></li><li><i class="s" style="--h:16%;--k:3"></i><i style="--h:52%;--k:3"></i></li><li><i class="s" style="--h:17%;--k:4"></i><i style="--h:58%;--k:4"></i></li><li><i class="s" style="--h:17%;--k:5"></i><i style="--h:63%;--k:5"></i></li><li><i class="s" style="--h:18%;--k:6"></i><i style="--h:71%;--k:6"></i></li><li><i class="s" style="--h:19%;--k:7"></i><i style="--h:80%;--k:7"></i></li></ul>
+            <p class="vp-legend"><span><i class="s"></i>Spend</span><span><i></i>Revenue</span></p></div>
+        </div>
       </div>
     </div>
   </section>

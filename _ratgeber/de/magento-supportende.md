@@ -10,6 +10,8 @@ published: 2026-09-24
 updated: 2026-09-24
 order: 1
 category: "Magento"
+image: "magento-supportende"
+image_alt: "Ein altes, geöffnetes Vorhängeschloss mit Riss im Bügel neben einer abgelaufenen Sanduhr"
 summary: "Magento 2.4.6 hat am 11. August 2026 den regulären Support verloren. Für Magento Open Source kommen seitdem keine Sicherheitspatches und Qualitätsfixes mehr von Adobe, Adobe-Commerce-Kunden erhalten Extended Support bis zum 31. August 2027. Der Shop läuft weiter, wird aber mit jeder neu entdeckten Lücke angreifbarer. Realistisch habt ihr drei Wege: auf 2.4.8 oder 2.4.9 upgraden, auf eine SaaS-Plattform wie Shopify umziehen oder den Shop als Übergang absichern, bis der Umzug steht."
 service: "/leistungen/shopify-migration/ | Shopify-Migration"
 related: magento-zu-shopify-migration, server-side-tracking-shopify

@@ -10,6 +10,8 @@ published: 2026-09-24
 updated: 2026-09-24
 order: 3
 category: "Tracking"
+image: "server-side-tracking-shopify"
+image_alt: "A small server with three glowing fibre-optic cables running in different directions"
 summary: "With server-side tracking, a server sends conversion data to GA4, Meta and Google Ads, not just the customer's browser. Fewer purchases get lost to ad blockers, browser restrictions and payment redirects. On Shopify there are three routes: the native Google and Meta apps, a custom pixel with server-side Google Tag Manager, or a dedicated tracking app. Visitor consent is still required, and server-side does not replace a cookie banner. Since 26 August 2026, “Additional scripts” no longer run on the thank-you page of non-Plus Shopify stores, so check your purchase events now."
 service: "/en/services/tracking/ | Tracking & attribution"
 related: magento-to-shopify-migration, magento-end-of-support

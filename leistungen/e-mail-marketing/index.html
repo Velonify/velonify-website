@@ -338,6 +338,8 @@ html { scroll-behavior: smooth; }
 <script src="/assets/js/InertiaPlugin.min.js"></script>
 <script src="/assets/js/lenis.min.js"></script>
 <script src="/assets/js/velonify-motion.js?v=2"></script>
+<link rel="stylesheet" href="/assets/visuals.css?v=1">
+<script src="/assets/js/visuals.js?v=1" defer></script>
 </head>
 <body>
 <div class="v v-desktop">
@@ -365,7 +367,8 @@ html { scroll-behavior: smooth; }
 
   <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 72px 64px 112px; overflow: hidden;">
     <svg class="mark-b" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true" style="position: absolute; right: -160px; bottom: -180px; width: 620px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
-    <div style="position: relative; display: flex; flex-direction: column; gap: 36px; max-width: 980px;">
+    <div class="hero-vz">
+    <div class="hero-copy" style="position: relative; display: flex; flex-direction: column; gap: 36px; max-width: 980px;">
       <nav aria-label="Brotkrumen" style="display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600;">
         <a href="/" style="color: rgba(255,255,255,0.75);">Start</a>
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
@@ -378,6 +381,37 @@ html { scroll-behavior: smooth; }
       <div class="hero-fade-2" style="display: flex; gap: 14px;">
         <a class="btn btn-ice" href="/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 60px; padding: 0 30px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Projekt anfragen <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
         <a class="btn btn-ghost-light" href="#umfang" style="display: flex; align-items: center; height: 60px; padding: 0 30px; border: 1.5px solid #FFFFFF; box-sizing: border-box; color: #FFFFFF; font-size: 16px; font-weight: 700;">Leistungsumfang ansehen</a>
+      </div>
+    </div>
+      <div class="vz vz-mail" role="group" aria-label="Beispiel: Klaviyo-Flow für Warenkorbabbrecher mit Umsatz aus Flows">
+        <div class="vz-bar" aria-hidden="true"><span class="vz-dots"><i></i><i></i><i></i></span><span class="vz-url"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="5" width="8" height="6"/><path d="M3 5 V3.5 a2 2 0 0 1 4 0 V5"/></svg>euer-shop.de</span><span class="vz-note">Beispielwerte</span></div>
+        <div class="vz-body">
+          <p class="vz-h vz-in" style="--i:0">Flow · Warenkorbabbruch</p>
+          <div class="ve-grid">
+            <div class="ve-flow">
+              <div class="ve-node t" style="--s:0"><small>Trigger</small>Warenkorb verlassen</div>
+              <span class="ve-link" style="--s:1"></span>
+              <div class="ve-node" style="--s:2"><small>Warten</small>1 Stunde</div>
+              <span class="ve-link" style="--s:3"></span>
+              <div class="ve-node" style="--s:4"><small>E-Mail 1</small>Noch was vergessen?<em>58 % offen</em></div>
+              <span class="ve-link" style="--s:5"></span>
+              <div class="ve-node q" style="--s:6">Bestellt?</div>
+              <span class="ve-fork" style="--s:7"></span>
+              <div class="ve-branches">
+                <div class="ve-branch"><span style="--s:8">Ja</span><div class="ve-node end" style="--s:9">Flow endet</div></div>
+                <div class="ve-branch"><span style="--s:8">Nein</span><div class="ve-node" style="--s:9"><small>E-Mail 2</small>Das sagen andere</div></div>
+              </div>
+            </div>
+            <div class="ve-side">
+              <div class="vz-tiles">
+                <div class="vz-tile vz-in" style="--i:3"><span>Umsatz aus Flows</span><strong><b data-to="12480" data-delay="700">0</b> €</strong></div>
+                <div class="vz-tile vz-in" style="--i:4"><span>Öffnungsrate</span><strong><b data-to="58" data-delay="800">0</b> %</strong></div>
+                <div class="vz-tile vz-in" style="--i:5"><span>Klickrate</span><strong><b data-to="9.4" data-dec="1" data-delay="900">0</b> %</strong></div>
+              </div>
+              <div class="vz-in" style="--i:6"><ul class="vz-feed ve-feed" data-rows="3" data-every="2100"><template><li><i></i><span>Bestellung aus Flow · 74,90 €</span></li><li><i></i><span>Bestellung aus Flow · 129,00 €</span></li><li><i></i><span>Zweitkauf · 58,40 €</span></li><li><i></i><span>Bestellung aus Flow · 212,70 €</span></li><li><i></i><span>Zweitkauf · 89,90 €</span></li></template></ul></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -501,7 +535,8 @@ html { scroll-behavior: smooth; }
 
   <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 36px 20px 56px; overflow: hidden;">
     <svg class="mark-b" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true" style="position: absolute; right: -80px; bottom: -90px; width: 341px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
-    <div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 100%;">
+    <div class="hero-vz">
+    <div class="hero-copy" style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 100%;">
       <nav aria-label="Brotkrumen" style="display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; flex-wrap: wrap;">
         <a href="/" style="color: rgba(255,255,255,0.75);">Start</a>
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
@@ -514,6 +549,37 @@ html { scroll-behavior: smooth; }
       <div class="hero-fade-2" style="display: flex; gap: 14px; flex-wrap: wrap;">
         <a class="btn btn-ice" href="/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 60px; padding: 0 20px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Projekt anfragen <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
         <a class="btn btn-ghost-light" href="#umfang" style="display: flex; align-items: center; height: 60px; padding: 0 20px; border: 1.5px solid #FFFFFF; box-sizing: border-box; color: #FFFFFF; font-size: 16px; font-weight: 700;">Leistungsumfang ansehen</a>
+      </div>
+    </div>
+      <div class="vz vz-mail" role="group" aria-label="Beispiel: Klaviyo-Flow für Warenkorbabbrecher mit Umsatz aus Flows">
+        <div class="vz-bar" aria-hidden="true"><span class="vz-dots"><i></i><i></i><i></i></span><span class="vz-url"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="5" width="8" height="6"/><path d="M3 5 V3.5 a2 2 0 0 1 4 0 V5"/></svg>euer-shop.de</span><span class="vz-note">Beispielwerte</span></div>
+        <div class="vz-body">
+          <p class="vz-h vz-in" style="--i:0">Flow · Warenkorbabbruch</p>
+          <div class="ve-grid">
+            <div class="ve-flow">
+              <div class="ve-node t" style="--s:0"><small>Trigger</small>Warenkorb verlassen</div>
+              <span class="ve-link" style="--s:1"></span>
+              <div class="ve-node" style="--s:2"><small>Warten</small>1 Stunde</div>
+              <span class="ve-link" style="--s:3"></span>
+              <div class="ve-node" style="--s:4"><small>E-Mail 1</small>Noch was vergessen?<em>58 % offen</em></div>
+              <span class="ve-link" style="--s:5"></span>
+              <div class="ve-node q" style="--s:6">Bestellt?</div>
+              <span class="ve-fork" style="--s:7"></span>
+              <div class="ve-branches">
+                <div class="ve-branch"><span style="--s:8">Ja</span><div class="ve-node end" style="--s:9">Flow endet</div></div>
+                <div class="ve-branch"><span style="--s:8">Nein</span><div class="ve-node" style="--s:9"><small>E-Mail 2</small>Das sagen andere</div></div>
+              </div>
+            </div>
+            <div class="ve-side">
+              <div class="vz-tiles">
+                <div class="vz-tile vz-in" style="--i:3"><span>Umsatz aus Flows</span><strong><b data-to="12480" data-delay="700">0</b> €</strong></div>
+                <div class="vz-tile vz-in" style="--i:4"><span>Öffnungsrate</span><strong><b data-to="58" data-delay="800">0</b> %</strong></div>
+                <div class="vz-tile vz-in" style="--i:5"><span>Klickrate</span><strong><b data-to="9.4" data-dec="1" data-delay="900">0</b> %</strong></div>
+              </div>
+              <div class="vz-in" style="--i:6"><ul class="vz-feed ve-feed" data-rows="3" data-every="2100"><template><li><i></i><span>Bestellung aus Flow · 74,90 €</span></li><li><i></i><span>Bestellung aus Flow · 129,00 €</span></li><li><i></i><span>Zweitkauf · 58,40 €</span></li><li><i></i><span>Bestellung aus Flow · 212,70 €</span></li><li><i></i><span>Zweitkauf · 89,90 €</span></li></template></ul></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

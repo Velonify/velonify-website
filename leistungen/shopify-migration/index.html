@@ -338,6 +338,8 @@ html { scroll-behavior: smooth; }
 <script src="/assets/js/InertiaPlugin.min.js"></script>
 <script src="/assets/js/lenis.min.js"></script>
 <script src="/assets/js/velonify-motion.js?v=2"></script>
+<link rel="stylesheet" href="/assets/visuals.css?v=1">
+<script src="/assets/js/visuals.js?v=1" defer></script>
 </head>
 <body>
 <div class="v v-desktop">
@@ -365,7 +367,8 @@ html { scroll-behavior: smooth; }
 
   <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 72px 64px 112px; overflow: hidden;">
     <svg class="mark-b" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true" style="position: absolute; right: -160px; bottom: -180px; width: 620px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
-    <div style="position: relative; display: flex; flex-direction: column; gap: 36px; max-width: 980px;">
+    <div class="hero-vz">
+    <div class="hero-copy" style="position: relative; display: flex; flex-direction: column; gap: 36px; max-width: 980px;">
       <nav aria-label="Brotkrumen" style="display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600;">
         <a href="/" style="color: rgba(255,255,255,0.75);">Start</a>
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
@@ -378,6 +381,28 @@ html { scroll-behavior: smooth; }
       <div class="hero-fade-2" style="display: flex; gap: 14px;">
         <a class="btn btn-ice" href="/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 60px; padding: 0 30px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Projekt anfragen <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
         <a class="btn btn-ghost-light" href="#umfang" style="display: flex; align-items: center; height: 60px; padding: 0 30px; border: 1.5px solid #FFFFFF; box-sizing: border-box; color: #FFFFFF; font-size: 16px; font-weight: 700;">Leistungsumfang ansehen</a>
+      </div>
+    </div>
+      <div class="vz vz-mig" role="group" aria-label="Beispiel: Migration von Magento auf Shopify mit Redirect-Log und stabiler Sichtbarkeit">
+        <div class="vz-bar" aria-hidden="true"><span class="vz-dots"><i></i><i></i><i></i></span><span class="vz-url"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="5" width="8" height="6"/><path d="M3 5 V3.5 a2 2 0 0 1 4 0 V5"/></svg>euer-shop.de</span><span class="vz-note">Beispielwerte</span></div>
+        <div class="vz-body">
+          <p class="vz-h vz-in" style="--i:0">Migration · Go-live-Check</p>
+          <div class="vm-flow vz-in" style="--i:1"><span class="vm-sys">Magento 2</span><span class="vm-pipe"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i></span><span class="vm-sys vm-to">Shopify Plus</span></div>
+          <div class="vz-tiles">
+            <div class="vz-tile vz-in" style="--i:2"><span>Datensätze</span><strong><b data-to="85645" data-delay="500">0</b></strong></div>
+            <div class="vz-tile vz-in" style="--i:3"><span>Redirects aktiv</span><strong><b data-to="1284" data-delay="600">0</b></strong></div>
+            <div class="vz-tile vz-in" style="--i:4"><span>404-Fehler</span><strong>0</strong></div>
+          </div>
+          <div class="vz-in" style="--i:5"><p class="vz-sub">Redirect-Log</p><ul class="vz-feed vm-feed vz-mono" data-rows="4" data-every="1700"><template><li><em>301</em><s>/catalog/product/view/id/412</s><span>→ /products/denim-jacket</span></li><li><em>301</em><s>/herren/jacken.html</s><span>→ /collections/herren-jacken</span></li><li><em>301</em><s>/checkout/cart/</s><span>→ /cart</span></li><li><em>301</em><s>/customer/account/login/</s><span>→ /account/login</span></li><li><em>301</em><s>/blog/pflegetipps-denim.html</s><span>→ /blogs/news/pflegetipps-denim</span></li><li><em>301</em><s>/catalogsearch/result/?q=jeans</s><span>→ /search?q=jeans</span></li><li><em>301</em><s>/damen/kleider.html?color=blau</s><span>→ /collections/damen-kleider</span></li></template></ul></div>
+          <div class="vz-in" style="--i:6"><p class="vz-sub">Sichtbarkeit rund um den Go-live</p>
+            <div class="vm-plot">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path class="vm-grid" d="M0 25 H100 M0 50 H100 M0 75 H100"/></svg>
+              <div class="vm-draw"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path class="vm-without" d="M0 52 L9 50 L18 51 L27 48 L36 49 L45 46 L55 45 L64 70 L73 78 L82 74 L91 72 L100 69"/><path class="vm-with" d="M0 52 L9 50 L18 51 L27 48 L36 49 L45 46 L55 45 L64 43 L73 41 L82 38 L91 35 L100 31"/></svg></div>
+              <div class="vm-live"><span>Go-live</span></div>
+            </div>
+            <p class="vm-legend"><span><i class="l1"></i>mit Redirect-Konzept</span><span><i class="l2"></i>ohne</span></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -501,7 +526,8 @@ html { scroll-behavior: smooth; }
 
   <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 36px 20px 56px; overflow: hidden;">
     <svg class="mark-b" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true" style="position: absolute; right: -80px; bottom: -90px; width: 341px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
-    <div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 100%;">
+    <div class="hero-vz">
+    <div class="hero-copy" style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 100%;">
       <nav aria-label="Brotkrumen" style="display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; flex-wrap: wrap;">
         <a href="/" style="color: rgba(255,255,255,0.75);">Start</a>
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
@@ -514,6 +540,28 @@ html { scroll-behavior: smooth; }
       <div class="hero-fade-2" style="display: flex; gap: 14px; flex-wrap: wrap;">
         <a class="btn btn-ice" href="/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 60px; padding: 0 20px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Projekt anfragen <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
         <a class="btn btn-ghost-light" href="#umfang" style="display: flex; align-items: center; height: 60px; padding: 0 20px; border: 1.5px solid #FFFFFF; box-sizing: border-box; color: #FFFFFF; font-size: 16px; font-weight: 700;">Leistungsumfang ansehen</a>
+      </div>
+    </div>
+      <div class="vz vz-mig" role="group" aria-label="Beispiel: Migration von Magento auf Shopify mit Redirect-Log und stabiler Sichtbarkeit">
+        <div class="vz-bar" aria-hidden="true"><span class="vz-dots"><i></i><i></i><i></i></span><span class="vz-url"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="5" width="8" height="6"/><path d="M3 5 V3.5 a2 2 0 0 1 4 0 V5"/></svg>euer-shop.de</span><span class="vz-note">Beispielwerte</span></div>
+        <div class="vz-body">
+          <p class="vz-h vz-in" style="--i:0">Migration · Go-live-Check</p>
+          <div class="vm-flow vz-in" style="--i:1"><span class="vm-sys">Magento 2</span><span class="vm-pipe"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i></span><span class="vm-sys vm-to">Shopify Plus</span></div>
+          <div class="vz-tiles">
+            <div class="vz-tile vz-in" style="--i:2"><span>Datensätze</span><strong><b data-to="85645" data-delay="500">0</b></strong></div>
+            <div class="vz-tile vz-in" style="--i:3"><span>Redirects aktiv</span><strong><b data-to="1284" data-delay="600">0</b></strong></div>
+            <div class="vz-tile vz-in" style="--i:4"><span>404-Fehler</span><strong>0</strong></div>
+          </div>
+          <div class="vz-in" style="--i:5"><p class="vz-sub">Redirect-Log</p><ul class="vz-feed vm-feed vz-mono" data-rows="4" data-every="1700"><template><li><em>301</em><s>/catalog/product/view/id/412</s><span>→ /products/denim-jacket</span></li><li><em>301</em><s>/herren/jacken.html</s><span>→ /collections/herren-jacken</span></li><li><em>301</em><s>/checkout/cart/</s><span>→ /cart</span></li><li><em>301</em><s>/customer/account/login/</s><span>→ /account/login</span></li><li><em>301</em><s>/blog/pflegetipps-denim.html</s><span>→ /blogs/news/pflegetipps-denim</span></li><li><em>301</em><s>/catalogsearch/result/?q=jeans</s><span>→ /search?q=jeans</span></li><li><em>301</em><s>/damen/kleider.html?color=blau</s><span>→ /collections/damen-kleider</span></li></template></ul></div>
+          <div class="vz-in" style="--i:6"><p class="vz-sub">Sichtbarkeit rund um den Go-live</p>
+            <div class="vm-plot">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path class="vm-grid" d="M0 25 H100 M0 50 H100 M0 75 H100"/></svg>
+              <div class="vm-draw"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path class="vm-without" d="M0 52 L9 50 L18 51 L27 48 L36 49 L45 46 L55 45 L64 70 L73 78 L82 74 L91 72 L100 69"/><path class="vm-with" d="M0 52 L9 50 L18 51 L27 48 L36 49 L45 46 L55 45 L64 43 L73 41 L82 38 L91 35 L100 31"/></svg></div>
+              <div class="vm-live"><span>Go-live</span></div>
+            </div>
+            <p class="vm-legend"><span><i class="l1"></i>mit Redirect-Konzept</span><span><i class="l2"></i>ohne</span></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

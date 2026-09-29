@@ -338,6 +338,8 @@ html { scroll-behavior: smooth; }
 <script src="/assets/js/InertiaPlugin.min.js"></script>
 <script src="/assets/js/lenis.min.js"></script>
 <script src="/assets/js/velonify-motion.js?v=2"></script>
+<link rel="stylesheet" href="/assets/visuals.css?v=1">
+<script src="/assets/js/visuals.js?v=1" defer></script>
 </head>
 <body>
 <div class="v v-desktop">
@@ -365,7 +367,8 @@ html { scroll-behavior: smooth; }
 
   <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 72px 64px 112px; overflow: hidden;">
     <svg class="mark-b" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true" style="position: absolute; right: -160px; bottom: -180px; width: 620px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
-    <div style="position: relative; display: flex; flex-direction: column; gap: 36px; max-width: 980px;">
+    <div class="hero-vz">
+    <div class="hero-copy" style="position: relative; display: flex; flex-direction: column; gap: 36px; max-width: 980px;">
       <nav aria-label="Brotkrumen" style="display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600;">
         <a href="/" style="color: rgba(255,255,255,0.75);">Start</a>
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
@@ -378,6 +381,36 @@ html { scroll-behavior: smooth; }
       <div class="hero-fade-2" style="display: flex; gap: 14px;">
         <a class="btn btn-ice" href="/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 60px; padding: 0 30px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Projekt anfragen <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
         <a class="btn btn-ghost-light" href="#umfang" style="display: flex; align-items: center; height: 60px; padding: 0 30px; border: 1.5px solid #FFFFFF; box-sizing: border-box; color: #FFFFFF; font-size: 16px; font-weight: 700;">Leistungsumfang ansehen</a>
+      </div>
+    </div>
+      <div class="vz vz-cro" role="group" aria-label="Beispiel: Produktseite vor und nach der Optimierung mit A/B-Test-Ergebnis">
+        <div class="vz-bar" aria-hidden="true"><span class="vz-dots"><i></i><i></i><i></i></span><span class="vz-url"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="5" width="8" height="6"/><path d="M3 5 V3.5 a2 2 0 0 1 4 0 V5"/></svg>euer-shop.de</span><span class="vz-note">Beispielwerte</span></div>
+        <div class="vz-body">
+          <div class="vc-tabs vz-in" style="--i:0"><button type="button" class="vc-tab on" aria-pressed="true"><b>A</b>Original</button><button type="button" class="vc-tab" aria-pressed="false"><b>B</b>Optimiert</button></div>
+          <div class="vc-grid">
+            <div class="vc-page vz-in" style="--i:1" aria-hidden="true">
+              <div class="vc-img"><svg viewBox="0 0 40 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 3 L20 7 L26 3 L37 10 L33 20 L29 18 L29 41 L11 41 L11 18 L7 20 L3 10 Z"/><path d="M20 7 V41"/></svg><span class="vc-heat" style="left:10%;top:18%;width:80%;height:55%"></span></div>
+              <div class="vc-info">
+                <span class="vc-title"></span><span class="vc-l" style="width:60%"></span>
+                <span class="vc-stars">★★★★★ <span style="color:#2C0E18;letter-spacing:0">(214)</span></span>
+                <span class="vc-price">89,90 €</span>
+                <span class="vc-ship">Gratis Versand ab 50 €</span>
+                <span class="vc-desc"><span class="vc-l"></span><span class="vc-l"></span><span class="vc-l" style="width:80%"></span><span class="vc-l"></span><span class="vc-l" style="width:70%"></span><span class="vc-l"></span><span class="vc-l" style="width:55%"></span></span>
+                <span class="vc-cta">In den Warenkorb</span>
+                <span class="vc-trust"><i></i><i></i><i></i></span>
+              </div>
+              <span class="vc-heat" style="left:58%;top:40%;width:40%;height:30%;animation-delay:-1.2s"></span>
+              <span class="vc-pin" style="left:78%;top:36%;--k:0">1</span>
+              <span class="vc-pin" style="left:92%;top:88%;--k:1">2</span>
+              <span class="vc-pin" style="left:62%;top:14%;--k:2">3</span>
+            </div>
+            <div class="vc-notes vz-in" style="--i:2">
+              <div class="na"><p class="vz-sub">Befunde aus dem Audit</p><p class="vc-find"><b>1</b><span>Versandkosten erst im Checkout sichtbar</span></p><p class="vc-find"><b>2</b><span>Kaufbutton unter dem Falz</span></p><p class="vc-find"><b>3</b><span>Keine Bewertungen in Sichtweite</span></p></div>
+              <div class="nb"><div class="vc-res"><span>Conversion-Rate Variante B</span><strong>+<b data-to="18" data-delay="200">0</b> %</strong><span class="vc-meta">Signifikanz 97 % · 21 Tage</span></div>
+                <ul class="vc-ok"><li>Versand-Info direkt am Preis</li><li>Button über dem Falz</li><li>Sterne und Bewertungen</li></ul></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -501,7 +534,8 @@ html { scroll-behavior: smooth; }
 
   <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 36px 20px 56px; overflow: hidden;">
     <svg class="mark-b" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true" style="position: absolute; right: -80px; bottom: -90px; width: 341px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
-    <div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 100%;">
+    <div class="hero-vz">
+    <div class="hero-copy" style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 100%;">
       <nav aria-label="Brotkrumen" style="display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; flex-wrap: wrap;">
         <a href="/" style="color: rgba(255,255,255,0.75);">Start</a>
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
@@ -514,6 +548,36 @@ html { scroll-behavior: smooth; }
       <div class="hero-fade-2" style="display: flex; gap: 14px; flex-wrap: wrap;">
         <a class="btn btn-ice" href="/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 60px; padding: 0 20px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Projekt anfragen <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
         <a class="btn btn-ghost-light" href="#umfang" style="display: flex; align-items: center; height: 60px; padding: 0 20px; border: 1.5px solid #FFFFFF; box-sizing: border-box; color: #FFFFFF; font-size: 16px; font-weight: 700;">Leistungsumfang ansehen</a>
+      </div>
+    </div>
+      <div class="vz vz-cro" role="group" aria-label="Beispiel: Produktseite vor und nach der Optimierung mit A/B-Test-Ergebnis">
+        <div class="vz-bar" aria-hidden="true"><span class="vz-dots"><i></i><i></i><i></i></span><span class="vz-url"><svg width="10" height="12" viewBox="0 0 10 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="5" width="8" height="6"/><path d="M3 5 V3.5 a2 2 0 0 1 4 0 V5"/></svg>euer-shop.de</span><span class="vz-note">Beispielwerte</span></div>
+        <div class="vz-body">
+          <div class="vc-tabs vz-in" style="--i:0"><button type="button" class="vc-tab on" aria-pressed="true"><b>A</b>Original</button><button type="button" class="vc-tab" aria-pressed="false"><b>B</b>Optimiert</button></div>
+          <div class="vc-grid">
+            <div class="vc-page vz-in" style="--i:1" aria-hidden="true">
+              <div class="vc-img"><svg viewBox="0 0 40 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 3 L20 7 L26 3 L37 10 L33 20 L29 18 L29 41 L11 41 L11 18 L7 20 L3 10 Z"/><path d="M20 7 V41"/></svg><span class="vc-heat" style="left:10%;top:18%;width:80%;height:55%"></span></div>
+              <div class="vc-info">
+                <span class="vc-title"></span><span class="vc-l" style="width:60%"></span>
+                <span class="vc-stars">★★★★★ <span style="color:#2C0E18;letter-spacing:0">(214)</span></span>
+                <span class="vc-price">89,90 €</span>
+                <span class="vc-ship">Gratis Versand ab 50 €</span>
+                <span class="vc-desc"><span class="vc-l"></span><span class="vc-l"></span><span class="vc-l" style="width:80%"></span><span class="vc-l"></span><span class="vc-l" style="width:70%"></span><span class="vc-l"></span><span class="vc-l" style="width:55%"></span></span>
+                <span class="vc-cta">In den Warenkorb</span>
+                <span class="vc-trust"><i></i><i></i><i></i></span>
+              </div>
+              <span class="vc-heat" style="left:58%;top:40%;width:40%;height:30%;animation-delay:-1.2s"></span>
+              <span class="vc-pin" style="left:78%;top:36%;--k:0">1</span>
+              <span class="vc-pin" style="left:92%;top:88%;--k:1">2</span>
+              <span class="vc-pin" style="left:62%;top:14%;--k:2">3</span>
+            </div>
+            <div class="vc-notes vz-in" style="--i:2">
+              <div class="na"><p class="vz-sub">Befunde aus dem Audit</p><p class="vc-find"><b>1</b><span>Versandkosten erst im Checkout sichtbar</span></p><p class="vc-find"><b>2</b><span>Kaufbutton unter dem Falz</span></p><p class="vc-find"><b>3</b><span>Keine Bewertungen in Sichtweite</span></p></div>
+              <div class="nb"><div class="vc-res"><span>Conversion-Rate Variante B</span><strong>+<b data-to="18" data-delay="200">0</b> %</strong><span class="vc-meta">Signifikanz 97 % · 21 Tage</span></div>
+                <ul class="vc-ok"><li>Versand-Info direkt am Preis</li><li>Button über dem Falz</li><li>Sterne und Bewertungen</li></ul></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
