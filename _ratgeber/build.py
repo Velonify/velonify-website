@@ -246,14 +246,30 @@ def footer(lang):
     t = L[lang]
     legal = [('/impressum/', 'Impressum'), ('/datenschutz/', 'Datenschutz')] if lang == 'de' else \
             [('/en/legal-notice/', 'Legal notice'), ('/en/privacy/', 'Privacy')]
-    links = [(t['home'], t['start']), (t['home'] + '#cases', 'Cases'), (t['base'], t['index'])] + legal
+    links = [(t['home'] + '#cases', 'Cases'), (t['base'], t['index'])] + legal
     nav = ''.join(f'<a class="navlink" href="{h}">{esc(x)}</a>' for h, x in links)
     ig = 'Velonify auf Instagram' if lang == 'de' else 'Velonify on Instagram'
     li = 'Velonify auf LinkedIn' if lang == 'de' else 'Velonify on LinkedIn'
+    tagline = ('Kleines Team, klare Ergebnisse: Migration, Tracking und Performance Marketing für Shopify.'
+               if lang == 'de' else
+               'Small team, clear results: Shopify migration, tracking and performance marketing.')
+    partners = ('<div class="rg-partners">'
+                '<img src="/assets/img/shopify-partners.png" alt="Shopify Partners">'
+                '<img src="/assets/img/google-partner.png" alt="Google Partner">'
+                '<img src="/assets/img/klaviyo-partner.png" alt="Klaviyo K:Partners Silver">'
+                '</div>')
     return f'''<footer class="rg-footer">
-  <img src="/assets/img/velonify-wordmark.png" alt="Velonify" style="height: 22px; width: auto;">
-  <nav aria-label="Footer">{nav}</nav>
-  <div class="rg-social"><a href="https://www.instagram.com/velonify.de/" target="_blank" rel="noopener" aria-label="{ig}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"></circle></svg></a><a href="https://www.linkedin.com/company/velonify/" target="_blank" rel="noopener" aria-label="{li}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="7.5" cy="8" r="0.9" fill="currentColor" stroke="none"></circle><path d="M7.5 11 V17"></path><path d="M11.5 17 V12.5 C11.5 11 13 10.3 14.3 11 C15.3 11.5 15.5 12.3 15.5 13 V17"></path><path d="M11.5 11 V17"></path></svg></a><span>© 2026 Velonify</span></div>
+  <div class="rg-footer-top">
+    <div class="rg-brand">
+      <a href="{t['home']}" aria-label="Velonify {t['start']}"><img src="/assets/img/velonify-wordmark.png" alt="Velonify" style="height: 22px; width: auto;"></a>
+      <p>{esc(tagline)}</p>
+    </div>
+    <nav aria-label="Footer">{nav}</nav>
+  </div>
+  <div class="rg-footer-bottom">
+    <div class="rg-social"><a href="https://www.instagram.com/velonify.de/" target="_blank" rel="noopener" aria-label="{ig}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"></circle></svg></a><a href="https://www.linkedin.com/company/velonify/" target="_blank" rel="noopener" aria-label="{li}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="7.5" cy="8" r="0.9" fill="currentColor" stroke="none"></circle><path d="M7.5 11 V17"></path><path d="M11.5 17 V12.5 C11.5 11 13 10.3 14.3 11 C15.3 11.5 15.5 12.3 15.5 13 V17"></path><path d="M11.5 11 V17"></path></svg></a><span>© 2026 Velonify</span></div>
+    {partners}
+  </div>
 </footer>'''
 
 

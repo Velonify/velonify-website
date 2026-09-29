@@ -112,12 +112,22 @@ main { display: block; }
 .rg-card-go { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: #45142D; transition: color .3s; }
 
 /* Footer */
-.rg-footer { background: #2C0E18; color: #FFFFFF; padding: 36px 64px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+.rg-footer { background: #2C0E18; color: #FFFFFF; padding: 36px 64px; display: flex; flex-direction: column; gap: 24px; }
+.rg-footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
+.rg-brand { display: flex; flex-direction: column; gap: 10px; }
+.rg-brand a { display: flex; }
+.rg-brand p { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,0.6); max-width: 320px; }
 .rg-footer nav { display: flex; gap: 32px; flex-wrap: wrap; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .rg-footer nav a { color: #FFFFFF; }
+.rg-footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
 .rg-social { display: flex; align-items: center; gap: 16px; }
 .rg-social a { color: #FFFFFF; display: flex; }
 .rg-social span { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+.rg-partners { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; opacity: 0.85; }
+.rg-partners img { display: block; }
+.rg-partners img:nth-child(1) { height: 20px; width: auto; }
+.rg-partners img:nth-child(2) { height: 34px; width: auto; }
+.rg-partners img:nth-child(3) { height: 24px; width: auto; }
 
 /* Cover image below the hero, card images */
 .rg-cover { margin: 0 0 32px; }
@@ -170,7 +180,11 @@ main { display: block; }
   .rg-cover img { aspect-ratio: 16 / 9; }
   .rg-card h3 { font-size: 18px; }
   .rg-footer { padding: 36px 20px; gap: 20px; }
+  .rg-footer-top { gap: 20px; }
   .rg-footer nav { gap: 20px; }
+  .rg-partners img:nth-child(1) { height: 16px; }
+  .rg-partners img:nth-child(2) { height: 28px; }
+  .rg-partners img:nth-child(3) { height: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .rg-card { transition: none; }

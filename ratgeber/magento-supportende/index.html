@@ -477,12 +477,22 @@ main { display: block; }
 .rg-card-go { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: #45142D; transition: color .3s; }
 
 /* Footer */
-.rg-footer { background: #2C0E18; color: #FFFFFF; padding: 36px 64px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+.rg-footer { background: #2C0E18; color: #FFFFFF; padding: 36px 64px; display: flex; flex-direction: column; gap: 24px; }
+.rg-footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
+.rg-brand { display: flex; flex-direction: column; gap: 10px; }
+.rg-brand a { display: flex; }
+.rg-brand p { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,0.6); max-width: 320px; }
 .rg-footer nav { display: flex; gap: 32px; flex-wrap: wrap; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .rg-footer nav a { color: #FFFFFF; }
+.rg-footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
 .rg-social { display: flex; align-items: center; gap: 16px; }
 .rg-social a { color: #FFFFFF; display: flex; }
 .rg-social span { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+.rg-partners { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; opacity: 0.85; }
+.rg-partners img { display: block; }
+.rg-partners img:nth-child(1) { height: 20px; width: auto; }
+.rg-partners img:nth-child(2) { height: 34px; width: auto; }
+.rg-partners img:nth-child(3) { height: 24px; width: auto; }
 
 /* Cover image below the hero, card images */
 .rg-cover { margin: 0 0 32px; }
@@ -535,7 +545,11 @@ main { display: block; }
   .rg-cover img { aspect-ratio: 16 / 9; }
   .rg-card h3 { font-size: 18px; }
   .rg-footer { padding: 36px 20px; gap: 20px; }
+  .rg-footer-top { gap: 20px; }
   .rg-footer nav { gap: 20px; }
+  .rg-partners img:nth-child(1) { height: 16px; }
+  .rg-partners img:nth-child(2) { height: 28px; }
+  .rg-partners img:nth-child(3) { height: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .rg-card { transition: none; }
@@ -670,9 +684,17 @@ main { display: block; }
 </a></div></div></section>
 </main>
 <footer class="rg-footer">
-  <img src="/assets/img/velonify-wordmark.png" alt="Velonify" style="height: 22px; width: auto;">
-  <nav aria-label="Footer"><a class="navlink" href="/">Start</a><a class="navlink" href="/#cases">Cases</a><a class="navlink" href="/ratgeber/">Ratgeber</a><a class="navlink" href="/impressum/">Impressum</a><a class="navlink" href="/datenschutz/">Datenschutz</a></nav>
-  <div class="rg-social"><a href="https://www.instagram.com/velonify.de/" target="_blank" rel="noopener" aria-label="Velonify auf Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"></circle></svg></a><a href="https://www.linkedin.com/company/velonify/" target="_blank" rel="noopener" aria-label="Velonify auf LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="7.5" cy="8" r="0.9" fill="currentColor" stroke="none"></circle><path d="M7.5 11 V17"></path><path d="M11.5 17 V12.5 C11.5 11 13 10.3 14.3 11 C15.3 11.5 15.5 12.3 15.5 13 V17"></path><path d="M11.5 11 V17"></path></svg></a><span>© 2026 Velonify</span></div>
+  <div class="rg-footer-top">
+    <div class="rg-brand">
+      <a href="/" aria-label="Velonify Start"><img src="/assets/img/velonify-wordmark.png" alt="Velonify" style="height: 22px; width: auto;"></a>
+      <p>Kleines Team, klare Ergebnisse: Migration, Tracking und Performance Marketing für Shopify.</p>
+    </div>
+    <nav aria-label="Footer"><a class="navlink" href="/#cases">Cases</a><a class="navlink" href="/ratgeber/">Ratgeber</a><a class="navlink" href="/impressum/">Impressum</a><a class="navlink" href="/datenschutz/">Datenschutz</a></nav>
+  </div>
+  <div class="rg-footer-bottom">
+    <div class="rg-social"><a href="https://www.instagram.com/velonify.de/" target="_blank" rel="noopener" aria-label="Velonify auf Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"></circle></svg></a><a href="https://www.linkedin.com/company/velonify/" target="_blank" rel="noopener" aria-label="Velonify auf LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="7.5" cy="8" r="0.9" fill="currentColor" stroke="none"></circle><path d="M7.5 11 V17"></path><path d="M11.5 17 V12.5 C11.5 11 13 10.3 14.3 11 C15.3 11.5 15.5 12.3 15.5 13 V17"></path><path d="M11.5 11 V17"></path></svg></a><span>© 2026 Velonify</span></div>
+    <div class="rg-partners"><img src="/assets/img/shopify-partners.png" alt="Shopify Partners"><img src="/assets/img/google-partner.png" alt="Google Partner"><img src="/assets/img/klaviyo-partner.png" alt="Klaviyo K:Partners Silver"></div>
+  </div>
 </footer>
 <script>if (window.matchMedia('(max-width: 1023px)').matches) document.querySelectorAll('details.rg-toc-box').forEach(function (d) { d.removeAttribute('open'); });</script>
 </body>
