@@ -218,15 +218,28 @@
     // whatever happened above, nothing stays held back
     html.classList.remove('vm-pre');
 
-    // ---------- HEADER: hide on scroll down, return on scroll up ----------
+    // ---------- HEADER: hide on scroll down, return the instant you scroll up ----------
     safe('header', function () {
       var header = doc.querySelector('header');
-      if (!ST || !header || getComputedStyle(header).position !== 'sticky') return;
+      if (!header || getComputedStyle(header).position !== 'sticky') return;
       var shown = true;
-      ST.create({ start: 240, end: 'max', onUpdate: function (self) {
-        var want = self.direction < 0;
-        if (want !== shown) { shown = want; gsap.to(header, { yPercent: want ? 0 : -100, duration: 0.45, ease: 'power3.out', overwrite: true }); }
-      }, onLeaveBack: function () { shown = true; gsap.to(header, { yPercent: 0, duration: 0.3, overwrite: true }); } });
+      function setShown(v) {
+        if (v === shown) return;
+        shown = v;
+        gsap.to(header, { yPercent: v ? 0 : -100, duration: 0.35, ease: 'power3.out', overwrite: true });
+      }
+      function y() { return window.scrollY || doc.documentElement.scrollTop || 0; }
+      // react to the raw input delta (not the eased Lenis position), so the header snaps back immediately
+      window.addEventListener('wheel', function (e) {
+        setShown(y() < 240 || e.deltaY < 0);
+      }, { passive: true });
+      var touchY = null;
+      window.addEventListener('touchstart', function (e) { touchY = e.touches[0].clientY; }, { passive: true });
+      window.addEventListener('touchmove', function (e) {
+        var ty = e.touches[0].clientY, dy = touchY == null ? 0 : ty - touchY;
+        touchY = ty;
+        setShown(y() < 240 || dy > 0);
+      }, { passive: true });
     });
 
     // ---------- TICKER: endless loop that reacts to scroll speed and direction ----------
@@ -476,36 +489,29 @@
       });
     });
 
-    // ---------- CASE CAROUSEL: drag with the mouse, throw with inertia, land on a card ----------
+    // ---------- CASE CAROUSEL: drag with the mouse, native scroll + snap does the rest ----------
     safe('drag', function () {
-      if (!canHover || !window.Draggable) return;
+      if (!canHover) return;
       $$('.car').forEach(function (car) {
-        var moved = false;
-        // land on the nearest card (or the very end), whatever sign Draggable reports the scroll in
-        var landing = function (v) {
-          var max = car.scrollWidth - car.clientWidth, pad = parseFloat(getComputedStyle(car).scrollPaddingLeft) || 0;
-          var stops = $$('.case-card', car).map(function (c) { return Math.min(max, Math.max(0, c.offsetLeft - car.offsetLeft - pad)); });
-          stops.push(max);
-          var a = Math.abs(v), best = stops[0] || 0;
-          stops.forEach(function (p) { if (Math.abs(p - a) < Math.abs(best - a)) best = p; });
-          return v < 0 ? -best : best;
-        };
-        // drag a hidden proxy and mirror it into the native scroll, so the carousel stays a real scroller
-        var proxy = doc.createElement('div');
-        var sync = function () { car.scrollLeft = -gsap.getProperty(proxy, 'x'); };
-        window.Draggable.create(proxy, {
-          trigger: car, type: 'x', inertia: !!window.InertiaPlugin, edgeResistance: 0.8, minimumMovement: 6, dragClickables: true,
-          cursor: false, activeCursor: false, allowContextMenu: true, snap: landing,
-          onPress: function () {
-            moved = false; car.style.scrollSnapType = 'none';
-            gsap.killTweensOf(proxy); gsap.set(proxy, { x: -car.scrollLeft });
-            this.applyBounds({ minX: -(car.scrollWidth - car.clientWidth), maxX: 0 }); this.update();
-          },
-          onDragStart: function () { moved = true; html.classList.add('vm-dragging'); },
-          onDrag: sync, onThrowUpdate: sync,
-          onRelease: function () { html.classList.remove('vm-dragging'); if (!this.isThrowing) car.style.scrollSnapType = ''; },
-          onThrowComplete: function () { car.style.scrollSnapType = ''; }
+        var down = false, moved = false, startX = 0, startScroll = 0;
+        car.addEventListener('pointerdown', function (e) {
+          if (e.pointerType === 'touch' || (e.button !== undefined && e.button !== 0)) return;
+          down = true; moved = false; startX = e.clientX; startScroll = car.scrollLeft;
+          car.style.scrollSnapType = 'none';
         });
+        car.addEventListener('pointermove', function (e) {
+          if (!down) return;
+          var dx = e.clientX - startX;
+          if (!moved && Math.abs(dx) > 4) { moved = true; html.classList.add('vm-dragging'); }
+          if (moved) car.scrollLeft = startScroll - dx;
+        });
+        function release() {
+          if (!down) return;
+          down = false; html.classList.remove('vm-dragging'); car.style.scrollSnapType = '';
+        }
+        car.addEventListener('pointerup', release);
+        car.addEventListener('pointerleave', release);
+        car.addEventListener('pointercancel', release);
         car.addEventListener('click', function (e) { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
       });
     });
