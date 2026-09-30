@@ -19,7 +19,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://velonify.de/assets/img/og-image-en.png">
 <meta name="theme-color" content="#2C0E18">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://velonify.de/#website", "name": "Velonify", "alternateName": "velonify.de", "url": "https://velonify.de/", "inLanguage": "en", "publisher": {"@id": "https://velonify.de/#organization"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "@id": "https://velonify.de/#organization", "name": "Velonify", "image": "https://velonify.de/assets/img/velonify-wordmark.png", "url": "https://velonify.de/en/", "email": "hallo@velonify.de", "address": {"@type": "PostalAddress", "streetAddress": "Zur Leimengrube 11", "postalCode": "97947", "addressLocality": "Paimar", "addressCountry": "DE"}, "areaServed": "DE", "priceRange": "$$", "sameAs": ["https://www.instagram.com/velonify.de/", "https://www.linkedin.com/company/velonify/"]}</script>
 <link rel="preload" href="/assets/fonts/krona-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts.css">
@@ -161,7 +164,7 @@ html { scroll-behavior: smooth; }
     @media (max-width: 500px) { .case-card { flex-basis: 300px; padding: 24px; gap: 24px; } .car { padding-left: 20px; padding-right: 20px; scroll-padding-left: 20px; gap: 16px; } .vrow { padding: 20px 0 24px; } .vword { font-size: min(44px, calc(100cqw / 8.8)); } .vtext { font-size: 17px; } }
 
     /* Phasen: three-step roadmap with accordions */
-    .phasen { padding: 0 64px 176px; display: flex; flex-direction: column; gap: 72px; }
+    .phasen { padding: 128px 64px 128px; display: flex; flex-direction: column; gap: 72px; }
     .ph-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 72px; align-items: center; }
     .ph-intro { display: flex; flex-direction: column; gap: 28px; }
     .ph-head h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 36px; line-height: 1.08; text-wrap: balance; }
@@ -203,7 +206,7 @@ html { scroll-behavior: smooth; }
       .ph-line { animation: growBar linear both; animation-timeline: view(); animation-range: entry 10% cover 40%; }
       .ph-col { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
     }
-    .is-mobile .phasen { padding: 0 20px 96px; gap: 40px; }
+    .is-mobile .phasen { padding: 72px 20px 72px; gap: 40px; }
     .is-mobile .ph-head { display: flex; flex-direction: column; align-items: stretch; gap: 32px; }
     .is-mobile .ph-intro { gap: 16px; }
     .is-mobile .ph-head h2 { font-size: 26px; }

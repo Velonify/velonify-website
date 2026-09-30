@@ -220,7 +220,8 @@ def chrome(lang):
     src = (ROOT / L[lang]['template']).read_text(encoding='utf-8')
     head = src[src.index('<head>') + 6:src.index('</head>')]
     head = re.sub(r'<title>.*?</title>\s*', '', head, flags=re.S)
-    head = re.sub(r'<meta (name="description"|property="og:[^"]+"|name="twitter:[^"]+")[^>]*>\s*', '', head)
+    # robots too: the Impressum template is noindex, the guides must stay indexable
+    head = re.sub(r'<meta (name="description"|name="robots"|property="og:[^"]+"|name="twitter:[^"]+")[^>]*>\s*', '', head)
     head = re.sub(r'<link rel="(canonical|alternate)"[^>]*>\s*', '', head)
     head = re.sub(r'<script type="application/ld\+json">.*?</script>\s*', '', head, flags=re.S)
     desk = src[src.index('<div class="v v-desktop">'):src.index('<div class="v v-mobile">')]
