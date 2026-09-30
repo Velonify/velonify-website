@@ -87,6 +87,18 @@
     var form = root.querySelector('form[name="anfrage"]');
     if (form) try { makeSteps(form); } catch (e) { console.error(e); }
 
+    // DE and EN share the Netlify form "anfrage", and Netlify redirects every submission to one
+    // thank-you page. Post in the background instead and open the page of this form's language.
+    if (form && window.fetch && window.URLSearchParams) form.addEventListener('submit', function (e) {
+      if (e.defaultPrevented) return;
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) btn.disabled = true;
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); location.href = form.getAttribute('action'); })
+        .catch(function (err) { console.error(err); if (btn) btn.disabled = false; form.submit(); });
+    });
+
     // hero flock and globe
     var f = root.querySelector('canvas.flock');
     if (f) try { makeFlock(f, mobile ? { count: 22, size: 0.7, c1: '#C5D8E6', c2: '#8A4A6A' } : { count: 36, size: 1, c1: '#C5D8E6', c2: '#8A4A6A' }); } catch (e) { console.error(e); }
