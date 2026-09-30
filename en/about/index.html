@@ -147,7 +147,7 @@ html { scroll-behavior: smooth; }
     /* Keyword rows: outlined word, fills on hover, text appears */
     .vrow { container-type: inline-size; padding: 24px 0 28px; border-top: 1px solid rgba(0,0,0,0.14); outline-offset: -3px; }
     .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
-    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 20px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
+    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 19px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
     .vrow:hover .vword, .vrow:focus-within .vword, .vrow:focus .vword { color: #45142D; }
     .vrow:hover .vtext, .vrow:focus-within .vtext, .vrow:focus .vtext { opacity: 1; transform: none; }
     @media (hover: none) { .vtext { opacity: 1; transform: none; } .vrow:active .vword { color: #45142D; } }
@@ -156,7 +156,7 @@ html { scroll-behavior: smooth; }
     /* Cases carousel */
     .car { display: flex; gap: 32px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 64px 8px; scroll-padding-left: 64px; }
     .car::-webkit-scrollbar { display: none; }
-    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px; padding: 40px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
+    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; padding: 32px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
     .case-card:hover { background: #45142D; color: #FFFFFF; border-color: #45142D; }
     .case-card .ck { color: #45142D; transition: color .35s; }
     .case-card:hover .ck { color: #C5D8E6; }
@@ -301,7 +301,7 @@ html { scroll-behavior: smooth; }
     /* Keyword rows: outlined word, fills on hover, text appears */
     .vrow { container-type: inline-size; padding: 24px 0 28px; border-top: 1px solid rgba(0,0,0,0.14); outline-offset: -3px; }
     .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
-    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 20px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
+    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 19px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
     .vrow:hover .vword, .vrow:focus-within .vword, .vrow:focus .vword { color: #45142D; }
     .vrow:hover .vtext, .vrow:focus-within .vtext, .vrow:focus .vtext { opacity: 1; transform: none; }
     @media (hover: none) { .vtext { opacity: 1; transform: none; } .vrow:active .vword { color: #45142D; } }
@@ -310,7 +310,7 @@ html { scroll-behavior: smooth; }
     /* Cases carousel */
     .car { display: flex; gap: 32px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 64px 8px; scroll-padding-left: 64px; }
     .car::-webkit-scrollbar { display: none; }
-    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px; padding: 40px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
+    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; padding: 32px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
     .case-card:hover { background: #45142D; color: #FFFFFF; border-color: #45142D; }
     .case-card .ck { color: #45142D; transition: color .35s; }
     .case-card:hover .ck { color: #C5D8E6; }
@@ -339,7 +339,7 @@ html { scroll-behavior: smooth; }
 @media (max-width: 1023px){.v-desktop{display:none!important}}@media (min-width: 1024px){.v-mobile{display:none!important}}
 .v-desktop > div{min-width:1024px!important}html.is-mobile .v-desktop,html.is-desktop .v-mobile{display:none!important}
 </style>
-<script src="/assets/js/site.js?v=3"></script>
+<script src="/assets/js/site.js?v=4"></script>
 <script src="/assets/js/gsap.min.js"></script>
 <script src="/assets/js/ScrollTrigger.min.js"></script>
 <script src="/assets/js/SplitText.min.js"></script>
@@ -347,13 +347,14 @@ html { scroll-behavior: smooth; }
 <script src="/assets/js/Draggable.min.js"></script>
 <script src="/assets/js/InertiaPlugin.min.js"></script>
 <script src="/assets/js/lenis.min.js"></script>
-<script src="/assets/js/velonify-motion.js?v=2"></script>
+<script src="/assets/js/velonify-motion.js?v=3"></script>
+<link rel="stylesheet" href="/assets/site.css?v=1">
 </head>
 <body>
 <div class="v v-desktop">
 
 
-<div style="width: 100%; min-width: 1280px; box-sizing: border-box; display: flex; flex-direction: column; background: #FFFFFF; overflow-x: hidden;">
+<div style="width: 100%; min-width: 1280px; box-sizing: border-box; display: flex; flex-direction: column; background: #FFFFFF; overflow-x: clip;">
   <header style="position: sticky; top: 0; z-index: 20; height: 88px; box-sizing: border-box; padding: 0 64px; display: flex; align-items: center; justify-content: space-between; background: #2C0E18; border-bottom: 1px solid rgba(197,216,230,0.14);">
     <a href="/en/" aria-label="Velonify home" style="display: flex; align-items: center; gap: 14px; color: #FFFFFF;">
       <svg width="38" height="25" viewBox="0 44 1278 813" fill="#C5D8E6" aria-hidden="true"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
@@ -373,7 +374,7 @@ html { scroll-behavior: smooth; }
     </nav>
   </header>
 
-  <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 80px 64px 112px; overflow: hidden;">
+  <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 80px 64px 80px; overflow: hidden;">
     <svg class="mark-a" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true" style="position: absolute; left: -200px; bottom: -220px; width: 620px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
     <div style="position: relative; display: flex; flex-direction: column; gap: 36px; max-width: 1160px;">
       <nav aria-label="Breadcrumb" style="display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600;">
@@ -381,43 +382,43 @@ html { scroll-behavior: smooth; }
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
         <span aria-current="page" style="color: #FFFFFF;">About us</span>
       </nav>
-      <h1 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 64px; line-height: 1.08; text-wrap: balance; max-width: 100%;"><span class="line"><span>Two people.</span></span><span class="line"><span>One point of contact.</span></span></h1>
-      <p class="hero-fade" style="font-size: 21px; line-height: 1.55; font-weight: 500; max-width: 720px; color: rgba(255,255,255,0.88);">Velonify is an e-commerce agency made up of Lukas and Johannes. Each of us owns our own area of expertise, and our size means you always know who is responsible for your store.</p>
+      <h1 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 50px; line-height: 1.08; text-wrap: balance; max-width: 100%;"><span class="line"><span>Two people.</span></span><span class="line"><span>One point of contact.</span></span></h1>
+      <p class="hero-fade" style="font-size: 20px; line-height: 1.55; font-weight: 500; max-width: 720px; color: rgba(255,255,255,0.88);">Velonify is an e-commerce agency made up of Lukas and Johannes. Each of us owns our own area of expertise, and our size means you always know who is responsible for your store.</p>
       <div class="hero-fade-2" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 8px; padding-top: 32px; border-top: 1px solid rgba(197,216,230,0.3); max-width: 720px;">
-        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 72px; line-height: 1; color: #C5D8E6;">9</span>
-        <span style="font-size: 20px; font-weight: 700; line-height: 1.3;">Years of experience, each</span>
+        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 55px; line-height: 1; color: #C5D8E6;">9</span>
+        <span style="font-size: 19px; font-weight: 700; line-height: 1.3;">Years of experience, each</span>
       </div>
     </div>
   </section>
 
-  <section class="on-light" style="padding: 128px 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: start;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 52px; line-height: 1.08;">Deep experience.<br>Short paths.</h2>
+  <section class="on-light" style="padding: 96px 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: start;">
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 41px; line-height: 1.08;">Deep experience.<br>Short paths.</h2>
     <div style="display: flex; flex-direction: column; gap: 20px;">
-      <p class="reveal" style="font-size: 19px; line-height: 1.6;">At bigger agencies, more layers of hierarchy often mean longer waits. At Velonify, the person who decides is the person who does the work on your project.</p>
-      <p class="reveal" style="font-size: 19px; line-height: 1.6;">For you, that doesn't mean less experience, it means a shorter path from request to result. Ideal for stores that want to grow without building their own department for it.</p>
+      <p class="reveal" style="font-size: 18px; line-height: 1.6;">At bigger agencies, more layers of hierarchy often mean longer waits. At Velonify, the person who decides is the person who does the work on your project.</p>
+      <p class="reveal" style="font-size: 18px; line-height: 1.6;">For you, that doesn't mean less experience, it means a shorter path from request to result. Ideal for stores that want to grow without building their own department for it.</p>
     </div>
   </section>
 
-  <section class="on-light" style="padding: 0 64px 128px; display: flex; flex-direction: column; gap: 48px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 44px; line-height: 1.08;">The team</h2>
+  <section class="on-light" style="padding: 0 64px 96px; display: flex; flex-direction: column; gap: 48px;">
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 36px; line-height: 1.08;">The team</h2>
     <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px;">
       <div class="reveal" style="display: flex; flex-direction: column; gap: 20px;">
         <div style="aspect-ratio: 4 / 5; background: #C5D8E6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #2C0E18;">[PHOTO LUKAS]</div>
-        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1.1;">Lukas</h3>
+        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1.1;">Lukas</h3>
         <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D;">[ROLE]</span>
         <p style="font-size: 16px; line-height: 1.55;">[One sentence: what Lukas is responsible for in the project.]</p>
       </div>
       <div class="reveal" style="display: flex; flex-direction: column; gap: 20px;">
         <div style="aspect-ratio: 4 / 5; background: #C5D8E6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #2C0E18;">[PHOTO JOHANNES]</div>
-        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1.1;">Johannes</h3>
+        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1.1;">Johannes</h3>
         <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D;">[ROLE]</span>
         <p style="font-size: 16px; line-height: 1.55;">[One sentence: what Johannes is responsible for in the project.]</p>
       </div>
     </div>
   </section>
 
-  <section class="on-light" style="padding: 0 64px 128px; display: flex; flex-direction: column; gap: 32px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 22px; letter-spacing: 0.04em;">How we work for you</h2>
+  <section class="on-light" style="padding: 0 64px 96px; display: flex; flex-direction: column; gap: 32px;">
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 20px; letter-spacing: 0.04em;">How we work for you</h2>
     <div style="display: flex; flex-direction: column; border-bottom: 1px solid rgba(0,0,0,0.14);">
       <div class="vrow" tabindex="0"><span class="vword">Direct</span><p class="vtext">You talk to the person who does the work on your project, not to an account manager in between.</p></div>
       <div class="vrow" tabindex="0"><span class="vword">Hands-on</span><p class="vtext">We do everything ourselves, without subcontractors and without passing work on to third parties.</p></div>
@@ -426,8 +427,8 @@ html { scroll-behavior: smooth; }
     </div>
   </section>
 
-  <section style="background: #2C0E18; color: #FFFFFF; padding: 112px 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: start;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 44px; line-height: 1.08;">The tools behind your store</h2>
+  <section style="background: #2C0E18; color: #FFFFFF; padding: 80px 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: start;">
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 36px; line-height: 1.08;">The tools behind your store</h2>
     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
       <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Shopify</span>
       <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Shopify Plus</span>
@@ -441,11 +442,11 @@ html { scroll-behavior: smooth; }
     </div>
   </section>
 
-  <section id="kontakt" style="position: relative; background: #45142D; color: #FFFFFF; padding: 128px 64px; overflow: hidden;">
+  <section id="kontakt" style="position: relative; background: #45142D; color: #FFFFFF; padding: 96px 64px; overflow: hidden;">
     <svg class="drift" viewBox="0 44 1278 813" fill="#2C0E18" aria-hidden="true" style="position: absolute; right: -60px; top: 20px; width: 520px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
     <div style="position: relative; display: flex; flex-direction: column; gap: 32px; max-width: 860px;">
-      <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 62px; line-height: 1.05; text-wrap: balance;">Let's get to know each other.</h2>
-      <p class="reveal" style="font-size: 20px; line-height: 1.55; max-width: 580px; color: rgba(255,255,255,0.9);">30 minutes, free. You tell us where your store stands and get an honest answer on whether we're the right fit for you.</p>
+      <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 48px; line-height: 1.05; text-wrap: balance;">Let's get to know each other.</h2>
+      <p class="reveal" style="font-size: 19px; line-height: 1.55; max-width: 580px; color: rgba(255,255,255,0.9);">30 minutes, free. You tell us where your store stands and get an honest answer on whether we're the right fit for you.</p>
       <div class="reveal" style="display: flex; gap: 24px; align-items: center;">
         <a class="btn btn-ice" href="/en/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 62px; padding: 0 32px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Start a project <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
         <a href="/en/#kontakt" style="color: #FFFFFF; font-size: 17px; font-weight: 600; text-decoration: underline; text-underline-offset: 5px;">or send a request</a>
@@ -465,7 +466,7 @@ html { scroll-behavior: smooth; }
 <div class="v v-mobile">
 
 
-<div style="width: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FFFFFF; overflow-x: hidden;">
+<div style="width: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FFFFFF; overflow-x: clip;">
   <header style="position: sticky; top: 0; z-index: 20; height: 68px; box-sizing: border-box; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; background: #2C0E18; border-bottom: 1px solid rgba(197,216,230,0.14);">
     <a href="/en/" aria-label="Velonify home" style="display: flex; align-items: center; gap: 10px;">
       <svg width="30" height="20" viewBox="0 44 1278 813" fill="#C5D8E6" aria-hidden="true"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
@@ -481,7 +482,7 @@ html { scroll-behavior: smooth; }
   
     <nav class="menu-panel" hidden aria-label="Main navigation" style="position: fixed; top: 68px; left: 0; right: 0; bottom: 0; z-index: 19; background: #2C0E18; padding: 24px 20px; display: flex; flex-direction: column; gap: 0; overflow-y: auto;">
       
-        <details class="menu-acc"><summary class="menu-link" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.06s; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;">Services<svg class="menu-acc-arrow" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; transition: transform .3s;"><path d="M5 8 L10 13 L15 8"></path></svg></summary><div class="menu-acc-sub"><a class="menu-link" href="/en/services/shopify-migration/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.1s;">Shopify Migration</a>
+        <details class="menu-acc"><summary class="menu-link" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.06s; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;">Services<svg class="menu-acc-arrow" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; transition: transform .3s;"><path d="M5 8 L10 13 L15 8"></path></svg></summary><div class="menu-acc-sub"><a class="menu-link" href="/en/services/shopify-migration/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.1s;">Shopify Migration</a>
       
         <a class="menu-link" href="/en/services/tracking/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.14s;">Tracking &amp; Attribution</a>
       
@@ -491,15 +492,15 @@ html { scroll-behavior: smooth; }
       
         <a class="menu-link" href="/en/services/conversion-optimization/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.26s;">Conversion Optimization</a>
       
-        </div></details><details class="menu-acc"><summary class="menu-link" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.3s; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;">Cases<svg class="menu-acc-arrow" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; transition: transform .3s;"><path d="M5 8 L10 13 L15 8"></path></svg></summary><div class="menu-acc-sub"><a class="menu-link" href="/en/cases/blue-fire/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.34s;">Blue Fire Co.</a>
+        </div></details><details class="menu-acc"><summary class="menu-link" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.3s; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;">Cases<svg class="menu-acc-arrow" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; transition: transform .3s;"><path d="M5 8 L10 13 L15 8"></path></svg></summary><div class="menu-acc-sub"><a class="menu-link" href="/en/cases/blue-fire/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.34s;">Blue Fire Co.</a>
       
         <a class="menu-link" href="/en/cases/storz-bickel/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.38s;">Storz &amp; Bickel</a>
       
         <a class="menu-link" href="/en/cases/pretty-woman/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.42s;">Pretty Woman Brautmoden</a>
       
-        </div></details><a class="menu-link" href="/en/guides/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.46s;">Guides</a>
+        </div></details><a class="menu-link" href="/en/guides/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.46s;">Guides</a>
       
-        <a class="menu-link" href="/en/#kontakt" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.5s;">Contact</a>
+        <a class="menu-link" href="/en/#kontakt" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.5s;">Contact</a>
       
       <div style="display: flex; gap: 16px; margin-top: 20px; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; flex-wrap: wrap;">
         <a href="/ueber-uns/" style="color: rgba(255,255,255,0.75);">DE</a>
@@ -517,17 +518,17 @@ html { scroll-behavior: smooth; }
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
         <span aria-current="page" style="color: #FFFFFF;">About us</span>
       </nav>
-      <h1 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 33px; line-height: 1.08; text-wrap: balance; max-width: 100%;"><span class="line"><span>Two people.</span></span><span class="line"><span>One point of contact.</span></span></h1>
-      <p class="hero-fade" style="font-size: 18px; line-height: 1.55; font-weight: 500; max-width: 100%; color: rgba(255,255,255,0.88);">Velonify is an e-commerce agency made up of Lukas and Johannes. Each of us owns our own area of expertise, and our size means you always know who is responsible for your store.</p>
+      <h1 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1.08; text-wrap: balance; max-width: 100%;"><span class="line"><span>Two people.</span></span><span class="line"><span>One point of contact.</span></span></h1>
+      <p class="hero-fade" style="font-size: 17px; line-height: 1.55; font-weight: 500; max-width: 100%; color: rgba(255,255,255,0.88);">Velonify is an e-commerce agency made up of Lukas and Johannes. Each of us owns our own area of expertise, and our size means you always know who is responsible for your store.</p>
       <div class="hero-fade-2" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 8px; padding-top: 32px; border-top: 1px solid rgba(197,216,230,0.3); max-width: 100%;">
-        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 37px; line-height: 1; color: #C5D8E6;">9</span>
+        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 31px; line-height: 1; color: #C5D8E6;">9</span>
         <span style="font-size: 17px; font-weight: 700; line-height: 1.3;">Years of experience, each</span>
       </div>
     </div>
   </section>
 
   <section class="on-light" style="padding: 64px 20px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 36px; align-items: start;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1.08;">Deep experience.<br>Short paths.</h2>
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1.08;">Deep experience.<br>Short paths.</h2>
     <div style="display: flex; flex-direction: column; gap: 20px;">
       <p class="reveal" style="font-size: 17px; line-height: 1.6;">At bigger agencies, more layers of hierarchy often mean longer waits. At Velonify, the person who decides is the person who does the work on your project.</p>
       <p class="reveal" style="font-size: 17px; line-height: 1.6;">For you, that doesn't mean less experience, it means a shorter path from request to result. Ideal for stores that want to grow without building their own department for it.</p>
@@ -535,17 +536,17 @@ html { scroll-behavior: smooth; }
   </section>
 
   <section class="on-light" style="padding: 0 20px 64px; display: flex; flex-direction: column; gap: 22px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1.08;">The team</h2>
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1.08;">The team</h2>
     <div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px;">
       <div class="reveal" style="display: flex; flex-direction: column; gap: 20px;">
         <div style="aspect-ratio: 4 / 5; background: #C5D8E6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #2C0E18;">[PHOTO LUKAS]</div>
-        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 22px; line-height: 1.1;">Lukas</h3>
+        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 20px; line-height: 1.1;">Lukas</h3>
         <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D;">[ROLE]</span>
         <p style="font-size: 16px; line-height: 1.55;">[One sentence: what Lukas is responsible for in the project.]</p>
       </div>
       <div class="reveal" style="display: flex; flex-direction: column; gap: 20px;">
         <div style="aspect-ratio: 4 / 5; background: #C5D8E6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #2C0E18;">[PHOTO JOHANNES]</div>
-        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 22px; line-height: 1.1;">Johannes</h3>
+        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 20px; line-height: 1.1;">Johannes</h3>
         <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D;">[ROLE]</span>
         <p style="font-size: 16px; line-height: 1.55;">[One sentence: what Johannes is responsible for in the project.]</p>
       </div>
@@ -553,7 +554,7 @@ html { scroll-behavior: smooth; }
   </section>
 
   <section class="on-light" style="padding: 0 20px 64px; display: flex; flex-direction: column; gap: 20px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 18px; letter-spacing: 0.04em;">How we work for you</h2>
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; letter-spacing: 0.04em;">How we work for you</h2>
     <div style="display: flex; flex-direction: column; border-bottom: 1px solid rgba(0,0,0,0.14);">
       <div class="vrow" tabindex="0"><span class="vword">Direct</span><p class="vtext">You talk to the person who does the work on your project, not to an account manager in between.</p></div>
       <div class="vrow" tabindex="0"><span class="vword">Hands-on</span><p class="vtext">We do everything ourselves, without subcontractors and without passing work on to third parties.</p></div>
@@ -563,7 +564,7 @@ html { scroll-behavior: smooth; }
   </section>
 
   <section style="background: #2C0E18; color: #FFFFFF; padding: 56px 20px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 36px; align-items: start;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1.08;">The tools behind your store</h2>
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1.08;">The tools behind your store</h2>
     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
       <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Shopify</span>
       <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Shopify Plus</span>
@@ -580,7 +581,7 @@ html { scroll-behavior: smooth; }
   <section id="kontakt" style="position: relative; background: #45142D; color: #FFFFFF; padding: 64px 20px; overflow: hidden;">
     <svg class="drift" viewBox="0 44 1278 813" fill="#2C0E18" aria-hidden="true" style="position: absolute; right: -30px; top: 20px; width: 286px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
     <div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 100%;">
-      <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 32px; line-height: 1.05; text-wrap: balance;">Let's get to know each other.</h2>
+      <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 27px; line-height: 1.05; text-wrap: balance;">Let's get to know each other.</h2>
       <p class="reveal" style="font-size: 17px; line-height: 1.55; max-width: 100%; color: rgba(255,255,255,0.9);">30 minutes, free. You tell us where your store stands and get an honest answer on whether we're the right fit for you.</p>
       <div class="reveal" style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
         <a class="btn btn-ice" href="/en/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 62px; padding: 0 20px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Start a project <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>

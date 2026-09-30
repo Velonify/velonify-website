@@ -1,0 +1,32 @@
+/* Velonify site-wide fixes on top of the design-canvas export. Colours and fonts are the site's own. */
+
+/* Partner badges fade out after the hero but their fixed box stayed on top of the page
+   and swallowed clicks (e.g. Impressum/Datenschutz in the footer) */
+.partners { pointer-events: none; }
+
+/* Homepage: the contact section now follows the dark tools ticker, keep the two apart */
+#kontakt { border-top: 1px solid rgba(197,216,230,0.14); }
+
+/* ---------- Contact form in steps (built by site.js) ---------- */
+.fs-on { gap: 24px !important; }
+.fs-progress { display: flex; flex-direction: column; gap: 12px; }
+.fs-label { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+.fs-label b { margin-left: 8px; font-weight: 700; color: #FFFFFF; }
+.fs-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.fs-bar span { height: 3px; background: rgba(255,255,255,0.18); transition: background-color .4s cubic-bezier(.16,1,.3,1); }
+.fs-bar span.fs-done { background: #C5D8E6; }
+
+.fs-step { display: flex; flex-direction: column; gap: 24px; }
+.fs-step[hidden] { display: none; }
+.fs-step.fs-in { animation: fsIn .45s cubic-bezier(.16,1,.3,1) both; }
+@keyframes fsIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .fs-step.fs-in { animation: none; } }
+
+.fs-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+.fs-next { display: flex; align-items: center; gap: 12px; height: 54px; padding: 0 28px; background: #C5D8E6; border: none; border-radius: 0; color: #2C0E18; font: 700 16px 'Albert Sans', sans-serif; cursor: pointer; }
+.fs-next:hover .arrow { transform: translateX(6px); }
+.fs-nav .fs-submit { align-self: auto !important; height: 54px !important; padding: 0 28px !important; }
+.fs-back { height: 54px; padding: 0 20px; background: transparent; border: 1.5px solid rgba(255,255,255,0.45); border-radius: 0; color: #FFFFFF; font: 600 15px 'Albert Sans', sans-serif; cursor: pointer; transition: border-color .2s; }
+.fs-back:hover { border-color: #C5D8E6; }
+.fs-step > p { margin: 0 !important; }
+.is-mobile .fs-nav > .fs-next, .is-mobile .fs-nav > .fs-submit { flex: 1; justify-content: center; }

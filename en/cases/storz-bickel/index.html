@@ -153,7 +153,7 @@ html { scroll-behavior: smooth; }
     /* Keyword rows: outlined word, fills on hover, text appears */
     .vrow { container-type: inline-size; padding: 24px 0 28px; border-top: 1px solid rgba(0,0,0,0.14); outline-offset: -3px; }
     .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
-    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 20px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
+    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 19px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
     .vrow:hover .vword, .vrow:focus-within .vword, .vrow:focus .vword { color: #45142D; }
     .vrow:hover .vtext, .vrow:focus-within .vtext, .vrow:focus .vtext { opacity: 1; transform: none; }
     @media (hover: none) { .vtext { opacity: 1; transform: none; } .vrow:active .vword { color: #45142D; } }
@@ -162,7 +162,7 @@ html { scroll-behavior: smooth; }
     /* Cases carousel */
     .car { display: flex; gap: 32px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 64px 8px; scroll-padding-left: 64px; }
     .car::-webkit-scrollbar { display: none; }
-    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px; padding: 40px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
+    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; padding: 32px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
     .case-card:hover { background: #45142D; color: #FFFFFF; border-color: #45142D; }
     .case-card .ck { color: #45142D; transition: color .35s; }
     .case-card:hover .ck { color: #C5D8E6; }
@@ -307,7 +307,7 @@ html { scroll-behavior: smooth; }
     /* Keyword rows: outlined word, fills on hover, text appears */
     .vrow { container-type: inline-size; padding: 24px 0 28px; border-top: 1px solid rgba(0,0,0,0.14); outline-offset: -3px; }
     .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
-    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 20px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
+    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 19px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
     .vrow:hover .vword, .vrow:focus-within .vword, .vrow:focus .vword { color: #45142D; }
     .vrow:hover .vtext, .vrow:focus-within .vtext, .vrow:focus .vtext { opacity: 1; transform: none; }
     @media (hover: none) { .vtext { opacity: 1; transform: none; } .vrow:active .vword { color: #45142D; } }
@@ -316,7 +316,7 @@ html { scroll-behavior: smooth; }
     /* Cases carousel */
     .car { display: flex; gap: 32px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 64px 8px; scroll-padding-left: 64px; }
     .car::-webkit-scrollbar { display: none; }
-    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px; padding: 40px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
+    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; padding: 32px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
     .case-card:hover { background: #45142D; color: #FFFFFF; border-color: #45142D; }
     .case-card .ck { color: #45142D; transition: color .35s; }
     .case-card:hover .ck { color: #C5D8E6; }
@@ -345,7 +345,7 @@ html { scroll-behavior: smooth; }
 @media (max-width: 1023px){.v-desktop{display:none!important}}@media (min-width: 1024px){.v-mobile{display:none!important}}
 .v-desktop > div{min-width:1024px!important}html.is-mobile .v-desktop,html.is-desktop .v-mobile{display:none!important}
 </style>
-<script src="/assets/js/site.js?v=3"></script>
+<script src="/assets/js/site.js?v=4"></script>
 <script src="/assets/js/gsap.min.js"></script>
 <script src="/assets/js/ScrollTrigger.min.js"></script>
 <script src="/assets/js/SplitText.min.js"></script>
@@ -353,15 +353,16 @@ html { scroll-behavior: smooth; }
 <script src="/assets/js/Draggable.min.js"></script>
 <script src="/assets/js/InertiaPlugin.min.js"></script>
 <script src="/assets/js/lenis.min.js"></script>
-<script src="/assets/js/velonify-motion.js?v=2"></script>
+<script src="/assets/js/velonify-motion.js?v=3"></script>
 <link rel="stylesheet" href="/assets/visuals.css?v=1">
 <script src="/assets/js/visuals.js?v=1" defer></script>
+<link rel="stylesheet" href="/assets/site.css?v=1">
 </head>
 <body>
 <div class="v v-desktop">
 
 
-<div style="width: 100%; min-width: 1280px; box-sizing: border-box; display: flex; flex-direction: column; background: #FFFFFF; overflow-x: hidden;">
+<div style="width: 100%; min-width: 1280px; box-sizing: border-box; display: flex; flex-direction: column; background: #FFFFFF; overflow-x: clip;">
   <header style="position: sticky; top: 0; z-index: 20; height: 88px; box-sizing: border-box; padding: 0 64px; display: flex; align-items: center; justify-content: space-between; background: #2C0E18; border-bottom: 1px solid rgba(197,216,230,0.14);">
     <a href="/en/" aria-label="Velonify home" style="display: flex; align-items: center; gap: 14px; color: #FFFFFF;">
       <svg width="38" height="25" viewBox="0 44 1278 813" fill="#C5D8E6" aria-hidden="true"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
@@ -381,7 +382,7 @@ html { scroll-behavior: smooth; }
     </nav>
   </header>
 
-    <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 80px 64px 112px; overflow: hidden;">
+    <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 80px 64px 80px; overflow: hidden;">
     <svg class="mark-b" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true" style="position: absolute; right: -180px; bottom: -200px; width: 640px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
     <div style="position: relative; display: flex; flex-direction: column; gap: 40px; max-width: 1000px;">
       <nav aria-label="Breadcrumb" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 14px; font-weight: 600;">
@@ -391,9 +392,9 @@ html { scroll-behavior: smooth; }
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
         <span aria-current="page" style="color: #FFFFFF;">Storz &amp; Bickel</span>
       </nav>
-      <span style="align-self: flex-start; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 36px; line-height: 1.1; text-transform: uppercase; color: #C5D8E6; border-bottom: 3px solid #C5D8E6; padding-bottom: 12px;">Storz &amp; Bickel</span>
-      <h1 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 64px; line-height: 1.08; text-wrap: balance;"><span class="line"><span>From Mapp to Klaviyo in four weeks.</span></span></h1>
-      <p class="hero-fade" style="font-size: 21px; line-height: 1.55; font-weight: 500; max-width: 720px; color: rgba(255,255,255,0.88);">Email marketing moved from Mapp to Klaviyo and Google Ads newly launched &ndash; completed in four weeks.</p>
+      <span style="align-self: flex-start; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 30px; line-height: 1.1; text-transform: uppercase; color: #C5D8E6; border-bottom: 3px solid #C5D8E6; padding-bottom: 12px;">Storz &amp; Bickel</span>
+      <h1 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 50px; line-height: 1.08; text-wrap: balance;"><span class="line"><span>From Mapp to Klaviyo in four weeks.</span></span></h1>
+      <p class="hero-fade" style="font-size: 20px; line-height: 1.55; font-weight: 500; max-width: 720px; color: rgba(255,255,255,0.88);">Email marketing moved from Mapp to Klaviyo and Google Ads newly launched &ndash; completed in four weeks.</p>
       <div class="hero-fade-2" style="display: flex; flex-wrap: wrap; gap: 10px;"><span style="display: flex; align-items: center; min-height: 44px; padding: 6px 16px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 14px; font-weight: 700; color: #C5D8E6;">Klaviyo</span><span style="display: flex; align-items: center; min-height: 44px; padding: 6px 16px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 14px; font-weight: 700; color: #C5D8E6;">Email Marketing</span><span style="display: flex; align-items: center; min-height: 44px; padding: 6px 16px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 14px; font-weight: 700; color: #C5D8E6;">Google Ads</span><span style="display: flex; align-items: center; min-height: 44px; padding: 6px 16px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 14px; font-weight: 700; color: #C5D8E6;">Performance Marketing</span></div>
     </div>
   </section>
@@ -410,78 +411,78 @@ html { scroll-behavior: smooth; }
     </div>
     <p class="cs-cap">Klaviyo flows after the move from Mapp</p>
   </section>
-  <section class="on-light" style="padding: 128px 64px 40px; display: flex; flex-direction: column; gap: 0;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 56px; line-height: 1.06; margin-bottom: 40px;">The starting point.</h2>
+  <section class="on-light" style="padding: 96px 64px 40px; display: flex; flex-direction: column; gap: 0;">
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 44px; line-height: 1.06; margin-bottom: 40px;">The starting point.</h2>
       <div class="reveal" style="display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 56px; padding: 48px 0; border-top: 1.5px solid #000000;">
-        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.15;">Situation</h3>
-        <div style="display: flex; flex-direction: column; gap: 20px;"><p style="font-size: 19px; line-height: 1.6; max-width: 760px;">Storz &amp; Bickel ran email marketing on Mapp and wanted to add Google Ads as an advertising channel.</p></div>
+        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.15;">Situation</h3>
+        <div style="display: flex; flex-direction: column; gap: 20px;"><p style="font-size: 18px; line-height: 1.6; max-width: 760px;">Storz &amp; Bickel ran email marketing on Mapp and wanted to add Google Ads as an advertising channel.</p></div>
       </div>
       <div class="reveal" style="display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 56px; padding: 48px 0; border-top: 1.5px solid #000000;">
-        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.15;">Goal</h3>
-        <div style="display: flex; flex-direction: column; gap: 20px;"><p style="font-size: 19px; line-height: 1.6; max-width: 760px;">Move email marketing to Klaviyo and launch Google Ads in parallel &ndash; both within four weeks.</p></div>
+        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.15;">Goal</h3>
+        <div style="display: flex; flex-direction: column; gap: 20px;"><p style="font-size: 18px; line-height: 1.6; max-width: 760px;">Move email marketing to Klaviyo and launch Google Ads in parallel &ndash; both within four weeks.</p></div>
       </div>
   </section>
-  <section class="on-light" style="padding: 88px 64px 128px; display: flex; flex-direction: column; gap: 40px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 56px; line-height: 1.06;">What Velonify took on.</h2>
+  <section class="on-light" style="padding: 88px 64px 96px; display: flex; flex-direction: column; gap: 40px;">
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 44px; line-height: 1.06;">What Velonify took on.</h2>
     <div style="display: flex; flex-direction: column; border-top: 1.5px solid #000000;">
       <a class="svc reveal" href="/en/services/email-marketing/" style="display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr) 40px; gap: 40px; align-items: center; padding: 32px; border-bottom: 1.5px solid #000000;">
-        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; text-transform: uppercase; font-size: 22px; line-height: 1.2;">Email Marketing Migration</span>
-        <span style="font-size: 18px; line-height: 1.55; font-weight: 500;">Moved from Mapp to Klaviyo: flows, segments and templates rebuilt.</span>
+        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; text-transform: uppercase; font-size: 20px; line-height: 1.2;">Email Marketing Migration</span>
+        <span style="font-size: 17px; line-height: 1.55; font-weight: 500;">Moved from Mapp to Klaviyo: flows, segments and templates rebuilt.</span>
         <svg class="svc-arrow" width="32" height="32" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
       </a>
       <a class="svc reveal" href="/en/services/performance-marketing/" style="display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr) 40px; gap: 40px; align-items: center; padding: 32px; border-bottom: 1.5px solid #000000;">
-        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; text-transform: uppercase; font-size: 22px; line-height: 1.2;">Google Ads</span>
-        <span style="font-size: 18px; line-height: 1.55; font-weight: 500;">Campaigns newly set up and launched.</span>
+        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; text-transform: uppercase; font-size: 20px; line-height: 1.2;">Google Ads</span>
+        <span style="font-size: 17px; line-height: 1.55; font-weight: 500;">Campaigns newly set up and launched.</span>
         <svg class="svc-arrow" width="32" height="32" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
       </a>
       </div>
   </section>
   <section style="margin: 0 64px; background: #2C0E18; color: #FFFFFF; padding: 88px 64px 56px; display: flex; flex-direction: column; gap: 24px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 56px; line-height: 1.06;">The numbers.</h2>
-    <p class="reveal" style="font-size: 19px; line-height: 1.6; max-width: 640px; color: rgba(255,255,255,0.86); margin-bottom: 24px;">What changed at Storz &amp; Bickel and what's behind it.</p>
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 44px; line-height: 1.06;">The numbers.</h2>
+    <p class="reveal" style="font-size: 18px; line-height: 1.6; max-width: 640px; color: rgba(255,255,255,0.86); margin-bottom: 24px;">What changed at Storz &amp; Bickel and what's behind it.</p>
     <div style="display: flex; flex-direction: column;">
       <div class="reveal" style="display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 56px; align-items: start; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.22);">
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 72px; line-height: 1.05; color: #C5D8E6;">4 weeks</span>
-          <span style="font-size: 18px; font-weight: 700;">migrated from Mapp to Klaviyo</span>
+          <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 55px; line-height: 1.05; color: #C5D8E6;">4 weeks</span>
+          <span style="font-size: 17px; font-weight: 700;">migrated from Mapp to Klaviyo</span>
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C5D8E6;">How it happened</span>
-          <p style="font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.9); max-width: 620px;">Existing flows and segments were carried over 1:1 from Mapp to Klaviyo.</p>
+          <p style="font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.9); max-width: 620px;">Existing flows and segments were carried over 1:1 from Mapp to Klaviyo.</p>
         </div>
       </div>
       <div class="reveal" style="display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 56px; align-items: start; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.22);">
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 72px; line-height: 1.05; color: #C5D8E6;">Google Ads</span>
-          <span style="font-size: 18px; font-weight: 700;">newly set up and launched</span>
+          <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 55px; line-height: 1.05; color: #C5D8E6;">Google Ads</span>
+          <span style="font-size: 17px; font-weight: 700;">newly set up and launched</span>
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C5D8E6;">How it happened</span>
-          <p style="font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.9); max-width: 620px;">Campaigns and tracking were built in parallel with the email migration.</p>
+          <p style="font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.9); max-width: 620px;">Campaigns and tracking were built in parallel with the email migration.</p>
         </div>
       </div>
       </div>
   </section>
-  <section class="on-light" style="padding: 128px 64px 40px; display: flex; flex-direction: column; gap: 32px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 40px; line-height: 1.1;">More cases.</h2>
+  <section class="on-light" style="padding: 96px 64px 40px; display: flex; flex-direction: column; gap: 32px;">
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 33px; line-height: 1.1;">More cases.</h2>
     <div style="display: flex; gap: 32px;">
       <a class="case-card" href="/en/cases/blue-fire/" style="flex: 1 1 0; min-width: 0;">
-        <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px;"><span style="font-family: 'Krona One', sans-serif; font-size: 22px; text-transform: uppercase; line-height: 1.2;">Blue Fire Co.</span><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; white-space: nowrap;">Denim &amp; Fashion</span></span>
+        <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px;"><span style="font-family: 'Krona One', sans-serif; font-size: 20px; text-transform: uppercase; line-height: 1.2;">Blue Fire Co.</span><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; white-space: nowrap;">Denim &amp; Fashion</span></span>
         <span style="font-size: 17px; line-height: 1.5; font-weight: 500;">First the migration from Magento to Shopify. Today the complete e-commerce.</span>
         <span style="display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 700;">View case <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></span>
       </a>
       <a class="case-card" href="/en/cases/pretty-woman/" style="flex: 1 1 0; min-width: 0;">
-        <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px;"><span style="font-family: 'Krona One', sans-serif; font-size: 22px; text-transform: uppercase; line-height: 1.2;">Pretty Woman Brautmoden</span><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; white-space: nowrap;">Bridal Fashion</span></span>
+        <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px;"><span style="font-family: 'Krona One', sans-serif; font-size: 20px; text-transform: uppercase; line-height: 1.2;">Pretty Woman Brautmoden</span><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; white-space: nowrap;">Bridal Fashion</span></span>
         <span style="font-size: 17px; line-height: 1.5; font-weight: 500;">Turning website visits into fitting appointments.</span>
         <span style="display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 700;">View case <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></span>
       </a>
     </div>
   </section>
-  <section id="kontakt" style="position: relative; background: #45142D; color: #FFFFFF; padding: 128px 64px; overflow: hidden; margin-top: 88px;">
+  <section id="kontakt" style="position: relative; background: #45142D; color: #FFFFFF; padding: 96px 64px; overflow: hidden; margin-top: 88px;">
     <svg class="drift" viewBox="0 44 1278 813" fill="#2C0E18" aria-hidden="true" style="position: absolute; right: -60px; top: 20px; width: 520px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
     <div style="position: relative; display: flex; flex-direction: column; gap: 32px; max-width: 860px;">
-      <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 62px; line-height: 1.05; text-wrap: balance;">Sound familiar?</h2>
-      <p class="reveal" style="font-size: 20px; line-height: 1.55; max-width: 580px; color: rgba(255,255,255,0.9);">Tell us what your store runs on and where it gets stuck. In a free intro call we'll show you what an approach could look like, directly with the person who does the work.</p>
+      <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 48px; line-height: 1.05; text-wrap: balance;">Sound familiar?</h2>
+      <p class="reveal" style="font-size: 19px; line-height: 1.55; max-width: 580px; color: rgba(255,255,255,0.9);">Tell us what your store runs on and where it gets stuck. In a free intro call we'll show you what an approach could look like, directly with the person who does the work.</p>
       <div class="reveal" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center;">
         <a class="btn btn-ice" href="/en/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 62px; padding: 0 32px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Start a project <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
       </div>
@@ -499,7 +500,7 @@ html { scroll-behavior: smooth; }
 <div class="v v-mobile">
 
 
-<div style="width: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FFFFFF; overflow-x: hidden;">
+<div style="width: 100%; box-sizing: border-box; display: flex; flex-direction: column; background: #FFFFFF; overflow-x: clip;">
   <header style="position: sticky; top: 0; z-index: 20; height: 68px; box-sizing: border-box; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; background: #2C0E18; border-bottom: 1px solid rgba(197,216,230,0.14);">
     <a href="/en/" aria-label="Velonify home" style="display: flex; align-items: center; gap: 10px;">
       <svg width="30" height="20" viewBox="0 44 1278 813" fill="#C5D8E6" aria-hidden="true"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
@@ -515,7 +516,7 @@ html { scroll-behavior: smooth; }
   
     <nav class="menu-panel" hidden aria-label="Main navigation" style="position: fixed; top: 68px; left: 0; right: 0; bottom: 0; z-index: 19; background: #2C0E18; padding: 24px 20px; display: flex; flex-direction: column; gap: 0; overflow-y: auto;">
       
-        <details class="menu-acc"><summary class="menu-link" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.06s; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;">Services<svg class="menu-acc-arrow" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; transition: transform .3s;"><path d="M5 8 L10 13 L15 8"></path></svg></summary><div class="menu-acc-sub"><a class="menu-link" href="/en/services/shopify-migration/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.1s;">Shopify Migration</a>
+        <details class="menu-acc"><summary class="menu-link" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.06s; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;">Services<svg class="menu-acc-arrow" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; transition: transform .3s;"><path d="M5 8 L10 13 L15 8"></path></svg></summary><div class="menu-acc-sub"><a class="menu-link" href="/en/services/shopify-migration/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.1s;">Shopify Migration</a>
       
         <a class="menu-link" href="/en/services/tracking/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.14s;">Tracking &amp; Attribution</a>
       
@@ -525,15 +526,15 @@ html { scroll-behavior: smooth; }
       
         <a class="menu-link" href="/en/services/conversion-optimization/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.26s;">Conversion Optimization</a>
       
-        </div></details><details class="menu-acc"><summary class="menu-link" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.3s; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;">Cases<svg class="menu-acc-arrow" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; transition: transform .3s;"><path d="M5 8 L10 13 L15 8"></path></svg></summary><div class="menu-acc-sub"><a class="menu-link" href="/en/cases/blue-fire/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.34s;">Blue Fire Co.</a>
+        </div></details><details class="menu-acc"><summary class="menu-link" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.3s; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;">Cases<svg class="menu-acc-arrow" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; transition: transform .3s;"><path d="M5 8 L10 13 L15 8"></path></svg></summary><div class="menu-acc-sub"><a class="menu-link" href="/en/cases/blue-fire/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.34s;">Blue Fire Co.</a>
       
         <a class="menu-link" href="/en/cases/storz-bickel/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.38s;">Storz &amp; Bickel</a>
       
         <a class="menu-link" href="/en/cases/pretty-woman/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.42s;">Pretty Woman Brautmoden</a>
       
-        </div></details><a class="menu-link" href="/en/guides/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.46s;">Guides</a>
+        </div></details><a class="menu-link" href="/en/guides/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.46s;">Guides</a>
       
-        <a class="menu-link" href="/en/#kontakt" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.5s;">Contact</a>
+        <a class="menu-link" href="/en/#kontakt" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.5s;">Contact</a>
       
       <div style="display: flex; gap: 16px; margin-top: 20px; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; flex-wrap: wrap;">
         <a href="/cases/storz-bickel/" style="color: rgba(255,255,255,0.75);">DE</a>
@@ -553,9 +554,9 @@ html { scroll-behavior: smooth; }
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
         <span aria-current="page" style="color: #FFFFFF;">Storz &amp; Bickel</span>
       </nav>
-      <span style="align-self: flex-start; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 27px; line-height: 1.1; text-transform: uppercase; color: #C5D8E6; border-bottom: 3px solid #C5D8E6; padding-bottom: 12px;">Storz &amp; Bickel</span>
-      <h1 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 33px; line-height: 1.08; text-wrap: balance;"><span class="line"><span>From Mapp to Klaviyo in four weeks.</span></span></h1>
-      <p class="hero-fade" style="font-size: 18px; line-height: 1.55; font-weight: 500; max-width: 100%; color: rgba(255,255,255,0.88);">Email marketing moved from Mapp to Klaviyo and Google Ads newly launched &ndash; completed in four weeks.</p>
+      <span style="align-self: flex-start; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 24px; line-height: 1.1; text-transform: uppercase; color: #C5D8E6; border-bottom: 3px solid #C5D8E6; padding-bottom: 12px;">Storz &amp; Bickel</span>
+      <h1 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1.08; text-wrap: balance;"><span class="line"><span>From Mapp to Klaviyo in four weeks.</span></span></h1>
+      <p class="hero-fade" style="font-size: 17px; line-height: 1.55; font-weight: 500; max-width: 100%; color: rgba(255,255,255,0.88);">Email marketing moved from Mapp to Klaviyo and Google Ads newly launched &ndash; completed in four weeks.</p>
       <div class="hero-fade-2" style="display: flex; flex-wrap: wrap; gap: 10px;"><span style="display: flex; align-items: center; min-height: 44px; padding: 6px 16px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 14px; font-weight: 700; color: #C5D8E6;">Klaviyo</span><span style="display: flex; align-items: center; min-height: 44px; padding: 6px 16px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 14px; font-weight: 700; color: #C5D8E6;">Email Marketing</span><span style="display: flex; align-items: center; min-height: 44px; padding: 6px 16px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 14px; font-weight: 700; color: #C5D8E6;">Google Ads</span><span style="display: flex; align-items: center; min-height: 44px; padding: 6px 16px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 14px; font-weight: 700; color: #C5D8E6;">Performance Marketing</span></div>
     </div>
   </section>
@@ -573,67 +574,67 @@ html { scroll-behavior: smooth; }
     <p class="cs-cap">Klaviyo flows after the move from Mapp</p>
   </section>
   <section class="on-light" style="padding: 64px 20px 40px; display: flex; flex-direction: column; gap: 0;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 29px; line-height: 1.06; margin-bottom: 40px;">The starting point.</h2>
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 25px; line-height: 1.06; margin-bottom: 40px;">The starting point.</h2>
       <div class="reveal" style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 25px; padding: 24px 0; border-top: 1.5px solid #000000;">
-        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 21px; line-height: 1.15;">Situation</h3>
+        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 20px; line-height: 1.15;">Situation</h3>
         <div style="display: flex; flex-direction: column; gap: 20px;"><p style="font-size: 17px; line-height: 1.6; max-width: 100%;">Storz &amp; Bickel ran email marketing on Mapp and wanted to add Google Ads as an advertising channel.</p></div>
       </div>
       <div class="reveal" style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 25px; padding: 24px 0; border-top: 1.5px solid #000000;">
-        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 21px; line-height: 1.15;">Goal</h3>
+        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 20px; line-height: 1.15;">Goal</h3>
         <div style="display: flex; flex-direction: column; gap: 20px;"><p style="font-size: 17px; line-height: 1.6; max-width: 100%;">Move email marketing to Klaviyo and launch Google Ads in parallel &ndash; both within four weeks.</p></div>
       </div>
   </section>
   <section class="on-light" style="padding: 44px 20px 64px; display: flex; flex-direction: column; gap: 20px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 29px; line-height: 1.06;">What Velonify took on.</h2>
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 25px; line-height: 1.06;">What Velonify took on.</h2>
     <div style="display: flex; flex-direction: column; border-top: 1.5px solid #000000;">
       <a class="svc reveal" href="/en/services/email-marketing/" style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-items: center; padding: 32px; border-bottom: 1.5px solid #000000;">
-        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Email Marketing Migration</span>
-        <span style="font-size: 18px; line-height: 1.55; font-weight: 500;">Moved from Mapp to Klaviyo: flows, segments and templates rebuilt.</span>
+        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; text-transform: uppercase; font-size: 17px; line-height: 1.2;">Email Marketing Migration</span>
+        <span style="font-size: 17px; line-height: 1.55; font-weight: 500;">Moved from Mapp to Klaviyo: flows, segments and templates rebuilt.</span>
         <svg class="svc-arrow" width="32" height="32" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
       </a>
       <a class="svc reveal" href="/en/services/performance-marketing/" style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-items: center; padding: 32px; border-bottom: 1.5px solid #000000;">
-        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; text-transform: uppercase; font-size: 18px; line-height: 1.2;">Google Ads</span>
-        <span style="font-size: 18px; line-height: 1.55; font-weight: 500;">Campaigns newly set up and launched.</span>
+        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; text-transform: uppercase; font-size: 17px; line-height: 1.2;">Google Ads</span>
+        <span style="font-size: 17px; line-height: 1.55; font-weight: 500;">Campaigns newly set up and launched.</span>
         <svg class="svc-arrow" width="32" height="32" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 32 L32 8 M14 8 H32 V26"></path></svg>
       </a>
       </div>
   </section>
   <section style="margin: 0 20px; background: #2C0E18; color: #FFFFFF; padding: 44px 20px 28px; display: flex; flex-direction: column; gap: 24px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 29px; line-height: 1.06;">The numbers.</h2>
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 25px; line-height: 1.06;">The numbers.</h2>
     <p class="reveal" style="font-size: 17px; line-height: 1.6; max-width: 100%; color: rgba(255,255,255,0.86); margin-bottom: 24px;">What changed at Storz &amp; Bickel and what's behind it.</p>
     <div style="display: flex; flex-direction: column;">
       <div class="reveal" style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 25px; align-items: start; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.22);">
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 37px; line-height: 1.05; color: #C5D8E6;">4 weeks</span>
-          <span style="font-size: 18px; font-weight: 700;">migrated from Mapp to Klaviyo</span>
+          <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 31px; line-height: 1.05; color: #C5D8E6;">4 weeks</span>
+          <span style="font-size: 17px; font-weight: 700;">migrated from Mapp to Klaviyo</span>
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C5D8E6;">How it happened</span>
-          <p style="font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.9); max-width: 100%;">Existing flows and segments were carried over 1:1 from Mapp to Klaviyo.</p>
+          <p style="font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.9); max-width: 100%;">Existing flows and segments were carried over 1:1 from Mapp to Klaviyo.</p>
         </div>
       </div>
       <div class="reveal" style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 25px; align-items: start; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.22);">
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 37px; line-height: 1.05; color: #C5D8E6;">Google Ads</span>
-          <span style="font-size: 18px; font-weight: 700;">newly set up and launched</span>
+          <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 31px; line-height: 1.05; color: #C5D8E6;">Google Ads</span>
+          <span style="font-size: 17px; font-weight: 700;">newly set up and launched</span>
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C5D8E6;">How it happened</span>
-          <p style="font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.9); max-width: 100%;">Campaigns and tracking were built in parallel with the email migration.</p>
+          <p style="font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.9); max-width: 100%;">Campaigns and tracking were built in parallel with the email migration.</p>
         </div>
       </div>
       </div>
   </section>
   <section class="on-light" style="padding: 64px 20px 40px; display: flex; flex-direction: column; gap: 20px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1.1;">More cases.</h2>
+    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1.1;">More cases.</h2>
     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
       <a class="case-card" href="/en/cases/blue-fire/" style="flex: 1 1 0; min-width: 0;">
-        <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px;"><span style="font-family: 'Krona One', sans-serif; font-size: 18px; text-transform: uppercase; line-height: 1.2;">Blue Fire Co.</span><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; white-space: nowrap;">Denim &amp; Fashion</span></span>
+        <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px;"><span style="font-family: 'Krona One', sans-serif; font-size: 17px; text-transform: uppercase; line-height: 1.2;">Blue Fire Co.</span><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; white-space: nowrap;">Denim &amp; Fashion</span></span>
         <span style="font-size: 17px; line-height: 1.5; font-weight: 500;">First the migration from Magento to Shopify. Today the complete e-commerce.</span>
         <span style="display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 700;">View case <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></span>
       </a>
       <a class="case-card" href="/en/cases/pretty-woman/" style="flex: 1 1 0; min-width: 0;">
-        <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px;"><span style="font-family: 'Krona One', sans-serif; font-size: 18px; text-transform: uppercase; line-height: 1.2;">Pretty Woman Brautmoden</span><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; white-space: nowrap;">Bridal Fashion</span></span>
+        <span style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px;"><span style="font-family: 'Krona One', sans-serif; font-size: 17px; text-transform: uppercase; line-height: 1.2;">Pretty Woman Brautmoden</span><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; white-space: nowrap;">Bridal Fashion</span></span>
         <span style="font-size: 17px; line-height: 1.5; font-weight: 500;">Turning website visits into fitting appointments.</span>
         <span style="display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 700;">View case <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></span>
       </a>
@@ -642,7 +643,7 @@ html { scroll-behavior: smooth; }
   <section id="kontakt" style="position: relative; background: #45142D; color: #FFFFFF; padding: 64px 20px; overflow: hidden; margin-top: 88px;">
     <svg class="drift" viewBox="0 44 1278 813" fill="#2C0E18" aria-hidden="true" style="position: absolute; right: -30px; top: 20px; width: 286px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
     <div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 100%;">
-      <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 32px; line-height: 1.05; text-wrap: balance;">Sound familiar?</h2>
+      <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 27px; line-height: 1.05; text-wrap: balance;">Sound familiar?</h2>
       <p class="reveal" style="font-size: 17px; line-height: 1.55; max-width: 100%; color: rgba(255,255,255,0.9);">Tell us what your store runs on and where it gets stuck. In a free intro call we'll show you what an approach could look like, directly with the person who does the work.</p>
       <div class="reveal" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center;">
         <a class="btn btn-ice" href="/en/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 62px; padding: 0 20px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Start a project <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>

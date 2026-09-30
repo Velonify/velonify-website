@@ -16,8 +16,8 @@ main { display: block; }
 .rg-crumbs span[aria-current] { color: #FFFFFF; }
 .rg-dot { width: 6px; height: 6px; background: #C5D8E6; flex-shrink: 0; }
 .rg-eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C5D8E6; }
-.rg-hero h1 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 46px; line-height: 1.15; max-width: 1040px; text-wrap: balance; }
-.rg-lead { font-size: 20px; line-height: 1.6; max-width: 720px; color: rgba(255,255,255,0.85); }
+.rg-hero h1 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 37px; line-height: 1.15; max-width: 1040px; text-wrap: balance; }
+.rg-lead { font-size: 19px; line-height: 1.6; max-width: 720px; color: rgba(255,255,255,0.85); }
 .rg-meta { display: flex; align-items: center; gap: 16px; }
 .rg-meta p { display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.8); }
 .rg-meta strong { color: #FFFFFF; }
@@ -34,15 +34,15 @@ main { display: block; }
 .rg-toc a::before { content: counter(toc, decimal-leading-zero); color: #45142D; font-weight: 700; font-size: 12px; padding-top: 2px; }
 .rg-toc a:hover { color: #45142D; }
 
-.rg-article { font-size: 18px; line-height: 1.7; color: #000000; min-width: 0; }
+.rg-article { font-size: 17px; line-height: 1.7; color: #000000; min-width: 0; }
 .rg-article p { margin: 0 0 20px; }
 .rg-article a { color: #45142D; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; }
 .rg-article a:hover { color: #2C0E18; background: rgba(197,216,230,0.45); }
 .rg-article strong { font-weight: 700; }
 .rg-article code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 0.86em; background: rgba(197,216,230,0.4); padding: 2px 6px; }
 .rg-sec { margin-top: 64px; }
-.rg-sec h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1.25; color: #2C0E18; margin: 0 0 24px; scroll-margin-top: 120px; text-wrap: balance; }
-.rg-sec h3 { font-size: 21px; line-height: 1.35; font-weight: 800; margin: 36px 0 12px; scroll-margin-top: 120px; }
+.rg-sec h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.25; color: #2C0E18; margin: 0 0 24px; scroll-margin-top: 120px; text-wrap: balance; }
+.rg-sec h3 { font-size: 20px; line-height: 1.35; font-weight: 800; margin: 36px 0 12px; scroll-margin-top: 120px; }
 .rg-article ul, .rg-article ol { margin: 0 0 24px; padding: 0; list-style: none; }
 .rg-article ul li { position: relative; padding-left: 26px; margin-bottom: 12px; }
 .rg-article ul li::before { content: ""; position: absolute; left: 2px; top: 0.72em; width: 7px; height: 7px; background: #45142D; }
@@ -53,7 +53,7 @@ main { display: block; }
 .rg-summary { background: rgba(197,216,230,0.35); border-left: 5px solid #45142D; padding: 28px 32px; }
 .rg-summary p { margin: 0; }
 .rg-summary .rg-label, .rg-author-label { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D; margin-bottom: 10px; }
-.rg-summary p + p { font-size: 19px; line-height: 1.65; font-weight: 500; }
+.rg-summary p + p { font-size: 18px; line-height: 1.65; font-weight: 500; }
 
 .rg-table { overflow-x: auto; margin: 8px 0 28px; border: 1.5px solid #000000; }
 .rg-table:focus-visible { outline: 2px solid #45142D; outline-offset: 2px; }
@@ -68,7 +68,7 @@ main { display: block; }
 .rg-faq:last-child { border-bottom: 1.5px solid #000000; }
 .rg-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; }
 .rg-faq summary::-webkit-details-marker { display: none; }
-.rg-faq summary h3 { margin: 0; font-size: 19px; line-height: 1.4; font-weight: 700; }
+.rg-faq summary h3 { margin: 0; font-size: 18px; line-height: 1.4; font-weight: 700; }
 .rg-faq summary:hover h3 { color: #45142D; }
 .rg-plus { position: relative; width: 18px; height: 18px; flex-shrink: 0; transition: transform .35s cubic-bezier(.16,1,.3,1); }
 .rg-plus::before, .rg-plus::after { content: ""; position: absolute; background: #45142D; }
@@ -89,8 +89,8 @@ main { display: block; }
 
 /* CTA */
 .rg-cta { background: #45142D; color: #FFFFFF; padding: 88px 0; }
-.rg-cta h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 40px; line-height: 1.15; margin-bottom: 20px; }
-.rg-cta p { font-size: 19px; line-height: 1.6; max-width: 680px; color: rgba(255,255,255,0.85); margin-bottom: 36px; }
+.rg-cta h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 33px; line-height: 1.15; margin-bottom: 20px; }
+.rg-cta p { font-size: 18px; line-height: 1.6; max-width: 680px; color: rgba(255,255,255,0.85); margin-bottom: 36px; }
 .rg-cta-row { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
 .rg-btn { display: inline-flex; align-items: center; gap: 12px; height: 60px; padding: 0 30px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700; }
 .rg-cta-link { display: inline-flex; align-items: center; gap: 10px; color: #FFFFFF; font-weight: 700; font-size: 16px; border-bottom: 2px solid #C5D8E6; padding-bottom: 4px; }
@@ -98,7 +98,7 @@ main { display: block; }
 
 /* Cards */
 .rg-related { padding: 88px 0 104px; }
-.rg-related h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 30px; color: #2C0E18; margin-bottom: 32px; }
+.rg-related h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; color: #2C0E18; margin-bottom: 32px; }
 .rg-list { padding: 72px 0 104px; }
 .rg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
 .rg-grid-index { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -106,7 +106,7 @@ main { display: block; }
 .rg-card:hover { background-size: 100% 100%; color: #FFFFFF; }
 .rg-card-cat { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D; transition: color .3s; }
 .rg-card:hover .rg-card-cat, .rg-card:hover .rg-card-go { color: #C5D8E6; }
-.rg-card h3 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 20px; line-height: 1.3; text-wrap: balance; }
+.rg-card h3 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 19px; line-height: 1.3; text-wrap: balance; }
 .rg-card-desc { font-size: 16px; line-height: 1.6; }
 .rg-card-meta { font-size: 14px; opacity: 0.75; margin-top: auto !important; }
 .rg-card-go { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: #45142D; transition: color .3s; }
@@ -145,14 +145,14 @@ main { display: block; }
   .rg-hero { padding: 36px 0 44px; }
   .rg-hero .mark-a { right: -80px; bottom: -100px; width: 308px; }
   .rg-hero-in { gap: 20px; }
-  .rg-hero h1 { font-size: 27px; line-height: 1.2; }
+  .rg-hero h1 { font-size: 24px; line-height: 1.2; }
   .rg-lead { font-size: 17px; }
   .rg-meta p { font-size: 14px; }
   .rg-avatar { width: 44px; height: 44px; font-size: 13px; }
   .rg-body { display: block; padding-top: 32px; padding-bottom: 64px; }
   .rg-toc { position: static; margin-bottom: 32px; border: 1.5px solid #000000; }
   .rg-toc summary { pointer-events: auto; cursor: pointer; padding: 16px 18px; border-bottom: 0; display: flex; justify-content: space-between; }
-  .rg-toc summary::after { content: "+"; font-size: 18px; line-height: 1; }
+  .rg-toc summary::after { content: "+"; font-size: 17px; line-height: 1; }
   .rg-toc details[open] summary::after { content: "–"; }
   .rg-toc ol { padding: 0 18px 8px; }
   .rg-toc li:last-child { border-bottom: 0; }
@@ -160,25 +160,25 @@ main { display: block; }
   .rg-summary { padding: 22px 20px; }
   .rg-summary p + p { font-size: 17px; }
   .rg-sec { margin-top: 48px; }
-  .rg-sec h2 { font-size: 20px; scroll-margin-top: 90px; }
-  .rg-sec h3 { font-size: 19px; scroll-margin-top: 90px; }
+  .rg-sec h2 { font-size: 19px; scroll-margin-top: 90px; }
+  .rg-sec h3 { font-size: 18px; scroll-margin-top: 90px; }
   .rg-table table { font-size: 14px; min-width: 560px; }
   .rg-faq summary h3 { font-size: 17px; }
   .rg-faq-a { padding-right: 0; }
   .rg-author { flex-direction: column; padding: 24px 20px; margin-top: 56px; }
   .rg-cta { padding: 56px 0; }
-  .rg-cta h2 { font-size: 26px; }
+  .rg-cta h2 { font-size: 23px; }
   .rg-cta p { font-size: 17px; }
   .rg-btn { width: 100%; justify-content: center; height: 58px; }
   .rg-related { padding: 56px 0 64px; }
-  .rg-related h2 { font-size: 22px; }
+  .rg-related h2 { font-size: 20px; }
   .rg-list { padding: 40px 0 64px; }
   .rg-grid, .rg-grid-index { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .rg-card { padding: 24px 20px; }
   .rg-card-img { margin: -24px -20px 4px; }
   .rg-cover { margin-bottom: 24px; }
   .rg-cover img { aspect-ratio: 16 / 9; }
-  .rg-card h3 { font-size: 18px; }
+  .rg-card h3 { font-size: 17px; }
   .rg-footer { padding: 36px 20px; gap: 20px; }
   .rg-footer-top { gap: 20px; }
   .rg-footer nav { gap: 20px; }

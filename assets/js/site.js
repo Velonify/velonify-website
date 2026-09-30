@@ -68,12 +68,118 @@
       btns[1].addEventListener('click', function () { slide(1); });
     }
 
+    // logo ticker: repeat the logo set until one half of the track is wider than the screen,
+    // otherwise the loop runs out of logos and leaves a gap on the right
+    root.querySelectorAll('.ticker-track').forEach(function (track) {
+      var kids = Array.prototype.slice.call(track.children);
+      var set = kids.slice(0, kids.length / 2), setW = track.scrollWidth / 2;
+      var copies = setW ? Math.ceil((window.innerWidth + 240) / setW) : 1;
+      if (copies < 2) return;
+      track.textContent = '';
+      for (var i = 0; i < copies * 2; i++) set.forEach(function (el) {
+        var c = el.cloneNode(true);
+        if (i) c.setAttribute('aria-hidden', 'true');
+        track.appendChild(c);
+      });
+    });
+
+    // contact form: one question at a time instead of one long block
+    var form = root.querySelector('form[name="anfrage"]');
+    if (form) try { makeSteps(form); } catch (e) { console.error(e); }
+
     // hero flock and globe
     var f = root.querySelector('canvas.flock');
     if (f) try { makeFlock(f, mobile ? { count: 22, size: 0.7, c1: '#C5D8E6', c2: '#8A4A6A' } : { count: 36, size: 1, c1: '#C5D8E6', c2: '#8A4A6A' }); } catch (e) { console.error(e); }
     var g = root.querySelector('canvas[data-globe]');
     if (g) try { makeGlobe(g); } catch (e) { console.error(e); }
   });
+
+// Contact form in three steps: topic & budget, contact details, message. Built from the existing
+// markup, so the Netlify fields stay exactly as they are and the form still works without JS.
+// Only the e-mail address is required.
+function makeSteps(form) {
+  var en = (form.querySelector('input[name="sprache"]') || {}).value === 'en';
+  var T = en
+    ? { step: 'Step', of: 'of', names: ['Project', 'Contact', 'Message'], next: 'Next', back: 'Back' }
+    : { step: 'Schritt', of: 'von', names: ['Projekt', 'Kontakt', 'Nachricht'], next: 'Weiter', back: 'Zurück' };
+  function top(el) { while (el && el.parentElement !== form) el = el.parentElement; return el; }
+  var email = form.querySelector('input[name="email"]');
+  var submit = form.querySelector('button[type="submit"]');
+  if (!email || !submit) return;
+  // desktop and mobile markup nest the contact fields differently, so collect their top-level wrappers
+  var contact = [];
+  ['name', 'email', 'shop'].forEach(function (n) {
+    var el = top(form.querySelector('input[name="' + n + '"]'));
+    if (el && contact.indexOf(el) < 0) contact.push(el);
+  });
+  var groups = [
+    Array.prototype.slice.call(form.querySelectorAll(':scope > fieldset')),
+    contact,
+    [top(form.querySelector('textarea[name="nachricht"]'))]
+  ];
+  if (!groups[0].length || !contact.length || !groups[2][0]) return;
+  var consent = submit.nextElementSibling;
+  // make clear that only the e-mail address is needed
+  ['name', 'shop'].forEach(function (n) {
+    var input = form.querySelector('input[name="' + n + '"]'), lab = input && input.id && form.querySelector('label[for="' + input.id + '"]');
+    if (lab && !/optional/.test(lab.textContent)) lab.insertAdjacentHTML('beforeend', ' <span style="font-weight: 500; color: rgba(255,255,255,0.7);">(optional)</span>');
+  });
+
+  // progress: "Schritt 1 von 3 · Worum geht es?" above three bar segments
+  var prog = document.createElement('div');
+  prog.className = 'fs-progress';
+  prog.innerHTML = '<p class="fs-label" aria-live="polite"></p><div class="fs-bar" aria-hidden="true"><span></span><span></span><span></span></div>';
+  var label = prog.querySelector('.fs-label'), segs = prog.querySelectorAll('.fs-bar span');
+  var title = form.querySelector(':scope > span');
+  form.insertBefore(prog, title ? title.nextSibling : groups[0][0]);
+
+  var steps = groups.map(function (els, i) {
+    var step = document.createElement('div');
+    step.className = 'fs-step';
+    form.insertBefore(step, els[0]);
+    els.forEach(function (el) { step.appendChild(el); });
+    var nav = document.createElement('div');
+    nav.className = 'fs-nav';
+    if (i) nav.innerHTML = '<button type="button" class="fs-back">' + T.back + '</button>';
+    if (i < groups.length - 1) nav.insertAdjacentHTML('beforeend', '<button type="button" class="btn btn-ice fs-next">' + T.next +
+      ' <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></button>');
+    else { submit.classList.add('fs-submit'); nav.appendChild(submit); }
+    step.appendChild(nav);
+    return step;
+  });
+  if (consent && consent.tagName === 'P') steps[steps.length - 1].appendChild(consent);
+  form.classList.add('fs-on');
+
+  var cur = 0;
+  function show(n, focus) {
+    cur = n;
+    steps.forEach(function (s, i) { s.hidden = i !== n; });
+    steps[n].classList.remove('fs-in'); void steps[n].offsetWidth; steps[n].classList.add('fs-in');
+    Array.prototype.forEach.call(segs, function (s, i) { s.classList.toggle('fs-done', i <= n); });
+    label.innerHTML = T.step + ' ' + (n + 1) + ' ' + T.of + ' ' + steps.length + ' <b>' + T.names[n] + '</b>';
+    if (focus) {
+      var f = steps[n].querySelector('input:not([type=hidden]), textarea, button.chip');
+      if (f) f.focus({ preventScroll: true });
+    }
+    if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+  }
+  function next() {
+    if (cur === 1 && !email.checkValidity()) { email.reportValidity(); return; }
+    if (cur < steps.length - 1) show(cur + 1, true);
+  }
+  form.addEventListener('click', function (e) {
+    if (e.target.closest('.fs-next')) next();
+    else if (e.target.closest('.fs-back')) show(Math.max(0, cur - 1), true);
+  });
+  // Enter in a text field moves on instead of sending half a form
+  form.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && e.target.tagName === 'INPUT' && cur < steps.length - 1) { e.preventDefault(); next(); }
+  });
+  form.addEventListener('submit', function (e) {
+    if (!email.checkValidity()) { e.preventDefault(); show(1, false); email.reportValidity(); }
+  });
+  show(0, false);
+}
 
 // Hero flock: 3D boids in the spirit of Vanta.js "Birds"; every bird is the Velonify mark,
 // folded along its flight axis so the two halves beat like wings.

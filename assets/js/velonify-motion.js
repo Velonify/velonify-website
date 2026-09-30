@@ -136,10 +136,16 @@
     // ---------- LENIS: smooth, weighted scrolling driven by the GSAP ticker ----------
     safe('lenis', function () {
       if (!window.Lenis) return;
+      // the case carousel only takes sideways wheel/trackpad input; vertical scrolling over it keeps moving the page
+      var sideways = false;
+      window.addEventListener('wheel', function (e) { sideways = Math.abs(e.deltaX) > Math.abs(e.deltaY); }, { capture: true, passive: true });
       var lenis = new window.Lenis({
         lerp: 0.085, wheelMultiplier: 1, smoothWheel: true, syncTouch: false,
         anchors: { offset: 0, duration: 1.4 },
-        prevent: function (node) { return !!(node && node.closest && node.closest('.car, textarea, .dd-menu')); }
+        prevent: function (node) {
+          if (!node || !node.closest) return false;
+          return !!(node.closest('textarea, .dd-menu') || (sideways && node.closest('.car')));
+        }
       });
       window.velonifyLenis = lenis;
       if (ST) lenis.on('scroll', ST.update);
@@ -231,7 +237,16 @@
       function y() { return window.scrollY || doc.documentElement.scrollTop || 0; }
       // react to the raw input delta (not the eased Lenis position), so the header snaps back immediately
       window.addEventListener('wheel', function (e) {
+        if (!e.deltaY) return; // sideways swipes over the case carousel
         setShown(y() < 240 || e.deltaY < 0);
+      }, { passive: true });
+      // keyboard, scrollbar and anchor jumps: follow the scroll position itself
+      var lastY = y();
+      window.addEventListener('scroll', function () {
+        var now = y(), d = now - lastY;
+        if (now < 240) setShown(true);
+        else if (Math.abs(d) > 12) setShown(d < 0);
+        if (Math.abs(d) > 12 || now < 240) lastY = now;
       }, { passive: true });
       var touchY = null;
       window.addEventListener('touchstart', function (e) { touchY = e.touches[0].clientY; }, { passive: true });
@@ -242,23 +257,23 @@
       }, { passive: true });
     });
 
-    // ---------- TICKER: endless loop that reacts to scroll speed and direction ----------
+    // ---------- TICKER: endless loop, always forward, a little faster while the page scrolls ----------
     safe('ticker', function () {
       $$('.ticker-track').forEach(function (track) {
         claim(track);
-        var loop = gsap.to(track, { xPercent: -50, ease: 'none', duration: 38, repeat: -1 });
-        loop.totalTime(38 * 400);
-        var dir = 1, hover = 1;
+        // constant speed in px/s, however many logo sets site.js put into the track
+        var dur = Math.max(20, track.scrollWidth / 2 / 45);
+        var loop = gsap.to(track, { xPercent: -50, ease: 'none', duration: dur, repeat: -1 });
+        var hover = 1;
         if (ST) ST.create({ onUpdate: function (self) {
-          dir = self.direction || dir;
-          var boost = Math.min(7, 1 + Math.abs(self.getVelocity()) / 260);
-          gsap.to(loop, { timeScale: dir * boost * hover, duration: 0.18, ease: 'power1.out', overwrite: true,
-            onComplete: function () { gsap.to(loop, { timeScale: dir * hover, duration: 1.2, ease: 'power2.out', overwrite: true }); } });
+          var boost = Math.min(2.5, 1 + Math.abs(self.getVelocity()) / 1200);
+          gsap.to(loop, { timeScale: boost * hover, duration: 0.3, ease: 'power1.out', overwrite: true,
+            onComplete: function () { gsap.to(loop, { timeScale: hover, duration: 1.2, ease: 'power2.out', overwrite: true }); } });
         } });
         var box = track.closest('.ticker') || track;
         if (canHover) {
-          box.addEventListener('mouseenter', function () { hover = 0.2; gsap.to(loop, { timeScale: dir * hover, duration: 0.6 }); });
-          box.addEventListener('mouseleave', function () { hover = 1; gsap.to(loop, { timeScale: dir, duration: 0.6 }); });
+          box.addEventListener('mouseenter', function () { hover = 0.25; gsap.to(loop, { timeScale: hover, duration: 0.6, overwrite: true }); });
+          box.addEventListener('mouseleave', function () { hover = 1; gsap.to(loop, { timeScale: hover, duration: 0.6, overwrite: true }); });
         }
       });
     });
@@ -524,18 +539,17 @@
       });
     });
 
-    // ---------- SCROLL VELOCITY: headlines lean, the ticker skews ----------
+    // ---------- SCROLL VELOCITY: headlines lean (the logo ticker stays upright) ----------
     safe('skew', function () {
       var heads = $$('section h2').filter(function (h) { return !vm(h, 'repel'); });
-      var ticks = $$('.ticker-track');
-      if (!heads.length && !ticks.length) return;
+      if (!heads.length) return;
       var proxy = { k: 0 }, clamp = gsap.utils.clamp(-7, 7);
-      var hs = heads.length ? gsap.quickSetter(heads, 'skewY', 'deg') : null, ts = ticks.length ? gsap.quickSetter(ticks, 'skewX', 'deg') : null;
+      var hs = gsap.quickSetter(heads, 'skewY', 'deg');
       ST.create({ onUpdate: function (self) {
         var k = clamp(self.getVelocity() / -320);
         if (Math.abs(k) > Math.abs(proxy.k)) {
           proxy.k = k;
-          gsap.to(proxy, { k: 0, duration: 0.8, ease: 'power3', overwrite: true, onUpdate: function () { if (hs) hs(proxy.k * 0.5); if (ts) ts(proxy.k * 2); } });
+          gsap.to(proxy, { k: 0, duration: 0.8, ease: 'power3', overwrite: true, onUpdate: function () { hs(proxy.k * 0.5); } });
         }
       } });
     });
