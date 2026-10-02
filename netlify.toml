@@ -18,6 +18,18 @@
   force = true
 
 [[redirects]]
+  from = "/_ressourcen/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# Lead-Magnete: es gibt nur die Seiten der einzelnen Magnete, keine Übersicht
+[[redirects]]
+  from = "/ressourcen/"
+  to = "/"
+  status = 302
+
+[[redirects]]
   from = "/_ratgeber/*"
   to = "/404.html"
   status = 404
@@ -46,3 +58,9 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "SAMEORIGIN"
+
+# Lead-Magnete: Seiten nach dem Formular und die Mail-Links gehören nicht in den Suchindex
+[[headers]]
+  for = "/ressourcen/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

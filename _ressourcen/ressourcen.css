@@ -1,0 +1,40 @@
+/* Lead magnets: content left, sign-up form right; on phones the form comes first */
+.rs-hero { padding-bottom: 72px; }
+.rs-body { display: grid; grid-template-columns: minmax(0, 1fr) 440px; gap: 80px; padding-top: 72px; padding-bottom: 104px; align-items: start; }
+.rs-inhalt > :first-child { margin-top: 0; }
+.rs-inhalt h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.25; color: #2C0E18; margin: 48px 0 20px; text-wrap: balance; }
+.rs-inhalt h3 { font-size: 20px; line-height: 1.35; font-weight: 800; margin: 32px 0 12px; }
+.rs-aside { position: sticky; top: 120px; }
+
+.rs-form { display: flex; flex-direction: column; gap: 20px; background: #45142D; color: #FFFFFF; padding: 36px 32px 32px; }
+.rs-form h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 19px; line-height: 1.3; margin: 0 0 4px; }
+.rs-field { display: flex; flex-direction: column; gap: 8px; }
+.rs-field label { font-size: 14px; font-weight: 700; }
+.rs-field label span { font-weight: 500; color: rgba(255,255,255,0.6); }
+.rs-field input, .rs-field select { height: 52px; box-sizing: border-box; width: 100%; padding: 0 14px; background: transparent; border: 1.5px solid rgba(255,255,255,0.45); border-radius: 0; color: #FFFFFF; font: 500 16px 'Albert Sans', sans-serif; }
+.rs-field select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #C5D8E6 50%), linear-gradient(135deg, #C5D8E6 50%, transparent 50%); background-position: calc(100% - 22px) 23px, calc(100% - 16px) 23px; background-size: 6px 6px; background-repeat: no-repeat; }
+.rs-field select option { color: #000000; }
+.rs-field input::placeholder { color: rgba(255,255,255,0.4); }
+.rs-field input:focus, .rs-field select:focus { outline: none; border-color: #C5D8E6; }
+.rs-check { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.85); cursor: pointer; }
+.rs-check input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: #C5D8E6; }
+.rs-btn { justify-content: center; border: 0; cursor: pointer; font-family: 'Albert Sans', sans-serif; }
+.rs-btn:disabled { opacity: 0.6; cursor: progress; }
+.rs-klein { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,0.65); }
+.rs-klein a { color: #C5D8E6; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Pages after the form and behind the mail links */
+.rs-einfach { padding-top: 64px; padding-bottom: 104px; }
+.rs-einfach .rg-article { max-width: 680px; }
+.rs-token { margin-top: 12px; }
+
+@media (max-width: 1180px) {
+  .rs-body { grid-template-columns: minmax(0, 1fr) 380px; gap: 56px; }
+}
+@media (max-width: 1023px) {
+  .rs-hero { padding-bottom: 40px; }
+  .rs-body { display: flex; flex-direction: column; gap: 40px; padding-top: 0; padding-bottom: 64px; }
+  .rs-aside { position: static; order: -1; }
+  .rs-form { padding: 28px 20px 24px; margin: 0 -20px; }
+  .rs-einfach { padding-top: 36px; padding-bottom: 64px; }
+}

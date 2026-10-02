@@ -17,6 +17,12 @@ Die Artikel unter `/ratgeber/` (DE) und `/en/guides/` (EN) werden **nicht von Ha
 - Beim Überarbeiten `updated:` hochsetzen, das landet als „Stand“ auf der Seite und als `dateModified` im Schema
 - `/_ratgeber/*` liefert auf Netlify 404 (siehe `netlify.toml`)
 
+## Lead-Magnete (/ressourcen/)
+Kostenlose Downloads gegen E-Mail, verteilt per LinkedIn-DM. Die Landingpages entstehen aus `_ressourcen/<slug>.md`:
+`python3 _ressourcen/build.py`. Formular `magnet` → `netlify/functions/submission-created.mjs` → Apps Script im CRM,
+das den Eintrag speichert und die Mail verschickt; die Knöpfe in der Mail laufen über `netlify/functions/magnet-link.mjs`
+(`/m/…`). Netlify braucht dafür die Umgebungsvariable `CRM_MAGNETE_URL`. Details in `_ressourcen/README.md`.
+
 ## Deploy auf Netlify
 Netlify hängt an diesem Repo: jeder Push auf `main` geht automatisch live, ein Build-Schritt läuft nicht (`publish = "."`).
 Domain velonify.de liegt auf Netlify, `www` leitet auf die Adresse ohne www (siehe `netlify.toml`); die MX-Einträge bleiben unberührt.
