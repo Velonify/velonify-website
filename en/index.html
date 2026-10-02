@@ -96,13 +96,8 @@ html { scroll-behavior: smooth; }
     .field::placeholder { color: rgba(255,255,255,0.55); }
 
 
-    /* Partner badges: visible on arrival, gone after a short scroll */
-    @keyframes partnerOut { to { opacity: 0; transform: translateY(24px); visibility: hidden; } }
+    /* Partner badges: pinned to the bottom of the hero */
     .partners { position: absolute; }
-    @supports (animation-timeline: scroll()) {
-      .partners { position: fixed; }
-      .partners-inner { animation: partnerOut linear both; animation-timeline: scroll(root); animation-range: 80px 420px; }
-    }
 
     /* Scroll-driven motion, content visible by default */
     @supports (animation-timeline: view()) {
@@ -434,13 +429,8 @@ html { scroll-behavior: smooth; }
     .field::placeholder { color: rgba(255,255,255,0.55); }
 
 
-    /* Partner badges: visible on arrival, gone after a short scroll */
-    @keyframes partnerOut { to { opacity: 0; transform: translateY(24px); visibility: hidden; } }
+    /* Partner badges: pinned to the bottom of the hero */
     .partners { position: absolute; }
-    @supports (animation-timeline: scroll()) {
-      .partners { position: fixed; }
-      .partners-inner { animation: partnerOut linear both; animation-timeline: scroll(root); animation-range: 80px 420px; }
-    }
 
     /* Scroll-driven motion, content visible by default */
     @supports (animation-timeline: view()) {
