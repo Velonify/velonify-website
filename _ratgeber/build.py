@@ -247,7 +247,7 @@ def footer(lang):
     t = L[lang]
     legal = [('/impressum/', 'Impressum'), ('/datenschutz/', 'Datenschutz')] if lang == 'de' else \
             [('/en/legal-notice/', 'Legal notice'), ('/en/privacy/', 'Privacy')]
-    links = [(t['home'] + '#cases', 'Cases'), (t['base'], t['index'])] + legal
+    links = [(t['home'] + '#cases', 'Cases'), (t['base'], t['index'])] + ([('/jobs/', 'Jobs')] if lang == 'de' else []) + legal
     nav = ''.join(f'<a class="navlink" href="{h}">{esc(x)}</a>' for h, x in links)
     ig = 'Velonify auf Instagram' if lang == 'de' else 'Velonify on Instagram'
     li = 'Velonify auf LinkedIn' if lang == 'de' else 'Velonify on LinkedIn'

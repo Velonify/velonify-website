@@ -3,15 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Über uns | Velonify</title>
-<meta name="description" content="Velonify ist eine E-Commerce-Agentur, bestehend aus Lukas und Johannes. Jeder verantwortet einen eigenen Fachbereich, und unsere Größe sorgt dafür, da">
-<link rel="canonical" href="https://velonify.de/ueber-uns/">
-<link rel="alternate" hreflang="de" href="https://velonify.de/ueber-uns/">
-<link rel="alternate" hreflang="en" href="https://velonify.de/en/about/">
-<link rel="alternate" hreflang="x-default" href="https://velonify.de/ueber-uns/">
-<meta property="og:title" content="Über uns | Velonify">
-<meta property="og:description" content="Velonify ist eine E-Commerce-Agentur, bestehend aus Lukas und Johannes. Jeder verantwortet einen eigenen Fachbereich, und unsere Größe sorgt dafür, da">
-<meta property="og:url" content="https://velonify.de/ueber-uns/">
+<title>Jobs | Velonify</title>
+<meta name="description" content="Jobs bei Velonify: Account Executive, Sales Manager und IT & Infrastructure. Remote oder in Stuttgart und Frankfurt. Bewerbung ohne Anschreiben an working@velonify.de.">
+<link rel="canonical" href="https://velonify.de/jobs/">
+<meta property="og:title" content="Jobs | Velonify">
+<meta property="og:description" content="Jobs bei Velonify: Account Executive, Sales Manager und IT & Infrastructure. Remote oder in Stuttgart und Frankfurt. Bewerbung ohne Anschreiben an working@velonify.de.">
+<meta property="og:url" content="https://velonify.de/jobs/">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#2C0E18">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -351,6 +348,93 @@ html { scroll-behavior: smooth; }
 <script src="/assets/js/lenis.min.js"></script>
 <script src="/assets/js/velonify-motion.js?v=3"></script>
 <link rel="stylesheet" href="/assets/site.css?v=1">
+<style>
+/* Jobs page */
+.jb-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.jb-chip { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border: 1.5px solid rgba(197,216,230,0.5); font-size: 14px; font-weight: 700; color: #C5D8E6; }
+.jb-chip i { width: 8px; height: 8px; border-radius: 50%; background: #9BE3B0; box-shadow: 0 0 0 0 rgba(155,227,176,0.6); animation: jbPing 2.2s cubic-bezier(.16,1,.3,1) infinite; }
+@keyframes jbPing { 0% { box-shadow: 0 0 0 0 rgba(155,227,176,0.6); } 70%, 100% { box-shadow: 0 0 0 9px rgba(155,227,176,0); } }
+.jb-h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 36px; line-height: 1.08; text-wrap: balance; }
+.jb-kicker { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #45142D; }
+.jb-sec { padding: 112px 64px; display: flex; flex-direction: column; gap: 48px; }
+.jb-sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 72px; align-items: end; }
+.jb-sec-head p { font-size: 18px; line-height: 1.6; max-width: 520px; }
+
+/* Roles */
+.jb-roles { border-top: 1.5px solid #000000; }
+.jb-role { border-bottom: 1.5px solid rgba(0,0,0,0.18); }
+.jb-role > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 64px minmax(0, 1fr) auto 56px; align-items: center; gap: 24px; padding: 36px 8px 36px 4px; transition: background-color .35s cubic-bezier(.16,1,.3,1); }
+.jb-role > summary::-webkit-details-marker { display: none; }
+.jb-role > summary:hover { background: rgba(197,216,230,0.25); }
+.jb-role > summary:focus-visible { outline: 2px solid #45142D; outline-offset: 2px; }
+.jb-num { font-size: 14px; font-weight: 600; color: #45142D; font-variant-numeric: tabular-nums; }
+.jb-title { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1.1; transition: transform .35s cubic-bezier(.16,1,.3,1), color .25s; }
+.jb-role > summary:hover .jb-title, .jb-role[open] .jb-title { color: #45142D; }
+.jb-role > summary:hover .jb-title { transform: translateX(6px); }
+.jb-meta { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+.jb-tag { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border: 1.5px solid #000000; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.jb-tag-hot { background: #45142D; border-color: #45142D; color: #FFFFFF; }
+.jb-plus { position: relative; width: 22px; height: 22px; justify-self: end; }
+.jb-plus::before, .jb-plus::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; margin-top: -1px; background: currentColor; transition: transform .4s cubic-bezier(.16,1,.3,1); }
+.jb-plus::after { transform: rotate(90deg); }
+.jb-role[open] .jb-plus::after { transform: rotate(0deg); }
+.jb-body { padding: 8px 8px 56px 92px; display: flex; flex-direction: column; gap: 40px; animation: jbOpen .5s cubic-bezier(.16,1,.3,1); }
+@keyframes jbOpen { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+.jb-pitch { font-size: 20px; line-height: 1.55; font-weight: 500; max-width: 820px; }
+.jb-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.jb-cols h3 { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #45142D; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1.5px solid #000000; }
+.jb-cols ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.jb-cols li { position: relative; padding-left: 22px; font-size: 16px; line-height: 1.5; }
+.jb-cols li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 8px; height: 8px; background: #C5D8E6; }
+.jb-apply { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+.jb-apply .btn { display: inline-flex; align-items: center; gap: 12px; height: 58px; padding: 0 28px; background: #45142D; color: #FFFFFF; font-size: 16px; font-weight: 700; }
+.jb-apply .btn:hover .arrow { transform: translateX(6px); }
+.jb-apply .arrow { transition: transform .35s cubic-bezier(.16,1,.3,1); }
+.jb-apply span { font-size: 15px; color: rgba(0,0,0,0.6); }
+
+/* Benefits */
+.jb-perks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px; background: rgba(197,216,230,0.22); border: 2px solid rgba(197,216,230,0.22); }
+.jb-perk { background: #2C0E18; padding: 32px 28px 36px; display: flex; flex-direction: column; gap: 14px; transition: background-color .35s cubic-bezier(.16,1,.3,1); }
+.jb-perk:hover { background: #45142D; }
+.jb-perk svg { color: #C5D8E6; transition: transform .45s cubic-bezier(.16,1,.3,1); }
+.jb-perk:hover svg { transform: translateY(-4px) rotate(-6deg); }
+.jb-perk h3 { font-size: 19px; font-weight: 700; line-height: 1.3; }
+.jb-perk p { font-size: 15px; line-height: 1.55; color: rgba(255,255,255,0.75); }
+
+/* Process */
+.jb-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; counter-reset: step; }
+.jb-step { display: flex; flex-direction: column; gap: 14px; padding-top: 24px; border-top: 1.5px solid #000000; }
+.jb-step b { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 40px; line-height: 1; color: #C5D8E6; -webkit-text-stroke: 1.5px #45142D; }
+.jb-step h3 { font-size: 19px; font-weight: 700; }
+.jb-step p { font-size: 15px; line-height: 1.55; color: rgba(0,0,0,0.7); }
+
+/* Mail CTA */
+.jb-mail { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 44px; line-height: 1.1; color: #C5D8E6; word-break: break-word; background-image: linear-gradient(#C5D8E6, #C5D8E6); background-size: 0 3px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size .5s cubic-bezier(.16,1,.3,1), color .25s; padding-bottom: 6px; }
+.jb-mail:hover { color: #FFFFFF; background-size: 100% 3px; }
+
+/* Mobile */
+.v-mobile .jb-sec { padding: 64px 20px; gap: 32px; }
+.v-mobile .jb-sec-head { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.v-mobile .jb-sec-head p { font-size: 17px; }
+.v-mobile .jb-h2 { font-size: 24px; }
+.v-mobile .jb-role > summary { grid-template-columns: minmax(0, 1fr) 22px; grid-template-areas: "num plus" "title plus" "meta plus"; gap: 10px 16px; padding: 26px 4px; }
+.v-mobile .jb-num { grid-area: num; }
+.v-mobile .jb-title { grid-area: title; font-size: 20px; }
+.v-mobile .jb-meta { grid-area: meta; justify-content: flex-start; margin-top: 6px; }
+.v-mobile .jb-plus { grid-area: plus; width: 18px; height: 18px; }
+.v-mobile .jb-tag { height: 28px; font-size: 12px; padding: 0 10px; }
+.v-mobile .jb-body { padding: 0 4px 40px; gap: 32px; }
+.v-mobile .jb-pitch { font-size: 17px; }
+.v-mobile .jb-cols { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+.v-mobile .jb-apply .btn { width: 100%; justify-content: center; box-sizing: border-box; }
+.v-mobile .jb-perks { grid-template-columns: minmax(0, 1fr); }
+.v-mobile .jb-perk { padding: 24px 20px 28px; }
+.v-mobile .jb-steps { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px 20px; }
+.v-mobile .jb-step b { font-size: 30px; }
+.v-mobile .jb-mail { font-size: 22px; }
+@media (prefers-reduced-motion: reduce) { .jb-chip i, .jb-body { animation: none; } }
+</style>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "JobPosting", "title": "Account Executive", "description": "<p>Du bringst neue Shopify-Marken zu uns: vom ersten Gespräch bis zur Unterschrift. Kein Callcenter, kein Skript, sondern echte Gespräche mit Gründern und E-Commerce-Leads.</p><ul><li>Neue Kunden gewinnen: Outbound, Inbound-Leads und Empfehlungen</li><li>Erstgespräche und Discovery-Calls mit Shopbetreibern führen</li><li>Angebote gemeinsam mit dem Fachteam aufsetzen und verhandeln</li><li>Deine Pipeline im CRM sauber und ehrlich führen</li><li>Auf Events und LinkedIn für Velonify sichtbar sein</li><li>1–3 Jahre Erfahrung im B2B-Vertrieb, gern Agentur oder SaaS</li><li>Du hast Spaß an Gesprächen und hörst besser zu, als du redest</li><li>Grundverständnis von E-Commerce oder Lust, es schnell zu lernen</li><li>Strukturiert, eigenständig, zielorientiert</li><li>Sehr gutes Deutsch, gutes Englisch</li></ul>", "datePosted": "2026-10-02", "employmentType": "FULL_TIME", "hiringOrganization": {"@type": "Organization", "name": "Velonify", "sameAs": "https://velonify.de/", "logo": "https://velonify.de/apple-touch-icon.png"}, "jobLocation": [{"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "Stuttgart", "addressRegion": "BW", "addressCountry": "DE"}}, {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "Frankfurt am Main", "addressRegion": "HE", "addressCountry": "DE"}}], "jobLocationType": "TELECOMMUTE", "applicantLocationRequirements": {"@type": "Country", "name": "Deutschland"}, "directApply": false}, {"@context": "https://schema.org", "@type": "JobPosting", "title": "Sales Manager", "description": "<p>Du baust unseren Vertrieb mit auf: Prozesse, Zahlen, Partnerschaften. Du schließt selbst ab und sorgst dafür, dass aus guten Gesprächen planbares Wachstum wird.</p><ul><li>Größere Deals und Bestandskunden mit Upsell-Potenzial verantworten</li><li>Vertriebsprozess, Pipeline-Stufen und Forecast aufsetzen</li><li>Partnerschaften mit Tech-Anbietern und Agenturen ausbauen</li><li>Account Executives coachen und gemeinsam Deals gewinnen</li><li>Pricing und Angebotspakete mit der Geschäftsführung weiterentwickeln</li><li>3+ Jahre Erfahrung im B2B-Vertrieb mit nachweisbaren Abschlüssen</li><li>Erfahrung mit Dienstleistungs- oder Agenturverkauf</li><li>Du denkst in Zahlen: Conversion, Deal Size, Sales Cycle</li><li>Souverän auf C-Level, auch wenn es mal hakt</li><li>Sehr gutes Deutsch, gutes Englisch</li></ul>", "datePosted": "2026-10-02", "employmentType": "FULL_TIME", "hiringOrganization": {"@type": "Organization", "name": "Velonify", "sameAs": "https://velonify.de/", "logo": "https://velonify.de/apple-touch-icon.png"}, "jobLocation": [{"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "Stuttgart", "addressRegion": "BW", "addressCountry": "DE"}}, {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "Frankfurt am Main", "addressRegion": "HE", "addressCountry": "DE"}}], "jobLocationType": "TELECOMMUTE", "applicantLocationRequirements": {"@type": "Country", "name": "Deutschland"}, "directApply": false}, {"@context": "https://schema.org", "@type": "JobPosting", "title": "IT & Infrastructure", "description": "<p>Du hältst alles am Laufen, was hinter unseren Projekten steckt: Server-Side-Tracking, Hosting, Automatisierungen und die eigenen Tools. Wenig Legacy, viel Gestaltungsspielraum.</p><ul><li>Server-Side-Tracking-Container und Cloud-Setups betreuen (GCP, Cloudflare)</li><li>Interne Tools, CRM und Automatisierungen weiterentwickeln</li><li>Deployments, Monitoring und Backups verantworten</li><li>Accounts, Zugriffe und Geräte sicher verwalten</li><li>Das Team bei Migrationen und Integrationen technisch unterstützen</li><li>Erfahrung als Sysadmin, DevOps oder in einer ähnlichen Rolle</li><li>Sicher mit Linux, DNS, Cloud (GCP/AWS) und Git</li><li>Scripting in Python, Node oder Bash</li><li>Sicherheitsbewusstsein und Lust auf saubere Dokumentation</li><li>Gutes Deutsch oder sehr gutes Englisch</li></ul>", "datePosted": "2026-10-02", "employmentType": "FULL_TIME", "hiringOrganization": {"@type": "Organization", "name": "Velonify", "sameAs": "https://velonify.de/", "logo": "https://velonify.de/apple-touch-icon.png"}, "jobLocation": [{"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "Stuttgart", "addressRegion": "BW", "addressCountry": "DE"}}, {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "Frankfurt am Main", "addressRegion": "HE", "addressCountry": "DE"}}], "jobLocationType": "TELECOMMUTE", "applicantLocationRequirements": {"@type": "Country", "name": "Deutschland"}, "directApply": false}]</script>
 </head>
 <body>
 <div class="v v-desktop">
@@ -370,89 +454,98 @@ html { scroll-behavior: smooth; }
       <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.08em;">
         <a href="#top" style="color: #C5D8E6;">DE</a>
         <span style="width: 1px; height: 14px; background: rgba(255,255,255,0.35);"></span>
-        <a href="/en/about/" style="color: rgba(255,255,255,0.75);">EN</a>
+        <a href="/en/" style="color: rgba(255,255,255,0.75);">EN</a>
       </div>
       <a class="btn btn-ice" href="/#kontakt" style="display: flex; align-items: center; height: 48px; padding: 0 22px; background: #C5D8E6; color: #2C0E18; font-weight: 700;">Projekt anfragen</a>
     </nav>
   </header>
 
-  <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 80px 64px 80px; overflow: hidden;">
-    <svg class="mark-a" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true" style="position: absolute; left: -200px; bottom: -220px; width: 620px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
+
+  <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 80px 64px 96px; overflow: hidden;">
+    <svg class="mark-a" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true" style="position: absolute; right: -140px; bottom: -200px; width: 620px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
     <div style="position: relative; display: flex; flex-direction: column; gap: 36px; max-width: 1160px;">
-      <nav aria-label="Brotkrumen" style="display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600;">
+      <nav aria-label="Brotkrumen" style="display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; flex-wrap: wrap;">
         <a href="/" style="color: rgba(255,255,255,0.75);">Start</a>
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
-        <span aria-current="page" style="color: #FFFFFF;">Über uns</span>
+        <span aria-current="page" style="color: #FFFFFF;">Jobs</span>
       </nav>
-      <h1 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 50px; line-height: 1.08; text-wrap: balance; max-width: 100%;"><span class="line"><span>Zwei Leute.</span></span><span class="line"><span>Ein Ansprech&shy;partner.</span></span></h1>
-      <p class="hero-fade" style="font-size: 20px; line-height: 1.55; font-weight: 500; max-width: 720px; color: rgba(255,255,255,0.88);">Velonify ist eine E-Commerce-Agentur, bestehend aus Lukas und Johannes. Jeder verantwortet einen eigenen Fachbereich, und unsere Größe sorgt dafür, dass ihr jederzeit wisst, wer für euren Shop zuständig ist.</p>
-      <div class="hero-fade-2" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 8px; padding-top: 32px; border-top: 1px solid rgba(197,216,230,0.3); max-width: 720px;">
-        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 55px; line-height: 1; color: #C5D8E6;">9</span>
-        <span style="font-size: 19px; font-weight: 700; line-height: 1.3;">Jahre Erfahrung pro Person</span>
+      <h1 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 50px; line-height: 1.08; text-wrap: balance; max-width: 100%;"><span class="line"><span>Bau mit uns Shops,</span></span><span class="line"><span data-vm="scramble" style="color: #C5D8E6;">die verkaufen.</span></span></h1>
+      <p class="hero-fade" style="font-size: 20px; line-height: 1.55; font-weight: 500; max-width: 720px; color: rgba(255,255,255,0.88);">Kleines Team, große Marken, echte Verantwortung ab Tag eins. Wir suchen Menschen, die Lust haben, Velonify mit aufzubauen: remote oder bei uns in Stuttgart und Frankfurt.</p>
+      <div class="hero-fade-2" style="display: flex; flex-direction: column; gap: 24px; margin-top: 8px; padding-top: 32px; border-top: 1px solid rgba(197,216,230,0.3); max-width: 720px;">
+        <div class="jb-chips"><span class="jb-chip"><i aria-hidden="true"></i>3 offene Stellen</span><span class="jb-chip">Remote</span><span class="jb-chip">Stuttgart</span><span class="jb-chip">Frankfurt</span></div>
+        <a class="btn btn-ice" href="#d-stellen" style="align-self: flex-start; display: flex; align-items: center; justify-content: center; gap: 12px; height: 58px; padding: 0 28px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Offene Stellen ansehen <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
       </div>
     </div>
   </section>
 
-  <section class="on-light" style="padding: 96px 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: start;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 41px; line-height: 1.08;">Große Erfahrung.<br>Kurze Wege.</h2>
-    <div style="display: flex; flex-direction: column; gap: 20px;">
-      <p class="reveal" style="font-size: 18px; line-height: 1.6;">In größeren Agenturen bedeuten mehr Hierarchieebenen oft längere Wartezeiten. Bei Velonify entscheidet die Person, die euer Projekt auch umsetzt.</p>
-      <p class="reveal" style="font-size: 18px; line-height: 1.6;">Für euch heißt das nicht weniger Erfahrung, sondern einen kürzeren Weg von der Anfrage zum Ergebnis. Ideal für Shops, die wachsen wollen, ohne dafür eine eigene Abteilung aufzubauen.</p>
+  <section class="on-light jb-sec" id="d-stellen" aria-labelledby="d-stellen-h">
+    <div class="jb-sec-head">
+      <div style="display: flex; flex-direction: column; gap: 16px;"><span class="jb-kicker">Offene Stellen</span><h2 class="jb-h2 reveal" id="d-stellen-h">Finde deine Rolle.</h2></div>
+      <p class="reveal">Alle Stellen sind in Vollzeit, unbefristet und ab sofort zu besetzen. Teilzeit ab 30 Stunden ist bei uns kein Problem, sprich uns einfach an.</p>
+    </div>
+    <div class="jb-roles">
+      <details class="jb-role reveal" id="d-account-executive">
+        <summary><span class="jb-num">01</span><h3 class="jb-title">Account Executive</h3><span class="jb-meta"><span class="jb-tag jb-tag-hot">Neu</span><span class="jb-tag">Vollzeit</span><span class="jb-tag">Remote / Stuttgart / Frankfurt</span></span><span class="jb-plus" aria-hidden="true"></span></summary>
+        <div class="jb-body">
+          <p class="jb-pitch">Du bringst neue Shopify-Marken zu uns: vom ersten Gespräch bis zur Unterschrift. Kein Callcenter, kein Skript, sondern echte Gespräche mit Gründern und E-Commerce-Leads.</p>
+          <div class="jb-cols">
+            <div><h3>Was du machst</h3><ul><li>Neue Kunden gewinnen: Outbound, Inbound-Leads und Empfehlungen</li><li>Erstgespräche und Discovery-Calls mit Shopbetreibern führen</li><li>Angebote gemeinsam mit dem Fachteam aufsetzen und verhandeln</li><li>Deine Pipeline im CRM sauber und ehrlich führen</li><li>Auf Events und LinkedIn für Velonify sichtbar sein</li></ul></div>
+            <div><h3>Was du mitbringst</h3><ul><li>1–3 Jahre Erfahrung im B2B-Vertrieb, gern Agentur oder SaaS</li><li>Du hast Spaß an Gesprächen und hörst besser zu, als du redest</li><li>Grundverständnis von E-Commerce oder Lust, es schnell zu lernen</li><li>Strukturiert, eigenständig, zielorientiert</li><li>Sehr gutes Deutsch, gutes Englisch</li></ul></div>
+            <div><h3>Nice to have</h3><ul><li>Erfahrung mit Shopify, Klaviyo oder Performance Marketing</li><li>Eigenes Netzwerk in der D2C-Szene</li><li>Erfahrung mit HubSpot, Pipedrive o. Ä.</li></ul></div>
+          </div>
+          <div class="jb-apply"><a class="btn btn-bdx" href="mailto:working@velonify.de?subject=Bewerbung%3A%20Account%20Executive">Jetzt bewerben <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a><span>CV oder LinkedIn genügt, Start ab sofort möglich.</span></div>
+        </div>
+      </details>
+      <details class="jb-role reveal" id="d-sales-manager">
+        <summary><span class="jb-num">02</span><h3 class="jb-title">Sales Manager</h3><span class="jb-meta"><span class="jb-tag">Vollzeit</span><span class="jb-tag">Remote / Stuttgart / Frankfurt</span></span><span class="jb-plus" aria-hidden="true"></span></summary>
+        <div class="jb-body">
+          <p class="jb-pitch">Du baust unseren Vertrieb mit auf: Prozesse, Zahlen, Partnerschaften. Du schließt selbst ab und sorgst dafür, dass aus guten Gesprächen planbares Wachstum wird.</p>
+          <div class="jb-cols">
+            <div><h3>Was du machst</h3><ul><li>Größere Deals und Bestandskunden mit Upsell-Potenzial verantworten</li><li>Vertriebsprozess, Pipeline-Stufen und Forecast aufsetzen</li><li>Partnerschaften mit Tech-Anbietern und Agenturen ausbauen</li><li>Account Executives coachen und gemeinsam Deals gewinnen</li><li>Pricing und Angebotspakete mit der Geschäftsführung weiterentwickeln</li></ul></div>
+            <div><h3>Was du mitbringst</h3><ul><li>3+ Jahre Erfahrung im B2B-Vertrieb mit nachweisbaren Abschlüssen</li><li>Erfahrung mit Dienstleistungs- oder Agenturverkauf</li><li>Du denkst in Zahlen: Conversion, Deal Size, Sales Cycle</li><li>Souverän auf C-Level, auch wenn es mal hakt</li><li>Sehr gutes Deutsch, gutes Englisch</li></ul></div>
+            <div><h3>Nice to have</h3><ul><li>E-Commerce- oder Shopify-Hintergrund</li><li>Erste Führungserfahrung</li><li>Erfahrung mit dem Aufbau eines Vertriebs von Null</li></ul></div>
+          </div>
+          <div class="jb-apply"><a class="btn btn-bdx" href="mailto:working@velonify.de?subject=Bewerbung%3A%20Sales%20Manager">Jetzt bewerben <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a><span>CV oder LinkedIn genügt, Start ab sofort möglich.</span></div>
+        </div>
+      </details>
+      <details class="jb-role reveal" id="d-it-infrastructure">
+        <summary><span class="jb-num">03</span><h3 class="jb-title">IT &amp; Infrastructure</h3><span class="jb-meta"><span class="jb-tag">Vollzeit</span><span class="jb-tag">Remote / Stuttgart / Frankfurt</span></span><span class="jb-plus" aria-hidden="true"></span></summary>
+        <div class="jb-body">
+          <p class="jb-pitch">Du hältst alles am Laufen, was hinter unseren Projekten steckt: Server-Side-Tracking, Hosting, Automatisierungen und die eigenen Tools. Wenig Legacy, viel Gestaltungsspielraum.</p>
+          <div class="jb-cols">
+            <div><h3>Was du machst</h3><ul><li>Server-Side-Tracking-Container und Cloud-Setups betreuen (GCP, Cloudflare)</li><li>Interne Tools, CRM und Automatisierungen weiterentwickeln</li><li>Deployments, Monitoring und Backups verantworten</li><li>Accounts, Zugriffe und Geräte sicher verwalten</li><li>Das Team bei Migrationen und Integrationen technisch unterstützen</li></ul></div>
+            <div><h3>Was du mitbringst</h3><ul><li>Erfahrung als Sysadmin, DevOps oder in einer ähnlichen Rolle</li><li>Sicher mit Linux, DNS, Cloud (GCP/AWS) und Git</li><li>Scripting in Python, Node oder Bash</li><li>Sicherheitsbewusstsein und Lust auf saubere Dokumentation</li><li>Gutes Deutsch oder sehr gutes Englisch</li></ul></div>
+            <div><h3>Nice to have</h3><ul><li>Erfahrung mit Google Tag Manager / sGTM</li><li>Shopify-APIs oder Webhooks</li><li>Docker, Terraform oder Netlify-Erfahrung</li></ul></div>
+          </div>
+          <div class="jb-apply"><a class="btn btn-bdx" href="mailto:working@velonify.de?subject=Bewerbung%3A%20IT%20%26%20Infrastructure">Jetzt bewerben <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a><span>CV oder LinkedIn genügt, Start ab sofort möglich.</span></div>
+        </div>
+      </details>
     </div>
   </section>
 
-  <section class="on-light" style="padding: 0 64px 96px; display: flex; flex-direction: column; gap: 48px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 36px; line-height: 1.08;">Das Team</h2>
-    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px;">
-      <div class="reveal" style="display: flex; flex-direction: column; gap: 20px;">
-        <div style="aspect-ratio: 4 / 5; background: #C5D8E6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #2C0E18;">[FOTO LUKAS]</div>
-        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1.1;">Lukas</h3>
-        <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D;">[ROLLE]</span>
-        <p style="font-size: 16px; line-height: 1.55;">[Ein Satz: wofür Lukas im Projekt zuständig ist.]</p>
-      </div>
-      <div class="reveal" style="display: flex; flex-direction: column; gap: 20px;">
-        <div style="aspect-ratio: 4 / 5; background: #C5D8E6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #2C0E18;">[FOTO JOHANNES]</div>
-        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1.1;">Johannes</h3>
-        <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D;">[ROLLE]</span>
-        <p style="font-size: 16px; line-height: 1.55;">[Ein Satz: wofür Johannes im Projekt zuständig ist.]</p>
-      </div>
+  <section class="jb-sec" style="background: #2C0E18; color: #FFFFFF;" aria-labelledby="d-perks-h">
+    <div class="jb-sec-head">
+      <div style="display: flex; flex-direction: column; gap: 16px;"><span class="jb-kicker" style="color: #C5D8E6;">Benefits</span><h2 class="jb-h2 reveal" id="d-perks-h">Was dich bei uns erwartet.</h2></div>
+      <p class="reveal" style="color: rgba(255,255,255,0.85);">Keine Obstkorb-Versprechen, sondern das, was im Alltag wirklich zählt: Freiheit, faire Bezahlung und ein Team, das hinter dir steht.</p>
     </div>
+    <div class="jb-perks"><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 L12 4 L21 11"></path><path d="M5 10 V20 H19 V10"></path><path d="M10 20 V14 H14 V20"></path></svg><h3>Remote oder Office</h3><p>Arbeite von zuhause oder in Stuttgart und Frankfurt. Du entscheidest, wo du am besten arbeitest.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 V12 L15.5 14"></path></svg><h3>Flexible Zeiten</h3><p>Kernzeiten statt Stechuhr. Arzttermin, Kita, Sport: lässt sich einrichten.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7 H20 V17 H4 Z"></path><circle cx="12" cy="12" r="2.5"></circle><path d="M7 10 V14 M17 10 V14"></path></svg><h3>Faires Gehalt</h3><p>Transparentes Fixgehalt plus Bonus bzw. Provision im Vertrieb. Kein Rätselraten.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 V5 M12 19 V21 M3 12 H5 M19 12 H21 M5.6 5.6 L7 7 M17 17 L18.4 18.4 M5.6 18.4 L7 17 M17 7 L18.4 5.6"></path><circle cx="12" cy="12" r="4"></circle></svg><h3>30 Tage Urlaub</h3><p>Plus Heiligabend und Silvester frei. Erholung ist Teil des Jobs.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6 H20 V16 H4 Z"></path><path d="M2 19 H22"></path></svg><h3>Top-Equipment</h3><p>MacBook, Zweitbildschirm und die Tools, die du brauchst. Ohne Antrag in dreifacher Ausführung.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9 L12 4 L22 9 L12 14 Z"></path><path d="M6 11 V16 C6 16 8.5 18 12 18 C15.5 18 18 16 18 16 V11"></path></svg><h3>Weiterbildung</h3><p>Jährliches Budget für Kurse, Konferenzen und Bücher. Shopify-, Google- und Klaviyo-Zertifizierungen inklusive.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 H20"></path><path d="M14 6 L20 12 L14 18"></path></svg><h3>Kurze Wege</h3><p>Keine Hierarchieebenen. Deine Idee landet direkt bei denen, die entscheiden, oft am selben Tag.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="3"></circle><circle cx="16" cy="9" r="3"></circle><path d="M2 20 C2 16 5 14 8 14 C11 14 14 16 14 20"></path><path d="M14 14.5 C15 14.2 15.5 14 16 14 C19 14 22 16 22 20"></path></svg><h3>Team-Offsites</h3><p>Regelmäßige Treffen in Person: arbeiten, essen, feiern. Remote heißt bei uns nicht allein.</p></div></div>
   </section>
 
-  <section class="on-light" style="padding: 0 64px 96px; display: flex; flex-direction: column; gap: 32px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 20px; letter-spacing: 0.04em;">So arbeiten wir für euch</h2>
-    <div style="display: flex; flex-direction: column; border-bottom: 1px solid rgba(0,0,0,0.14);">
-      <div class="vrow" tabindex="0"><span class="vword">Direkt</span><p class="vtext">Ihr sprecht mit der Person, die euer Projekt umsetzt, nicht mit einem Account Manager dazwischen.</p></div>
-      <div class="vrow" tabindex="0"><span class="vword">Selbst</span><p class="vtext">Wir setzen alles selbst um, ohne Subunternehmer und ohne Weitergabe an Dritte.</p></div>
-      <div class="vrow" tabindex="0"><span class="vword">Schnell</span><p class="vtext">Entscheidungen fallen im kurzen Gespräch. Freigaberunden gibt es nicht.</p></div>
-      <div class="vrow" tabindex="0"><span class="vword">Ergebnis</span><p class="vtext">Euer Erfolg im Shop ist unser Maßstab. Wir denken in euren Kennzahlen, nicht in unserem Leistungskatalog.</p></div>
+  <section class="on-light jb-sec" aria-labelledby="d-process-h">
+    <div class="jb-sec-head">
+      <div style="display: flex; flex-direction: column; gap: 16px;"><span class="jb-kicker">Bewerbungsprozess</span><h2 class="jb-h2 reveal" id="d-process-h">Schnell und ohne Umwege.</h2></div>
+      <p class="reveal">Vier Schritte, meist in unter zwei Wochen erledigt. Du weißt immer, wo du stehst.</p>
     </div>
-  </section>
-
-  <section style="background: #2C0E18; color: #FFFFFF; padding: 80px 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: start;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 36px; line-height: 1.08;">Die Tools hinter eurem Shop</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Shopify</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Shopify Plus</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Klaviyo</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Meta Ads</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Google Ads</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Google Merchant Center</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">GA4</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Google Tag Manager</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Server-Side Tracking</span>
-    </div>
+    <div class="jb-steps"><div class="jb-step reveal"><b>01</b><h3>Bewerben</h3><p>Lebenslauf oder LinkedIn-Profil an working@velonify.de. Ein Anschreiben brauchen wir nicht.</p></div><div class="jb-step reveal"><b>02</b><h3>Kennenlernen</h3><p>30 Minuten Video-Call. Wir erzählen von uns, du von dir. Ganz entspannt.</p></div><div class="jb-step reveal"><b>03</b><h3>Fachgespräch</h3><p>Ein Gespräch mit dem Team, je nach Rolle mit einer kleinen Praxisaufgabe.</p></div><div class="jb-step reveal"><b>04</b><h3>Angebot</h3><p>Du bekommst innerhalb weniger Tage Feedback und im besten Fall ein Angebot.</p></div></div>
   </section>
 
   <section id="kontakt" style="position: relative; background: #45142D; color: #FFFFFF; padding: 96px 64px; overflow: hidden;">
     <svg class="drift" viewBox="0 44 1278 813" fill="#2C0E18" aria-hidden="true" style="position: absolute; right: -60px; top: 20px; width: 520px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
-    <div style="position: relative; display: flex; flex-direction: column; gap: 32px; max-width: 860px;">
-      <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 48px; line-height: 1.05; text-wrap: balance;">Lernen wir uns kennen.</h2>
-      <p class="reveal" style="font-size: 19px; line-height: 1.55; max-width: 580px; color: rgba(255,255,255,0.9);">30 Minuten, kostenlos. Ihr erzählt, wo euer Shop steht, und bekommt eine ehrliche Antwort, ob wir die Richtigen für euch sind.</p>
-      <div class="reveal" style="display: flex; gap: 24px; align-items: center;">
-        <a class="btn btn-ice" href="/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 62px; padding: 0 32px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Projekt anfragen <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
-        <a href="/#kontakt" style="color: #FFFFFF; font-size: 17px; font-weight: 600; text-decoration: underline; text-underline-offset: 5px;">oder Anfrage schreiben</a>
-      </div>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 28px; max-width: 860px;">
+      <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 48px; line-height: 1.05; text-wrap: balance;">Klingt nach dir?</h2>
+      <p class="reveal" style="font-size: 19px; line-height: 1.55; max-width: 580px; color: rgba(255,255,255,0.9);">Schick uns deinen Lebenslauf oder dein LinkedIn-Profil und sag kurz, welche Rolle dich reizt. Keine passende Stelle dabei? Initiativbewerbungen lesen wir genauso gern.</p>
+      <a class="jb-mail reveal" href="mailto:working@velonify.de?subject=Bewerbung" style="align-self: flex-start;">working@velonify.de</a>
+      <a class="btn btn-ice reveal" href="mailto:working@velonify.de?subject=Initiativbewerbung" style="align-self: flex-start; display: flex; align-items: center; justify-content: center; gap: 12px; height: 62px; padding: 0 32px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700; margin-top: 8px;">Initiativ bewerben <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
     </div>
   </section>
 
@@ -507,11 +600,12 @@ html { scroll-behavior: smooth; }
       
       <div style="display: flex; gap: 16px; margin-top: 20px; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; flex-wrap: wrap;">
         <a href="#top" aria-current="page" style="color: #C5D8E6;">DE</a>
-        <a href="/en/about/" style="color: rgba(255,255,255,0.75);">EN</a>
+        <a href="/en/" style="color: rgba(255,255,255,0.75);">EN</a>
       </div>
       <a class="btn btn-ice" href="/#kontakt" style="margin-top: auto; display: flex; align-items: center; justify-content: center; height: 58px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Projekt anfragen</a>
     </nav>
   
+
 
   <section id="top" style="position: relative; background: #2C0E18; color: #FFFFFF; padding: 40px 20px 56px; overflow: hidden;">
     <svg class="mark-a" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true" style="position: absolute; left: -100px; bottom: -110px; width: 341px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
@@ -519,77 +613,85 @@ html { scroll-behavior: smooth; }
       <nav aria-label="Brotkrumen" style="display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; flex-wrap: wrap;">
         <a href="/" style="color: rgba(255,255,255,0.75);">Start</a>
         <span style="width: 6px; height: 6px; background: #C5D8E6;"></span>
-        <span aria-current="page" style="color: #FFFFFF;">Über uns</span>
+        <span aria-current="page" style="color: #FFFFFF;">Jobs</span>
       </nav>
-      <h1 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1.08; text-wrap: balance; max-width: 100%;"><span class="line"><span>Zwei Leute.</span></span><span class="line"><span>Ein Ansprech&shy;partner.</span></span></h1>
-      <p class="hero-fade" style="font-size: 17px; line-height: 1.55; font-weight: 500; max-width: 100%; color: rgba(255,255,255,0.88);">Velonify ist eine E-Commerce-Agentur, bestehend aus Lukas und Johannes. Jeder verantwortet einen eigenen Fachbereich, und unsere Größe sorgt dafür, dass ihr jederzeit wisst, wer für euren Shop zuständig ist.</p>
-      <div class="hero-fade-2" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 8px; padding-top: 32px; border-top: 1px solid rgba(197,216,230,0.3); max-width: 100%;">
-        <span style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 31px; line-height: 1; color: #C5D8E6;">9</span>
-        <span style="font-size: 17px; font-weight: 700; line-height: 1.3;">Jahre Erfahrung pro Person</span>
+      <h1 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 28px; line-height: 1.08; text-wrap: balance; max-width: 100%;"><span class="line"><span>Bau mit uns Shops,</span></span><span class="line"><span data-vm="scramble" style="color: #C5D8E6;">die verkaufen.</span></span></h1>
+      <p class="hero-fade" style="font-size: 17px; line-height: 1.55; font-weight: 500; max-width: 720px; color: rgba(255,255,255,0.88);">Kleines Team, große Marken, echte Verantwortung ab Tag eins. Wir suchen Menschen, die Lust haben, Velonify mit aufzubauen: remote oder bei uns in Stuttgart und Frankfurt.</p>
+      <div class="hero-fade-2" style="display: flex; flex-direction: column; gap: 24px; margin-top: 8px; padding-top: 24px; border-top: 1px solid rgba(197,216,230,0.3); max-width: 720px;">
+        <div class="jb-chips"><span class="jb-chip"><i aria-hidden="true"></i>3 offene Stellen</span><span class="jb-chip">Remote</span><span class="jb-chip">Stuttgart</span><span class="jb-chip">Frankfurt</span></div>
+        <a class="btn btn-ice" href="#m-stellen" style="align-self: stretch; display: flex; align-items: center; justify-content: center; gap: 12px; height: 58px; padding: 0 28px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700;">Offene Stellen ansehen <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
       </div>
     </div>
   </section>
 
-  <section class="on-light" style="padding: 64px 20px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 36px; align-items: start;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1.08;">Große Erfahrung.<br>Kurze Wege.</h2>
-    <div style="display: flex; flex-direction: column; gap: 20px;">
-      <p class="reveal" style="font-size: 17px; line-height: 1.6;">In größeren Agenturen bedeuten mehr Hierarchieebenen oft längere Wartezeiten. Bei Velonify entscheidet die Person, die euer Projekt auch umsetzt.</p>
-      <p class="reveal" style="font-size: 17px; line-height: 1.6;">Für euch heißt das nicht weniger Erfahrung, sondern einen kürzeren Weg von der Anfrage zum Ergebnis. Ideal für Shops, die wachsen wollen, ohne dafür eine eigene Abteilung aufzubauen.</p>
+  <section class="on-light jb-sec" id="m-stellen" aria-labelledby="m-stellen-h">
+    <div class="jb-sec-head">
+      <div style="display: flex; flex-direction: column; gap: 16px;"><span class="jb-kicker">Offene Stellen</span><h2 class="jb-h2 reveal" id="m-stellen-h">Finde deine Rolle.</h2></div>
+      <p class="reveal">Alle Stellen sind in Vollzeit, unbefristet und ab sofort zu besetzen. Teilzeit ab 30 Stunden ist bei uns kein Problem, sprich uns einfach an.</p>
+    </div>
+    <div class="jb-roles">
+      <details class="jb-role reveal" id="m-account-executive">
+        <summary><span class="jb-num">01</span><h3 class="jb-title">Account Executive</h3><span class="jb-meta"><span class="jb-tag jb-tag-hot">Neu</span><span class="jb-tag">Vollzeit</span><span class="jb-tag">Remote / Stuttgart / Frankfurt</span></span><span class="jb-plus" aria-hidden="true"></span></summary>
+        <div class="jb-body">
+          <p class="jb-pitch">Du bringst neue Shopify-Marken zu uns: vom ersten Gespräch bis zur Unterschrift. Kein Callcenter, kein Skript, sondern echte Gespräche mit Gründern und E-Commerce-Leads.</p>
+          <div class="jb-cols">
+            <div><h3>Was du machst</h3><ul><li>Neue Kunden gewinnen: Outbound, Inbound-Leads und Empfehlungen</li><li>Erstgespräche und Discovery-Calls mit Shopbetreibern führen</li><li>Angebote gemeinsam mit dem Fachteam aufsetzen und verhandeln</li><li>Deine Pipeline im CRM sauber und ehrlich führen</li><li>Auf Events und LinkedIn für Velonify sichtbar sein</li></ul></div>
+            <div><h3>Was du mitbringst</h3><ul><li>1–3 Jahre Erfahrung im B2B-Vertrieb, gern Agentur oder SaaS</li><li>Du hast Spaß an Gesprächen und hörst besser zu, als du redest</li><li>Grundverständnis von E-Commerce oder Lust, es schnell zu lernen</li><li>Strukturiert, eigenständig, zielorientiert</li><li>Sehr gutes Deutsch, gutes Englisch</li></ul></div>
+            <div><h3>Nice to have</h3><ul><li>Erfahrung mit Shopify, Klaviyo oder Performance Marketing</li><li>Eigenes Netzwerk in der D2C-Szene</li><li>Erfahrung mit HubSpot, Pipedrive o. Ä.</li></ul></div>
+          </div>
+          <div class="jb-apply"><a class="btn btn-bdx" href="mailto:working@velonify.de?subject=Bewerbung%3A%20Account%20Executive">Jetzt bewerben <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a><span>CV oder LinkedIn genügt, Start ab sofort möglich.</span></div>
+        </div>
+      </details>
+      <details class="jb-role reveal" id="m-sales-manager">
+        <summary><span class="jb-num">02</span><h3 class="jb-title">Sales Manager</h3><span class="jb-meta"><span class="jb-tag">Vollzeit</span><span class="jb-tag">Remote / Stuttgart / Frankfurt</span></span><span class="jb-plus" aria-hidden="true"></span></summary>
+        <div class="jb-body">
+          <p class="jb-pitch">Du baust unseren Vertrieb mit auf: Prozesse, Zahlen, Partnerschaften. Du schließt selbst ab und sorgst dafür, dass aus guten Gesprächen planbares Wachstum wird.</p>
+          <div class="jb-cols">
+            <div><h3>Was du machst</h3><ul><li>Größere Deals und Bestandskunden mit Upsell-Potenzial verantworten</li><li>Vertriebsprozess, Pipeline-Stufen und Forecast aufsetzen</li><li>Partnerschaften mit Tech-Anbietern und Agenturen ausbauen</li><li>Account Executives coachen und gemeinsam Deals gewinnen</li><li>Pricing und Angebotspakete mit der Geschäftsführung weiterentwickeln</li></ul></div>
+            <div><h3>Was du mitbringst</h3><ul><li>3+ Jahre Erfahrung im B2B-Vertrieb mit nachweisbaren Abschlüssen</li><li>Erfahrung mit Dienstleistungs- oder Agenturverkauf</li><li>Du denkst in Zahlen: Conversion, Deal Size, Sales Cycle</li><li>Souverän auf C-Level, auch wenn es mal hakt</li><li>Sehr gutes Deutsch, gutes Englisch</li></ul></div>
+            <div><h3>Nice to have</h3><ul><li>E-Commerce- oder Shopify-Hintergrund</li><li>Erste Führungserfahrung</li><li>Erfahrung mit dem Aufbau eines Vertriebs von Null</li></ul></div>
+          </div>
+          <div class="jb-apply"><a class="btn btn-bdx" href="mailto:working@velonify.de?subject=Bewerbung%3A%20Sales%20Manager">Jetzt bewerben <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a><span>CV oder LinkedIn genügt, Start ab sofort möglich.</span></div>
+        </div>
+      </details>
+      <details class="jb-role reveal" id="m-it-infrastructure">
+        <summary><span class="jb-num">03</span><h3 class="jb-title">IT &amp; Infrastructure</h3><span class="jb-meta"><span class="jb-tag">Vollzeit</span><span class="jb-tag">Remote / Stuttgart / Frankfurt</span></span><span class="jb-plus" aria-hidden="true"></span></summary>
+        <div class="jb-body">
+          <p class="jb-pitch">Du hältst alles am Laufen, was hinter unseren Projekten steckt: Server-Side-Tracking, Hosting, Automatisierungen und die eigenen Tools. Wenig Legacy, viel Gestaltungsspielraum.</p>
+          <div class="jb-cols">
+            <div><h3>Was du machst</h3><ul><li>Server-Side-Tracking-Container und Cloud-Setups betreuen (GCP, Cloudflare)</li><li>Interne Tools, CRM und Automatisierungen weiterentwickeln</li><li>Deployments, Monitoring und Backups verantworten</li><li>Accounts, Zugriffe und Geräte sicher verwalten</li><li>Das Team bei Migrationen und Integrationen technisch unterstützen</li></ul></div>
+            <div><h3>Was du mitbringst</h3><ul><li>Erfahrung als Sysadmin, DevOps oder in einer ähnlichen Rolle</li><li>Sicher mit Linux, DNS, Cloud (GCP/AWS) und Git</li><li>Scripting in Python, Node oder Bash</li><li>Sicherheitsbewusstsein und Lust auf saubere Dokumentation</li><li>Gutes Deutsch oder sehr gutes Englisch</li></ul></div>
+            <div><h3>Nice to have</h3><ul><li>Erfahrung mit Google Tag Manager / sGTM</li><li>Shopify-APIs oder Webhooks</li><li>Docker, Terraform oder Netlify-Erfahrung</li></ul></div>
+          </div>
+          <div class="jb-apply"><a class="btn btn-bdx" href="mailto:working@velonify.de?subject=Bewerbung%3A%20IT%20%26%20Infrastructure">Jetzt bewerben <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a><span>CV oder LinkedIn genügt, Start ab sofort möglich.</span></div>
+        </div>
+      </details>
     </div>
   </section>
 
-  <section class="on-light" style="padding: 0 20px 64px; display: flex; flex-direction: column; gap: 22px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1.08;">Das Team</h2>
-    <div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px;">
-      <div class="reveal" style="display: flex; flex-direction: column; gap: 20px;">
-        <div style="aspect-ratio: 4 / 5; background: #C5D8E6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #2C0E18;">[FOTO LUKAS]</div>
-        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 20px; line-height: 1.1;">Lukas</h3>
-        <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D;">[ROLLE]</span>
-        <p style="font-size: 16px; line-height: 1.55;">[Ein Satz: wofür Lukas im Projekt zuständig ist.]</p>
-      </div>
-      <div class="reveal" style="display: flex; flex-direction: column; gap: 20px;">
-        <div style="aspect-ratio: 4 / 5; background: #C5D8E6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #2C0E18;">[FOTO JOHANNES]</div>
-        <h3 style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 20px; line-height: 1.1;">Johannes</h3>
-        <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D;">[ROLLE]</span>
-        <p style="font-size: 16px; line-height: 1.55;">[Ein Satz: wofür Johannes im Projekt zuständig ist.]</p>
-      </div>
+  <section class="jb-sec" style="background: #2C0E18; color: #FFFFFF;" aria-labelledby="m-perks-h">
+    <div class="jb-sec-head">
+      <div style="display: flex; flex-direction: column; gap: 16px;"><span class="jb-kicker" style="color: #C5D8E6;">Benefits</span><h2 class="jb-h2 reveal" id="m-perks-h">Was dich bei uns erwartet.</h2></div>
+      <p class="reveal" style="color: rgba(255,255,255,0.85);">Keine Obstkorb-Versprechen, sondern das, was im Alltag wirklich zählt: Freiheit, faire Bezahlung und ein Team, das hinter dir steht.</p>
     </div>
+    <div class="jb-perks"><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 L12 4 L21 11"></path><path d="M5 10 V20 H19 V10"></path><path d="M10 20 V14 H14 V20"></path></svg><h3>Remote oder Office</h3><p>Arbeite von zuhause oder in Stuttgart und Frankfurt. Du entscheidest, wo du am besten arbeitest.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7 V12 L15.5 14"></path></svg><h3>Flexible Zeiten</h3><p>Kernzeiten statt Stechuhr. Arzttermin, Kita, Sport: lässt sich einrichten.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7 H20 V17 H4 Z"></path><circle cx="12" cy="12" r="2.5"></circle><path d="M7 10 V14 M17 10 V14"></path></svg><h3>Faires Gehalt</h3><p>Transparentes Fixgehalt plus Bonus bzw. Provision im Vertrieb. Kein Rätselraten.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 V5 M12 19 V21 M3 12 H5 M19 12 H21 M5.6 5.6 L7 7 M17 17 L18.4 18.4 M5.6 18.4 L7 17 M17 7 L18.4 5.6"></path><circle cx="12" cy="12" r="4"></circle></svg><h3>30 Tage Urlaub</h3><p>Plus Heiligabend und Silvester frei. Erholung ist Teil des Jobs.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6 H20 V16 H4 Z"></path><path d="M2 19 H22"></path></svg><h3>Top-Equipment</h3><p>MacBook, Zweitbildschirm und die Tools, die du brauchst. Ohne Antrag in dreifacher Ausführung.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9 L12 4 L22 9 L12 14 Z"></path><path d="M6 11 V16 C6 16 8.5 18 12 18 C15.5 18 18 16 18 16 V11"></path></svg><h3>Weiterbildung</h3><p>Jährliches Budget für Kurse, Konferenzen und Bücher. Shopify-, Google- und Klaviyo-Zertifizierungen inklusive.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 H20"></path><path d="M14 6 L20 12 L14 18"></path></svg><h3>Kurze Wege</h3><p>Keine Hierarchieebenen. Deine Idee landet direkt bei denen, die entscheiden, oft am selben Tag.</p></div><div class="jb-perk reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="3"></circle><circle cx="16" cy="9" r="3"></circle><path d="M2 20 C2 16 5 14 8 14 C11 14 14 16 14 20"></path><path d="M14 14.5 C15 14.2 15.5 14 16 14 C19 14 22 16 22 20"></path></svg><h3>Team-Offsites</h3><p>Regelmäßige Treffen in Person: arbeiten, essen, feiern. Remote heißt bei uns nicht allein.</p></div></div>
   </section>
 
-  <section class="on-light" style="padding: 0 20px 64px; display: flex; flex-direction: column; gap: 20px;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; letter-spacing: 0.04em;">So arbeiten wir für euch</h2>
-    <div style="display: flex; flex-direction: column; border-bottom: 1px solid rgba(0,0,0,0.14);">
-      <div class="vrow" tabindex="0"><span class="vword">Direkt</span><p class="vtext">Ihr sprecht mit der Person, die euer Projekt umsetzt, nicht mit einem Account Manager dazwischen.</p></div>
-      <div class="vrow" tabindex="0"><span class="vword">Selbst</span><p class="vtext">Wir setzen alles selbst um, ohne Subunternehmer und ohne Weitergabe an Dritte.</p></div>
-      <div class="vrow" tabindex="0"><span class="vword">Schnell</span><p class="vtext">Entscheidungen fallen im kurzen Gespräch. Freigaberunden gibt es nicht.</p></div>
-      <div class="vrow" tabindex="0"><span class="vword">Ergebnis</span><p class="vtext">Euer Erfolg im Shop ist unser Maßstab. Wir denken in euren Kennzahlen, nicht in unserem Leistungskatalog.</p></div>
+  <section class="on-light jb-sec" aria-labelledby="m-process-h">
+    <div class="jb-sec-head">
+      <div style="display: flex; flex-direction: column; gap: 16px;"><span class="jb-kicker">Bewerbungsprozess</span><h2 class="jb-h2 reveal" id="m-process-h">Schnell und ohne Umwege.</h2></div>
+      <p class="reveal">Vier Schritte, meist in unter zwei Wochen erledigt. Du weißt immer, wo du stehst.</p>
     </div>
-  </section>
-
-  <section style="background: #2C0E18; color: #FFFFFF; padding: 56px 20px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 36px; align-items: start;">
-    <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 24px; line-height: 1.08;">Die Tools hinter eurem Shop</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Shopify</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Shopify Plus</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Klaviyo</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Meta Ads</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Google Ads</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Google Merchant Center</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">GA4</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Google Tag Manager</span>
-      <span style="display: flex; align-items: center; height: 44px; padding: 0 18px; border: 1.5px solid rgba(197,216,230,0.6); font-size: 15px; font-weight: 700; color: #C5D8E6;">Server-Side Tracking</span>
-    </div>
+    <div class="jb-steps"><div class="jb-step reveal"><b>01</b><h3>Bewerben</h3><p>Lebenslauf oder LinkedIn-Profil an working@velonify.de. Ein Anschreiben brauchen wir nicht.</p></div><div class="jb-step reveal"><b>02</b><h3>Kennenlernen</h3><p>30 Minuten Video-Call. Wir erzählen von uns, du von dir. Ganz entspannt.</p></div><div class="jb-step reveal"><b>03</b><h3>Fachgespräch</h3><p>Ein Gespräch mit dem Team, je nach Rolle mit einer kleinen Praxisaufgabe.</p></div><div class="jb-step reveal"><b>04</b><h3>Angebot</h3><p>Du bekommst innerhalb weniger Tage Feedback und im besten Fall ein Angebot.</p></div></div>
   </section>
 
   <section id="kontakt" style="position: relative; background: #45142D; color: #FFFFFF; padding: 64px 20px; overflow: hidden;">
     <svg class="drift" viewBox="0 44 1278 813" fill="#2C0E18" aria-hidden="true" style="position: absolute; right: -30px; top: 20px; width: 286px; height: auto;"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
-    <div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 100%;">
-      <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 27px; line-height: 1.05; text-wrap: balance;">Lernen wir uns kennen.</h2>
-      <p class="reveal" style="font-size: 17px; line-height: 1.55; max-width: 100%; color: rgba(255,255,255,0.9);">30 Minuten, kostenlos. Ihr erzählt, wo euer Shop steht, und bekommt eine ehrliche Antwort, ob wir die Richtigen für euch sind.</p>
-      <div class="reveal" style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
-        <a class="btn btn-ice" href="/#kontakt" style="display: flex; align-items: center; gap: 12px; height: 62px; padding: 0 20px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Projekt anfragen <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
-        <a href="/#kontakt" style="color: #FFFFFF; font-size: 17px; font-weight: 600; text-decoration: underline; text-underline-offset: 5px;">oder Anfrage schreiben</a>
-      </div>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 860px;">
+      <h2 class="reveal" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 27px; line-height: 1.05; text-wrap: balance;">Klingt nach dir?</h2>
+      <p class="reveal" style="font-size: 17px; line-height: 1.55; max-width: 580px; color: rgba(255,255,255,0.9);">Schick uns deinen Lebenslauf oder dein LinkedIn-Profil und sag kurz, welche Rolle dich reizt. Keine passende Stelle dabei? Initiativbewerbungen lesen wir genauso gern.</p>
+      <a class="jb-mail reveal" href="mailto:working@velonify.de?subject=Bewerbung" style="align-self: flex-start;">working@velonify.de</a>
+      <a class="btn btn-ice reveal" href="mailto:working@velonify.de?subject=Initiativbewerbung" style="align-self: stretch; display: flex; align-items: center; justify-content: center; gap: 12px; height: 62px; padding: 0 32px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700; margin-top: 8px;">Initiativ bewerben <svg class="arrow" width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H18 M13 1 L18 6 L13 11"></path></svg></a>
     </div>
   </section>
 
