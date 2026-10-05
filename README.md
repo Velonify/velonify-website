@@ -18,10 +18,11 @@ Die Artikel unter `/ratgeber/` (DE) und `/en/guides/` (EN) werden **nicht von Ha
 - `/_ratgeber/*` liefert auf Netlify 404 (siehe `netlify.toml`)
 
 ## Lead-Magnete (/ressourcen/)
-Kostenlose Downloads gegen E-Mail, verteilt per LinkedIn-DM. Die Landingpages entstehen aus `_ressourcen/<slug>.md`:
-`python3 _ressourcen/build.py`. Formular `magnet` → `netlify/functions/submission-created.mjs` → Apps Script im CRM,
-das den Eintrag speichert und die Mail verschickt; die Knöpfe in der Mail laufen über `netlify/functions/magnet-link.mjs`
-(`/m/…`). Netlify braucht dafür die Umgebungsvariable `CRM_MAGNETE_URL`. Details in `_ressourcen/README.md`.
+Kostenlose Downloads gegen E-Mail, verteilt per LinkedIn-DM. Neue Magnete entstehen im Hub, ohne Deploy:
+`netlify/functions/ressourcen-seite.mjs` baut `/ressourcen/<adresse>/` beim Aufruf aus der Vorlage und den Texten
+im Hub. Formular `magnet` → `netlify/functions/submission-created.mjs` → Apps Script im CRM, das den Eintrag
+speichert und die Mail verschickt; die Knöpfe in der Mail laufen über `netlify/functions/magnet-link.mjs` (`/m/…`).
+Netlify braucht dafür die Umgebungsvariable `CRM_MAGNETE_URL`. Details in `_ressourcen/README.md`.
 
 ## Deploy auf Netlify
 Netlify hängt an diesem Repo: jeder Push auf `main` geht automatisch live, ein Build-Schritt läuft nicht (`publish = "."`).
