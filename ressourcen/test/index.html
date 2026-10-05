@@ -590,6 +590,11 @@ main { display: block; }
   .rs-einfach { padding-top: 36px; padding-bottom: 64px; }
 }
 
+/* Shop-Roast: free places above the form */
+.rs-plaetze { margin: -8px 0 0; font-size: 15px; line-height: 1.5; color: #C5D8E6; }
+.rs-plaetze strong { color: #FFFFFF; }
+.rs-plaetze.is-voll { color: rgba(255,255,255,0.85); border-left: 3px solid #C5D8E6; padding-left: 12px; }
+
 </style>
 </head>
 <body>
@@ -683,10 +688,12 @@ main { display: block; }
 <input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value=""><input type="hidden" name="utm_content" value="">
 <p hidden><label>Nicht ausfüllen: <input name="bot-field"></label></p>
 <h2 id="rs-form-titel">Per Mail zuschicken lassen</h2>
+
 <div class="rs-field"><label for="rs-vorname">Vorname</label><input id="rs-vorname" name="vorname" type="text" autocomplete="given-name" required maxlength="80"></div>
 <div class="rs-field"><label for="rs-email">E-Mail</label><input id="rs-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="name@shop.de" maxlength="200"></div>
 <div class="rs-field"><label for="rs-shop">Shop-URL <span>(optional)</span></label><input id="rs-shop" name="shop" type="text" inputmode="url" autocomplete="url" placeholder="meinshop.de" maxlength="200"></div>
 <div class="rs-field"><label for="rs-system">Shopsystem</label><select id="rs-system" name="shopsystem" required><option value="" disabled selected>Bitte wählen</option><option value="shopify">Shopify</option><option value="magento">Magento</option><option value="shopware">Shopware</option><option value="woocommerce">WooCommerce</option><option value="anderes">Anderes</option><option value="keins">Noch kein Shop</option></select></div>
+
 <label class="rs-check"><input type="checkbox" name="newsletter" value="ja"><span>Schickt mir zusätzlich den Velonify-Newsletter mit Praxiswissen zu Shopify, Tracking und E-Mail-Marketing (etwa einmal im Monat). Abmelden geht jederzeit mit einem Klick.</span></label>
 <button type="submit" class="btn btn-ice rg-btn rs-btn">Testmail anfordern <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></button>
 <p class="rs-klein">Den Link schicken wir an deine E-Mail-Adresse. Für den Newsletter kommt zusätzlich ein Bestätigungslink. Mehr dazu in der <a href="/datenschutz/#ressourcen">Datenschutzerklärung</a>.</p>

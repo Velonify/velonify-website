@@ -55,3 +55,25 @@ Der Wortlaut der Newsletter-Checkbox steht in `build.py` (`NEWSLETTER_TEXT`) und
 Nachweis gespeichert. Alle Seiten sind `noindex` und stehen nicht in der Sitemap.
 
 Netlify braucht die Umgebungsvariable `CRM_MAGNETE_URL` (Adresse des Apps Scripts samt `?token=…`).
+
+## Shop-Roast (Magnete vom Typ „audit“)
+
+Stellt man im Hub bei einem Magneten *Art: Shop-Roast (Audit)* ein, nimmt die Funktion die zweite Vorlage
+(`audit` in `netlify/lib/magnet-vorlage.mjs`):
+- Shop-URL ist Pflicht, dazu die Pflicht-Checkbox „Ich arbeite für diesen Shop oder betreue ihn.“ (Feld
+  `shop_bestaetigt`, Wortlaut `SHOP_BESTAETIGT` in `build.py`; Netlify speichert ihn mit der Einsendung).
+- Über dem Formular steht „Noch X von Y Plätzen frei“ bzw. „Alle Plätze sind vergeben … Warteliste“. Die Zahl
+  liefert das Apps Script (Aktion „inhalt“), sie hängt wegen des CDN-Caches bis zu 2 Minuten nach.
+- Nach dem Absenden geht es auf `/ressourcen/danke/roast/`.
+
+Den Report schreibt das Team im Hub (Lead-Magnete → Shop prüfen) und gibt ihn dort frei. Er steht dann unter
+`velonify.de/roast/<token>/`: `netlify/functions/roast-seite.mjs` holt ihn beim Aufruf vom Apps Script (Aktion
+„report“) und setzt ihn mit `netlify/lib/report.mjs` in den Rahmen `netlify/lib/roast-vorlage.mjs` (von
+`build.py` erzeugt, Stil in `roast.css`). Die Seite ist privat: kein Cache, `noindex`, kein Referrer. Jeder
+Aufruf zählt im CRM mit, außer mit `?vorschau`. Nicht freigegebene oder unbekannte Reports ergeben die 404-Seite.
+
+Auf der Seite: „Als PDF speichern“ (Drucklayout A4 in `roast.css`), „Link kopieren“, „Per Mail weiterleiten“.
+Der Report hat bewusst keine `<section>`-Elemente: `velonify-motion.js` blendet `section h2` erst beim Scrollen
+ein, ein sofort gedrucktes PDF hätte sonst Lücken.
+
+Der Aufbau des Reports (JSON) ist im CRM-Repo festgelegt: `src/data/roast.ts`, Typ `Report`.

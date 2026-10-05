@@ -14,6 +14,10 @@ What happens after the form: netlify/functions/submission-created.mjs passes the
 in the CRM (apps-script/magnete), which stores it and sends the mail; the links in that mail run through
 netlify/functions/magnet-link.mjs. File link, mail text and on/off switch are kept in the hub (Lead-Magnete),
 not here – the slug is what ties both together.
+
+Magnets of type "audit" (Shop-Roast) use a second template with a required shop address, a confirmation that the
+person works for the shop and the number of free places. Their report is shown on /roast/<token>/ by
+netlify/functions/roast-seite.mjs, in the frame this script writes to netlify/lib/roast-vorlage.mjs.
 """
 import json, pathlib, re, sys
 
@@ -35,6 +39,10 @@ SHOPSYSTEME = [('', 'Bitte wählen'), ('shopify', 'Shopify'), ('magento', 'Magen
                ('woocommerce', 'WooCommerce'), ('anderes', 'Anderes'), ('keins', 'Noch kein Shop')]
 
 CSS = rg.CSS + '\n' + (SRC / 'ressourcen.css').read_text(encoding='utf-8')
+ROAST_CSS = (SRC / 'roast.css').read_text(encoding='utf-8')
+
+# Shop-Roast: wording of the required box. Netlify keeps it with every submission.
+SHOP_BESTAETIGT = 'Ich arbeite für diesen Shop oder betreue ihn.'
 
 
 def body(text):
@@ -73,7 +81,7 @@ def parse(path):
     return meta
 
 
-def document(title, desc, path, main, robots='noindex, follow', image=None, extra_head=''):
+def document(title, desc, path, main, robots='noindex, follow', image=None, extra_head='', css=''):
     """A full page: Ratgeber chrome, own meta tags. Magnet pages are reached by link, not by search."""
     # Not rg.page_chrome: that one marks „Ratgeber“ in the menu as the current page.
     head, dh, mh = rg.chrome('de')
@@ -102,7 +110,7 @@ def document(title, desc, path, main, robots='noindex, follow', image=None, extr
 {meta}
 {head.strip()}
 <style>
-{CSS}
+{CSS}{css}
 </style>
 </head>
 <body>
@@ -138,21 +146,40 @@ def hero(eyebrow, title, lead=''):
 def formular(m):
     optionen = ''.join(f'<option value="{v}"{" disabled selected" if not v else ""}>{esc(t)}</option>' for v, t in SHOPSYSTEME)
     utm = ''.join(f'<input type="hidden" name="{k}" value="">' for k in ('utm_source', 'utm_medium', 'utm_campaign', 'utm_content'))
-    knopf = m.get('cta') or 'Kostenlos anfordern'
-    return f'''<form class="rs-form" name="magnet" method="POST" action="{BASE}danke/" data-netlify="true" netlify-honeypot="bot-field" aria-labelledby="rs-form-titel">
+    audit = m.get('typ') == 'audit'
+    knopf = m.get('cta') or ('Shop prüfen lassen' if audit else 'Kostenlos anfordern')
+    titel = m.get('form_titel') or ('Shop prüfen lassen' if audit else 'Per Mail zuschicken lassen')
+    if audit:
+        shop = ('<div class="rs-field"><label for="rs-shop">Shop-URL</label><input id="rs-shop" name="shop" type="text" inputmode="url" '
+                'autocomplete="url" required placeholder="meinshop.de" minlength="4" maxlength="200"></div>')
+        bestaetigt = f'<label class="rs-check"><input type="checkbox" name="shop_bestaetigt" value="ja" required><span>{esc(SHOP_BESTAETIGT)}</span></label>'
+        klein = ('Du bekommst gleich eine Bestätigung und innerhalb von zwei Werktagen den Report per Mail. Für den Newsletter kommt '
+                 'zusätzlich ein Bestätigungslink. Mehr dazu in der <a href="/datenschutz/#shop-roast">Datenschutzerklärung</a>.')
+        danke = f'{BASE}danke/roast/'
+    else:
+        shop = ('<div class="rs-field"><label for="rs-shop">Shop-URL <span>(optional)</span></label><input id="rs-shop" name="shop" type="text" '
+                'inputmode="url" autocomplete="url" placeholder="meinshop.de" maxlength="200"></div>')
+        bestaetigt = ''
+        klein = ('Den Link schicken wir an deine E-Mail-Adresse. Für den Newsletter kommt zusätzlich ein Bestätigungslink. Mehr dazu in der '
+                 '<a href="/datenschutz/#ressourcen">Datenschutzerklärung</a>.')
+        danke = f'{BASE}danke/'
+    plaetze = m.get('plaetze', '')
+    return f'''<form class="rs-form" name="magnet" method="POST" action="{danke}" data-netlify="true" netlify-honeypot="bot-field" aria-labelledby="rs-form-titel">
 <input type="hidden" name="form-name" value="magnet">
 <input type="hidden" name="magnet" value="{esc(m["slug"])}">
 <input type="hidden" name="newsletter_text" value="{esc(NEWSLETTER_TEXT)}">
 {utm}
 <p hidden><label>Nicht ausfüllen: <input name="bot-field"></label></p>
-<h2 id="rs-form-titel">{esc(m.get("form_titel") or "Per Mail zuschicken lassen")}</h2>
+<h2 id="rs-form-titel">{esc(titel)}</h2>
+{plaetze}
 <div class="rs-field"><label for="rs-vorname">Vorname</label><input id="rs-vorname" name="vorname" type="text" autocomplete="given-name" required maxlength="80"></div>
 <div class="rs-field"><label for="rs-email">E-Mail</label><input id="rs-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="name@shop.de" maxlength="200"></div>
-<div class="rs-field"><label for="rs-shop">Shop-URL <span>(optional)</span></label><input id="rs-shop" name="shop" type="text" inputmode="url" autocomplete="url" placeholder="meinshop.de" maxlength="200"></div>
+{shop}
 <div class="rs-field"><label for="rs-system">Shopsystem</label><select id="rs-system" name="shopsystem" required>{optionen}</select></div>
+{bestaetigt}
 <label class="rs-check"><input type="checkbox" name="newsletter" value="ja"><span>{esc(NEWSLETTER_TEXT)}</span></label>
 <button type="submit" class="btn btn-ice rg-btn rs-btn">{esc(knopf)} {rg.ARROW}</button>
-<p class="rs-klein">Den Link schicken wir an deine E-Mail-Adresse. Für den Newsletter kommt zusätzlich ein Bestätigungslink. Mehr dazu in der <a href="/datenschutz/#ressourcen">Datenschutzerklärung</a>.</p>
+<p class="rs-klein">{klein}</p>
 </form>
 <script>
 (function () {{
@@ -184,13 +211,15 @@ def magnet_page(m):
 # Placeholders of the template; the function fills them with the texts from the hub (already HTML-escaped).
 VORLAGE = {'slug': '%%SLUG%%', 'titel': '%%TITEL%%', 'lead': '%%UNTERTITEL%%', 'description': '%%UNTERTITEL%%',
            'body': '%%INHALT%%', 'cta': '%%KNOPF%%'}
+# Shop-Roast: the function also fills in how many places are left (or nothing without a limit).
+VORLAGE_AUDIT = {**VORLAGE, 'typ': 'audit', 'eyebrow': 'Kostenlos · Shop-Roast', 'plaetze': '%%PLAETZE%%'}
 
 
 def formular_definition():
     """The form once more, hidden and without content: Netlify only accepts submissions for forms it found in
     static HTML at deploy time, and the template pages are not static."""
     felder = ['form-name', 'magnet', 'newsletter_text', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content',
-              'vorname', 'email', 'shop', 'shopsystem', 'newsletter']
+              'vorname', 'email', 'shop', 'shopsystem', 'newsletter', 'shop_bestaetigt']
     inputs = ''.join(f'<input type="hidden" name="{f}" value="{"magnet" if f == "form-name" else ""}">' for f in felder)
     return (f'<form name="magnet" method="POST" action="{BASE}danke/" data-netlify="true" netlify-honeypot="bot-field" hidden>'
             f'{inputs}<input name="bot-field"></form>')
@@ -231,6 +260,11 @@ SEITEN = {
         'Nichts angekommen? Schau im Spam- oder Werbe-Ordner nach. Hilft das nicht, schreib uns an [hallo@velonify.de](mailto:hallo@velonify.de).',
         'Hast du den Newsletter angehakt, steckt in der Mail zusätzlich ein Knopf zum Bestätigen. Erst dann tragen wir dich ein.',
     ], 'formular_definition'),
+    'danke/roast': ('Danke', 'Wir schauen uns deinen Shop an', [
+        'Die Bestätigung ist per Mail unterwegs. Sie kommt von Lukas von Velonify und ist meist nach einer Minute da.',
+        'Innerhalb von zwei Werktagen bekommst du den Report: vier geprüfte Bereiche und drei Beobachtungen aus unserem Team. Waren schon alle Plätze vergeben, steht das in der Mail. Du bist dann auf der Warteliste.',
+        'Nichts angekommen? Schau im Spam- oder Werbe-Ordner nach. Hilft das nicht, schreib uns an [hallo@velonify.de](mailto:hallo@velonify.de).',
+    ], ''),
     'newsletter': ('Newsletter', 'Anmeldung bestätigen', [
         'Ein Klick noch, dann bekommst du etwa einmal im Monat Praxiswissen zu Shopify, Tracking und E-Mail-Marketing von uns.',
     ], 'newsletter_formular'),
@@ -250,6 +284,14 @@ SEITEN = {
 }
 
 
+def roast_vorlage():
+    """Frame of the Shop-Roast report page; netlify/functions/roast-seite.mjs fills in the report (netlify/lib/report.mjs)."""
+    main = hero('Shop-Roast', '%%TITEL%%', '%%UNTERTITEL%%') + '\n%%INHALT%%'
+    extra = '\n<meta name="referrer" content="no-referrer">'
+    return document('%%TITEL%% | Velonify', 'Euer persönlicher Shop-Report von Velonify.', f'/roast/%%TOKEN%%/', main,
+                    robots='noindex, nofollow', extra_head=extra, css='\n' + ROAST_CSS)
+
+
 def main():
     magnete = [parse(p) for p in sorted(SRC.glob('*.md')) if p.name != 'README.md']
     for m in magnete:
@@ -257,11 +299,17 @@ def main():
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(magnet_page(m), encoding='utf-8')
         print('wrote', out.relative_to(ROOT))
-    vorlage = magnet_page(VORLAGE)
     out = ROOT / 'netlify' / 'lib' / 'magnet-vorlage.mjs'
-    out.write_text('// Generated by _ressourcen/build.py – do not edit. Template of the landing pages rendered by\n'
+    out.write_text('// Generated by _ressourcen/build.py – do not edit. Templates of the landing pages rendered by\n'
                    '// netlify/functions/ressourcen-seite.mjs; %%NAME%% are filled with the texts from the hub.\n'
-                   f'export default {json.dumps(vorlage, ensure_ascii=False)};\n', encoding='utf-8')
+                   '// `audit` is the Shop-Roast variant (shop address required, free places).\n'
+                   f'export default {json.dumps(magnet_page(VORLAGE), ensure_ascii=False)};\n'
+                   f'export const audit = {json.dumps(magnet_page(VORLAGE_AUDIT), ensure_ascii=False)};\n', encoding='utf-8')
+    print('wrote', out.relative_to(ROOT))
+    out = ROOT / 'netlify' / 'lib' / 'roast-vorlage.mjs'
+    out.write_text('// Generated by _ressourcen/build.py – do not edit. Frame of the Shop-Roast report page rendered by\n'
+                   '// netlify/functions/roast-seite.mjs; %%NAME%% are filled per report.\n'
+                   f'export default {json.dumps(roast_vorlage(), ensure_ascii=False)};\n', encoding='utf-8')
     print('wrote', out.relative_to(ROOT))
     formulare = {
         'newsletter_formular': token_formular('/m/n', 'Ja, Newsletter bestätigen'),
