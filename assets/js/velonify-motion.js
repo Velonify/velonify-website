@@ -1,6 +1,6 @@
 /*!
  * Velonify Motion 1.5: site-wide GSAP layer (ScrollTrigger, SplitText, ScrambleText, Draggable, Inertia) + Lenis smooth scroll.
- * Works off the classes the pages already use (.reveal, .line, .svc, .case-card, .vrow, .bar, .drift, .btn, .navlink …)
+ * Works off the classes the pages already use (.reveal, .line, .svc, .case-card, .vrow, .bar, .drift …)
  * plus opt-in tokens in data-vm (several allowed, space separated):
  *   highlight  words light up while scrolling      scramble   text decodes after the hero intro
  *   chars      headline flips in letter by letter   decode     headline decodes like a terminal on enter
@@ -92,28 +92,6 @@
     });
   }
 
-  // Text roll: letters slide out the top and come back in from below
-  function textTarget(el) {
-    var d = getComputedStyle(el).display;
-    if (d.indexOf('flex') === -1 && d.indexOf('grid') === -1) return el;
-    if (el.__vmTxt) return el.__vmTxt;
-    for (var n = el.firstChild; n; n = n.nextSibling) {
-      if (n.nodeType === 3 && n.nodeValue.trim()) {
-        var w = doc.createElement('span'); w.className = 'vm-txt';
-        el.insertBefore(w, n); w.appendChild(n); el.__vmTxt = w; return w;
-      }
-      if (n.nodeType === 1 && n.tagName !== 'svg' && n.textContent.trim()) return n;
-    }
-    return null;
-  }
-  function roll(el) {
-    var t = textTarget(el);
-    if (!t || t.__vmRolling || !Split) return;
-    t.__vmRolling = true;
-    var s = split(t, { type: 'chars', mask: 'chars' });
-    gsap.to(s.chars, { keyframes: [{ yPercent: -110, duration: 0.2, ease: 'power2.in' }, { yPercent: 110, duration: 0 }, { yPercent: 0, duration: 0.38, ease: 'power3.out' }],
-      stagger: 0.014, onComplete: function () { s.revert(); t.__vmRolling = false; } });
-  }
 
   // Wait until the runtime has rendered the artboard and the DOM has settled, then fonts
   function whenReady(fn) {
@@ -424,30 +402,6 @@
       ST.batch(els, { start: 'top 90%', once: true, onEnter: function (batch) {
         gsap.to(batch, { y: 0, autoAlpha: 1, duration: 1.1, ease: 'expo.out', stagger: 0.09, clearProps: 'transform' });
       } });
-    });
-
-    // ---------- MAGNETIC BUTTONS ----------
-    safe('magnetic', function () {
-      if (!canHover) return;
-      $$('.btn, .car-btn').forEach(function (b) {
-        var xTo = gsap.quickTo(b, 'x', { duration: 0.5, ease: 'power3.out' });
-        var yTo = gsap.quickTo(b, 'y', { duration: 0.5, ease: 'power3.out' });
-        b.addEventListener('pointermove', function (e) {
-          var r = b.getBoundingClientRect();
-          xTo((e.clientX - r.left - r.width / 2) * 0.28);
-          yTo((e.clientY - r.top - r.height / 2) * 0.38);
-        });
-        b.addEventListener('pointerleave', function () {
-          gsap.to(b, { x: 0, y: 0, duration: 0.9, ease: 'elastic.out(1, 0.4)', overwrite: true });
-        });
-      });
-    });
-
-    // ---------- TEXT ROLL on links and buttons ----------
-    safe('roll', function () {
-      if (!canHover) return;
-      $$('.navlink, .btn').forEach(function (el) { el.addEventListener('mouseenter', function () { roll(el); }); });
-      $$('.dd-item').forEach(function (el) { var t = el.querySelector('span'); if (t) el.addEventListener('mouseenter', function () { roll(t); }); });
     });
 
     // ---------- SERVICE ROWS: title ripples, arrow leans toward the cursor ----------
