@@ -26,11 +26,161 @@
         if (bars[0]) bars[0].style.transform = open ? 'translateY(9px) rotate(45deg)' : 'none';
         if (bars[1]) bars[1].style.width = open ? '0px' : '20px';
         if (bars[2]) bars[2].style.transform = open ? 'translateY(-9px) rotate(-45deg) scaleX(1.4)' : 'none';
+        var hd = burger.closest('header');
+        if (hd) hd.classList.toggle('vnav-open', open);
         if (window.velonifyLenis) { if (open) window.velonifyLenis.stop(); else window.velonifyLenis.start(); }
         document.documentElement.style.overflow = open ? 'hidden' : '';
       };
       burger.addEventListener('click', function () { set(panel.hasAttribute('hidden')); });
       panel.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+    }
+
+    // header: full-width bar at the top, floating glass pill once the page scrolls,
+    // a glass highlight that slides between the nav links (after reactbits.dev)
+    var header = root.querySelector('header');
+    if (header) {
+      var css = document.createElement('style');
+      css.textContent =
+        'header.vnav { --vnav-side: max(24px, calc((100% - 1276px) / 2)); isolation: isolate;' +
+        ' transition: background-color .5s, border-color .5s, padding .5s cubic-bezier(.16,1,.3,1); }' +
+        'header.vnav::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; border: 1px solid transparent;' +
+        ' border-radius: 0; background: transparent; transition: inset .5s cubic-bezier(.16,1,.3,1), border-radius .5s, background-color .5s, border-color .5s, box-shadow .5s; }' +
+        'header.vnav.vnav-scrolled:not(.vnav-open) { background: transparent !important; border-bottom-color: transparent !important; padding: 0 calc(var(--vnav-side) + 28px) !important; }' +
+        'header.vnav.vnav-scrolled:not(.vnav-open)::before { inset: 12px var(--vnav-side); border-radius: 18px; background: rgba(44,14,24,.8);' +
+        ' -webkit-backdrop-filter: blur(24px) saturate(1.4); backdrop-filter: blur(24px) saturate(1.4); border-color: rgba(197,216,230,.12);' +
+        ' box-shadow: 0 8px 32px rgba(0,0,0,.28), inset 0 .5px 0 rgba(255,255,255,.08); }' +
+        // phone: smaller pill
+        'html.is-mobile header.vnav { --vnav-side: 12px; }' +
+        'html.is-mobile header.vnav.vnav-scrolled:not(.vnav-open) { padding: 0 26px !important; }' +
+        'html.is-mobile header.vnav.vnav-scrolled:not(.vnav-open)::before { inset: 8px 12px; border-radius: 16px; }' +
+        // sliding hover highlight replaces the underline
+        'header.vnav nav .navlink::after { display: none; }' +
+        'header.vnav .vnav-hl { position: absolute; left: 0; top: 0; z-index: -1; pointer-events: none; border-radius: 12px; opacity: 0;' +
+        ' background: rgba(197,216,230,.08); border: 1px solid rgba(197,216,230,.16); box-shadow: 0 2px 16px rgba(0,0,0,.2), inset 0 .5px 0 rgba(255,255,255,.06);' +
+        ' transition: transform .3s cubic-bezier(.16,1,.3,1), width .3s cubic-bezier(.16,1,.3,1), height .3s, opacity .2s; }' +
+        'header.vnav .vnav-hl.vnav-hl-jump { transition: opacity .2s; }' +
+        // contact becomes the accent button
+        'header.vnav nav > a.navlink[href$="#kontakt"] { color: #2C0E18 !important; background: #C5D8E6; padding: 10px 18px; border-radius: 10px; font-weight: 700;' +
+        ' box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 1px 2px rgba(0,0,0,.2); transition: filter .2s; }' +
+        'header.vnav nav > a.navlink[href$="#kontakt"]:hover { filter: brightness(1.06); }' +
+        // dropdowns as rounded glass panels
+        'header.vnav .dd-menu { top: 80px; left: -16px; padding: 8px; border: 1px solid rgba(197,216,230,.14); border-radius: 14px; background: rgba(44,14,24,.9);' +
+        ' -webkit-backdrop-filter: blur(32px) saturate(1.3); backdrop-filter: blur(32px) saturate(1.3); box-shadow: 0 12px 40px rgba(0,0,0,.4); }' +
+        'header.vnav .dd-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }' +
+        'header.vnav .dd-item { border-radius: 9px; padding: 12px 16px; }' +
+        'header.vnav .dd-item:hover { background: rgba(197,216,230,.08); }';
+      document.head.appendChild(css);
+      header.classList.add('vnav');
+
+      var onScroll = function () { header.classList.toggle('vnav-scrolled', (window.scrollY || document.documentElement.scrollTop) > 24); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      var navEl = header.querySelector('nav');
+      var hoverable = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      if (navEl && hoverable) {
+        var hl = document.createElement('span');
+        hl.className = 'vnav-hl';
+        hl.setAttribute('aria-hidden', 'true');
+        header.appendChild(hl);
+        var shown = false;
+        var moveTo = function (link) {
+          var h = header.getBoundingClientRect(), r = link.getBoundingClientRect();
+          hl.classList.toggle('vnav-hl-jump', !shown);
+          hl.style.transform = 'translate(' + (r.left - h.left - 14) + 'px,' + (r.top - h.top - 8) + 'px)';
+          hl.style.width = (r.width + 28) + 'px';
+          hl.style.height = (r.height + 16) + 'px';
+          if (!shown) { void hl.offsetWidth; hl.classList.remove('vnav-hl-jump'); }
+          hl.style.opacity = '1';
+          shown = true;
+        };
+        var hide = function () { hl.style.opacity = '0'; shown = false; };
+        navEl.querySelectorAll('.navlink').forEach(function (a) {
+          if (/#kontakt$/.test(a.getAttribute('href') || '')) { a.addEventListener('mouseenter', hide); return; }
+          a.addEventListener('mouseenter', function () { moveTo(a); });
+          a.addEventListener('focus', function () { moveTo(a); });
+        });
+        navEl.addEventListener('mouseleave', hide);
+        navEl.addEventListener('focusout', function (e) { if (!navEl.contains(e.relatedTarget)) hide(); });
+      }
+    }
+
+    // "Fokus auf Ergebnis" stat cards: border glow that follows the cursor near the edge
+    // (port of reactbits.dev/components/border-glow; on touch it sweeps once when the card scrolls in)
+    var stats = root.querySelectorAll('.stat');
+    if (stats.length) {
+      var bg = document.createElement('style');
+      var glow = '331deg 55% 26%', glowOp = [100, 60, 50, 40, 30, 20, 10], glowKeys = ['', '-60', '-50', '-40', '-30', '-20', '-10'];
+      var cols = ['#45142D', '#C5D8E6', '#8A3A5C'], pos = ['80% 55%', '69% 34%', '8% 6%', '41% 38%', '86% 85%', '82% 18%', '51% 4%'], map = [0, 1, 2, 0, 1, 2, 1];
+      var grads = pos.map(function (p, i) { return 'radial-gradient(at ' + p + ', ' + cols[map[i]] + ' 0px, transparent 50%)'; });
+      var shadow = function (inset) {
+        return [['0 0 1px 0', '-60'], ['0 0 3px 0', '-50'], ['0 0 6px 0', '-40'], ['0 0 15px 0', '-30'], ['0 0 25px 2px', '-20'], ['0 0 50px 2px', '-10']]
+          .map(function (s) { return (inset ? 'inset ' : '') + s[0] + ' var(--glow-color' + s[1] + ')'; }).join(',');
+      };
+      var cone = 'conic-gradient(from var(--cursor-angle) at center, black calc(var(--cone-spread) * 1%), transparent calc((var(--cone-spread) + 15) * 1%), transparent calc((100 - var(--cone-spread) - 15) * 1%), black calc((100 - var(--cone-spread)) * 1%))';
+      var fillMask = 'linear-gradient(to bottom, black, black), radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%), conic-gradient(from var(--cursor-angle) at center, transparent 5%, black 15%, black 85%, transparent 95%)';
+      var lightMask = 'conic-gradient(from var(--cursor-angle) at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%)';
+      bg.textContent =
+        '.bglow-grid { background: transparent !important; gap: 20px !important; }' +
+        '.bglow { --edge-proximity: 0; --cursor-angle: 45deg; --edge-sensitivity: 30; --color-sensitivity: 50; --cone-spread: 25; --glow-padding: 40px;' +
+        ' --card-bg: #FFFFFF; position: relative; isolation: isolate; overflow: visible; border: 1px solid rgba(44,14,24,.14);' +
+        glowOp.map(function (o, i) { return ' --glow-color' + glowKeys[i] + ': hsl(' + glow + ' / ' + o + '%);'; }).join('') +
+        ' box-shadow: rgba(44,14,24,.04) 0 1px 2px, rgba(44,14,24,.05) 0 8px 24px; }' +
+        '.bglow > * { position: relative; z-index: 1; }' +
+        '.bglow::before, .bglow::after, .bglow > .edge-light { content: ""; position: absolute; inset: 0; border-radius: inherit; transition: opacity .25s ease-out; z-index: 0; pointer-events: none; }' +
+        '.bglow:not(:hover):not(.sweep-active)::before, .bglow:not(:hover):not(.sweep-active)::after, .bglow:not(:hover):not(.sweep-active) > .edge-light { opacity: 0 !important; transition: opacity .75s ease-in-out; }' +
+        '.bglow::before { inset: -1px; border: 1px solid transparent; background: linear-gradient(var(--card-bg) 0 100%) padding-box, ' +
+        grads.map(function (g) { return g + ' border-box'; }).join(', ') + ', linear-gradient(' + cols[0] + ' 0 100%) border-box;' +
+        ' opacity: calc((var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));' +
+        ' -webkit-mask-image: ' + cone + '; mask-image: ' + cone + '; }' +
+        '.bglow::after { background: ' + grads.map(function (g) { return g + ' padding-box'; }).join(', ') + ', linear-gradient(' + cols[0] + ' 0 100%) padding-box;' +
+        ' -webkit-mask-image: ' + fillMask + '; mask-image: ' + fillMask + '; mask-composite: subtract, add;' +
+        ' opacity: calc(.12 * (var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity))); }' +
+        '.bglow > .edge-light { inset: calc(var(--glow-padding) * -1); z-index: 2; -webkit-mask-image: ' + lightMask + '; mask-image: ' + lightMask + ';' +
+        ' opacity: calc((var(--edge-proximity) - var(--edge-sensitivity)) / (100 - var(--edge-sensitivity))); }' +
+        '.bglow > .edge-light::before { content: ""; position: absolute; inset: var(--glow-padding); box-shadow: inset 0 0 0 1px var(--glow-color),' + shadow(true) + ',' + shadow(false) + '; }';
+      document.head.appendChild(bg);
+
+      var setGlow = function (card, edge, angle) {
+        card.style.setProperty('--edge-proximity', edge.toFixed(3));
+        card.style.setProperty('--cursor-angle', angle.toFixed(3) + 'deg');
+      };
+      // same timing as the original "animated" sweep: glow fades in, travels once around, fades out
+      var sweep = function (card) {
+        var t0 = performance.now(), a0 = 110, a1 = 465;
+        card.classList.add('sweep-active');
+        (function tick() {
+          var t = performance.now() - t0;
+          var e = t < 500 ? 100 * (1 - Math.pow(1 - t / 500, 3)) : t < 2500 ? 100 : 100 * (1 - Math.pow(Math.min((t - 2500) / 1500, 1), 3));
+          var p = t < 1500 ? 50 * Math.pow(t / 1500, 3) : 50 + 50 * (1 - Math.pow(1 - Math.min((t - 1500) / 2250, 1), 3));
+          setGlow(card, e, a0 + (a1 - a0) * p / 100);
+          if (t < 4000) requestAnimationFrame(tick); else card.classList.remove('sweep-active');
+        })();
+      };
+      var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      stats.forEach(function (card) {
+        if (card.parentElement) card.parentElement.classList.add('bglow-grid');
+        card.classList.add('bglow');
+        var light = document.createElement('span');
+        light.className = 'edge-light';
+        light.setAttribute('aria-hidden', 'true');
+        card.appendChild(light);
+        if (fine) {
+          card.addEventListener('pointermove', function (e) {
+            var r = card.getBoundingClientRect(), cx = r.width / 2, cy = r.height / 2;
+            var dx = e.clientX - r.left - cx, dy = e.clientY - r.top - cy;
+            var kx = dx ? cx / Math.abs(dx) : Infinity, ky = dy ? cy / Math.abs(dy) : Infinity;
+            var deg = Math.atan2(dy, dx) * 180 / Math.PI + 90;
+            setGlow(card, Math.min(Math.max(1 / Math.min(kx, ky), 0), 1) * 100, deg < 0 ? deg + 360 : deg);
+          });
+        } else if (!still && 'IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (en) {
+            if (en[0].isIntersecting) { io.disconnect(); sweep(card); }
+          }, { threshold: 0.6 });
+          io.observe(card);
+        }
+      });
     }
 
     // topic chips in the contact form (multi-select)
