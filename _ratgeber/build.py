@@ -301,7 +301,7 @@ def document(lang, head, dh, mh, meta_head, main):
 </main>
 {footer(lang)}
 <script>if (window.matchMedia('(max-width: 1023px)').matches) document.querySelectorAll('details.rg-toc-box').forEach(function (d) {{ d.removeAttribute('open'); }});</script>
-<script src="/assets/js/consent.js?v=1" defer></script>
+<script src="/assets/js/consent.js?v=2" defer></script>
 </body>
 </html>
 '''

@@ -3,8 +3,8 @@
   var KEY = 'velonify-consent', CLARITY_ID = 'yyoy0esqf2';
   var en = (document.documentElement.lang || '').slice(0, 2) === 'en';
   var T = en
-    ? { text: 'We use Microsoft Clarity to understand how the site is used. Only with your consent.', more: 'Privacy', yes: 'Accept', no: 'Decline', url: '/en/privacy/' }
-    : { text: 'Wir nutzen Microsoft Clarity, um zu verstehen, wie die Seite genutzt wird. Nur mit deiner Zustimmung.', more: 'Datenschutz', yes: 'Akzeptieren', no: 'Ablehnen', url: '/datenschutz/' };
+    ? { text: 'We use cookies to improve your experience on our site.', more: 'Privacy', yes: 'Accept', no: 'Decline', url: '/en/privacy/' }
+    : { text: 'Wir nutzen Cookies, um die User Experience auf unserer Seite zu verbessern.', more: 'Datenschutz', yes: 'Akzeptieren', no: 'Ablehnen', url: '/datenschutz/' };
 
   function get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
   function set(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }

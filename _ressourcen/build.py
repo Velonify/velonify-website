@@ -125,7 +125,7 @@ def document(title, desc, path, main, robots='noindex, follow', image=None, extr
 {main}
 </main>
 {rg.footer('de')}
-<script src="/assets/js/consent.js?v=1" defer></script>
+<script src="/assets/js/consent.js?v=2" defer></script>
 </body>
 </html>
 '''
