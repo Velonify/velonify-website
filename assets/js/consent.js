@@ -4,7 +4,7 @@
   var en = (document.documentElement.lang || '').slice(0, 2) === 'en';
   var T = en
     ? { text: 'We use cookies to improve your experience on our site.', more: 'Privacy', yes: 'Accept', no: 'Decline', url: '/en/privacy/' }
-    : { text: 'Wir nutzen Cookies, um die User Experience auf unserer Seite zu verbessern.', more: 'Datenschutz', yes: 'Akzeptieren', no: 'Ablehnen', url: '/datenschutz/' };
+    : { text: 'Wir nutzen Cookies, um das Nutzungserlebnis auf unserer Seite zu verbessern.', more: 'Datenschutz', yes: 'Akzeptieren', no: 'Ablehnen', url: '/datenschutz/' };
 
   function get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
   function set(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
