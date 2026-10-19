@@ -42,6 +42,7 @@ L = {
         'index_desc': 'Praxiswissen aus unseren Projekten: Shopify-Migration, Magento-Supportende, Tracking und Performance Marketing. Konkret, mit Zahlen und Quellen.',
         'index_lead': 'Was wir in Projekten lernen, schreiben wir hier auf: konkret, mit Zahlen und mit Quellen. Für Shopbetreiber, die eine Entscheidung vorbereiten.',
         'skip': 'Zum Inhalt springen',
+        'series': {'migration': 'Migration zu Shopify von'},
     },
     'en': {
         'base': '/en/guides/', 'home': '/en/', 'contact': '/en/#kontakt', 'template': 'en/legal-notice/index.html',
@@ -57,6 +58,7 @@ L = {
         'index_desc': 'Practical knowledge from our projects: Shopify migration, Magento end of support, tracking and performance marketing. Specific, with numbers and sources.',
         'index_lead': 'What we learn in projects, we write down here: specific, with numbers and with sources. For store owners preparing a decision.',
         'skip': 'Skip to content',
+        'series': {'migration': 'Migrating to Shopify from'},
     },
 }
 
@@ -392,6 +394,20 @@ def card(lang, a):
 </a>'''
 
 
+def switcher(a, by_slug):
+    # platform switcher: articles sharing `series` link to each other, each keeps its own URL
+    if not a.get('series'):
+        return ''
+    t = L[a['lang']]
+    sib = sorted([x for x in by_slug.values() if x.get('series') == a['series']], key=lambda x: int(x.get('order', 99)))
+    if len(sib) < 2:
+        return ''
+    label = t['series'][a['series']]
+    links = ''.join(f'<span class="rg-switch-on" aria-current="page">{esc(x["series_label"])}</span>' if x is a else
+                    f'<a href="{t["base"]}{x["slug"]}/">{esc(x["series_label"])}</a>' for x in sib)
+    return f'<nav class="rg-switch" aria-label="{esc(label)}"><span class="rg-switch-label">{esc(label)}</span><div class="rg-switch-opts">{links}</div></nav>'
+
+
 def article_page(a, by_slug, other):
     lang = a['lang']
     t = L[lang]
@@ -428,7 +444,7 @@ def article_page(a, by_slug, other):
     meta_row = (f'<div class="rg-meta"><div class="rg-avatar" aria-hidden="true">{au["initials"]}</div>'
                 f'<p><span>{t["by"]} <strong>{esc(au["name"])}</strong>, {esc(au["role"][lang])}</span>'
                 f'<span>{t["updated"]}: <time datetime="{a["updated"]}">{fmt_date(a["updated"], lang)}</time> · {mins} {t["minutes"]}</span></p></div>')
-    main = hero(lang, [(t['start'], t['home']), (t['index'], t['base']), (a['title'], None)], a['category'], a['title'], meta_row)
+    main = hero(lang, [(t['start'], t['home']), (t['index'], t['base']), (a['title'], None)], a['category'], a['title'], meta_row + switcher(a, by_slug))
     cover = (f'<figure class="rg-cover"><img src="{IMG}{a["image"]}.jpg" alt="{esc(a.get("image_alt", ""))}" '
              f'width="1800" height="1018" fetchpriority="high" decoding="async"></figure>\n' if a.get('image') else '')
     main += f'''

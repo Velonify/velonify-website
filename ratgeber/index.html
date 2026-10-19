@@ -20,7 +20,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://velonify.de/assets/img/og-image.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://velonify.de/ratgeber/#page", "name": "Ratgeber: Shopify-Migration, Tracking & E-Commerce | Velonify", "description": "Praxiswissen aus unseren Projekten: Shopify-Migration, Magento-Supportende, Tracking und Performance Marketing. Konkret, mit Zahlen und Quellen.", "url": "https://velonify.de/ratgeber/", "inLanguage": "de-DE", "publisher": {"@type": "Organization", "@id": "https://velonify.de/#organization", "name": "Velonify", "url": "https://velonify.de/", "logo": {"@type": "ImageObject", "url": "https://velonify.de/assets/img/velonify-wordmark.png"}}, "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://velonify.de/ratgeber/magento-supportende/", "name": "Magento 2.4.6 ohne Support: Was Shopbetreiber jetzt tun sollten"}, {"@type": "ListItem", "position": 2, "url": "https://velonify.de/ratgeber/magento-zu-shopify-migration/", "name": "Magento zu Shopify migrieren: Ablauf, Dauer und Kosten"}, {"@type": "ListItem", "position": 3, "url": "https://velonify.de/ratgeber/server-side-tracking-shopify/", "name": "Server-Side Tracking auf Shopify: GA4, Meta und Consent richtig aufsetzen"}]}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://velonify.de/"}, {"@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://velonify.de/ratgeber/"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "@id": "https://velonify.de/ratgeber/#page", "name": "Ratgeber: Shopify-Migration, Tracking & E-Commerce | Velonify", "description": "Praxiswissen aus unseren Projekten: Shopify-Migration, Magento-Supportende, Tracking und Performance Marketing. Konkret, mit Zahlen und Quellen.", "url": "https://velonify.de/ratgeber/", "inLanguage": "de-DE", "publisher": {"@type": "Organization", "@id": "https://velonify.de/#organization", "name": "Velonify", "url": "https://velonify.de/", "logo": {"@type": "ImageObject", "url": "https://velonify.de/assets/img/velonify-wordmark.png"}}, "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://velonify.de/ratgeber/shopware-zu-shopify-migration/", "name": "Shopware zu Shopify migrieren: Anlass, Ablauf und Kosten"}, {"@type": "ListItem", "position": 2, "url": "https://velonify.de/ratgeber/woocommerce-zu-shopify-migration/", "name": "WooCommerce zu Shopify migrieren: Ablauf, Daten und Kosten"}, {"@type": "ListItem", "position": 3, "url": "https://velonify.de/ratgeber/magento-supportende/", "name": "Magento 2.4.6 ohne Support: Was Shopbetreiber jetzt tun sollten"}, {"@type": "ListItem", "position": 4, "url": "https://velonify.de/ratgeber/magento-zu-shopify-migration/", "name": "Magento zu Shopify migrieren: Ablauf, Dauer und Kosten"}, {"@type": "ListItem", "position": 5, "url": "https://velonify.de/ratgeber/server-side-tracking-shopify/", "name": "Server-Side Tracking auf Shopify: GA4, Meta und Consent richtig aufsetzen"}]}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://velonify.de/"}, {"@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://velonify.de/ratgeber/"}]}]}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#2C0E18">
@@ -385,6 +385,14 @@ main { display: block; }
 .rg-meta { display: flex; align-items: center; gap: 16px; }
 .rg-meta p { display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.8); }
 .rg-meta strong { color: #FFFFFF; }
+/* Platform switcher (series of articles, e.g. migration from Magento / Shopware / WooCommerce) */
+.rg-switch { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.18); max-width: 1040px; }
+.rg-switch-label { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C5D8E6; }
+.rg-switch-opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.rg-switch-opts a, .rg-switch-on { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.5); color: #FFFFFF; transition: background-color .2s ease, border-color .2s ease, color .2s ease; }
+.rg-switch-opts a:hover { border-color: #FFFFFF; background: rgba(255,255,255,0.08); }
+.rg-switch-opts a:focus-visible { outline: 2px solid #C5D8E6; outline-offset: 2px; }
+.rg-switch-on { background: #C5D8E6; border-color: #C5D8E6; color: #2C0E18; }
 .rg-avatar { width: 52px; height: 52px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #C5D8E6; color: #2C0E18; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 15px; }
 
 /* Body: table of contents + article */
@@ -512,6 +520,8 @@ main { display: block; }
   .rg-hero h1 { font-size: 24px; line-height: 1.2; }
   .rg-lead { font-size: 17px; }
   .rg-meta p { font-size: 14px; }
+  .rg-switch { flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 20px; }
+  .rg-switch-opts a, .rg-switch-on { padding: 0 12px; font-size: 14px; }
   .rg-avatar { width: 44px; height: 44px; font-size: 13px; }
   .rg-body { display: block; padding-top: 32px; padding-bottom: 64px; }
   .rg-toc { position: static; margin-bottom: 32px; border: 1.5px solid #000000; }
@@ -634,7 +644,19 @@ main { display: block; }
 <p class="rg-lead">Was wir in Projekten lernen, schreiben wir hier auf: konkret, mit Zahlen und mit Quellen. Für Shopbetreiber, die eine Entscheidung vorbereiten.</p>
 </div>
 </section>
-<section id="inhalt" class="rg-list"><div class="rg-wrap"><div class="rg-grid rg-grid-index"><a class="rg-card" href="/ratgeber/magento-supportende/">
+<section id="inhalt" class="rg-list"><div class="rg-wrap"><div class="rg-grid rg-grid-index"><a class="rg-card" href="/ratgeber/shopware-zu-shopify-migration/">
+<p class="rg-card-cat">Shopify-Migration</p>
+<h3>Shopware zu Shopify migrieren: Anlass, Ablauf und Kosten</h3>
+<p class="rg-card-desc">Shopware 5 ohne Updates, Shopware 6.5 läuft aus, die Community Edition hat eine Umsatzgrenze: Wann sich der Wechsel zu Shopify lohnt, welche Daten mitkommen und was er kostet.</p>
+<p class="rg-card-meta">Lukas Hanke · 19. Oktober 2026 · 9 Min. Lesezeit</p>
+<span class="rg-card-go">Artikel lesen <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
+</a><a class="rg-card" href="/ratgeber/woocommerce-zu-shopify-migration/">
+<p class="rg-card-cat">Shopify-Migration</p>
+<h3>WooCommerce zu Shopify migrieren: Ablauf, Daten und Kosten</h3>
+<p class="rg-card-desc">Wann sich der Umzug von WooCommerce auf Shopify lohnt, welche Daten mitkommen, was mit Blog, SEO-Plugin und Abos passiert und was die Migration kostet. Mit Checkliste.</p>
+<p class="rg-card-meta">Lukas Hanke · 19. Oktober 2026 · 8 Min. Lesezeit</p>
+<span class="rg-card-go">Artikel lesen <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
+</a><a class="rg-card" href="/ratgeber/magento-supportende/">
 <span class="rg-card-img" aria-hidden="true"><img src="/assets/img/ratgeber/magento-supportende-card.jpg" alt="" width="900" height="509" loading="lazy" decoding="async"></span>
 <p class="rg-card-cat">Magento</p>
 <h3>Magento 2.4.6 ohne Support: Was Shopbetreiber jetzt tun sollten</h3>
