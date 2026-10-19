@@ -113,4 +113,12 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/server-side-tracking-shopify/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopify-server-side-tracking/"/>
   </url>
+  <url><loc>https://velonify.de/termin/</loc><lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/termin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/booking/"/>
+  </url>
+  <url><loc>https://velonify.de/en/booking/</loc><lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/termin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/booking/"/>
+  </url>
 </urlset>
