@@ -5,6 +5,8 @@ translation: magento-zu-shopify-migration
 title: "Migrating from Magento to Shopify: process, timeline and cost"
 seo_title: "Magento to Shopify Migration: Timeline & Cost | Velonify"
 description: "How a Magento to Shopify migration works, which data comes along, how long it takes and what it costs. With a schedule, cost ranges and a go-live checklist."
+series: migration
+series_label: Magento
 author: lukas
 published: 2026-09-24
 updated: 2026-09-24
@@ -14,7 +16,7 @@ image: "magento-zu-shopify-migration"
 image_alt: "Moving boxes on a hand truck in an empty room with a bordeaux wall"
 summary: "A migration from Magento to Shopify runs in four phases: audit, mapping, build with a test migration, and go-live with aftercare. A lean store is often live in four to six weeks. With several integrations or on Shopify Plus it takes eight to twelve weeks, and large B2B projects three to six months. Market prices range from a low four-figure sum for small stores to six figures for enterprise projects. The biggest risks are missing redirects, incomplete data and tracking that stops measuring after the switch."
 service: "/en/services/shopify-migration/ | Shopify migration"
-related: magento-end-of-support, shopify-server-side-tracking
+related: shopware-to-shopify-migration, woocommerce-to-shopify-migration, magento-end-of-support
 ---
 
 ## When does moving from Magento to Shopify make sense?

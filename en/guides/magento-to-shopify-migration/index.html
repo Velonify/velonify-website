@@ -389,6 +389,14 @@ main { display: block; }
 .rg-meta { display: flex; align-items: center; gap: 16px; }
 .rg-meta p { display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.8); }
 .rg-meta strong { color: #FFFFFF; }
+/* Platform switcher (series of articles, e.g. migration from Magento / Shopware / WooCommerce) */
+.rg-switch { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.18); max-width: 1040px; }
+.rg-switch-label { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C5D8E6; }
+.rg-switch-opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.rg-switch-opts a, .rg-switch-on { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.5); color: #FFFFFF; transition: background-color .2s ease, border-color .2s ease, color .2s ease; }
+.rg-switch-opts a:hover { border-color: #FFFFFF; background: rgba(255,255,255,0.08); }
+.rg-switch-opts a:focus-visible { outline: 2px solid #C5D8E6; outline-offset: 2px; }
+.rg-switch-on { background: #C5D8E6; border-color: #C5D8E6; color: #2C0E18; }
 .rg-avatar { width: 52px; height: 52px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #C5D8E6; color: #2C0E18; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 15px; }
 
 /* Body: table of contents + article */
@@ -516,6 +524,8 @@ main { display: block; }
   .rg-hero h1 { font-size: 24px; line-height: 1.2; }
   .rg-lead { font-size: 17px; }
   .rg-meta p { font-size: 14px; }
+  .rg-switch { flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 20px; }
+  .rg-switch-opts a, .rg-switch-on { padding: 0 12px; font-size: 14px; }
   .rg-avatar { width: 44px; height: 44px; font-size: 13px; }
   .rg-body { display: block; padding-top: 32px; padding-bottom: 64px; }
   .rg-toc { position: static; margin-bottom: 32px; border: 1.5px solid #000000; }
@@ -632,7 +642,7 @@ main { display: block; }
 <nav aria-label="Breadcrumb" class="rg-crumbs"><a href="/en/">Home</a><span class="rg-dot" aria-hidden="true"></span><a href="/en/guides/">Guides</a><span class="rg-dot" aria-hidden="true"></span><span aria-current="page">Migrating from Magento to Shopify: process, timeline and cost</span></nav>
 <p class="rg-eyebrow">Shopify migration</p>
 <h1>Migrating from Magento to Shopify: process, timeline and cost</h1>
-<div class="rg-meta"><div class="rg-avatar" aria-hidden="true">LH</div><p><span>By <strong>Lukas Hanke</strong>, Backend, CRM &amp; integrations</span><span>Updated: <time datetime="2026-09-24">24 September 2026</time> · 8 min read</span></p></div>
+<div class="rg-meta"><div class="rg-avatar" aria-hidden="true">LH</div><p><span>By <strong>Lukas Hanke</strong>, Backend, CRM &amp; integrations</span><span>Updated: <time datetime="2026-09-24">24 September 2026</time> · 8 min read</span></p></div><nav class="rg-switch" aria-label="Migrating to Shopify from"><span class="rg-switch-label">Migrating to Shopify from</span><div class="rg-switch-opts"><span class="rg-switch-on" aria-current="page">Magento</span><a href="/en/guides/shopware-to-shopify-migration/">Shopware</a><a href="/en/guides/woocommerce-to-shopify-migration/">WooCommerce</a></div></nav>
 </div>
 </section>
 <div id="inhalt" class="rg-wrap rg-body">
@@ -666,18 +676,23 @@ main { display: block; }
 <div class="rg-cta-row"><a class="btn btn-ice rg-btn" href="/en/#kontakt">Start a project <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></a><a class="rg-cta-link" href="/en/services/shopify-migration/">See the service: Shopify migration <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></a></div>
 </div>
 </section>
-<section class="rg-related"><div class="rg-wrap"><h2>Keep reading</h2><div class="rg-grid"><a class="rg-card" href="/en/guides/magento-end-of-support/">
+<section class="rg-related"><div class="rg-wrap"><h2>Keep reading</h2><div class="rg-grid"><a class="rg-card" href="/en/guides/shopware-to-shopify-migration/">
+<p class="rg-card-cat">Shopify migration</p>
+<h3>Migrating from Shopware to Shopify: triggers, process and cost</h3>
+<p class="rg-card-desc">Shopware 5 gets no more updates, Shopware 6.5 is running out, and the Community Edition now has a revenue cap. When moving to Shopify pays off, which data comes along and what it costs.</p>
+<p class="rg-card-meta">Lukas Hanke · 19 October 2026 · 10 min read</p>
+<span class="rg-card-go">Read article <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
+</a><a class="rg-card" href="/en/guides/woocommerce-to-shopify-migration/">
+<p class="rg-card-cat">Shopify migration</p>
+<h3>Migrating from WooCommerce to Shopify: process, data and cost</h3>
+<p class="rg-card-desc">When moving from WooCommerce to Shopify pays off, which data comes along, what happens to your blog, SEO plugin and subscriptions, and what the migration costs. With a checklist.</p>
+<p class="rg-card-meta">Lukas Hanke · 19 October 2026 · 8 min read</p>
+<span class="rg-card-go">Read article <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
+</a><a class="rg-card" href="/en/guides/magento-end-of-support/">
 <span class="rg-card-img" aria-hidden="true"><img src="/assets/img/ratgeber/magento-supportende-card.jpg" alt="" width="900" height="509" loading="lazy" decoding="async"></span>
 <p class="rg-card-cat">Magento</p>
 <h3>Magento 2.4.6 end of support: what store owners should do now</h3>
 <p class="rg-card-desc">Since 11 August 2026, Magento 2.4.6 no longer receives regular security updates. What that means for your store, which options you have and how to decide.</p>
-<p class="rg-card-meta">Lukas Hanke · 24 September 2026 · 8 min read</p>
-<span class="rg-card-go">Read article <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
-</a><a class="rg-card" href="/en/guides/shopify-server-side-tracking/">
-<span class="rg-card-img" aria-hidden="true"><img src="/assets/img/ratgeber/server-side-tracking-shopify-card.jpg" alt="" width="900" height="509" loading="lazy" decoding="async"></span>
-<p class="rg-card-cat">Tracking</p>
-<h3>Server-side tracking on Shopify: setting up GA4, Meta and consent properly</h3>
-<p class="rg-card-desc">Why browser tracking on Shopify loses purchases, the three routes to server-side tracking, and what has applied to Shopify stores since 26 August 2026.</p>
 <p class="rg-card-meta">Lukas Hanke · 24 September 2026 · 8 min read</p>
 <span class="rg-card-go">Read article <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
 </a></div></div></section>
