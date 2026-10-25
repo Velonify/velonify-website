@@ -6,27 +6,37 @@ Kontakt: hallo@velonify.de · Anfragen über https://velonify.de/#kontakt
 
 ## Leistungen
 
-- [Shopify-Migration](https://velonify.de/leistungen/shopify-migration/): Umzug von Magento, Shopware oder WooCommerce auf Shopify und Shopify Plus mit Datenübernahme, Redirects und Tracking
-- [Tracking & Attribution](https://velonify.de/leistungen/tracking/): GA4, Google Tag Manager, Server-Side Tracking, Conversions API
-- [Performance Marketing](https://velonify.de/leistungen/performance-marketing/): Meta Ads und Google Ads, gesteuert nach Umsatz und Marge
+- [Leistungen im Überblick](https://velonify.de/leistungen/): erst Migration zu Shopify, danach Performance Marketing aus demselben Team
+- [Shopify-Migration](https://velonify.de/leistungen/shopify-migration/): Umzug von Shopware, Magento, WooCommerce oder JTL auf Shopify und Shopify Plus inkl. Anbindung von Warenwirtschaft/ERP und Logistik, 301-Redirects und Tracking ab Go-live
+- [Performance Marketing](https://velonify.de/leistungen/performance-marketing/): Google Ads, Meta Ads und E-Mail-Marketing mit Klaviyo für Shopify-Shops, gesteuert nach Marge
+- [Meta Ads für Shopify](https://velonify.de/leistungen/meta-ads-shopify/): Advantage+ Sales, Katalog-Anzeigen, Creative-Tests und Conversions API
 - [E-Mail & Retention](https://velonify.de/leistungen/e-mail-marketing/): Klaviyo-Flows, Kampagnen und Segmente
+- [Tracking & Attribution](https://velonify.de/leistungen/tracking/): GA4, Google Tag Manager, Server-Side Tracking, Conversions API
 - [Conversion-Optimierung](https://velonify.de/leistungen/conversion-optimierung/): CRO-Audit, Produktseiten und Checkout
 
 ## Ratgeber (Deutsch)
 
+- [Google Ads für Shopify: Einrichtung, Tracking und Kampagnen](https://velonify.de/ratgeber/google-ads-shopify/): Google Ads für Shopify aufsetzen: Google & YouTube App oder manuell, Merchant-Center-Feed, Conversion-Tracking mit Consent Mode und typische Fehler.
+- [JTL zu Shopify migrieren: JTL-Shop ablösen, JTL-Wawi behalten](https://velonify.de/ratgeber/jtl-zu-shopify-migration/): JTL-Shop zu Shopify migrieren und JTL-Wawi per JTL-Connector anbinden: was übertragen wird, wo der Connector Grenzen hat, Ablauf, Dauer und Kosten.
 - [Magento 2.4.6 ohne Support: Was Shopbetreiber jetzt tun sollten](https://velonify.de/ratgeber/magento-supportende/): Seit dem 11. August 2026 bekommt Magento 2.4.6 keine regulären Sicherheitsupdates mehr. Was das für euren Shop bedeutet und welche Optionen ihr jetzt habt.
-- [Magento zu Shopify migrieren: Ablauf, Dauer und Kosten](https://velonify.de/ratgeber/magento-zu-shopify-migration/): Wie eine Migration von Magento auf Shopify abläuft, welche Daten mitkommen, wie lange sie dauert und was sie kostet. Mit Zeitplan, Kostenrahmen und Checkliste.
-- [Server-Side Tracking auf Shopify: GA4, Meta und Consent richtig aufsetzen](https://velonify.de/ratgeber/server-side-tracking-shopify/): Warum Browser-Tracking auf Shopify Käufe verliert, welche drei Wege zum serverseitigen Tracking es gibt und was seit dem 26. August 2026 für Shopify-Shops gilt.
-- [Shopware zu Shopify migrieren: Anlass, Ablauf und Kosten](https://velonify.de/ratgeber/shopware-zu-shopify-migration/): Shopware 5 ohne Updates, Shopware 6.5 läuft aus, die Community Edition hat eine Umsatzgrenze: Wann sich der Wechsel zu Shopify lohnt, welche Daten mitkommen und was er kostet.
-- [WooCommerce zu Shopify migrieren: Ablauf, Daten und Kosten](https://velonify.de/ratgeber/woocommerce-zu-shopify-migration/): Wann sich der Umzug von WooCommerce auf Shopify lohnt, welche Daten mitkommen, was mit Blog, SEO-Plugin und Abos passiert und was die Migration kostet. Mit Checkliste.
+- [Magento zu Shopify migrieren: Ablauf, Dauer und Kosten](https://velonify.de/ratgeber/magento-zu-shopify-migration/): Wie eine Migration von Magento auf Shopify abläuft, welche Daten mitkommen, wie lange sie dauert und was sie kostet. Mit Zeitplan und Checkliste.
+- [Server-Side Tracking auf Shopify: GA4, Meta und Consent richtig aufsetzen](https://velonify.de/ratgeber/server-side-tracking-shopify/): Warum Browser-Tracking auf Shopify Käufe verliert, welche drei Wege zum serverseitigen Tracking es gibt und was seit 26. August 2026 für Shopify gilt.
+- [Was kostet eine Shopify-Migration? Preise, Kostentreiber und laufende Kosten](https://velonify.de/ratgeber/shopify-migration-kosten/): Was eine Shopify-Migration 2026 kostet: Marktspannen nach Projektgröße, die größten Kostentreiber, laufende Kosten über drei Jahre und Angebotsvergleich.
+- [Shopware 5 Supportende: Risiken und Optionen 2026](https://velonify.de/ratgeber/shopware-5-supportende/): Shopware 5 bekommt seit Juli 2024 keine Sicherheitsupdates mehr, Ende 2026 läuft auch PHP 8.2 aus. Was das heißt und welche drei Wege euch 2026 bleiben.
+- [Shopware zu Shopify migrieren: Anlass, Ablauf und Kosten](https://velonify.de/ratgeber/shopware-zu-shopify-migration/): Shopware 5 ohne Updates, 6.5 läuft aus, die Community Edition hat eine Umsatzgrenze: wann sich Shopify lohnt, welche Daten mitkommen, was es kostet.
+- [WooCommerce zu Shopify migrieren: Ablauf, Daten und Kosten](https://velonify.de/ratgeber/woocommerce-zu-shopify-migration/): Wann sich der Umzug von WooCommerce auf Shopify lohnt, welche Daten mitkommen, was mit Blog, SEO-Plugin und Abos passiert und was er kostet.
 
 ## Guides (English)
 
+- [Migrating from JTL to Shopify: replace JTL-Shop, keep JTL-Wawi](https://velonify.de/en/guides/jtl-to-shopify-migration/): Migrating JTL-Shop to Shopify and connecting JTL-Wawi via JTL-Connector: what transfers, where the connector has limits, process, timeline and cost.
 - [Magento 2.4.6 end of support: what store owners should do now](https://velonify.de/en/guides/magento-end-of-support/): Since 11 August 2026, Magento 2.4.6 no longer receives regular security updates. What that means for your store, which options you have and how to decide.
-- [Migrating from Magento to Shopify: process, timeline and cost](https://velonify.de/en/guides/magento-to-shopify-migration/): How a Magento to Shopify migration works, which data comes along, how long it takes and what it costs. With a schedule, cost ranges and a go-live checklist.
+- [Migrating from Magento to Shopify: process, timeline and cost](https://velonify.de/en/guides/magento-to-shopify-migration/): How a Magento to Shopify migration works, which data comes along, how long it takes and what it costs. With a schedule, cost ranges and a checklist.
+- [Google Ads for Shopify: setup, tracking and campaigns](https://velonify.de/en/guides/shopify-google-ads/): Setting up Google Ads for Shopify: Google & YouTube app or manual setup, Merchant Center feed, conversion tracking with Consent Mode and common mistakes.
+- [What does a Shopify migration cost? Prices, cost drivers and running costs](https://velonify.de/en/guides/shopify-migration-cost/): What a Shopify migration costs in 2026: market ranges by project size, the biggest cost drivers, running costs over three years and how to compare quotes.
 - [Server-side tracking on Shopify: setting up GA4, Meta and consent properly](https://velonify.de/en/guides/shopify-server-side-tracking/): Why browser tracking on Shopify loses purchases, the three routes to server-side tracking, and what has applied to Shopify stores since 26 August 2026.
-- [Migrating from Shopware to Shopify: triggers, process and cost](https://velonify.de/en/guides/shopware-to-shopify-migration/): Shopware 5 gets no more updates, Shopware 6.5 is running out, and the Community Edition now has a revenue cap. When moving to Shopify pays off, which data comes along and what it costs.
-- [Migrating from WooCommerce to Shopify: process, data and cost](https://velonify.de/en/guides/woocommerce-to-shopify-migration/): When moving from WooCommerce to Shopify pays off, which data comes along, what happens to your blog, SEO plugin and subscriptions, and what the migration costs. With a checklist.
+- [Shopware 5 end of life: risks and options in 2026](https://velonify.de/en/guides/shopware-5-end-of-life/): Shopware 5 has had no security updates since July 2024, and PHP 8.2 runs out at the end of 2026. What that means and the three paths you have in 2026.
+- [Migrating from Shopware to Shopify: triggers, process and cost](https://velonify.de/en/guides/shopware-to-shopify-migration/): Shopware 5 gets no updates, 6.5 is running out, the Community Edition has a revenue cap: when Shopify pays off, which data moves and what it costs.
+- [Migrating from WooCommerce to Shopify: process, data and cost](https://velonify.de/en/guides/woocommerce-to-shopify-migration/): When moving from WooCommerce to Shopify pays off, which data comes along, what happens to your blog, SEO plugin and subscriptions, and what it costs.
 
 ## Optional
 

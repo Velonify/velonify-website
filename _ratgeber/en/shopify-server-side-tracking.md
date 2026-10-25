@@ -7,14 +7,14 @@ seo_title: "Shopify Server-Side Tracking: GA4 & Meta CAPI | Velonify"
 description: "Why browser tracking on Shopify loses purchases, the three routes to server-side tracking, and what has applied to Shopify stores since 26 August 2026."
 author: lukas
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-25
 order: 3
 category: "Tracking"
 image: "server-side-tracking-shopify"
 image_alt: "A small server with three glowing fibre-optic cables running in different directions"
 summary: "With server-side tracking, a server sends conversion data to GA4, Meta and Google Ads, not just the customer's browser. Fewer purchases get lost to ad blockers, browser restrictions and payment redirects. On Shopify there are three routes: the native Google and Meta apps, a custom pixel with server-side Google Tag Manager, or a dedicated tracking app. Visitor consent is still required, and server-side does not replace a cookie banner. Since 26 August 2026, “Additional scripts” no longer run on the thank-you page of non-Plus Shopify stores, so check your purchase events now."
 service: "/en/services/tracking/ | Tracking & attribution"
-related: magento-to-shopify-migration, magento-end-of-support
+related: shopify-google-ads, magento-to-shopify-migration, magento-end-of-support
 ---
 
 ## What is server-side tracking?
@@ -86,7 +86,7 @@ When the browser and the server report the same event, the platform has to recog
 
 - **Shopify against GA4.** Purchases in GA4 will never exactly match orders, because not every visitor consents. Large or suddenly growing gaps, though, show that events are missing.
 - **Meta Events Manager.** Here you see whether browser and server events arrive, whether they are deduplicated and how well Meta can match events to people (Event Match Quality).
-- **Google Ads.** Conversion diagnostics show whether enhanced conversions are active and receiving data.
+- **Google Ads.** Conversion diagnostics show whether enhanced conversions are active and receiving data. How to set up Google Ads on Shopify from the feed to the revenue value is covered in [Google Ads for Shopify](/en/guides/shopify-google-ads/).
 - **Test after every change.** New apps, theme updates and checkout changes are the typical moments when tracking breaks unnoticed.
 
 ## Frequently asked questions {faq}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://velonify.de/</loc><lastmod>2026-09-20</lastmod>
+  <url><loc>https://velonify.de/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/"/>
   </url>
@@ -8,7 +8,11 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/"/>
   </url>
-  <url><loc>https://velonify.de/leistungen/shopify-migration/</loc><lastmod>2026-09-20</lastmod>
+  <url><loc>https://velonify.de/leistungen/meta-ads-shopify/</loc><lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/leistungen/meta-ads-shopify/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://velonify.de/leistungen/meta-ads-shopify/"/>
+  </url>
+  <url><loc>https://velonify.de/leistungen/shopify-migration/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/leistungen/shopify-migration/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/services/shopify-migration/"/>
   </url>
@@ -16,7 +20,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/leistungen/shopify-migration/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/services/shopify-migration/"/>
   </url>
-  <url><loc>https://velonify.de/leistungen/tracking/</loc><lastmod>2026-09-20</lastmod>
+  <url><loc>https://velonify.de/leistungen/tracking/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/leistungen/tracking/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/services/tracking/"/>
   </url>
@@ -24,7 +28,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/leistungen/tracking/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/services/tracking/"/>
   </url>
-  <url><loc>https://velonify.de/leistungen/performance-marketing/</loc><lastmod>2026-09-20</lastmod>
+  <url><loc>https://velonify.de/leistungen/performance-marketing/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/leistungen/performance-marketing/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/services/performance-marketing/"/>
   </url>
@@ -32,7 +36,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/leistungen/performance-marketing/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/services/performance-marketing/"/>
   </url>
-  <url><loc>https://velonify.de/leistungen/e-mail-marketing/</loc><lastmod>2026-09-20</lastmod>
+  <url><loc>https://velonify.de/leistungen/e-mail-marketing/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/leistungen/e-mail-marketing/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/services/email-marketing/"/>
   </url>
@@ -40,7 +44,7 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/leistungen/e-mail-marketing/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/services/email-marketing/"/>
   </url>
-  <url><loc>https://velonify.de/leistungen/conversion-optimierung/</loc><lastmod>2026-09-20</lastmod>
+  <url><loc>https://velonify.de/leistungen/conversion-optimierung/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/leistungen/conversion-optimierung/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/services/conversion-optimization/"/>
   </url>
@@ -89,51 +93,83 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/termin/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/booking/"/>
   </url>
-  <url><loc>https://velonify.de/ratgeber/</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://velonify.de/ratgeber/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/"/>
   </url>
-  <url><loc>https://velonify.de/en/guides/</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://velonify.de/en/guides/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/"/>
   </url>
-  <url><loc>https://velonify.de/ratgeber/magento-supportende/</loc><lastmod>2026-09-24</lastmod>
+  <url><loc>https://velonify.de/ratgeber/google-ads-shopify/</loc><lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/google-ads-shopify/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopify-google-ads/"/>
+  </url>
+  <url><loc>https://velonify.de/en/guides/shopify-google-ads/</loc><lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/google-ads-shopify/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopify-google-ads/"/>
+  </url>
+  <url><loc>https://velonify.de/ratgeber/jtl-zu-shopify-migration/</loc><lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/jtl-zu-shopify-migration/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/jtl-to-shopify-migration/"/>
+  </url>
+  <url><loc>https://velonify.de/en/guides/jtl-to-shopify-migration/</loc><lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/jtl-zu-shopify-migration/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/jtl-to-shopify-migration/"/>
+  </url>
+  <url><loc>https://velonify.de/ratgeber/magento-supportende/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/magento-supportende/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/magento-end-of-support/"/>
   </url>
-  <url><loc>https://velonify.de/en/guides/magento-end-of-support/</loc><lastmod>2026-09-24</lastmod>
+  <url><loc>https://velonify.de/en/guides/magento-end-of-support/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/magento-supportende/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/magento-end-of-support/"/>
   </url>
-  <url><loc>https://velonify.de/ratgeber/magento-zu-shopify-migration/</loc><lastmod>2026-09-24</lastmod>
+  <url><loc>https://velonify.de/ratgeber/magento-zu-shopify-migration/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/magento-zu-shopify-migration/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/magento-to-shopify-migration/"/>
   </url>
-  <url><loc>https://velonify.de/en/guides/magento-to-shopify-migration/</loc><lastmod>2026-09-24</lastmod>
+  <url><loc>https://velonify.de/en/guides/magento-to-shopify-migration/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/magento-zu-shopify-migration/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/magento-to-shopify-migration/"/>
   </url>
-  <url><loc>https://velonify.de/ratgeber/server-side-tracking-shopify/</loc><lastmod>2026-09-24</lastmod>
+  <url><loc>https://velonify.de/ratgeber/server-side-tracking-shopify/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/server-side-tracking-shopify/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopify-server-side-tracking/"/>
   </url>
-  <url><loc>https://velonify.de/en/guides/shopify-server-side-tracking/</loc><lastmod>2026-09-24</lastmod>
+  <url><loc>https://velonify.de/en/guides/shopify-server-side-tracking/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/server-side-tracking-shopify/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopify-server-side-tracking/"/>
   </url>
-  <url><loc>https://velonify.de/ratgeber/shopware-zu-shopify-migration/</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://velonify.de/ratgeber/shopify-migration-kosten/</loc><lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/shopify-migration-kosten/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopify-migration-cost/"/>
+  </url>
+  <url><loc>https://velonify.de/en/guides/shopify-migration-cost/</loc><lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/shopify-migration-kosten/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopify-migration-cost/"/>
+  </url>
+  <url><loc>https://velonify.de/ratgeber/shopware-5-supportende/</loc><lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/shopware-5-supportende/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopware-5-end-of-life/"/>
+  </url>
+  <url><loc>https://velonify.de/en/guides/shopware-5-end-of-life/</loc><lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/shopware-5-supportende/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopware-5-end-of-life/"/>
+  </url>
+  <url><loc>https://velonify.de/ratgeber/shopware-zu-shopify-migration/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/shopware-zu-shopify-migration/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopware-to-shopify-migration/"/>
   </url>
-  <url><loc>https://velonify.de/en/guides/shopware-to-shopify-migration/</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://velonify.de/en/guides/shopware-to-shopify-migration/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/shopware-zu-shopify-migration/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopware-to-shopify-migration/"/>
   </url>
-  <url><loc>https://velonify.de/ratgeber/woocommerce-zu-shopify-migration/</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://velonify.de/ratgeber/woocommerce-zu-shopify-migration/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/woocommerce-zu-shopify-migration/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/woocommerce-to-shopify-migration/"/>
   </url>
-  <url><loc>https://velonify.de/en/guides/woocommerce-to-shopify-migration/</loc><lastmod>2026-10-19</lastmod>
+  <url><loc>https://velonify.de/en/guides/woocommerce-to-shopify-migration/</loc><lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/woocommerce-zu-shopify-migration/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/woocommerce-to-shopify-migration/"/>
   </url>

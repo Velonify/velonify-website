@@ -7,14 +7,14 @@ seo_title: "Magento 2.4.6 End of Support: Risks and Options | Velonify"
 description: "Since 11 August 2026, Magento 2.4.6 no longer receives regular security updates. What that means for your store, which options you have and how to decide."
 author: lukas
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-25
 order: 1
 category: "Magento"
 image: "magento-supportende"
 image_alt: "An old open padlock with a cracked shackle next to an hourglass that has run out"
 summary: "Magento 2.4.6 reached the end of regular support on 11 August 2026. Magento Open Source no longer gets security patches or quality fixes from Adobe, while Adobe Commerce customers receive extended support until 31 August 2027. Your store keeps running, but every newly discovered vulnerability stays open. Realistically you have three paths: upgrade to 2.4.8 or 2.4.9, move to a SaaS platform such as Shopify, or harden the store as a bridge until the move is done."
 service: "/en/services/shopify-migration/ | Shopify migration"
-related: magento-to-shopify-migration, shopify-server-side-tracking
+related: magento-to-shopify-migration, shopify-migration-cost, shopware-5-end-of-life
 ---
 
 ## What happened on 11 August 2026?
@@ -82,7 +82,7 @@ If it says 2.4.6 or lower, this article applies to you directly. On 2.4.7 you ha
 ## Upgrade or move? Five questions to decide
 
 1. **How much custom code is in the store?** Lots of custom modules point towards an upgrade, since they would need rethinking on Shopify. An audit often shows, though, that much of it is standard today or solved by an app.
-2. **What does Magento cost you per year?** Add up hosting, developer hours, extension licences and upgrades. That total is what you compare against Shopify's fees.
+2. **What does Magento cost you per year?** Add up hosting, developer hours, extension licences and upgrades. That total is what you compare against Shopify's fees. How to set up the three-year comparison is covered in [What does a Shopify migration cost?](/en/guides/shopify-migration-cost/).
 3. **Who runs the store day to day?** If every landing page, banner and promotion needs a developer, the platform is slowing down your marketing.
 4. **How many more major upgrades do you want to do?** With Magento, the next deadline is certain, every two to three years.
 5. **What are your plans for the next two years?** New countries, B2B customers, more channels: check which platform covers them with less custom work.
@@ -97,6 +97,8 @@ It is the end of September. For most stores, the busiest months of the year star
 - **October and November:** Audit and a decision on upgrade or move. This takes little of your team's time.
 - **December to February:** Build in parallel to the live store.
 - **January to March 2027:** Go live in the quieter period after the holidays.
+
+When you move to Shopify, we also connect your inventory system so that orders, stock and shipping work from day one. Afterwards, the same team can take over your Meta ads, Google Ads and email marketing, with tracking we set up ourselves during the move. More on our [Shopify migration](/en/services/shopify-migration/) and [performance marketing](/en/services/performance-marketing/) pages.
 
 For Adobe Commerce customers with extended support until August 2027, this is comfortable. For Open Source stores, the time until go-live is the riskiest phase, which is why hardening comes first.
 

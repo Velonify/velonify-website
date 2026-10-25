@@ -4,17 +4,17 @@ lang: de
 translation: shopify-server-side-tracking
 title: "Server-Side Tracking auf Shopify: GA4, Meta und Consent richtig aufsetzen"
 seo_title: "Server-Side Tracking auf Shopify: GA4 & Meta CAPI | Velonify"
-description: "Warum Browser-Tracking auf Shopify Käufe verliert, welche drei Wege zum serverseitigen Tracking es gibt und was seit dem 26. August 2026 für Shopify-Shops gilt."
+description: "Warum Browser-Tracking auf Shopify Käufe verliert, welche drei Wege zum serverseitigen Tracking es gibt und was seit 26. August 2026 für Shopify gilt."
 author: lukas
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-25
 order: 3
 category: "Tracking"
 image: "server-side-tracking-shopify"
 image_alt: "Ein kleiner Server, aus dem drei leuchtende Glasfaserkabel in verschiedene Richtungen laufen"
 summary: "Beim Server-Side Tracking schickt ein Server die Conversion-Daten an GA4, Meta und Google Ads, nicht nur der Browser des Kunden. Dadurch gehen weniger Käufe durch Adblocker, Browser-Beschränkungen und Zahlungs-Weiterleitungen verloren. Auf Shopify gibt es drei Wege: die nativen Apps von Google und Meta, ein Custom Pixel mit serverseitigem Google Tag Manager oder eine spezialisierte Tracking-App. Die Einwilligung der Besucher bleibt Pflicht, serverseitig ersetzt kein Cookie-Banner. Seit dem 26. August 2026 laufen auf Shopify-Shops ohne Plus keine „Zusätzlichen Skripte“ auf der Danke-Seite mehr, deshalb solltet ihr eure Kauf-Events jetzt prüfen."
 service: "/leistungen/tracking/ | Tracking & Attribution"
-related: magento-zu-shopify-migration, magento-supportende
+related: google-ads-shopify, magento-zu-shopify-migration, magento-supportende
 ---
 
 ## Was ist Server-Side Tracking?
@@ -86,7 +86,7 @@ Wenn Browser und Server dasselbe Ereignis melden, muss die Plattform erkennen, d
 
 - **Shopify gegen GA4.** Die Zahl der Käufe in GA4 wird nie exakt der Zahl der Bestellungen entsprechen, weil nicht jeder Besucher einwilligt. Große oder plötzlich wachsende Lücken zeigen aber, dass Events fehlen.
 - **Meta Events Manager.** Hier seht ihr, ob Browser- und Server-Events ankommen, ob sie dedupliziert werden und wie gut Meta die Events Personen zuordnen kann (Event Match Quality).
-- **Google Ads.** Die Conversion-Diagnose zeigt, ob erweiterte Conversions aktiv sind und Daten empfangen.
+- **Google Ads.** Die Conversion-Diagnose zeigt, ob erweiterte Conversions aktiv sind und Daten empfangen. Wie ihr Google Ads auf Shopify vom Feed bis zum Umsatzwert aufsetzt, steht in [Google Ads für Shopify](/ratgeber/google-ads-shopify/).
 - **Nach jeder Änderung testen.** Neue Apps, Theme-Updates und Checkout-Anpassungen sind die typischen Momente, in denen Tracking unbemerkt bricht.
 
 ## Häufige Fragen {faq}

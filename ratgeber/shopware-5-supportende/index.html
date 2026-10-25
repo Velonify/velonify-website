@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shopware 5 End of Life: Risiken &amp; Optionen 2026 | Velonify</title>
+<meta name="description" content="Shopware 5 bekommt seit Juli 2024 keine Sicherheitsupdates mehr, Ende 2026 läuft auch PHP 8.2 aus. Was das heißt und welche drei Wege euch 2026 bleiben.">
+<link rel="canonical" href="https://velonify.de/ratgeber/shopware-5-supportende/">
+<link rel="alternate" hreflang="de" href="https://velonify.de/ratgeber/shopware-5-supportende/">
+<link rel="alternate" hreflang="en" href="https://velonify.de/en/guides/shopware-5-end-of-life/">
+<link rel="alternate" hreflang="x-default" href="https://velonify.de/ratgeber/shopware-5-supportende/">
+<meta property="og:title" content="Shopware 5 End of Life: Risiken &amp; Optionen 2026 | Velonify">
+<meta property="og:description" content="Shopware 5 bekommt seit Juli 2024 keine Sicherheitsupdates mehr, Ende 2026 läuft auch PHP 8.2 aus. Was das heißt und welche drei Wege euch 2026 bleiben.">
+<meta property="og:url" content="https://velonify.de/ratgeber/shopware-5-supportende/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Velonify">
+<meta property="og:image" content="https://velonify.de/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://velonify.de/assets/img/og-image.png">
+<meta property="article:published_time" content="2026-10-25">
+<meta property="article:modified_time" content="2026-10-25">
+<meta name="author" content="Lukas Hanke">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://velonify.de/ratgeber/shopware-5-supportende/#article", "headline": "Shopware 5 Supportende: Risiken und Optionen 2026", "description": "Shopware 5 bekommt seit Juli 2024 keine Sicherheitsupdates mehr, Ende 2026 läuft auch PHP 8.2 aus. Was das heißt und welche drei Wege euch 2026 bleiben.", "abstract": "Shopware 5 bekommt seit Ende Juli 2024 keine Sicherheitsupdates mehr vom Hersteller. Die letzte Version 5.7.20 unterstützt offiziell PHP bis 8.2, und PHP 8.2 bekommt nur noch bis zum 31. Dezember 2026 Sicherheitsupdates. Ab 2027 läuft ein Shopware-5-Shop damit auf keiner offiziell unterstützten Kombination mehr. 2026 bleiben drei Wege: verlängerter Support über einen Drittanbieter wie safefive als Übergang, ein Umstieg auf Shopware 6, der technisch ein Neuaufbau ist, oder ein Wechsel zu Shopify. Bei Shopware 6 und Shopify muss in beiden Fällen auch die Anbindung von Warenwirtschaft und Versand neu eingerichtet werden.", "inLanguage": "de-DE", "url": "https://velonify.de/ratgeber/shopware-5-supportende/", "mainEntityOfPage": "https://velonify.de/ratgeber/shopware-5-supportende/", "datePublished": "2026-10-25", "dateModified": "2026-10-25", "image": "https://velonify.de/assets/img/velonify-wordmark.png", "articleSection": "Shopware", "wordCount": 1808, "author": {"@type": "Person", "name": "Lukas Hanke", "jobTitle": "Backend, CRM & Integrationen", "worksFor": {"@id": "https://velonify.de/#organization"}}, "publisher": {"@type": "Organization", "@id": "https://velonify.de/#organization", "name": "Velonify", "url": "https://velonify.de/", "logo": {"@type": "ImageObject", "url": "https://velonify.de/assets/img/velonify-wordmark.png"}}, "citation": ["https://endoflife.date/shopware", "https://github.com/shopware5/shopware/releases/tag/v5.7.20", "https://github.com/shopware5/shopware/blob/v5.7.20/composer.json", "https://www.php.net/supported-versions.php", "https://www.php.net/eol.php", "https://store.shopware.com/de/extension-partners/safefive", "https://maxcluster.de/en/blog/shopware-5-eol-interview-safefive", "https://docs.shopware.com/de/migration-de/shopware5", "https://docs.shopware.com/de/de/migration-de/was-wird-migriert", "https://shopware.com/en/news/fair-usage-policy-community-edition/", "https://www.shopify.com/de/preise", "https://dsgvo-gesetz.de/art-32-dsgvo/", "https://www.pcisecuritystandards.org/document_library/", "https://guide.jtl-software.com/jtl-connector/", "https://xentral.com/de/integrationen/shopify", "https://apps.shopify.com/plentymarkets-1", "https://apps.shopify.com/billbee-de"]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Start", "item": "https://velonify.de/"}, {"@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://velonify.de/ratgeber/"}, {"@type": "ListItem", "position": 3, "name": "Shopware 5 Supportende: Risiken und Optionen 2026", "item": "https://velonify.de/ratgeber/shopware-5-supportende/"}]}, {"@type": "FAQPage", "@id": "https://velonify.de/ratgeber/shopware-5-supportende/#faq", "mainEntity": [{"@type": "Question", "name": "Funktioniert Shopware 5 nach dem Supportende weiter?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Der Shop läuft weiter und verkauft. Es kommen nur keine Sicherheitsupdates und Fehlerkorrekturen mehr vom Hersteller. Das Risiko steigt mit jeder neu bekannten Lücke und mit jeder PHP-Version, die ausläuft."}}, {"@type": "Question", "name": "Seit wann bekommt Shopware 5 keine Sicherheitsupdates mehr?", "acceptedAnswer": {"@type": "Answer", "text": "Seit Ende Juli 2024. Bis dahin hat Shopware noch Sicherheitsupdates geliefert. Die spätere Version 5.7.20 vom Juni 2025 enthielt laut Changelog nur Aufräumarbeiten."}}, {"@type": "Question", "name": "Kann ich Shopware 5 mit PHP 8.3 betreiben?", "acceptedAnswer": {"@type": "Answer", "text": "Offiziell nein. Die letzte Version 5.7.20 erlaubt laut ihrer composer.json PHP 7.4 bis 8.2. safefive bietet laut Shopware Store neben Sicherheits- auch Kompatibilitätsupdates an. Fragt dort nach, welche PHP-Versionen abgedeckt sind."}}, {"@type": "Question", "name": "Ist das Upgrade auf Shopware 6 einfacher als ein Wechsel zu Shopify?", "acceptedAnswer": {"@type": "Answer", "text": "Nicht unbedingt. Beide sind ein Neuaufbau. Der Migrationsassistent von Shopware überträgt Produkte, Kunden und Bestellungen, Themes, Einkaufswelten, Versandkosten und SEO-Einstellungen aber nicht. Der Unterschied liegt im Betrieb danach: Bei Shopware 6 bleiben Upgrades und in der Regel auch das Hosting bei euch, bei Shopify liegt beides beim Anbieter."}}, {"@type": "Question", "name": "Kann ich von Shopware 5 direkt zu Shopify wechseln?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Ein Zwischenschritt über Shopware 6 ist nicht nötig. Die Daten werden direkt aus Shopware 5 exportiert und in Shopify importiert."}}, {"@type": "Question", "name": "Was passiert mit meiner Warenwirtschaft beim Wechsel?", "acceptedAnswer": {"@type": "Answer", "text": "Die Anbindung wird für den neuen Shop neu eingerichtet. Für Shopify gibt es fertige Anbindungen unter anderem für JTL-Wawi, Xentral, PlentyONE und Billbee. Klärt vor dem Projekt, welche Daten euer System mit Shopify austauscht."}}, {"@type": "Question", "name": "Was kostet verlängerter Support für Shopware 5?", "acceptedAnswer": {"@type": "Answer", "text": "Bei safefive richtet sich der Preis laut Anbieter nach dem Online-Umsatz des Shops. Die aktuellen Konditionen nennt safefive selbst. Rechnet die Summe in euren Kostenvergleich ein, denn sie fällt zusätzlich zu Hosting und Wartung an."}}]}]}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2C0E18">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/krona-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Albert Sans', 'Helvetica Neue', Arial, sans-serif; background: #FFFFFF; color: #000000; -webkit-font-smoothing: antialiased; caret-color: #45142D; }
+    h1, h2, h3, p { margin: 0; }
+    a { color: #45142D; text-decoration: none; }
+    a:hover { color: #2C0E18; }
+    ::selection { background: #45142D; color: #FFFFFF; }
+    :focus-visible { outline: 2px solid #C5D8E6; outline-offset: 3px; }
+    .on-light :focus-visible { outline-color: #45142D; }
+    html { scrollbar-color: #45142D #FFFFFF; }
+    ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: #FFFFFF; } ::-webkit-scrollbar-thumb { background: #45142D; }
+
+    /* Buttons & links */
+    .btn { transition: background-color .25s cubic-bezier(.16,1,.3,1), color .25s cubic-bezier(.16,1,.3,1), border-color .25s; }
+    .btn-ice:hover { background: #FFFFFF !important; color: #2C0E18 !important; }
+    .btn-bdx:hover { background: #2C0E18 !important; color: #FFFFFF !important; }
+    .btn-ghost-light:hover { background: #FFFFFF !important; color: #2C0E18 !important; }
+    .navlink { position: relative; }
+    .navlink::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: #C5D8E6; transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.16,1,.3,1); }
+    .navlink:hover::after { transform: scaleX(1); }
+    .arrow { transition: transform .35s cubic-bezier(.16,1,.3,1); }
+    a:hover .arrow { transform: translateX(6px); }
+
+    /* Hero load sequence */
+    @keyframes wipeUp { from { transform: translateY(105%); } to { transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    @keyframes slideFromLeft { from { transform: translate(-38%, 0); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes slideFromRight { from { transform: translate(30%, 22%); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes flash { 0%, 100% { opacity: 1; } 40% { opacity: 0; } 55% { opacity: 1; } 70% { opacity: 0; } }
+    .line { display: block; overflow: hidden; }
+    .line > span { display: block; animation: wipeUp .9s cubic-bezier(.16,1,.3,1) both; }
+    .line:nth-child(2) > span { animation-delay: .12s; }
+    .line:nth-child(3) > span { animation-delay: .24s; }
+    .hero-fade { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .45s both; }
+    .hero-fade-2 { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .6s both; }
+    .mark-a { animation: slideFromLeft 1.1s cubic-bezier(.16,1,.3,1) .2s both; }
+    .mark-b { animation: slideFromRight 1.1s cubic-bezier(.16,1,.3,1) .2s both; }
+    .blitz { animation: flash 1s steps(1) 1.3s both; }
+
+
+    /* Hero mark: slow 3D spin with light falloff and sheen */
+    @keyframes spinY { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+    @keyframes spinLight { 0%, 50%, 100% { filter: brightness(1.45); } 22%, 28%, 72%, 78% { filter: brightness(0.62); } 25%, 75% { filter: brightness(0.5); } }
+    .spin-stage { perspective: 2400px; }
+    .spin { transform-style: preserve-3d; animation: spinY 7.68s linear 1.3s infinite; will-change: transform; }
+    .spin > svg { display: block; animation: spinLight 7.68s linear 1.3s infinite; backface-visibility: visible; }
+
+    /* Ticker */
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker-track { animation: ticker 38s linear infinite; }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+
+    /* Service rows: hard bordeaux wipe on hover */
+    .svc { background: linear-gradient(#45142D, #45142D) no-repeat left top / 0% 100%; transition: background-size .5s cubic-bezier(.16,1,.3,1), color .3s; color: #000000; }
+    .svc:hover { background-size: 100% 100%; color: #FFFFFF; }
+    .svc-tags { color: #45142D; transition: color .3s; }
+    .svc:hover .svc-tags { color: #C5D8E6; }
+    .svc:hover .svc-arrow { transform: translate(6px, -6px); color: #C5D8E6; }
+    .svc-arrow { transition: transform .4s cubic-bezier(.16,1,.3,1), color .3s; }
+
+    /* Form */
+    .chip { height: 44px; padding: 0 18px; border-radius: 0; cursor: pointer; font: 600 15px 'Albert Sans', sans-serif; border: 1.5px solid rgba(255,255,255,0.45); background: transparent; color: #FFFFFF; transition: background-color .2s, border-color .2s, color .2s; }
+    .chip:hover { border-color: #C5D8E6; }
+    .chip-on { background: #C5D8E6; border-color: #C5D8E6; color: #2C0E18; }
+    .field { transition: border-color .2s, box-shadow .2s; }
+    .field:hover { border-color: #C5D8E6 !important; }
+    .field:focus { outline: none; border-color: #C5D8E6 !important; box-shadow: inset 0 -3px 0 #C5D8E6; }
+    .field::placeholder { color: rgba(255,255,255,0.55); }
+
+
+    /* Partner badges: visible on arrival, gone after a short scroll */
+    @keyframes partnerOut { to { opacity: 0; transform: translateY(24px); visibility: hidden; } }
+    .partners { position: absolute; }
+    @supports (animation-timeline: scroll()) {
+      .partners { position: fixed; }
+      .partners-inner { animation: partnerOut linear both; animation-timeline: scroll(root); animation-range: 80px 420px; }
+    }
+
+    /* Scroll-driven motion, content visible by default */
+    @supports (animation-timeline: view()) {
+      @keyframes rise { from { opacity: 0; transform: translateY(48px); } to { opacity: 1; transform: none; } }
+      @keyframes fillWord { 0% { color: transparent; } 35%, 65% { color: #45142D; } 100% { color: transparent; } }
+      @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+      @keyframes drift { from { transform: translateY(-120px) rotate(0deg); } to { transform: translateY(140px) rotate(0deg); } }
+      @keyframes growBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+      .reveal { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+      .value-word { animation: fillWord linear both; animation-timeline: view(); animation-range: cover 15% cover 85%; }
+      .route { animation: draw linear both; animation-timeline: view(); animation-range: entry 20% cover 55%; }
+      .drift { animation: drift linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+      .bar { transform-origin: left; animation: growBar linear both; animation-timeline: view(); animation-range: entry 10% cover 40%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+      .value-word { color: #45142D !important; }
+    }
+  
+    /* FAQ accordion */
+    details.faq { border-top: 1.5px solid #000000; }
+    details.faq:last-child { border-bottom: 1.5px solid #000000; }
+    details.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 28px 0; }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq .plus { transition: transform .35s cubic-bezier(.16,1,.3,1); flex-shrink: 0; }
+    details.faq[open] .plus { transform: rotate(45deg); }
+    details.faq summary:hover .q { color: #45142D; }
+    details.faq[open] .a { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; }
+    /* Mobile menu */
+    @keyframes menuIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+    .menu-panel { animation: menuIn .45s cubic-bezier(.16,1,.3,1) both; } .menu-panel[hidden] { display: none !important; }
+    .menu-link { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; } .menu-acc summary { -webkit-tap-highlight-color: transparent; } .menu-acc summary::-webkit-details-marker, .menu-acc summary::marker { display: none; } .menu-acc[open] .menu-acc-arrow { transform: rotate(180deg); } .menu-acc-sub { display: flex; flex-direction: column; } .menu-panel > * { flex-shrink: 0; }
+    .burger { background: transparent; border: 0; padding: 0; width: 48px; height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 7px; cursor: pointer; }
+    .burger span { display: block; height: 2px; background: #FFFFFF; transition: transform .35s cubic-bezier(.16,1,.3,1), width .35s; }
+
+    /* ---- v2: robust text, dropdown, values, carousel, globe ---- */
+    h1, h2, h3, p, li, span, a, label, blockquote { overflow-wrap: break-word; }
+    .line { display: block; overflow-x: visible; overflow-y: clip; padding-top: .2em; margin-top: -.2em; padding-bottom: .06em; margin-bottom: -.06em; }
+    .dd { position: relative; display: flex; align-items: center; height: 88px; }
+    .dd-trigger { display: inline-flex; align-items: center; gap: 8px; }
+    .dd-chev { transition: transform .3s cubic-bezier(.16,1,.3,1); }
+    .dd:hover .dd-chev, .dd:focus-within .dd-chev { transform: rotate(180deg); }
+    .dd-menu { position: absolute; top: 88px; left: -24px; min-width: 340px; display: none; flex-direction: column; padding: 8px 0; background: #2C0E18; border: 1px solid rgba(197,216,230,0.22); border-top: 2px solid #C5D8E6; z-index: 30; }
+    .dd:hover .dd-menu, .dd:focus-within .dd-menu { display: flex; }
+    .dd-item { display: flex; justify-content: space-between; align-items: baseline; gap: 28px; padding: 14px 24px; color: #FFFFFF; font-size: 15px; font-weight: 700; white-space: nowrap; transition: background-color .2s, color .2s; }
+    .dd-item small { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; }
+    .dd-item:hover { background: #45142D; color: #C5D8E6; }
+    .dd-all { border-top: 1px solid rgba(197,216,230,0.22); margin-top: 6px; color: #C5D8E6; }
+
+    /* Keyword rows: outlined word, fills on hover, text appears */
+    .vrow { container-type: inline-size; padding: 24px 0 28px; border-top: 1px solid rgba(0,0,0,0.14); outline-offset: -3px; }
+    .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
+    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 19px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
+    .vrow:hover .vword, .vrow:focus-within .vword, .vrow:focus .vword { color: #45142D; }
+    .vrow:hover .vtext, .vrow:focus-within .vtext, .vrow:focus .vtext { opacity: 1; transform: none; }
+    @media (hover: none) { .vtext { opacity: 1; transform: none; } .vrow:active .vword { color: #45142D; } }
+    @media (prefers-reduced-motion: reduce) { .vtext { transition: none; } }
+
+    /* Cases carousel */
+    .car { display: flex; gap: 32px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 64px 8px; scroll-padding-left: 64px; }
+    .car::-webkit-scrollbar { display: none; }
+    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; padding: 32px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
+    .case-card:hover { background: #45142D; color: #FFFFFF; border-color: #45142D; }
+    .case-card .ck { color: #45142D; transition: color .35s; }
+    .case-card:hover .ck { color: #C5D8E6; }
+    .case-card .ct { border: 1.5px solid #000000; color: #000000; transition: border-color .35s, color .35s; }
+    .case-card:hover .ct { border-color: rgba(197,216,230,0.6); color: #C5D8E6; }
+    .case-card .clogo { filter: invert(1); transition: filter .35s; }
+    .case-card:hover .clogo { filter: none; }
+    .case-card:hover .arrow { transform: translateX(6px); }
+    .car-btn { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; padding: 0; background: transparent; border: 1.5px solid #000000; border-radius: 0; color: #000000; cursor: pointer; transition: background-color .25s, color .25s; }
+    .car-btn:hover { background: #000000; color: #FFFFFF; }
+    .globe-wrap canvas { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; }
+    @media (max-width: 500px) { .case-card { flex-basis: 300px; padding: 24px; gap: 24px; } .car { padding-left: 20px; padding-right: 20px; scroll-padding-left: 20px; gap: 16px; } .vrow { padding: 20px 0 24px; } .vword { font-size: min(44px, calc(100cqw / 8.8)); } .vtext { font-size: 17px; } }
+</style>
+<style>
+@media (max-width: 1023px) {
+html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Albert Sans', 'Helvetica Neue', Arial, sans-serif; background: #FFFFFF; color: #000000; -webkit-font-smoothing: antialiased; caret-color: #45142D; }
+    h1, h2, h3, p { margin: 0; }
+    a { color: #45142D; text-decoration: none; }
+    a:hover { color: #2C0E18; }
+    ::selection { background: #45142D; color: #FFFFFF; }
+    :focus-visible { outline: 2px solid #C5D8E6; outline-offset: 3px; }
+    .on-light :focus-visible { outline-color: #45142D; }
+    html { scrollbar-color: #45142D #FFFFFF; }
+    ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: #FFFFFF; } ::-webkit-scrollbar-thumb { background: #45142D; }
+
+    /* Buttons & links */
+    .btn { transition: background-color .25s cubic-bezier(.16,1,.3,1), color .25s cubic-bezier(.16,1,.3,1), border-color .25s; }
+    .btn-ice:hover { background: #FFFFFF !important; color: #2C0E18 !important; }
+    .btn-bdx:hover { background: #2C0E18 !important; color: #FFFFFF !important; }
+    .btn-ghost-light:hover { background: #FFFFFF !important; color: #2C0E18 !important; }
+    .navlink { position: relative; }
+    .navlink::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: #C5D8E6; transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.16,1,.3,1); }
+    .navlink:hover::after { transform: scaleX(1); }
+    .arrow { transition: transform .35s cubic-bezier(.16,1,.3,1); }
+    a:hover .arrow { transform: translateX(6px); }
+
+    /* Hero load sequence */
+    @keyframes wipeUp { from { transform: translateY(105%); } to { transform: translateY(0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    @keyframes slideFromLeft { from { transform: translate(-38%, 0); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes slideFromRight { from { transform: translate(30%, 22%); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes flash { 0%, 100% { opacity: 1; } 40% { opacity: 0; } 55% { opacity: 1; } 70% { opacity: 0; } }
+    .line { display: block; overflow: hidden; }
+    .line > span { display: block; animation: wipeUp .9s cubic-bezier(.16,1,.3,1) both; }
+    .line:nth-child(2) > span { animation-delay: .12s; }
+    .line:nth-child(3) > span { animation-delay: .24s; }
+    .hero-fade { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .45s both; }
+    .hero-fade-2 { animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .6s both; }
+    .mark-a { animation: slideFromLeft 1.1s cubic-bezier(.16,1,.3,1) .2s both; }
+    .mark-b { animation: slideFromRight 1.1s cubic-bezier(.16,1,.3,1) .2s both; }
+    .blitz { animation: flash 1s steps(1) 1.3s both; }
+
+
+    /* Hero mark: slow 3D spin with light falloff and sheen */
+    @keyframes spinY { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+    @keyframes spinLight { 0%, 50%, 100% { filter: brightness(1.45); } 22%, 28%, 72%, 78% { filter: brightness(0.62); } 25%, 75% { filter: brightness(0.5); } }
+    .spin-stage { perspective: 2400px; }
+    .spin { transform-style: preserve-3d; animation: spinY 7.68s linear 1.3s infinite; will-change: transform; }
+    .spin > svg { display: block; animation: spinLight 7.68s linear 1.3s infinite; backface-visibility: visible; }
+
+    /* Ticker */
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker-track { animation: ticker 38s linear infinite; }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+
+    /* Service rows: hard bordeaux wipe on hover */
+    .svc { background: linear-gradient(#45142D, #45142D) no-repeat left top / 0% 100%; transition: background-size .5s cubic-bezier(.16,1,.3,1), color .3s; color: #000000; }
+    .svc:hover { background-size: 100% 100%; color: #FFFFFF; }
+    .svc-tags { color: #45142D; transition: color .3s; }
+    .svc:hover .svc-tags { color: #C5D8E6; }
+    .svc:hover .svc-arrow { transform: translate(6px, -6px); color: #C5D8E6; }
+    .svc-arrow { transition: transform .4s cubic-bezier(.16,1,.3,1), color .3s; }
+
+    /* Form */
+    .chip { height: 44px; padding: 0 18px; border-radius: 0; cursor: pointer; font: 600 15px 'Albert Sans', sans-serif; border: 1.5px solid rgba(255,255,255,0.45); background: transparent; color: #FFFFFF; transition: background-color .2s, border-color .2s, color .2s; }
+    .chip:hover { border-color: #C5D8E6; }
+    .chip-on { background: #C5D8E6; border-color: #C5D8E6; color: #2C0E18; }
+    .field { transition: border-color .2s, box-shadow .2s; }
+    .field:hover { border-color: #C5D8E6 !important; }
+    .field:focus { outline: none; border-color: #C5D8E6 !important; box-shadow: inset 0 -3px 0 #C5D8E6; }
+    .field::placeholder { color: rgba(255,255,255,0.55); }
+
+
+    /* Partner badges: visible on arrival, gone after a short scroll */
+    @keyframes partnerOut { to { opacity: 0; transform: translateY(24px); visibility: hidden; } }
+    .partners { position: absolute; }
+    @supports (animation-timeline: scroll()) {
+      .partners { position: fixed; }
+      .partners-inner { animation: partnerOut linear both; animation-timeline: scroll(root); animation-range: 80px 420px; }
+    }
+
+    /* Scroll-driven motion, content visible by default */
+    @supports (animation-timeline: view()) {
+      @keyframes rise { from { opacity: 0; transform: translateY(48px); } to { opacity: 1; transform: none; } }
+      @keyframes fillWord { 0% { color: transparent; } 35%, 65% { color: #45142D; } 100% { color: transparent; } }
+      @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+      @keyframes drift { from { transform: translateY(-120px) rotate(0deg); } to { transform: translateY(140px) rotate(0deg); } }
+      @keyframes growBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+      .reveal { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+      .value-word { animation: fillWord linear both; animation-timeline: view(); animation-range: cover 15% cover 85%; }
+      .route { animation: draw linear both; animation-timeline: view(); animation-range: entry 20% cover 55%; }
+      .drift { animation: drift linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+      .bar { transform-origin: left; animation: growBar linear both; animation-timeline: view(); animation-range: entry 10% cover 40%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      html { scroll-behavior: auto; }
+      .value-word { color: #45142D !important; }
+    }
+  
+    /* FAQ accordion */
+    details.faq { border-top: 1.5px solid #000000; }
+    details.faq:last-child { border-bottom: 1.5px solid #000000; }
+    details.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 28px 0; }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq .plus { transition: transform .35s cubic-bezier(.16,1,.3,1); flex-shrink: 0; }
+    details.faq[open] .plus { transform: rotate(45deg); }
+    details.faq summary:hover .q { color: #45142D; }
+    details.faq[open] .a { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; }
+    /* Mobile menu */
+    @keyframes menuIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+    .menu-panel { animation: menuIn .45s cubic-bezier(.16,1,.3,1) both; } .menu-panel[hidden] { display: none !important; }
+    .menu-link { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; } .menu-acc summary { -webkit-tap-highlight-color: transparent; } .menu-acc summary::-webkit-details-marker, .menu-acc summary::marker { display: none; } .menu-acc[open] .menu-acc-arrow { transform: rotate(180deg); } .menu-acc-sub { display: flex; flex-direction: column; }
+    .burger { background: transparent; border: 0; padding: 0; width: 48px; height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 7px; cursor: pointer; }
+    .burger span { display: block; height: 2px; background: #FFFFFF; transition: transform .35s cubic-bezier(.16,1,.3,1), width .35s; }
+
+    /* ---- v2: robust text, dropdown, values, carousel, globe ---- */
+    h1, h2, h3, p, li, span, a, label, blockquote { overflow-wrap: break-word; }
+    .line { display: block; overflow-x: visible; overflow-y: clip; padding-top: .2em; margin-top: -.2em; padding-bottom: .06em; margin-bottom: -.06em; }
+    .dd { position: relative; display: flex; align-items: center; height: 88px; }
+    .dd-trigger { display: inline-flex; align-items: center; gap: 8px; }
+    .dd-chev { transition: transform .3s cubic-bezier(.16,1,.3,1); }
+    .dd:hover .dd-chev, .dd:focus-within .dd-chev { transform: rotate(180deg); }
+    .dd-menu { position: absolute; top: 88px; left: -24px; min-width: 340px; display: none; flex-direction: column; padding: 8px 0; background: #2C0E18; border: 1px solid rgba(197,216,230,0.22); border-top: 2px solid #C5D8E6; z-index: 30; }
+    .dd:hover .dd-menu, .dd:focus-within .dd-menu { display: flex; }
+    .dd-item { display: flex; justify-content: space-between; align-items: baseline; gap: 28px; padding: 14px 24px; color: #FFFFFF; font-size: 15px; font-weight: 700; white-space: nowrap; transition: background-color .2s, color .2s; }
+    .dd-item small { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; }
+    .dd-item:hover { background: #45142D; color: #C5D8E6; }
+    .dd-all { border-top: 1px solid rgba(197,216,230,0.22); margin-top: 6px; color: #C5D8E6; }
+
+    /* Keyword rows: outlined word, fills on hover, text appears */
+    .vrow { container-type: inline-size; padding: 24px 0 28px; border-top: 1px solid rgba(0,0,0,0.14); outline-offset: -3px; }
+    .vword { display: block; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; line-height: 1.04; white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px #45142D; transition: color .4s cubic-bezier(.16,1,.3,1); font-size: min(104px, calc(100cqw / 16.7)); }
+    .vtext { margin-top: 14px; min-height: 1.5em; max-width: 980px; font-size: 19px; line-height: 1.5; font-weight: 600; opacity: 0; transform: translateY(-8px); transition: opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1); }
+    .vrow:hover .vword, .vrow:focus-within .vword, .vrow:focus .vword { color: #45142D; }
+    .vrow:hover .vtext, .vrow:focus-within .vtext, .vrow:focus .vtext { opacity: 1; transform: none; }
+    @media (hover: none) { .vtext { opacity: 1; transform: none; } .vrow:active .vword { color: #45142D; } }
+    @media (prefers-reduced-motion: reduce) { .vtext { transition: none; } }
+
+    /* Cases carousel */
+    .car { display: flex; gap: 32px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 64px 8px; scroll-padding-left: 64px; }
+    .car::-webkit-scrollbar { display: none; }
+    .case-card { scroll-snap-align: start; flex: 0 0 720px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; padding: 32px; background: #FFFFFF; color: #000000; border: 1.5px solid #000000; transition: background-color .35s cubic-bezier(.16,1,.3,1), color .35s cubic-bezier(.16,1,.3,1), border-color .35s; }
+    .case-card:hover { background: #45142D; color: #FFFFFF; border-color: #45142D; }
+    .case-card .ck { color: #45142D; transition: color .35s; }
+    .case-card:hover .ck { color: #C5D8E6; }
+    .case-card .ct { border: 1.5px solid #000000; color: #000000; transition: border-color .35s, color .35s; }
+    .case-card:hover .ct { border-color: rgba(197,216,230,0.6); color: #C5D8E6; }
+    .case-card .clogo { filter: invert(1); transition: filter .35s; }
+    .case-card:hover .clogo { filter: none; }
+    .case-card:hover .arrow { transform: translateX(6px); }
+    .car-btn { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; padding: 0; background: transparent; border: 1.5px solid #000000; border-radius: 0; color: #000000; cursor: pointer; transition: background-color .25s, color .25s; }
+    .car-btn:hover { background: #000000; color: #FFFFFF; }
+    .globe-wrap canvas { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; }
+    @media (max-width: 500px) { .case-card { flex-basis: 300px; padding: 24px; gap: 24px; } .car { padding-left: 20px; padding-right: 20px; scroll-padding-left: 20px; gap: 16px; } .vrow { padding: 20px 0 24px; } .vword { font-size: min(44px, calc(100cqw / 8.8)); } .vtext { font-size: 17px; } }
+    @keyframes menuIn { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+    .menu-panel { animation: menuIn .45s cubic-bezier(.16,1,.3,1) both; } .menu-panel[hidden] { display: none !important; }
+    .menu-link { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) both; } .menu-acc summary { -webkit-tap-highlight-color: transparent; } .menu-acc summary::-webkit-details-marker, .menu-acc summary::marker { display: none; } .menu-acc[open] .menu-acc-arrow { transform: rotate(180deg); } .menu-acc-sub { display: flex; flex-direction: column; }
+    .burger { background: transparent; border: 0; padding: 0; width: 48px; height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 7px; cursor: pointer; }
+    .burger span { display: block; height: 2px; background: #FFFFFF; transition: transform .35s cubic-bezier(.16,1,.3,1), width .35s; }
+    /* Mobile layout */
+    .hero-fade-2:has(> .btn) { flex-direction: column !important; align-items: stretch !important; }
+    .btn { justify-content: center; text-align: center; }
+    a.case-card[style*="flex: 1 1 0"] { flex: 1 1 100% !important; }
+    h1, h2, h3, summary { hyphens: auto; -webkit-hyphens: auto; }
+    img { max-width: 100%; height: auto; }
+    table { display: block; overflow-x: auto; }
+}
+@media (max-width: 1023px){.v-desktop{display:none!important}}@media (min-width: 1024px){.v-mobile{display:none!important}}
+.v-desktop > div{min-width:1024px!important}html.is-mobile .v-desktop,html.is-desktop .v-mobile{display:none!important}
+</style>
+<script src="/assets/js/site.js?v=6"></script>
+<script src="/assets/js/gsap.min.js"></script>
+<script src="/assets/js/ScrollTrigger.min.js"></script>
+<script src="/assets/js/SplitText.min.js"></script>
+<script src="/assets/js/ScrambleTextPlugin.min.js"></script>
+<script src="/assets/js/Draggable.min.js"></script>
+<script src="/assets/js/InertiaPlugin.min.js"></script>
+<script src="/assets/js/lenis.min.js"></script>
+<script src="/assets/js/velonify-motion.js?v=5"></script>
+<link rel="stylesheet" href="/assets/site.css?v=1">
+<style>
+/* Ratgeber / Guides: one responsive layout, header and menu come from the regular pages */
+.rg-bar { position: sticky; top: 0; z-index: 20; }
+.rg-bar > div { width: 100%; }
+.rg-skip { position: absolute; left: 16px; top: -60px; z-index: 50; background: #C5D8E6; color: #2C0E18; padding: 12px 18px; font-weight: 700; }
+.rg-skip:focus { top: 12px; }
+main { display: block; }
+.rg-wrap { box-sizing: border-box; width: 100%; max-width: 1288px; margin: 0 auto; padding: 0 64px; }
+
+/* Hero */
+.rg-hero { position: relative; background: #2C0E18; color: #FFFFFF; padding: 72px 0 80px; overflow: hidden; }
+.rg-hero .mark-a { position: absolute; right: -160px; bottom: -200px; width: 560px; height: auto; }
+.rg-hero-in { position: relative; display: flex; flex-direction: column; gap: 28px; }
+.rg-crumbs { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; font-weight: 600; }
+.rg-crumbs a { color: rgba(255,255,255,0.75); }
+.rg-crumbs a:hover { color: #FFFFFF; }
+.rg-crumbs span[aria-current] { color: #FFFFFF; }
+.rg-dot { width: 6px; height: 6px; background: #C5D8E6; flex-shrink: 0; }
+.rg-eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C5D8E6; }
+.rg-hero h1 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 37px; line-height: 1.15; max-width: 1040px; text-wrap: balance; }
+.rg-lead { font-size: 19px; line-height: 1.6; max-width: 720px; color: rgba(255,255,255,0.85); }
+.rg-meta { display: flex; align-items: center; gap: 16px; }
+.rg-meta p { display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.8); }
+.rg-meta strong { color: #FFFFFF; }
+/* Platform switcher (series of articles, e.g. migration from Magento / Shopware / WooCommerce) */
+.rg-switch { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.18); max-width: 1040px; }
+.rg-switch-label { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C5D8E6; }
+.rg-switch-opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.rg-switch-opts a, .rg-switch-on { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; font-size: 15px; font-weight: 700; border: 1.5px solid rgba(255,255,255,0.5); color: #FFFFFF; transition: background-color .2s ease, border-color .2s ease, color .2s ease; }
+.rg-switch-opts a:hover { border-color: #FFFFFF; background: rgba(255,255,255,0.08); }
+.rg-switch-opts a:focus-visible { outline: 2px solid #C5D8E6; outline-offset: 2px; }
+.rg-switch-on { background: #C5D8E6; border-color: #C5D8E6; color: #2C0E18; }
+.rg-avatar { width: 52px; height: 52px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #C5D8E6; color: #2C0E18; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 15px; }
+
+/* Body: table of contents + article */
+.rg-body { display: grid; grid-template-columns: 240px minmax(0, 760px); gap: 80px; padding-top: 72px; padding-bottom: 96px; }
+.rg-toc { position: sticky; top: 120px; align-self: start; }
+.rg-toc summary { list-style: none; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D; padding-bottom: 16px; border-bottom: 1.5px solid #000000; pointer-events: none; }
+.rg-toc summary::-webkit-details-marker { display: none; }
+.rg-toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+.rg-toc li { counter-increment: toc; border-bottom: 1px solid rgba(0,0,0,0.12); }
+.rg-toc a { display: grid; grid-template-columns: 28px 1fr; padding: 12px 0; font-size: 14px; line-height: 1.45; font-weight: 600; color: #000000; }
+.rg-toc a::before { content: counter(toc, decimal-leading-zero); color: #45142D; font-weight: 700; font-size: 12px; padding-top: 2px; }
+.rg-toc a:hover { color: #45142D; }
+
+.rg-article { font-size: 17px; line-height: 1.7; color: #000000; min-width: 0; }
+.rg-article p { margin: 0 0 20px; }
+.rg-article a { color: #45142D; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; }
+.rg-article a:hover { color: #2C0E18; background: rgba(197,216,230,0.45); }
+.rg-article strong { font-weight: 700; }
+.rg-article code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 0.86em; background: rgba(197,216,230,0.4); padding: 2px 6px; }
+.rg-sec { margin-top: 64px; }
+.rg-sec h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.25; color: #2C0E18; margin: 0 0 24px; scroll-margin-top: 120px; text-wrap: balance; }
+.rg-sec h3 { font-size: 20px; line-height: 1.35; font-weight: 800; margin: 36px 0 12px; scroll-margin-top: 120px; }
+.rg-article ul, .rg-article ol { margin: 0 0 24px; padding: 0; list-style: none; }
+.rg-article ul li { position: relative; padding-left: 26px; margin-bottom: 12px; }
+.rg-article ul li::before { content: ""; position: absolute; left: 2px; top: 0.72em; width: 7px; height: 7px; background: #45142D; }
+.rg-article ol { counter-reset: step; }
+.rg-article ol li { counter-increment: step; position: relative; padding-left: 48px; margin-bottom: 16px; }
+.rg-article ol li::before { content: counter(step); position: absolute; left: 0; top: 2px; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background: #45142D; color: #FFFFFF; font-family: 'Krona One', 'Arial Narrow', sans-serif; font-size: 13px; line-height: 1; }
+
+.rg-summary { background: rgba(197,216,230,0.35); border-left: 5px solid #45142D; padding: 28px 32px; }
+.rg-summary p { margin: 0; }
+.rg-summary .rg-label, .rg-author-label { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D; margin-bottom: 10px; }
+.rg-summary p + p { font-size: 18px; line-height: 1.65; font-weight: 500; }
+
+.rg-table { overflow-x: auto; margin: 8px 0 28px; border: 1.5px solid #000000; }
+.rg-table:focus-visible { outline: 2px solid #45142D; outline-offset: 2px; }
+.rg-table table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
+.rg-table th { background: #2C0E18; color: #FFFFFF; text-align: left; font-weight: 700; padding: 14px 16px; vertical-align: bottom; }
+.rg-table td { padding: 14px 16px; border-top: 1px solid rgba(0,0,0,0.14); vertical-align: top; }
+.rg-table td:first-child { font-weight: 700; }
+.rg-table tbody tr:nth-child(even) td { background: rgba(197,216,230,0.18); }
+
+/* FAQ */
+.rg-faq { border-top: 1.5px solid #000000; }
+.rg-faq:last-child { border-bottom: 1.5px solid #000000; }
+.rg-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; }
+.rg-faq summary::-webkit-details-marker { display: none; }
+.rg-faq summary h3 { margin: 0; font-size: 18px; line-height: 1.4; font-weight: 700; }
+.rg-faq summary:hover h3 { color: #45142D; }
+.rg-plus { position: relative; width: 18px; height: 18px; flex-shrink: 0; transition: transform .35s cubic-bezier(.16,1,.3,1); }
+.rg-plus::before, .rg-plus::after { content: ""; position: absolute; background: #45142D; }
+.rg-plus::before { left: 0; right: 0; top: 8px; height: 2px; }
+.rg-plus::after { top: 0; bottom: 0; left: 8px; width: 2px; }
+.rg-faq[open] .rg-plus { transform: rotate(45deg); }
+.rg-faq-a { padding: 0 48px 12px 0; }
+
+/* Author, sources */
+.rg-author { display: flex; gap: 20px; margin-top: 72px; padding: 28px 32px; background: #2C0E18; color: rgba(255,255,255,0.85); font-size: 16px; line-height: 1.6; }
+.rg-author p { margin: 0; }
+.rg-author .rg-author-label { color: #C5D8E6; margin-bottom: 6px; }
+.rg-author-name { font-family: 'Krona One', 'Arial Narrow', sans-serif; text-transform: uppercase; color: #FFFFFF; font-size: 17px; }
+.rg-author-role { color: #C5D8E6; font-weight: 600; margin-bottom: 8px !important; }
+.rg-sources { margin-top: 48px; }
+.rg-sources h2 { font-family: 'Albert Sans', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: #45142D; margin-bottom: 12px; }
+.rg-sources ul li { font-size: 15px; margin-bottom: 8px; }
+
+/* CTA */
+.rg-cta { background: #45142D; color: #FFFFFF; padding: 88px 0; }
+.rg-cta h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 33px; line-height: 1.15; margin-bottom: 20px; }
+.rg-cta p { font-size: 18px; line-height: 1.6; max-width: 680px; color: rgba(255,255,255,0.85); margin-bottom: 36px; }
+.rg-cta-row { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+.rg-btn { display: inline-flex; align-items: center; gap: 12px; height: 60px; padding: 0 30px; background: #C5D8E6; color: #2C0E18; font-size: 16px; font-weight: 700; }
+.rg-cta-link { display: inline-flex; align-items: center; gap: 10px; color: #FFFFFF; font-weight: 700; font-size: 16px; border-bottom: 2px solid #C5D8E6; padding-bottom: 4px; }
+.rg-cta-link:hover { color: #C5D8E6; }
+
+/* Cards */
+.rg-related { padding: 88px 0 104px; }
+.rg-related h2 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; color: #2C0E18; margin-bottom: 32px; }
+.rg-list { padding: 72px 0 104px; }
+.rg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.rg-grid-index { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.rg-card { display: flex; flex-direction: column; gap: 14px; padding: 32px; border: 1.5px solid #000000; color: #000000; background: linear-gradient(#45142D, #45142D) no-repeat left top / 0% 100%; transition: background-size .5s cubic-bezier(.16,1,.3,1), color .3s; }
+.rg-card:hover { background-size: 100% 100%; color: #FFFFFF; }
+.rg-card-cat { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #45142D; transition: color .3s; }
+.rg-card:hover .rg-card-cat, .rg-card:hover .rg-card-go { color: #C5D8E6; }
+.rg-card h3 { font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 19px; line-height: 1.3; text-wrap: balance; }
+.rg-card-desc { font-size: 16px; line-height: 1.6; }
+.rg-card-meta { font-size: 14px; opacity: 0.75; margin-top: auto !important; }
+.rg-card-go { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: #45142D; transition: color .3s; }
+
+/* Footer */
+.rg-footer { background: #2C0E18; color: #FFFFFF; padding: 36px 64px; display: flex; flex-direction: column; gap: 24px; }
+.rg-footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
+.rg-brand { display: flex; flex-direction: column; gap: 10px; }
+.rg-brand a { display: flex; }
+.rg-brand p { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,0.6); max-width: 320px; }
+.rg-footer nav { display: flex; gap: 32px; flex-wrap: wrap; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.rg-footer nav a { color: #FFFFFF; }
+.rg-footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.rg-social { display: flex; align-items: center; gap: 16px; }
+.rg-social a { color: #FFFFFF; display: flex; }
+.rg-social span { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+.rg-partners { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; opacity: 0.85; }
+.rg-partners img { display: block; }
+.rg-partners img:nth-child(1) { height: 20px; width: auto; }
+.rg-partners img:nth-child(2) { height: 34px; width: auto; }
+.rg-partners img:nth-child(3) { height: 24px; width: auto; }
+
+/* Cover image below the hero, card images */
+.rg-cover { margin: 0 0 32px; }
+.rg-cover img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; background: #45142D; }
+.rg-card-img { display: block; margin: -32px -32px 6px; aspect-ratio: 16 / 9; overflow: hidden; background: #45142D; border-bottom: 1.5px solid #000000; }
+.rg-card-img img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.16,1,.3,1); }
+.rg-card:hover .rg-card-img img { transform: scale(1.04); }
+
+@media (max-width: 1180px) {
+  .rg-grid-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rg-body { grid-template-columns: 200px minmax(0, 1fr); gap: 56px; }
+}
+@media (max-width: 1023px) {
+  .rg-wrap { padding: 0 20px; }
+  .rg-hero { padding: 36px 0 44px; }
+  .rg-hero .mark-a { right: -80px; bottom: -100px; width: 308px; }
+  .rg-hero-in { gap: 20px; }
+  .rg-hero h1 { font-size: 24px; line-height: 1.2; }
+  .rg-lead { font-size: 17px; }
+  .rg-meta p { font-size: 14px; }
+  .rg-switch { flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 20px; }
+  .rg-switch-opts a, .rg-switch-on { padding: 0 12px; font-size: 14px; }
+  .rg-avatar { width: 44px; height: 44px; font-size: 13px; }
+  .rg-body { display: block; padding-top: 32px; padding-bottom: 64px; }
+  .rg-toc { position: static; margin-bottom: 32px; border: 1.5px solid #000000; }
+  .rg-toc summary { pointer-events: auto; cursor: pointer; padding: 16px 18px; border-bottom: 0; display: flex; justify-content: space-between; }
+  .rg-toc summary::after { content: "+"; font-size: 17px; line-height: 1; }
+  .rg-toc details[open] summary::after { content: "–"; }
+  .rg-toc ol { padding: 0 18px 8px; }
+  .rg-toc li:last-child { border-bottom: 0; }
+  .rg-article { font-size: 17px; }
+  .rg-summary { padding: 22px 20px; }
+  .rg-summary p + p { font-size: 17px; }
+  .rg-sec { margin-top: 48px; }
+  .rg-sec h2 { font-size: 19px; scroll-margin-top: 90px; }
+  .rg-sec h3 { font-size: 18px; scroll-margin-top: 90px; }
+  .rg-table table { font-size: 14px; min-width: 560px; }
+  .rg-faq summary h3 { font-size: 17px; }
+  .rg-faq-a { padding-right: 0; }
+  .rg-author { flex-direction: column; padding: 24px 20px; margin-top: 56px; }
+  .rg-cta { padding: 56px 0; }
+  .rg-cta h2 { font-size: 23px; }
+  .rg-cta p { font-size: 17px; }
+  .rg-btn { width: 100%; justify-content: center; height: 58px; }
+  .rg-related { padding: 56px 0 64px; }
+  .rg-related h2 { font-size: 20px; }
+  .rg-list { padding: 40px 0 64px; }
+  .rg-grid, .rg-grid-index { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .rg-card { padding: 24px 20px; }
+  .rg-card-img { margin: -24px -20px 4px; }
+  .rg-cover { margin-bottom: 24px; }
+  .rg-cover img { aspect-ratio: 16 / 9; }
+  .rg-card h3 { font-size: 17px; }
+  .rg-footer { padding: 36px 20px; gap: 20px; }
+  .rg-footer-top { gap: 20px; }
+  .rg-footer nav { gap: 20px; }
+  .rg-partners img:nth-child(1) { height: 16px; }
+  .rg-partners img:nth-child(2) { height: 28px; }
+  .rg-partners img:nth-child(3) { height: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-card { transition: none; }
+}
+
+</style>
+</head>
+<body>
+<a class="rg-skip" href="#inhalt">Zum Inhalt springen</a>
+<div class="v v-desktop rg-bar"><div>
+<header style="position: sticky; top: 0; z-index: 20; height: 88px; box-sizing: border-box; padding: 0 64px; display: flex; align-items: center; justify-content: space-between; background: #2C0E18; border-bottom: 1px solid rgba(197,216,230,0.14);">
+    <a href="/" aria-label="Velonify Startseite" style="display: flex; align-items: center; gap: 14px; color: #FFFFFF;">
+      <svg width="38" height="25" viewBox="0 44 1278 813" fill="#C5D8E6" aria-hidden="true"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
+      <img src="/assets/img/velonify-wordmark.png" alt="Velonify" style="height: 18px; width: auto;">
+    </a>
+    <nav aria-label="Hauptnavigation" style="display: flex; align-items: center; gap: 40px; font-size: 15px; font-weight: 600;">
+      <div class="dd"><a class="navlink dd-trigger" href="/leistungen/" aria-haspopup="true" style="color: #FFFFFF;">Leistungen <svg class="dd-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1 L5 5 L9 1"></path></svg></a><div class="dd-menu"><a class="dd-item" href="/leistungen/shopify-migration/"><span>Shopify-Migration</span></a><a class="dd-item" href="/leistungen/performance-marketing/"><span>Performance Marketing</span></a><a class="dd-item" href="/leistungen/meta-ads-shopify/"><span>Meta Ads für Shopify</span></a><a class="dd-item" href="/leistungen/e-mail-marketing/"><span>E-Mail & Retention</span></a><a class="dd-item" href="/leistungen/tracking/"><span>Tracking & Attribution</span></a><a class="dd-item" href="/leistungen/conversion-optimierung/"><span>Conversion-Optimierung</span></a><a class="dd-item dd-all" href="/leistungen/"><span>Alle Leistungen</span></a></div></div>
+      <div class="dd"><a class="navlink dd-trigger" href="/#cases" aria-haspopup="true" style="color: #FFFFFF;">Cases <svg class="dd-chev" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 1 L5 5 L9 1"></path></svg></a><div class="dd-menu"><a class="dd-item" href="/leistungen/shopify-migration/"><span>Shopify-Migration</span></a><a class="dd-item" href="/leistungen/performance-marketing/"><span>Performance Marketing</span></a><a class="dd-item" href="/leistungen/meta-ads-shopify/"><span>Meta Ads für Shopify</span></a><a class="dd-item" href="/leistungen/e-mail-marketing/"><span>E-Mail & Retention</span></a><a class="dd-item" href="/leistungen/tracking/"><span>Tracking & Attribution</span></a><a class="dd-item" href="/leistungen/conversion-optimierung/"><span>Conversion-Optimierung</span></a><a class="dd-item dd-all" href="/leistungen/"><span>Alle Leistungen</span></a></div></div>
+      <a class="navlink" href="/ratgeber/" aria-current="page" style="color: #C5D8E6;">Ratgeber</a>
+      <a class="navlink" href="/jobs/" style="color: #FFFFFF;">Jobs</a>
+      <a class="navlink" href="/#kontakt" style="color: #FFFFFF;">Kontakt</a>
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.08em;">
+        <a href="#top" style="color: #C5D8E6;">DE</a>
+        <span style="width: 1px; height: 14px; background: rgba(255,255,255,0.35);"></span>
+        <a href="/en/guides/shopware-5-end-of-life/" style="color: rgba(255,255,255,0.75);">EN</a>
+      </div>
+      <a class="btn btn-ice" href="/#kontakt" style="display: flex; align-items: center; height: 48px; padding: 0 22px; background: #C5D8E6; color: #2C0E18; font-weight: 700;">Projekt anfragen</a>
+    </nav>
+  </header>
+</div></div>
+<div class="v v-mobile rg-bar"><div>
+<header style="position: sticky; top: 0; z-index: 20; height: 68px; box-sizing: border-box; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; background: #2C0E18; border-bottom: 1px solid rgba(197,216,230,0.14);">
+    <a href="/" aria-label="Velonify Startseite" style="display: flex; align-items: center; gap: 10px;">
+      <svg width="30" height="20" viewBox="0 44 1278 813" fill="#C5D8E6" aria-hidden="true"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
+      <img src="/assets/img/velonify-wordmark.png" alt="Velonify" style="height: 14px; width: auto;">
+    </a>
+    <button class="burger" type="button" data-labels="Menü öffnen|Menü schließen" aria-label="Menü öffnen" aria-expanded="false">
+      <span style="width: 28px; transform: none;"></span>
+      <span style="width: 20px;"></span>
+      <span style="width: 20px; transform: none;"></span>
+    </button>
+  </header>
+
+  
+    <nav class="menu-panel" hidden aria-label="Hauptnavigation" style="position: fixed; top: 68px; left: 0; right: 0; bottom: 0; z-index: 19; background: #2C0E18; padding: 24px 20px; display: flex; flex-direction: column; gap: 0; overflow-y: auto;">
+      
+        <details class="menu-acc"><summary class="menu-link" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.06s; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;">Leistungen<svg class="menu-acc-arrow" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; transition: transform .3s;"><path d="M5 8 L10 13 L15 8"></path></svg></summary><div class="menu-acc-sub"><a class="menu-link" href="/leistungen/shopify-migration/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.10s;">Shopify-Migration</a><a class="menu-link" href="/leistungen/performance-marketing/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.15s;">Performance Marketing</a><a class="menu-link" href="/leistungen/meta-ads-shopify/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.20s;">Meta Ads für Shopify</a><a class="menu-link" href="/leistungen/e-mail-marketing/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.25s;">E-Mail & Retention</a><a class="menu-link" href="/leistungen/tracking/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.30s;">Tracking & Attribution</a><a class="menu-link" href="/leistungen/conversion-optimierung/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.35s;">Conversion-Optimierung</a><a class="menu-link" href="/leistungen/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.40s;">Alle Leistungen</a></div></details><details class="menu-acc"><summary class="menu-link" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.3s; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;">Cases<svg class="menu-acc-arrow" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex: none; transition: transform .3s;"><path d="M5 8 L10 13 L15 8"></path></svg></summary><div class="menu-acc-sub"><a class="menu-link" href="/cases/blue-fire/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.34s;">Blue Fire Co.</a>
+      
+        <a class="menu-link" href="/cases/storz-bickel/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.38s;">Storz &amp; Bickel</a>
+      
+        <a class="menu-link" href="/cases/pretty-woman/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 17px; line-height: 1.1; color: #C5D8E6; padding: 14px 0 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.42s;">Pretty Woman Brautmoden</a>
+      
+        </div></details><a class="menu-link" href="/ratgeber/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.46s;">Ratgeber</a>
+      
+        <a class="menu-link" href="/jobs/" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.5s;">Jobs</a>
+        
+        <a class="menu-link" href="/#kontakt" style="font-family: 'Krona One', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; font-size: 23px; line-height: 1.1; color: #FFFFFF; padding: 14px 0 14px 0px; border-bottom: 1px solid rgba(255,255,255,0.14); animation-delay: 0.5s;">Kontakt</a>
+      
+      <div style="display: flex; gap: 16px; margin-top: 20px; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; flex-wrap: wrap;">
+        <a href="#top" aria-current="page" style="color: #C5D8E6;">DE</a>
+        <a href="/en/guides/shopware-5-end-of-life/" style="color: rgba(255,255,255,0.75);">EN</a>
+      </div>
+      <a class="btn btn-ice" href="/#kontakt" style="margin-top: auto; display: flex; align-items: center; justify-content: center; height: 58px; background: #C5D8E6; color: #2C0E18; font-size: 17px; font-weight: 700;">Projekt anfragen</a>
+    </nav>
+</div></div>
+<main>
+<section id="top" class="rg-hero">
+<svg class="mark-a" viewBox="0 44 1278 813" fill="#45142D" aria-hidden="true"><path d="M0 242 L199 44 L412 44 L412 456 L0 456 Z"></path><path d="M412 456 L570 456 L982 44 L1278 44 L1278 292 L702 857 L412 857 Z"></path></svg>
+<div class="rg-wrap rg-hero-in">
+<nav aria-label="Brotkrumen" class="rg-crumbs"><a href="/">Start</a><span class="rg-dot" aria-hidden="true"></span><a href="/ratgeber/">Ratgeber</a><span class="rg-dot" aria-hidden="true"></span><span aria-current="page">Shopware 5 Supportende: Risiken und Optionen 2026</span></nav>
+<p class="rg-eyebrow">Shopware</p>
+<h1>Shopware 5 Supportende: Risiken und Optionen 2026</h1>
+<div class="rg-meta"><div class="rg-avatar" aria-hidden="true">LH</div><p><span>Von <strong>Lukas Hanke</strong>, Backend, CRM &amp; Integrationen</span><span>Stand: <time datetime="2026-10-25">25. Oktober 2026</time> · 10 Min. Lesezeit</span></p></div>
+</div>
+</section>
+<div id="inhalt" class="rg-wrap rg-body">
+<nav class="rg-toc" aria-label="Inhalt"><details class="rg-toc-box" open><summary>Inhalt</summary><ol><li><a href="#was-bedeutet-das-supportende-von-shopware-5">Was bedeutet das Supportende von Shopware 5?</a></li><li><a href="#welche-risiken-hat-ein-shopware-5-shop-2026">Welche Risiken hat ein Shopware-5-Shop 2026?</a></li><li><a href="#welche-optionen-habt-ihr-2026">Welche Optionen habt ihr 2026?</a></li><li><a href="#welche-rolle-spielt-die-anbindung-der-warenwirtschaft">Welche Rolle spielt die Anbindung der Warenwirtschaft?</a></li><li><a href="#wie-trefft-ihr-die-entscheidung">Wie trefft ihr die Entscheidung?</a></li><li><a href="#was-ihr-jetzt-sofort-tun-solltet">Was ihr jetzt sofort tun solltet</a></li><li><a href="#nach-dem-umzug-marketing-aus-einer-hand">Nach dem Umzug: Marketing aus einer Hand</a></li><li><a href="#haeufige-fragen">Häufige Fragen</a></li><li><a href="#quellen">Quellen</a></li></ol></details></nav>
+<article class="rg-article">
+<div class="rg-summary"><p class="rg-label">Kurz gesagt</p><p>Shopware 5 bekommt seit Ende Juli 2024 keine Sicherheitsupdates mehr vom Hersteller. Die letzte Version 5.7.20 unterstützt offiziell PHP bis 8.2, und PHP 8.2 bekommt nur noch bis zum 31. Dezember 2026 Sicherheitsupdates. Ab 2027 läuft ein Shopware-5-Shop damit auf keiner offiziell unterstützten Kombination mehr. 2026 bleiben drei Wege: verlängerter Support über einen Drittanbieter wie safefive als Übergang, ein Umstieg auf Shopware 6, der technisch ein Neuaufbau ist, oder ein Wechsel zu Shopify. Bei Shopware 6 und Shopify muss in beiden Fällen auch die Anbindung von Warenwirtschaft und Versand neu eingerichtet werden.</p></div>
+<section class="rg-sec" aria-labelledby="was-bedeutet-das-supportende-von-shopware-5"><h2 id="was-bedeutet-das-supportende-von-shopware-5">Was bedeutet das Supportende von Shopware 5?</h2><p>Shopware hat die Entwicklung von Shopware 5 Ende Juli 2024 eingestellt, das End of Life ist erreicht. Seitdem gibt es vom Hersteller keine Sicherheitsupdates, Fehlerkorrekturen oder neuen Funktionen mehr. Die letzte veröffentlichte Version ist 5.7.20 vom Juni 2025. Laut Changelog enthält sie nur Aufräumarbeiten am Captcha-Code.</p>
+<p>Euer Shop läuft trotzdem weiter. Er verkauft, Bestellungen kommen an, die Warenwirtschaft gleicht ab. Das Problem zeigt sich erst, wenn eine neue Sicherheitslücke bekannt wird. Für Shopware 5 schließt sie der Hersteller nicht mehr.</p>
+<div class="rg-table" role="region" tabindex="0"><table><thead><tr><th scope="col">Termin</th><th scope="col">Was passiert ist oder passiert</th></tr></thead><tbody><tr><td>31. Juli 2024</td><td>Ende der Sicherheitsupdates für Shopware 5.7</td></tr><tr><td>Juni 2025</td><td>Version 5.7.20 mit Aufräumarbeiten, ohne neue Funktionen</td></tr><tr><td>31. Dezember 2025</td><td>PHP 8.1 bekommt keine Sicherheitsupdates mehr</td></tr><tr><td>31. Dezember 2026</td><td>PHP 8.2, die höchste offiziell unterstützte PHP-Version von Shopware 5, bekommt keine Sicherheitsupdates mehr</td></tr></tbody></table></div></section><section class="rg-sec" aria-labelledby="welche-risiken-hat-ein-shopware-5-shop-2026"><h2 id="welche-risiken-hat-ein-shopware-5-shop-2026">Welche Risiken hat ein Shopware-5-Shop 2026?</h2><p><strong>Sicherheit.</strong> Jede Lücke, die ab jetzt in Shopware 5 gefunden wird, bleibt im Original-Code offen. Ein Shop speichert Kundenkonten, Adressen und Bestellungen. Er ist damit ein lohnendes Ziel.</p>
+<p><strong>PHP-Versionen.</strong> Shopware 5.7.20 erlaubt laut seiner <code>composer.json</code> PHP 7.4 bis 8.2. PHP 7.4, 8.0 und 8.1 sind bereits ohne Sicherheitsupdates. Für PHP 8.2 endet die Sicherheitsunterstützung am 31. Dezember 2026. Ab 2027 läuft ein Shopware-5-Shop deshalb entweder auf einer PHP-Version ohne Sicherheitsupdates oder auf einer neueren Version, die Shopware nie offiziell freigegeben hat. Fragt euren Hoster, wie lange er PHP 8.2 noch anbietet.</p>
+<p><strong>Plugins und Zahlungsanbieter.</strong> Zahlungsarten, Versanddienstleister und Rechtstexte hängen in Shopware 5 an Plugins. Ändern Zahlungsanbieter ihre Schnittstellen, braucht das Plugin ein Update. Fragt bei euren Anbietern nach, wie lange sie ihre Shopware-5-Plugins noch pflegen, und lasst euch das schriftlich geben.</p>
+<p><strong>Datenschutz und Zahlungssicherheit.</strong> Die DSGVO verlangt in Artikel 32 technische Maßnahmen, die den Stand der Technik berücksichtigen. Der Kartenzahlungsstandard PCI DSS verlangt in Anforderung 6.3.3, Systeme durch Sicherheitspatches vor bekannten Schwachstellen zu schützen. Mit einer Software ohne Herstellerupdates wird beides schwerer zu begründen. Das ist keine Rechtsberatung. Klärt eure Lage mit eurem Datenschutzbeauftragten.</p>
+<p><strong>Dienstleister.</strong> Klärt mit eurer Agentur oder eurem Entwickler, wie lange sie Shopware 5 noch betreuen. Diese Antwort braucht ihr vor dem nächsten Notfall.</p></section><section class="rg-sec" aria-labelledby="welche-optionen-habt-ihr-2026"><h2 id="welche-optionen-habt-ihr-2026">Welche Optionen habt ihr 2026?</h2><p>Realistisch bleiben drei Wege. Sie schließen sich nicht aus: Ihr könnt den Shop zuerst absichern und parallel den Umzug planen.</p>
+<div class="rg-table" role="region" tabindex="0"><table><thead><tr><th scope="col"></th><th scope="col">Verlängerter Support (z. B. safefive)</th><th scope="col">Upgrade auf Shopware 6</th><th scope="col">Wechsel zu Shopify</th></tr></thead><tbody><tr><td>Was es ist</td><td>Sicherheits- und Kompatibilitätsupdates von einem Drittanbieter</td><td>Neuer Shop auf Shopware 6, Daten über den Migrationsassistenten</td><td>Neuer Shop auf Shopify, Daten über CSV, Import-Apps oder Migrationsdienste</td></tr><tr><td>Aufwand</td><td>Gering, Plugin plus Vertrag</td><td>Hoch. Theme, Einkaufswelten, Plugins und Versandkosten werden neu aufgebaut.</td><td>Hoch. Theme, Apps und URLs werden neu aufgebaut.</td></tr><tr><td>Laufender Betrieb</td><td>Weiter bei euch: Hosting, Updates, Plugins</td><td>Weiter bei euch: Hosting, Updates, Major-Upgrades</td><td>Beim Anbieter: Hosting, Sicherheit, Updates</td></tr><tr><td>Laufende Kosten</td><td>Vertrag nach Online-Umsatz plus bisheriger Betrieb</td><td>Community Edition kostenlos bis 1 Mio. € Umsatz, darüber ab 600 € pro Monat, plus Hosting</td><td>Basic ab 27 €, Advanced 289 €, Plus ab 2.100 € pro Monat</td></tr><tr><td>Passt für</td><td>Die Zeit bis zum Umzug</td><td>Händler mit Entwicklerteam und stark individuellen Prozessen</td><td>Händler, die Betrieb und Updates abgeben wollen</td></tr></tbody></table></div>
+<h3 id="verlaengerter-support-als-uebergang">Verlängerter Support als Übergang</h3>
+<p>Ein Anbieter dafür ist safefive. Laut Shopware Store liefert safefive seit August 2024 Sicherheits- und Kompatibilitätsupdates für Shopware 5 als Plugin, Voraussetzung ist ein Vertrag. Unterstützt werden die Versionen 5.5.0 bis 5.7.20. Im Interview mit dem Hoster maxcluster nannte safefive 2023 eine Laufzeit von mindestens fünf Jahren und einen Preis abhängig vom Online-Umsatz. Fehlerkorrekturen und neue Funktionen gehören ausdrücklich nicht dazu. safefive selbst beschreibt das Angebot als Brücke, bis der Umzug abgeschlossen ist.</p>
+<p>Das ist eine sinnvolle Absicherung, wenn ihr den Umzug erst in einigen Monaten schafft. Als Dauerlösung bleibt der Shop auf einer Plattform, die sich nicht mehr weiterentwickelt.</p>
+<h3 id="upgrade-auf-shopware-6">Upgrade auf Shopware 6</h3>
+<p>Der Schritt von Shopware 5 auf 6 ist kein Update. Shopware selbst beschreibt ihn als Start auf der grünen Wiese mit einem komplett neuen Shop. Der Migrationsassistent überträgt laut Shopware Kategorien, Produkte, Kunden, Bestellungen, Rabatte, Bewertungen und Medien. Nicht übernommen werden laut Shopware:</p>
+<ul><li>Templates und Themes</li><li>Einkaufswelten (sie werden als Erlebniswelten neu gebaut)</li><li>Versandkosten</li><li>E-Mail- und Dokumentvorlagen</li><li>SEO-Einstellungen</li><li>Daten aus der B2B-Suite</li></ul>
+<p>Dazu kommt, dass jedes Plugin eine Shopware-6-Version braucht. Auch Shopware 6 hat Versionszyklen: Shopware 6.5 bekommt laut endoflife.date nur noch bis 28. Februar 2027 Sicherheitsupdates, 6.6 und 6.7 bis 28. Februar 2028. Wer auf Shopware 6 geht, plant das nächste Upgrade-Projekt also gleich mit.</p>
+<p>Shopware 6 ist der richtige Weg, wenn euer Geschäft auf tief individualisierten Prozessen im Shop-Core aufbaut und ihr ein Team habt, das diese Logik pflegt.</p>
+<h3 id="wechsel-zu-shopify">Wechsel zu Shopify</h3>
+<p>Shopify ist eine gemietete Plattform. Hosting, Sicherheitsupdates und Weiterentwicklung liegen beim Anbieter, Versionen und Upgrade-Projekte gibt es nicht. Der Aufwand für den Umzug ist ähnlich hoch wie für ein Upgrade auf Shopware 6, weil beide ein Neuaufbau sind. Der Unterschied liegt im Betrieb danach.</p>
+<p>Welche Daten mitkommen, wo Shopify andere Grenzen hat (etwa drei Optionen pro Produkt) und wie der Umzug abläuft, beschreiben wir ausführlich in <a href="/ratgeber/shopware-zu-shopify-migration/">Shopware zu Shopify migrieren</a>. Was so ein Projekt kostet, steht in <a href="/ratgeber/shopify-migration-kosten/">Was kostet eine Shopify-Migration?</a>.</p></section><section class="rg-sec" aria-labelledby="welche-rolle-spielt-die-anbindung-der-warenwirtschaft"><h2 id="welche-rolle-spielt-die-anbindung-der-warenwirtschaft">Welche Rolle spielt die Anbindung der Warenwirtschaft?</h2><p>Eine große. In Shopware-5-Shops hängen Warenwirtschaft, Versand und Buchhaltung meist über ein Plugin oder einen Connector am Shop. Egal ob ihr zu Shopware 6 oder zu Shopify wechselt: Diese Anbindung wird neu eingerichtet.</p>
+<p>Prüft deshalb früh, ob euer System den Zielshop unterstützt. Für Shopify gibt es Anbindungen der verbreiteten Systeme im DACH-Raum, zum Beispiel den JTL-Connector für JTL-Wawi, den Shopify-Connector von Xentral sowie Apps von PlentyONE (früher plentymarkets) und Billbee im Shopify App Store. JTL bietet seinen Connector auch für Shopware 6 an.</p>
+<p>Im Projekt testen wir die Anbindung mit echten Testbestellungen: Kommen Bestellungen mit Zahlart und Versandart richtig an, stimmen Bestände, laufen Versandmeldungen und Rechnungen? Erst dann wird umgeschaltet.</p></section><section class="rg-sec" aria-labelledby="wie-trefft-ihr-die-entscheidung"><h2 id="wie-trefft-ihr-die-entscheidung">Wie trefft ihr die Entscheidung?</h2><p>Fünf Fragen bringen euch in einer Stunde zu einer klaren Richtung:</p>
+<ol><li><strong>Wann seid ihr frühestens bereit für einen neuen Shop?</strong> Liegt der Termin mehr als ein paar Monate entfernt, sichert den Shop bis dahin über verlängerten Support ab.</li><li><strong>Wer betreibt den Shop heute?</strong> Habt ihr ein eigenes Entwicklerteam, das Shopware 6 betreuen will, oder läuft jede Änderung über eine Agentur?</li><li><strong>Was kostet euch Shopware 5 pro Jahr?</strong> Hosting, Wartung, Plugin-Lizenzen, Entwicklerstunden und jetzt der verlängerte Support. Diese Summe ist die Vergleichsgröße.</li><li><strong>Welche Funktionen sind wirklich individuell?</strong> Was ein Plugin oder eine App abdeckt, ist kein Argument für eine Plattform.</li><li><strong>Hat eure Warenwirtschaft eine Anbindung an das Zielsystem?</strong> Fragt beim Anbieter nach, welche Daten in welche Richtung laufen.</li></ol>
+<p>Wenn ihr bei Frage 2 und 4 merkt, dass ihr Betrieb und Updates abgeben wollt und eure Prozesse Standard sind, spricht vieles für Shopify. Wenn ihr ein Team habt und tief in Prozesse eingreift, spricht vieles für Shopware 6.</p></section><section class="rg-sec" aria-labelledby="was-ihr-jetzt-sofort-tun-solltet"><h2 id="was-ihr-jetzt-sofort-tun-solltet">Was ihr jetzt sofort tun solltet</h2><ul><li>Shopware-Version und PHP-Version eures Shops prüfen</li><li>Beim Hoster nachfragen, wie lange er PHP 8.2 noch anbietet</li><li>Admin-Zugänge aufräumen, ungenutzte Konten löschen, Backups prüfen</li><li>Plugins entfernen, die ihr nicht mehr braucht</li><li>Entscheiden, ob ihr verlängerten Support als Übergang bucht</li><li>Top-URLs aus der Search Console exportieren, als Grundlage für jede spätere Migration</li><li>Bei der Warenwirtschaft nachfragen, welche Shopsysteme sie anbindet</li></ul></section><section class="rg-sec" aria-labelledby="nach-dem-umzug-marketing-aus-einer-hand"><h2 id="nach-dem-umzug-marketing-aus-einer-hand">Nach dem Umzug: Marketing aus einer Hand</h2><p>Wenn ihr zu Shopify wechselt, kann dasselbe Team, das den Umzug macht, danach eure Meta Ads, Google Ads und das E-Mail-Marketing mit Klaviyo übernehmen. Das Tracking steht dann ab dem ersten Tag, weil wir es beim Umzug eingerichtet haben. Mehr dazu unter <a href="/leistungen/performance-marketing/">Performance Marketing</a>. Für den Umzug selbst findet ihr alles auf der Seite <a href="/leistungen/shopify-migration/">Shopify-Migration</a>.</p></section><section class="rg-sec" aria-labelledby="haeufige-fragen"><h2 id="haeufige-fragen">Häufige Fragen</h2><details class="rg-faq"><summary><h3>Funktioniert Shopware 5 nach dem Supportende weiter?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Ja. Der Shop läuft weiter und verkauft. Es kommen nur keine Sicherheitsupdates und Fehlerkorrekturen mehr vom Hersteller. Das Risiko steigt mit jeder neu bekannten Lücke und mit jeder PHP-Version, die ausläuft.</p></div></details><details class="rg-faq"><summary><h3>Seit wann bekommt Shopware 5 keine Sicherheitsupdates mehr?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Seit Ende Juli 2024. Bis dahin hat Shopware noch Sicherheitsupdates geliefert. Die spätere Version 5.7.20 vom Juni 2025 enthielt laut Changelog nur Aufräumarbeiten.</p></div></details><details class="rg-faq"><summary><h3>Kann ich Shopware 5 mit PHP 8.3 betreiben?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Offiziell nein. Die letzte Version 5.7.20 erlaubt laut ihrer <code>composer.json</code> PHP 7.4 bis 8.2. safefive bietet laut Shopware Store neben Sicherheits- auch Kompatibilitätsupdates an. Fragt dort nach, welche PHP-Versionen abgedeckt sind.</p></div></details><details class="rg-faq"><summary><h3>Ist das Upgrade auf Shopware 6 einfacher als ein Wechsel zu Shopify?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Nicht unbedingt. Beide sind ein Neuaufbau. Der Migrationsassistent von Shopware überträgt Produkte, Kunden und Bestellungen, Themes, Einkaufswelten, Versandkosten und SEO-Einstellungen aber nicht. Der Unterschied liegt im Betrieb danach: Bei Shopware 6 bleiben Upgrades und in der Regel auch das Hosting bei euch, bei Shopify liegt beides beim Anbieter.</p></div></details><details class="rg-faq"><summary><h3>Kann ich von Shopware 5 direkt zu Shopify wechseln?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Ja. Ein Zwischenschritt über Shopware 6 ist nicht nötig. Die Daten werden direkt aus Shopware 5 exportiert und in Shopify importiert.</p></div></details><details class="rg-faq"><summary><h3>Was passiert mit meiner Warenwirtschaft beim Wechsel?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Die Anbindung wird für den neuen Shop neu eingerichtet. Für Shopify gibt es fertige Anbindungen unter anderem für JTL-Wawi, Xentral, PlentyONE und Billbee. Klärt vor dem Projekt, welche Daten euer System mit Shopify austauscht.</p></div></details><details class="rg-faq"><summary><h3>Was kostet verlängerter Support für Shopware 5?</h3><span class="rg-plus" aria-hidden="true"></span></summary><div class="rg-faq-a"><p>Bei safefive richtet sich der Preis laut Anbieter nach dem Online-Umsatz des Shops. Die aktuellen Konditionen nennt safefive selbst. Rechnet die Summe in euren Kostenvergleich ein, denn sie fällt zusätzlich zu Hosting und Wartung an.</p></div></details></section><aside class="rg-author"><div class="rg-avatar" aria-hidden="true">LH</div><div><p class="rg-author-label">Über den Autor</p><p class="rg-author-name">Lukas Hanke</p><p class="rg-author-role">Backend, CRM &amp; Integrationen</p><p>Verbindet Shop, CRM und Drittsysteme über stabile Schnittstellen.</p></div></aside><section class="rg-sec rg-sources" aria-labelledby="quellen"><h2 id="quellen">Quellen</h2><ul><li><a href="https://endoflife.date/shopware" target="_blank" rel="noopener">endoflife.date: Shopware-Versionen und Support-Zeiträume</a></li><li><a href="https://github.com/shopware5/shopware/releases/tag/v5.7.20" target="_blank" rel="noopener">GitHub: Shopware 5 Release v5.7.20</a></li><li><a href="https://github.com/shopware5/shopware/blob/v5.7.20/composer.json" target="_blank" rel="noopener">GitHub: Shopware 5.7.20 composer.json mit PHP-Anforderungen</a></li><li><a href="https://www.php.net/supported-versions.php" target="_blank" rel="noopener">PHP: Unterstützte Versionen</a></li><li><a href="https://www.php.net/eol.php" target="_blank" rel="noopener">PHP: Nicht mehr unterstützte Versionen</a></li><li><a href="https://store.shopware.com/de/extension-partners/safefive" target="_blank" rel="noopener">Shopware Store: safefive</a></li><li><a href="https://maxcluster.de/en/blog/shopware-5-eol-interview-safefive" target="_blank" rel="noopener">maxcluster: Shopware 5 End of Life, Interview mit safefive</a></li><li><a href="https://docs.shopware.com/de/migration-de/shopware5" target="_blank" rel="noopener">Shopware Docs: Migration von Shopware 5</a></li><li><a href="https://docs.shopware.com/de/de/migration-de/was-wird-migriert" target="_blank" rel="noopener">Shopware Docs: Was wird von Shopware 5 auf 6 migriert</a></li><li><a href="https://shopware.com/en/news/fair-usage-policy-community-edition/" target="_blank" rel="noopener">Shopware: Fair Usage Policy für die Community Edition</a></li><li><a href="https://www.shopify.com/de/preise" target="_blank" rel="noopener">Shopify: Preise für Deutschland</a></li><li><a href="https://dsgvo-gesetz.de/art-32-dsgvo/" target="_blank" rel="noopener">DSGVO Art. 32: Sicherheit der Verarbeitung</a></li><li><a href="https://www.pcisecuritystandards.org/document_library/" target="_blank" rel="noopener">PCI Security Standards Council: Dokumentenbibliothek (PCI DSS v4.0.1)</a></li><li><a href="https://guide.jtl-software.com/jtl-connector/" target="_blank" rel="noopener">JTL-Guide: JTL-Connector</a></li><li><a href="https://xentral.com/de/integrationen/shopify" target="_blank" rel="noopener">Xentral: Shopify-Integration</a></li><li><a href="https://apps.shopify.com/plentymarkets-1" target="_blank" rel="noopener">Shopify App Store: PlentyONE</a></li><li><a href="https://apps.shopify.com/billbee-de" target="_blank" rel="noopener">Shopify App Store: Billbee</a></li></ul></section>
+</article>
+</div>
+<section class="rg-cta">
+<div class="rg-wrap">
+<h2>Fragen zu eurem Shop?</h2>
+<p>In 30 Minuten klären wir Ausgangslage, Ziel und nächste Schritte. Kostenlos und unverbindlich, direkt mit der Person, die euer Projekt später umsetzt.</p>
+<div class="rg-cta-row"><a class="btn btn-ice rg-btn" href="/#kontakt">Projekt anfragen <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></a><a class="rg-cta-link" href="/leistungen/shopify-migration/">Zur Leistung: Shopify-Migration <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></a></div>
+</div>
+</section>
+<section class="rg-related"><div class="rg-wrap"><h2>Weiterlesen</h2><div class="rg-grid"><a class="rg-card" href="/ratgeber/shopware-zu-shopify-migration/">
+<p class="rg-card-cat">Shopify-Migration</p>
+<h3>Shopware zu Shopify migrieren: Anlass, Ablauf und Kosten</h3>
+<p class="rg-card-desc">Shopware 5 ohne Updates, 6.5 läuft aus, die Community Edition hat eine Umsatzgrenze: wann sich Shopify lohnt, welche Daten mitkommen, was es kostet.</p>
+<p class="rg-card-meta">Lukas Hanke · 25. Oktober 2026 · 10 Min. Lesezeit</p>
+<span class="rg-card-go">Artikel lesen <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
+</a><a class="rg-card" href="/ratgeber/shopify-migration-kosten/">
+<p class="rg-card-cat">Shopify-Migration</p>
+<h3>Was kostet eine Shopify-Migration? Preise, Kostentreiber und laufende Kosten</h3>
+<p class="rg-card-desc">Was eine Shopify-Migration 2026 kostet: Marktspannen nach Projektgröße, die größten Kostentreiber, laufende Kosten über drei Jahre und Angebotsvergleich.</p>
+<p class="rg-card-meta">Lukas Hanke · 25. Oktober 2026 · 9 Min. Lesezeit</p>
+<span class="rg-card-go">Artikel lesen <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
+</a><a class="rg-card" href="/ratgeber/magento-supportende/">
+<span class="rg-card-img" aria-hidden="true"><img src="/assets/img/ratgeber/magento-supportende-card.jpg" alt="" width="900" height="509" loading="lazy" decoding="async"></span>
+<p class="rg-card-cat">Magento</p>
+<h3>Magento 2.4.6 ohne Support: Was Shopbetreiber jetzt tun sollten</h3>
+<p class="rg-card-desc">Seit dem 11. August 2026 bekommt Magento 2.4.6 keine regulären Sicherheitsupdates mehr. Was das für euren Shop bedeutet und welche Optionen ihr jetzt habt.</p>
+<p class="rg-card-meta">Lukas Hanke · 25. Oktober 2026 · 8 Min. Lesezeit</p>
+<span class="rg-card-go">Artikel lesen <svg class="arrow" width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6 H16 M11 1 L16 6 L11 11"></path></svg></span>
+</a></div></div></section>
+</main>
+<footer class="rg-footer">
+  <div class="rg-footer-top">
+    <div class="rg-brand">
+      <a href="/" aria-label="Velonify Start"><img src="/assets/img/velonify-wordmark.png" alt="Velonify" style="height: 22px; width: auto;"></a>
+      <p>Kleines Team, klare Ergebnisse: Migration, Tracking und Performance Marketing für Shopify.</p>
+    </div>
+    <nav aria-label="Footer"><a class="navlink" href="/#cases">Cases</a><a class="navlink" href="/ratgeber/">Ratgeber</a><a class="navlink" href="/jobs/">Jobs</a><a class="navlink" href="/impressum/">Impressum</a><a class="navlink" href="/datenschutz/">Datenschutz</a></nav>
+  </div>
+  <div class="rg-footer-bottom">
+    <div class="rg-social"><a href="https://www.instagram.com/velonify.de/" target="_blank" rel="noopener" aria-label="Velonify auf Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"></circle></svg></a><a href="https://www.linkedin.com/company/velonify/" target="_blank" rel="noopener" aria-label="Velonify auf LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="7.5" cy="8" r="0.9" fill="currentColor" stroke="none"></circle><path d="M7.5 11 V17"></path><path d="M11.5 17 V12.5 C11.5 11 13 10.3 14.3 11 C15.3 11.5 15.5 12.3 15.5 13 V17"></path><path d="M11.5 11 V17"></path></svg></a><span>© 2026 Velonify</span></div>
+    <div class="rg-partners"><img src="/assets/img/shopify-partners.png" alt="Shopify Partners"><img src="/assets/img/google-partner.png" alt="Google Partner"><img src="/assets/img/klaviyo-partner.png" alt="Klaviyo K:Partners Silver"></div>
+  </div>
+</footer>
+<script>if (window.matchMedia('(max-width: 1023px)').matches) document.querySelectorAll('details.rg-toc-box').forEach(function (d) { d.removeAttribute('open'); });</script>
+<script src="/assets/js/consent.js?v=2" defer></script>
+</body>
+</html>

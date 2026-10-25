@@ -3,18 +3,18 @@ slug: shopware-zu-shopify-migration
 lang: de
 translation: shopware-to-shopify-migration
 title: "Shopware zu Shopify migrieren: Anlass, Ablauf und Kosten"
-seo_title: "Shopware zu Shopify migrieren: Ablauf & Kosten 2026 | Velonify"
-description: "Shopware 5 ohne Updates, Shopware 6.5 läuft aus, die Community Edition hat eine Umsatzgrenze: Wann sich der Wechsel zu Shopify lohnt, welche Daten mitkommen und was er kostet."
+seo_title: "Shopware zu Shopify migrieren: Ablauf & Kosten | Velonify"
+description: "Shopware 5 ohne Updates, 6.5 läuft aus, die Community Edition hat eine Umsatzgrenze: wann sich Shopify lohnt, welche Daten mitkommen, was es kostet."
 series: migration
 series_label: Shopware
 author: lukas
 published: 2026-10-19
-updated: 2026-10-19
+updated: 2026-10-25
 order: 3
 category: "Shopify-Migration"
 summary: "Shopware 5 bekommt seit Ende Juli 2024 keine Sicherheitsupdates mehr. Für Shopware 6.5 gibt es nur noch Sicherheitsfixes, laut Shopwares Lebenszyklus-Planung voraussichtlich bis Ende Februar 2027. Seit März 2025 brauchen Shops mit mehr als 1 Mio. € Jahresumsatz auf der kostenlosen Community Edition einen bezahlten Plan ab 600 € im Monat, um Account und Store weiter zu nutzen. Ein Umzug zu Shopify läuft wie jede Migration in vier Phasen: Audit, Mapping, Aufbau mit Testmigration, Go-live. Produkte, Kunden und Bestellungen lassen sich übertragen, URLs, Passwörter und Erlebniswelten nicht. Für Shopware gibt es kein offizielles Shopify-Importwerkzeug, die Daten laufen über CSV-Importe oder spezialisierte Migrationsdienste."
 service: "/leistungen/shopify-migration/ | Shopify-Migration"
-related: magento-zu-shopify-migration, woocommerce-zu-shopify-migration, server-side-tracking-shopify
+related: shopware-5-supportende, shopify-migration-kosten, jtl-zu-shopify-migration
 ---
 
 ## Warum wechseln gerade so viele Shops von Shopware zu Shopify?
@@ -23,7 +23,7 @@ Weil 2024 bis 2027 gleich drei Termine zusammenfallen, die für Shopware-Händle
 
 | Anlass | Was gilt | Was es für euch heißt |
 |---|---|---|
-| Shopware 5 | Seit Ende Juli 2024 keine Sicherheitsupdates mehr vom Hersteller. Verlängerten Support gibt es nur noch kostenpflichtig über Drittanbieter. | Wer noch auf Shopware 5 läuft, betreibt einen ungepatchten Shop und muss so oder so migrieren, auch zu Shopware 6. |
+| Shopware 5 | Seit Ende Juli 2024 keine Sicherheitsupdates mehr vom Hersteller. Verlängerten Support gibt es nur noch kostenpflichtig über Drittanbieter. | Wer noch auf Shopware 5 läuft, betreibt einen ungepatchten Shop und muss so oder so migrieren, auch zu Shopware 6. Details im Artikel [Shopware 5 Supportende](/ratgeber/shopware-5-supportende/). |
 | Shopware 6.5 | Nur noch Sicherheitsfixes, ausgeliefert über ein Security-Plugin. Laut Shopwares Lebenszyklus-Grafik endet auch das voraussichtlich am 28. Februar 2027. | Das nächste Major-Upgrade steht an. Jedes Plugin und das Theme müssen dafür kompatibel sein. |
 | Community Edition | Seit 24. März 2025 gilt eine Fair-Usage-Regel: Wer mit seinen Shops mehr als 1 Mio. € Umsatz in 365 Tagen macht, braucht einen bezahlten Plan, um Shopware-Account und Plugin-Store weiter nutzen zu können. | Ab dieser Grenze kostet Shopware mindestens die Edition Rise ab 600 € pro Monat zuzüglich Hosting. |
 
@@ -91,9 +91,15 @@ Den Ablauf jeder Phase im Detail beschreiben wir im Artikel [Magento zu Shopify 
 Vier Punkte kosten bei Shopware-Projekten regelmäßig Zeit:
 
 - **Plugins aus dem deutschen Markt.** Viele Shopware-Shops nutzen Plugins für Rechnungskauf, Rechtstexte, Grundpreise oder Versanddienstleister. Für fast alles gibt es Shopify-Apps oder Bordmittel. Aber jede Funktion braucht eine bewusste Entscheidung, und manche Plugins fallen ersatzlos weg, weil Shopify die Funktion schon mitbringt.
-- **Warenwirtschaft.** Klärt früh, ob eure Warenwirtschaft eine Shopify-Anbindung hat und ob sie dieselben Prozesse abdeckt wie die Shopware-Anbindung. Die verbreiteten Systeme bieten eine an, der Funktionsumfang unterscheidet sich aber.
+- **Warenwirtschaft.** Klärt früh, ob eure Warenwirtschaft eine Shopify-Anbindung hat und ob sie dieselben Prozesse abdeckt wie die Shopware-Anbindung. Mehr dazu im nächsten Abschnitt.
 - **Erlebniswelten.** Startseite, Landingpages und Kategorieseiten mit eigenem Layout werden im Shopify-Theme neu gebaut. Ein guter Moment, um Seiten ohne Traffic gar nicht erst mitzunehmen.
 - **Rule Builder.** Versandkosten, Zahlarten nach Land oder Kundengruppe und Staffelrabatte stecken in Shopware oft in Regeln. Die müssen einzeln gesammelt und in Shopify über Versandprofile, Rabatte oder Shopify Functions nachgebaut werden.
+
+## Warenwirtschaft, ERP und Versand anbinden
+
+Nach dem Umzug muss mehr laufen als der Shop: Bestellungen müssen in der Warenwirtschaft ankommen, Bestände zurück in den Shop, Versandmeldungen und Rechnungen an die Kunden. In Shopware-Shops laufen diese Verbindungen meist über ein Plugin oder einen Connector, der für Shopify neu eingerichtet wird. Für Shopify gibt es fertige Anbindungen der verbreiteten Systeme im DACH-Raum, zum Beispiel den [JTL-Connector für JTL-Wawi](/ratgeber/jtl-zu-shopify-migration/), den Shopify-Connector von Xentral sowie Apps von PlentyONE (früher plentymarkets) und Billbee im Shopify App Store.
+
+Wir binden euer System im Rahmen der [Shopify-Migration](/leistungen/shopify-migration/) an und prüfen vor dem Go-live mit echten Testbestellungen, ob Zahlart, Versandart, Bestände, Versandmeldung und Rechnung stimmen. Fehlt für euer System eine fertige Anbindung, klären wir im Audit, ob eine App, ein Middleware-Dienst oder eine eigene Schnittstelle der richtige Weg ist.
 
 ## Wie lange dauert der Umzug und was kostet er?
 
@@ -105,7 +111,7 @@ Dauer und Kosten hängen weniger an der Zahl der Produkte als an der Zahl der an
 | Mehrere Schnittstellen (Warenwirtschaft, Marktplätze), angepasstes Design | acht bis zwölf Wochen | ca. 7.000 bis 28.000 € |
 | Mehrere Länder, B2B, ERP-Anbindung, Shopify Plus | drei bis sechs Monate | ab ca. 30.000 € |
 
-Die Spannen sind Marktwerte, die Agenturen 2026 öffentlich nennen. Einen belastbaren Preis gibt es erst nach dem Audit.
+Die Spannen sind Marktwerte, die Agenturen 2026 öffentlich nennen. Einen belastbaren Preis gibt es erst nach dem Audit. Was die Spanne nach oben treibt und wie ihr Angebote vergleicht, steht im Artikel [Was kostet eine Shopify-Migration?](/ratgeber/shopify-migration-kosten/).
 
 **Laufende Kosten richtig vergleichen.** Legt für drei Jahre nebeneinander: auf der Shopware-Seite Lizenz oder Edition, Hosting, Wartung, Sicherheitsupdates, Plugin-Lizenzen und das nächste Major-Upgrade. Auf der Shopify-Seite Plan, Apps und Zahlungsgebühren. Achtung: Wer bei Shopify einen externen Zahlungsanbieter statt Shopify Payments nutzt, zahlt je nach Plan zusätzlich zwischen 2 % (Basic) und 0,2 % (Plus) Transaktionsgebühr.
 
@@ -118,6 +124,10 @@ Die Spannen sind Marktwerte, die Agenturen 2026 öffentlich nennen. Einen belast
 - Top-URLs aus der Search Console exportiert, als Grundlage für die Weiterleitungen
 - Regeln aus dem Rule Builder gesammelt (Versand, Zahlarten, Rabatte)
 - Go-live-Termin außerhalb der Hochsaison festgelegt
+
+## Nach dem Go-live: Marketing aus einer Hand
+
+Dasselbe Team, das euren Shop zu Shopify bringt, kann danach eure Meta Ads, Google Ads und das E-Mail-Marketing mit Klaviyo übernehmen. Ihr spart euch die Übergabe an eine zweite Agentur, und das Tracking steht ab dem ersten Tag, weil wir es beim Umzug eingerichtet haben. Mehr dazu unter [Performance Marketing](/leistungen/performance-marketing/).
 
 ## Häufige Fragen {faq}
 
@@ -143,7 +153,7 @@ Ja. Shopify B2B ist in den Plänen Basic, Grow, Advanced und Plus enthalten, der
 
 ## Quellen {sources}
 
-- [Shopware: Shopware 5 End of Life](https://docs.shopware.com/en/shopware-5-en/end-of-life/shopware-5-end-of-life)
+- [Shopware Store: safefive, Sicherheitsupdates für Shopware 5 nach dem End of Life](https://store.shopware.com/de/extension-partners/safefive)
 - [Shopware: Fair Usage Policy für die Community Edition](https://shopware.com/en/news/fair-usage-policy-community-edition/)
 - [Shopware: Preise und Editionen](https://www.shopware.com/de/preise/)
 - [endoflife.date: Shopware-Versionen und Support-Zeiträume](https://endoflife.date/shopware)
@@ -151,3 +161,7 @@ Ja. Shopify B2B ist in den Plänen Basic, Grow, Advanced und Plus enthalten, der
 - [Shopify Help Center: Shopify B2B](https://help.shopify.com/en/manual/b2b)
 - [Shopify Developer Changelog: Variantenlimit 2.048 für alle Händler](https://shopify.dev/changelog/the-product-variant-limit-is-now-2048-for-all-merchants)
 - [Shopify App Store: Store Migration](https://apps.shopify.com/store-migration)
+- [JTL-Guide: JTL-Connector für Shopify](https://guide.jtl-software.com/jtl-connector/shopify/)
+- [Xentral: Shopify-Integration](https://xentral.com/de/integrationen/shopify)
+- [Shopify App Store: PlentyONE](https://apps.shopify.com/plentymarkets-1)
+- [Shopify App Store: Billbee](https://apps.shopify.com/billbee-de)

@@ -4,19 +4,19 @@ lang: en
 translation: magento-zu-shopify-migration
 title: "Migrating from Magento to Shopify: process, timeline and cost"
 seo_title: "Magento to Shopify Migration: Timeline & Cost | Velonify"
-description: "How a Magento to Shopify migration works, which data comes along, how long it takes and what it costs. With a schedule, cost ranges and a go-live checklist."
+description: "How a Magento to Shopify migration works, which data comes along, how long it takes and what it costs. With a schedule, cost ranges and a checklist."
 series: migration
 series_label: Magento
 author: lukas
 published: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-25
 order: 2
 category: "Shopify migration"
 image: "magento-zu-shopify-migration"
 image_alt: "Moving boxes on a hand truck in an empty room with a bordeaux wall"
 summary: "A migration from Magento to Shopify runs in four phases: audit, mapping, build with a test migration, and go-live with aftercare. A lean store is often live in four to six weeks. With several integrations or on Shopify Plus it takes eight to twelve weeks, and large B2B projects three to six months. Market prices range from a low four-figure sum for small stores to six figures for enterprise projects. The biggest risks are missing redirects, incomplete data and tracking that stops measuring after the switch."
 service: "/en/services/shopify-migration/ | Shopify migration"
-related: shopware-to-shopify-migration, woocommerce-to-shopify-migration, magento-end-of-support
+related: shopify-migration-cost, magento-end-of-support, shopware-to-shopify-migration
 ---
 
 ## When does moving from Magento to Shopify make sense?
@@ -67,6 +67,12 @@ Theme, integrations and tracking are built in the new store. Then a full test mi
 
 Shortly before the switch, the orders and customers added since the test migration are transferred. Then the domain is switched, and redirects and tracking are checked live. In the weeks that follow, we watch rankings, crawl errors in Search Console and order numbers.
 
+## Connecting inventory, ERP and shipping
+
+After the move, more than the store has to work: orders must reach your inventory system, stock must flow back to the store, and shipping confirmations and invoices must reach your customers. In Magento stores, these systems are often connected through extensions or custom integrations that do not come along in the move. For Shopify there are ready-made connections for widely used systems in Germany, Austria and Switzerland, for example the [JTL-Connector for JTL-Wawi](/en/guides/jtl-to-shopify-migration/), Xentral's Shopify connector, and apps from PlentyONE (formerly plentymarkets) and Billbee in the Shopify App Store.
+
+We connect your system as part of our [Shopify migration](/en/services/shopify-migration/) service and check with real test orders before go-live that payment method, shipping method, stock, shipping confirmation and invoice are correct. If there is no ready-made connection for your system, we clarify in the audit whether an app, a middleware service or a custom integration is the right route.
+
 ## How long does a Magento to Shopify migration take?
 
 | Starting point | Typical duration |
@@ -95,7 +101,7 @@ The biggest cost drivers are:
 - **Data quality.** Cleaning up messy legacy data often costs more than importing it.
 - **Internal effort.** Meetings, approvals and testing on your side are easy to forget.
 
-**Running costs compared.** In Germany, Shopify costs between €27 (Basic, billed yearly) and €289 (Advanced) per month, and Shopify Plus starts at €2,100 per month. Apps and payment fees come on top. Important: if you use an external payment provider instead of Shopify Payments, you pay an additional transaction fee between 2% (Basic) and 0.2% (Plus), depending on your plan. On the Magento side, you have hosting, maintenance, security updates, extension licences and regular upgrades. Put both totals side by side for three years before you decide.
+**Running costs compared.** In Germany, Shopify costs between €27 (Basic, billed yearly) and €289 (Advanced) per month, and Shopify Plus starts at €2,100 per month. Apps and payment fees come on top. Important: if you use an external payment provider instead of Shopify Payments, you pay an additional transaction fee between 2% (Basic) and 0.2% (Plus), depending on your plan. On the Magento side, you have hosting, maintenance, security updates, extension licences and regular upgrades. Put both totals side by side for three years before you decide. How to set up that comparison and check quotes is covered in [What does a Shopify migration cost?](/en/guides/shopify-migration-cost/).
 
 ## The five most common migration mistakes
 
@@ -115,6 +121,10 @@ The biggest cost drivers are:
 - Purchases arrive in Shopify, GA4, Meta and Google Ads
 - Transactional emails (order confirmation, shipping) checked
 - Old store in maintenance mode, but still reachable for lookups
+
+## After go-live: marketing from one team
+
+The same team that moves your store to Shopify can then take over your Meta ads, Google Ads and email marketing with Klaviyo. You skip the handover to a second agency, and tracking works from day one because we set it up during the move. More on our [performance marketing](/en/services/performance-marketing/) page.
 
 ## Frequently asked questions {faq}
 
@@ -144,4 +154,8 @@ No, passwords cannot be transferred for security reasons. With Shopify's new cus
 - [Shopify developer changelog: variant limit of 2,048 for all merchants](https://shopify.dev/changelog/the-product-variant-limit-is-now-2048-for-all-merchants)
 - [Shopify Help Center: URL redirects](https://help.shopify.com/en/manual/online-store/menus-and-links/url-redirect)
 - [Uncap: Magento to Shopify migration cost](https://www.uncap.com/post/magento-to-shopify-migration-cost)
+- [JTL Guide: JTL-Connector for Shopify (German)](https://guide.jtl-software.com/jtl-connector/shopify/)
+- [Xentral: Shopify integration (German)](https://xentral.com/de/integrationen/shopify)
+- [Shopify App Store: PlentyONE](https://apps.shopify.com/plentymarkets-1)
+- [Shopify App Store: Billbee](https://apps.shopify.com/billbee-de)
 - [WeArePresta: Shopify migration cost breakdown 2026](https://wearepresta.com/shopify-migration-cost-breakdown-what-agencies-actually-charge-in-2026/)

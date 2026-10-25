@@ -3,18 +3,18 @@ slug: woocommerce-to-shopify-migration
 lang: en
 translation: woocommerce-zu-shopify-migration
 title: "Migrating from WooCommerce to Shopify: process, data and cost"
-seo_title: "WooCommerce to Shopify Migration: Process & Cost 2026 | Velonify"
-description: "When moving from WooCommerce to Shopify pays off, which data comes along, what happens to your blog, SEO plugin and subscriptions, and what the migration costs. With a checklist."
+seo_title: "WooCommerce to Shopify Migration: Process & Cost | Velonify"
+description: "When moving from WooCommerce to Shopify pays off, which data comes along, what happens to your blog, SEO plugin and subscriptions, and what it costs."
 series: migration
 series_label: WooCommerce
 author: lukas
 published: 2026-10-19
-updated: 2026-10-19
+updated: 2026-10-25
 order: 4
 category: "Shopify migration"
 summary: "WooCommerce itself is free, but hosting, paid extensions, updates and security are on you. In 2025, 11,334 new security vulnerabilities were reported in the WordPress ecosystem, 91% of them in plugins. Moving to Shopify shifts hosting and updates to the provider. Shopify's own Store Migration app supports WooCommerce directly, and products, customers and orders can be transferred. The theme, URLs with 301 redirects, SEO data from Yoast or Rank Math and subscriptions are rebuilt. Customer passwords cannot be carried over. A lean store is often moved in four to six weeks."
 service: "/en/services/shopify-migration/ | Shopify migration"
-related: magento-to-shopify-migration, shopware-to-shopify-migration, shopify-server-side-tracking
+related: shopify-migration-cost, shopware-to-shopify-migration, shopify-server-side-tracking
 ---
 
 ## When does moving from WooCommerce to Shopify make sense?
@@ -81,6 +81,12 @@ We describe the phases in detail in [Migrating from Magento to Shopify](/en/guid
 - **Page builders.** Pages built with Elementor or similar builders cannot be transferred. The content moves, the layout is rebuilt in the Shopify theme.
 - **Custom code.** Changes in `functions.php` or in child themes often only surface late in the move. Collect them during the audit so it is clear which of them an app or a built-in Shopify feature will cover.
 
+## Connecting inventory, ERP and shipping
+
+After the move, more than the store has to work: orders must reach your inventory system, stock must flow back to the store, and shipping confirmations and invoices must reach your customers. In WooCommerce stores, these connections usually run through plugins that go away with the move. For Shopify there are ready-made connections for widely used systems in Germany, Austria and Switzerland, for example the [JTL-Connector for JTL-Wawi](/en/guides/jtl-to-shopify-migration/), Xentral's Shopify connector, and apps from PlentyONE (formerly plentymarkets) and Billbee in the Shopify App Store.
+
+We connect your system as part of our [Shopify migration](/en/services/shopify-migration/) service and check with real test orders before go-live that payment method, shipping method, stock, shipping confirmation and invoice are correct. If there is no ready-made connection for your system, we clarify in the audit whether an app, a middleware service or a custom integration is the right route.
+
 ## How long does the move take and what does it cost?
 
 | Starting point | Typical timeline | Typical market range |
@@ -89,7 +95,7 @@ We describe the phases in detail in [Migrating from Magento to Shopify](/en/guid
 | Larger catalogue, blog, several integrations, customised design | eight to twelve weeks | approx. €7,000 to €28,000 |
 | Several countries, B2B, ERP integration, Shopify Plus | three to six months | from approx. €30,000 |
 
-These ranges are market figures that agencies publish in 2026. A reliable price only exists after the audit.
+These ranges are market figures that agencies publish in 2026. A reliable price only exists after the audit. What pushes the range up and how to compare quotes is covered in [What does a Shopify migration cost?](/en/guides/shopify-migration-cost/).
 
 **Comparing running costs.** WooCommerce looks cheaper because the software is free. Calculate three years: hosting, annual extension licences, maintenance and updates, security services and backups. Against that, Shopify has the plan, apps and payment fees. If you use an external payment provider instead of Shopify Payments, Shopify charges an extra transaction fee of between 2% (Basic) and 0.2% (Plus), depending on the plan.
 
@@ -102,6 +108,10 @@ These ranges are market figures that agencies publish in 2026. A reliable price 
 - Subscriptions and payment provider checked: can stored payment details be transferred?
 - Mandatory legal information planned for Shopify (unit prices, delivery times, invoices)
 - Go-live date set outside peak season
+
+## After go-live: marketing from one team
+
+The same team that moves your store to Shopify can then take over your Meta ads, Google Ads and email marketing with Klaviyo. You skip the handover to a second agency, and tracking works from day one because we set it up during the move. More on our [performance marketing](/en/services/performance-marketing/) page.
 
 ## Frequently asked questions {faq}
 
@@ -133,3 +143,7 @@ The software is free, running it is not: hosting, annual extension licences, upd
 - [Shopify: Pricing for Germany](https://www.shopify.com/de/preise)
 - [Shopify Developer Changelog: 2,048 variant limit for all merchants](https://shopify.dev/changelog/the-product-variant-limit-is-now-2048-for-all-merchants)
 - [Shopify Help Center: URL redirects](https://help.shopify.com/en/manual/online-store/menus-and-links/url-redirect)
+- [JTL Guide: JTL-Connector for Shopify (German)](https://guide.jtl-software.com/jtl-connector/shopify/)
+- [Xentral: Shopify integration (German)](https://xentral.com/de/integrationen/shopify)
+- [Shopify App Store: PlentyONE](https://apps.shopify.com/plentymarkets-1)
+- [Shopify App Store: Billbee](https://apps.shopify.com/billbee-de)
