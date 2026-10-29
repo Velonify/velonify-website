@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//STORZ & BICKEL//Black Sale 2026//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:blacksale2026-de@storz-bickel.com
+DTSTAMP:20261029T090000Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:STORZ & BICKEL Black Sale startet
+DESCRIPTION:Der Black Sale läuft vom 15. bis 29. November 2026. Jetzt die 
+ stärksten Deals des Jahres sichern:\nhttps://www.storz-bickel.com/de/
+URL:https://www.storz-bickel.com/de/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:STORZ & BICKEL Black Sale startet heute
+TRIGGER:PT9H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

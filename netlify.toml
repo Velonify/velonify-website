@@ -64,3 +64,10 @@
   for = "/ressourcen/*"
   [headers.values]
     X-Robots-Tag = "noindex"
+
+# Kalenderdateien für Kunden-Newsletter (z. B. S&B Black Sale)
+[[headers]]
+  for = "/cal/*"
+  [headers.values]
+    Content-Type = "text/calendar; charset=utf-8"
+    X-Robots-Tag = "noindex"
